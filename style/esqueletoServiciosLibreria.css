@@ -1,0 +1,28 @@
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+.section-one{
+    margin-top: 50px;
+}
+
+.content div{
+    width: 80%;
+    text-align: center;
+    background-color: grey;
+    min-height: 200px;
+    border-radius: 20px;
+}
+
+.content article div{
+    width: 300px;
+    text-align: center;
+    background-color: grey;
+}
+
+.section-three{
+    display: flex;
+    justify-content: space-evenly;
+}

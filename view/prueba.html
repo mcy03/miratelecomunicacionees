@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Infinite Card Slider JavaScript | CodingNepal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  padding: 0 35px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #ffffff;
+}
+.wrapper {
+  max-width: 90%;
+  width: 60%;
+  position: relative;
+}
+.wrapper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child{
+  left: -22px;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3));
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  margin-left: 60px;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  height: 320px;
+  width: 250px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 8px;
+  transition: transform 0.3s ease; /* Agrega una transición */
+}
+
+.carousel .center {
+  transform: scale(1); /* Ajusta el tamaño de la tarjeta central */
+}
+
+.carousel .select{
+  scroll-snap-align: start;
+  height: 250px;
+  width: 200px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.carousel .card .img {
+  background: #6A6D78;
+  height: 72%;
+  width: 100%;
+  border-radius: 6px;
+}
+.card .img img {
+  width: 100%;
+  border-radius: 10px;
+}
+.carousel .card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+.carousel .card span {
+  color: #6A6D78;
+  font-size: 1.31rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .carousel .card {
+    scroll-snap-align: start;
+    height: 240px;
+    width: 200px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Agrega una transición */
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <img src="./resourse/pasoDeSeccion.svg" alt="">
+    <!--
+    <div class="wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <ul class="carousel">
+        <li class="card">
+          <div class="img"><img src="resource/MiraLogo/Mira.png" alt="img" draggable="false"></div>
+          <h2>Ejemplo 1</h2>
+          <span>Ejemplo 1</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="resource/MiraLogo/Mira.png" alt="img" draggable="false"></div>
+          <h2>Ejemplo 2</h2>
+          <span>Ejemplo 2</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="resource/MiraLogo/Mira.png" alt="img" draggable="false"></div>
+          <h2>Ejemplo 3</h2>
+          <span>Ejemplo 3</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="resource/MiraLogo/Mira.png" alt="img" draggable="false"></div>
+          <h2>Ejemplo 4</h2>
+          <span>Ejemplo 4</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="resource/MiraLogo/Mira.png" alt="img" draggable="false"></div>
+          <h2>Ejemplo 5</h2>
+          <span>Ejemplo 5</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="resource/MiraLogo/Mira.png" alt="img" draggable="false"></div>
+          <h2>Ejemplo 6</h2>
+          <span>Ejemplo 6</span>
+        </li>
+      </ul>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+    <script>
+      const wrapper = document.querySelector(".wrapper");
+      const carousel = document.querySelector(".carousel");
+      const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+      const arrowBtns = document.querySelectorAll(".wrapper i");
+      const carouselChildrens = [...carousel.children];
+
+let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+
+// Obtén la cantidad de tarjetas que caben en el carrusel a la vez
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+// Inserta copias de las últimas tarjetas al comienzo del carrusel para un desplazamiento infinito
+carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+});
+
+// Inserta copias de las primeras tarjetas hasta el final del carrusel para un desplazamiento infinito
+carouselChildrens.slice(0, cardPerView).forEach(card => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+});
+
+// Desplázate por el carrusel hasta la posición adecuada para ocultar las primeras tarjetas duplicadas en Firefox
+carousel.classList.add("no-transition");
+carousel.scrollLeft = carousel.offsetWidth;
+carousel.classList.remove("no-transition");
+
+// Agrega detectores de eventos para los botones de flecha para desplazar el carrusel hacia la izquierda y hacia la derecha
+arrowBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+    });
+});
+
+const dragStart = (e) => {
+    isDragging = true;
+    carousel.classList.add("dragging");
+    // Registra el cursor inicial y la posición de desplazamiento del carrusel
+    startX = e.pageX;
+    startScrollLeft = carousel.scrollLeft;
+}
+
+const dragging = (e) => {
+    if(!isDragging) return; // si isDragging es falso regresa desde aquí
+    // Actualiza la posición de desplazamiento del carrusel según el movimiento del cursor
+    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+}
+
+const dragStop = () => {
+    isDragging = false;
+    carousel.classList.remove("dragging");
+}
+
+const infiniteScroll = () => {
+    // Si el carrusel está al principio, desplázate hasta el final
+    if(carousel.scrollLeft === 0) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+        carousel.classList.remove("no-transition");
+    }
+    // Si el carrusel está al final, desplázate hasta el principio
+    else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+    }
+
+    // Borra el tiempo de espera existente e inicia la reproducción automática si el mouse no está sobre el carrusel
+    clearTimeout(timeoutId);
+    if(!wrapper.matches(":hover")) autoPlay();
+}
+
+const autoPlay = () => {
+    if(window.innerWidth < 800 || !isAutoPlay) return;  // Devuelve si la ventana es menor que 800 o isAutoPlay es falso
+    // Reproduce automáticamente el carrusel cada 2500 ms
+    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+}
+
+autoPlay();
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
+wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+wrapper.addEventListener("mouseleave", autoPlay);
+    </script>
+  -->
+  </body>
+</html>

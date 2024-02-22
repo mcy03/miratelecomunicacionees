@@ -1,0 +1,95 @@
+.banner-principal{
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body{
+    background-color: #EFEFEF;
+}
+.buscador {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 40px;
+}
+.buscador form{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.buscador select, .buscador input[type='text']{
+    background-color: #fff;
+    border: 0;
+    border-radius: 15px;
+    padding: 5px 30px;
+    margin-right: 20px;
+}
+
+.contenido{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    margin: 0 50px;
+    padding-bottom: 70px;
+}
+.filtro{
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 30px;
+}
+.filtro h3{
+    font-size: 15px;
+}
+
+.tecnologias-filtro h4, .certificacion-filtro h4{
+    font-size: 15px;
+    color: #4D4D4D;
+    padding: 25px;
+    padding-bottom: 10px;
+}
+
+.tecnologias-filtro p, .certificacion-filtro p{
+    font-size: 13px;
+    color: #000000;
+    padding: 0 50px;
+}
+
+.cursos{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fila-cursos{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.curso{
+    background-color: #fff;
+    width: 33.33%;
+    margin: 0 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.curso h2{
+    font-size: 14px;
+}
+
+.curso p{
+    font-size: 12px;
+    color: #8D8D8D;
+}
+
+.curso span{
+    font-size: 10px;
+    color: #383838;
+}
+

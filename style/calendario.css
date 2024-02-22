@@ -1,0 +1,114 @@
+.banner-principal{
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+table{
+    margin: 50px 30px;
+}
+
+.buscador input{
+    border-radius: 10px;
+    margin-right: 5px;
+    padding-left: 5px;
+}
+
+
+.buscador td{
+    text-align: center;
+}
+.separator{
+    height: 30px;
+}
+#input-name, .title-name, #input-id, #input-start-date, .title-id, .title-start-date, .title-enroll, #input-enroll, #input-end-date, #input-idioma, #input-timeZone, .title-end-date, .title-idioma, .title-timeZone{
+    width: 95%;
+}
+.head-table td{
+    background-color: #EA1C24;
+    padding: 0;
+}
+.head-table h3{
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10px 10px;
+    text-align: center;
+    color: white;
+}
+
+.esquina-izquierda, .esquina-izquierda h3{
+    border-radius: 10px 0 0 0;
+}
+
+.esquina-derecha, .esquina-derecha h3{
+    border-radius: 0 10px 0 0;
+}
+.body-table{
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    text-align: center;
+}
+
+.body-table span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 11px;
+}
+.border-center{
+    border: 1px solid grey;
+}
+
+.valor-name{
+    width: 320px;
+    padding: 0 5px;
+}
+
+.valor-enroll{
+    width: 100px;
+    padding: 0 10px;
+    font-size: 10px;
+}
+
+.pagina{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+}
+
+.publi{
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.publi article{
+    margin-bottom: 150px;
+    border-radius: 10px;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.publi-text h4{
+    width: 100%;
+    text-align: center;
+}
+.publi-text p{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.publi-text button:hover{
+    border: 1px solid rgb(0, 0, 0);
+}
