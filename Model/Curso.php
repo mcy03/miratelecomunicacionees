@@ -60,6 +60,52 @@ class Curso {
         }
     }
 
+    public static function getNameById($id){
+        $conn = db::connect();
+
+        // Consulta SQL para obtener el nombre del usuario con el ID dado
+        $sql = "SELECT NOMBRE_CURSO FROM curso WHERE CURSO_ID = $id";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Obtener el primer resultado (asumiendo que el ID es único)
+            $row = $result->fetch_assoc();
+            $name_curso = $row["NOMBRE_CURSO"];
+        }else {
+            return false;
+        }
+
+        // Cierra la conexión
+        $conn->close();
+
+        // Devolver el nombre del usuario
+        return $name_curso;
+    }
+
+    public static function getDescById($id){
+        $conn = db::connect();
+
+        // Consulta SQL para obtener el nombre del usuario con el ID dado
+        $sql = "SELECT DESCRIPCION FROM curso WHERE CURSO_ID = $id";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Obtener el primer resultado (asumiendo que el ID es único)
+            $row = $result->fetch_assoc();
+            $desc_curso = $row["DESCRIPCION"];
+        }else {
+            return false;
+        }
+
+        // Cierra la conexión
+        $conn->close();
+
+        // Devolver el nombre del usuario
+        return $desc_curso;
+    }
+
     /**
      * Get the value of CURSO_ID
      */ 

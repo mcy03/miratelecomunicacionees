@@ -29,7 +29,7 @@ class ApiCalendarioController{
         }
 
         if(trim($accion) == "get_dates"){
-            $dates = Certificacion::getDates();
+            $dates = Calendario::getCalendario();
 
             $array_dates = [];
             foreach ($dates as $registro) {
@@ -42,8 +42,6 @@ class ApiCalendarioController{
                     "TIME_ZONE" => $registro->getTIME_ZONE(),
                     "ENROLL" => $registro->getENROLL()
                 );
-
-                $index++;
             }
 
             echo json_encode($array_dates, JSON_UNESCAPED_UNICODE);

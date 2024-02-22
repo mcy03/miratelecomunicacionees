@@ -1,6 +1,8 @@
 window.addEventListener("load", async function() {
     const courses = await getDates();
+
     listCourses(courses);
+    //listCourses(courses);
     
 })
 
@@ -18,19 +20,19 @@ async function listCourses(courses) {
     courses.forEach(curso => {
         contenidoTabla += `
             <tr class="body-table">
-                <td><span class="valor-id">${curso.id}</span></td>
-                <td class="border-center"><span class="valor-name">${curso.nombre}</span></td>
-                <td class="border-center"><span class="valor-start-date">${curso.startDate}</span></td>
-                <td class="border-center"><span class="valor-end-date">${curso.endDate}</span></td>
-                <td class="border-center"><span class="valor-idioma">${curso.idioma}</span></td>
-                <td class="border-center"><span class="valor-timeZone">${curso.timeZone}</span></td>
-                <td><span class="valor-enroll">Contact</span></td>
+                <td><span class="valor-id">${curso.CURSO_ID}</span></td>
+                <td class="border-center"><span class="valor-name">${curso.CURSO}</span></td>
+                <td class="border-center"><span class="valor-start-date">${curso.FECHA_INICIO}</span></td>
+                <td class="border-center"><span class="valor-end-date">${curso.FECHA_FIN}</span></td>
+                <td class="border-center"><span class="valor-idioma">${curso.IDIOMA}</span></td>
+                <td class="border-center"><span class="valor-timeZone">${curso.TIME_ZONE}</span></td>
+                <td><span class="valor-enroll">${curso.ENROLL}</span></td>
             </tr>
         `;
     });
 
     // Asignar el contenido generado a la tabla
-    tabla.innerHTML = contenidoTabla;
+    tabla.innerHTML += contenidoTabla;
 }
 
 

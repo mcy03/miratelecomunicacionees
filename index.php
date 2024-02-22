@@ -13,12 +13,14 @@ include_once 'controller/api/ApiCertificacionController.php';
 include_once 'controller/api/ApiCursoController.php';
 include_once 'controller/api/ApiLaboratorioController.php';
 include_once 'controller/api/ApiTecnologiaController.php';
+include_once 'controller/api/ApiCalendarioController.php';
 
 include_once 'Model/db.php';
 include_once 'Model/Certificacion.php';
 include_once 'Model/Curso.php';
 include_once 'Model/Laboratorio.php';
 include_once 'Model/Tecnologia.php';
+include_once 'Model/Calendario.php';
 
 include_once 'config/parameters.php';
 

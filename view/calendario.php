@@ -23,7 +23,7 @@
     </section>
     <div class="pagina">
         <section class="calendario">
-            <table class="tabla-calendario">
+            <table id="tabla-calendario" class="tabla-calendario">
                 <tr class="buscador">
                     <td><input type="text" name="input-id" id="input-id" placeholder="id"></td>
                     <td><input type="text" name="input-name" id="input-name" placeholder="name"></td>
@@ -45,17 +45,6 @@
                     <td><h3 class="title-timeZone">Time Zone</h3></td>
                     <td class="esquina-derecha"><h3 class="title-enroll">Enroll</h3></td>
                 </tr>
-                <?php for ($i=0; $i < 10 ; $i++) { ?>
-                    <tr class="body-table">
-                        <td><span class="valor-id">DNA</span></td>
-                        <td class="border-center"><span class="valor-name">IMPLEMENTING CISCO INTRUSION PREVENTION SYSTEM(IPS 7)</span></td>
-                        <td class="border-center"><span class="valor-start-date">10/03/2024</span></td>
-                        <td class="border-center"><span class="valor-end-date">20/03/2024</span></td>
-                        <td class="border-center"><span class="valor-idioma">Español</span></td>
-                        <td class="border-center"><span class="valor-timeZone">GMT+1</span></td>
-                        <td><span class="valor-enroll">contact</span></td>
-                    </tr>
-                <?php } ?>
             </table>    
         </section>
         <section class="publi">
