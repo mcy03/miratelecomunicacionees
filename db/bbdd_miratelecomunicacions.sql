@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-02-2024 a las 11:22:52
+-- Tiempo de generación: 23-02-2024 a las 13:24:12
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -160,7 +160,9 @@ CREATE TABLE `img` (
 
 INSERT INTO `img` (`IMG_ID`, `PUBLICACION_ID`, `IMG`, `POSICION`, `ALT`, `WIDTH`, `HEIGHT`) VALUES
 (1, 1, 'backgroundEjemplo.jpg', 0, 'Pilares de una estructura romana con filtro en blanco y negro.', 100, 100),
-(2, 1, 'backgroundEjemplo.jpg', 2, 'Pilares de una estructura romana con filtro en blanco y negro.', 100, 100);
+(2, 1, 'backgroundEjemplo.jpg', 2, 'Pilares de una estructura romana con filtro en blanco y negro.', 100, 100),
+(7, 2, 'backgroundEjemplo.jpg', 0, 'alt entrada 2', 100, 100),
+(8, 3, 'backgroundEjemplo.jpg', 0, 'alt entrada 3', 100, 100);
 
 -- --------------------------------------------------------
 
@@ -215,7 +217,9 @@ CREATE TABLE `publicacion` (
 --
 
 INSERT INTO `publicacion` (`PUBLICACION_ID`, `CATEGORIA_ID`, `TITULO`, `DESCRIPCION`, `FECHA`) VALUES
-(1, 1, 'Publicacion de prueba de entradas.', 'En esta publicacion encontraras pruebas sobre las entradas', '2024-02-23');
+(1, 1, 'Publicacion de prueba de entradas.', 'En esta publicacion encontraras pruebas sobre las entradas', '2024-02-23'),
+(2, 2, 'Prueba de entrada 2', 'Esta es la segunda prueba de entrada', '2024-02-23'),
+(3, 1, 'Prueba de entrada 3', 'Esta es la tercera prueba de entrada', '2024-02-23');
 
 -- --------------------------------------------------------
 
@@ -378,7 +382,7 @@ ALTER TABLE `iframe`
 -- AUTO_INCREMENT de la tabla `img`
 --
 ALTER TABLE `img`
-  MODIFY `IMG_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `IMG_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `laboratorio`
@@ -390,7 +394,7 @@ ALTER TABLE `laboratorio`
 -- AUTO_INCREMENT de la tabla `publicacion`
 --
 ALTER TABLE `publicacion`
-  MODIFY `PUBLICACION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `PUBLICACION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tecnologia`
