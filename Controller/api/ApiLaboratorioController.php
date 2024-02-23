@@ -24,6 +24,24 @@ class ApiLaboratorioController{
             echo json_encode($array_laboratorios, JSON_UNESCAPED_UNICODE);
             return;
 
+        }elseif(trim($accion) == "get_labs_table_format"){  
+            $laboratorios = Laboratorio::getLabs();
+
+            $array_laboratorios = [];
+            foreach ($laboratorios as $laboratorio) {
+                $array_laboratorios[] = array(
+                    "LABORATORIO_ID" => $laboratorio->getLABORATORIO_ID(),
+                    "CURSO_ID" => Curso::getNameById($laboratorio->getCURSO_ID()),
+                    "CURSO" => Curso::getDescById($laboratorio->getCURSO_ID()),
+                    "DESCRIPCION_LABORTORIO" => $laboratorio->getDESCRIPCION_LABORATORIO(),
+                    "DURACION" => $laboratorio->getDURACION(),
+                    "PODS_AVALIABLE" => $laboratorio->getPODS_AVALIABLE()
+                );
+            }
+
+            echo json_encode($array_laboratorios, JSON_UNESCAPED_UNICODE);
+            return;
+
         }
     }
 }

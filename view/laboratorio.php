@@ -23,7 +23,7 @@
     </section>
     <div class="pagina">
         <section class="lab">
-            <table class="tabla-lab">
+            <table id="tabla-lab" class="tabla-lab">
                 <tr class="buscador">
                     <td><input type="text" name="input-id" id="input-id" placeholder="id"></td>
                     <td><input type="text" name="input-name" id="input-name" placeholder="name"></td>
@@ -39,14 +39,6 @@
                     <td><h3 class="title-start-date">Duración</h3></td>
                     <td class="esquina-derecha"><h3 class="title-end-date">Pods Avaliable</h3></td>
                 </tr>
-                <?php for ($i=0; $i < 10 ; $i++) { ?>
-                    <tr class="body-table">
-                        <td><span class="valor-id">DNA</span></td>
-                        <td class="border-center"><span class="valor-name">IMPLEMENTING CISCO INTRUSION PREVENTION SYSTEM(IPS 7)</span></td>
-                        <td class="border-center"><span class="valor-start-date">40 hours</span></td>
-                        <td class="border-center"><span class="valor-end-date">4</span></td>
-                    </tr>
-                <?php } ?>
             </table>    
         </section>
         <section class="publi">
@@ -76,5 +68,8 @@
             </article>
         </section>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
+    <script src="./script/laboratorio/dataLaboratorio.js"></script>
 </body>
 </html>

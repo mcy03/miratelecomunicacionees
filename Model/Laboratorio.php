@@ -10,13 +10,9 @@ de la base de datos.                                                    º
 class Laboratorio {
     protected $LABORATORIO_ID;
     protected $CURSO_ID;
-    protected $NOMBRE_LABORATORIO;
-    protected $DESCRIPCION_LABORTORIO;
+    protected $DESCRIPCION_LABORATORIO;
     protected $DURACION;
     protected $PODS_AVALIABLE;
-
-
-    
 
 
     public function ___construct(){
@@ -65,6 +61,7 @@ class Laboratorio {
         }
     }
 
+
     /**
      * Get the value of LABORATORIO_ID
      */ 
@@ -106,21 +103,61 @@ class Laboratorio {
     }
 
     /**
-     * Get the value of NOMBRE_LABORATORIO
+     * Get the value of DESCRIPCION_LABORATORIO
      */ 
-    public function getNOMBRE_LABORATORIO()
+    public function getDESCRIPCION_LABORATORIO()
     {
-        return $this->NOMBRE_LABORATORIO;
+        return $this->DESCRIPCION_LABORATORIO;
     }
 
     /**
-     * Set the value of NOMBRE_LABORATORIO
+     * Set the value of DESCRIPCION_LABORATORIO
      *
      * @return  self
      */ 
-    public function setNOMBRE_LABORATORIO($NOMBRE_LABORATORIO)
+    public function setDESCRIPCION_LABORATORIO($DESCRIPCION_LABORATORIO)
     {
-        $this->NOMBRE_LABORATORIO = $NOMBRE_LABORATORIO;
+        $this->DESCRIPCION_LABORATORIO = $DESCRIPCION_LABORATORIO;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of DURACION
+     */ 
+    public function getDURACION()
+    {
+        return $this->DURACION;
+    }
+
+    /**
+     * Set the value of DURACION
+     *
+     * @return  self
+     */ 
+    public function setDURACION($DURACION)
+    {
+        $this->DURACION = $DURACION;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of PODS_AVALIABLE
+     */ 
+    public function getPODS_AVALIABLE()
+    {
+        return $this->PODS_AVALIABLE;
+    }
+
+    /**
+     * Set the value of PODS_AVALIABLE
+     *
+     * @return  self
+     */ 
+    public function setPODS_AVALIABLE($PODS_AVALIABLE)
+    {
+        $this->PODS_AVALIABLE = $PODS_AVALIABLE;
 
         return $this;
     }

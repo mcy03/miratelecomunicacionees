@@ -1,7 +1,7 @@
 window.addEventListener("load", async function() {
-    const courses = await getDates();
+    const dates = await getDates();
 
-    listCourses(courses);
+    listCourses(dates);
     //listCourses(courses);
     
 })
@@ -9,7 +9,7 @@ window.addEventListener("load", async function() {
 //----------------------
 //      Function para listar cursos en la tabla de calendario, 
 //----------------------
-async function listCourses(courses) {
+async function listCourses(dates) {
     // Obtener el elemento donde se colocará el contenido generado
     const tabla = document.getElementById('tabla-calendario');
 
@@ -17,16 +17,16 @@ async function listCourses(courses) {
     let contenidoTabla = '';
 
     // Bucle para generar las filas de la tabla
-    courses.forEach(curso => {
+    dates.forEach(fecha => {
         contenidoTabla += `
             <tr class="body-table">
-                <td><span class="valor-id">${curso.CURSO_ID}</span></td>
-                <td class="border-center"><span class="valor-name">${curso.CURSO}</span></td>
-                <td class="border-center"><span class="valor-start-date">${curso.FECHA_INICIO}</span></td>
-                <td class="border-center"><span class="valor-end-date">${curso.FECHA_FIN}</span></td>
-                <td class="border-center"><span class="valor-idioma">${curso.IDIOMA}</span></td>
-                <td class="border-center"><span class="valor-timeZone">${curso.TIME_ZONE}</span></td>
-                <td><span class="valor-enroll">${curso.ENROLL}</span></td>
+                <td><span class="valor-id">${fecha.CURSO_ID}</span></td>
+                <td class="border-center"><span class="valor-name">${fecha.CURSO}</span></td>
+                <td class="border-center"><span class="valor-start-date">${fecha.FECHA_INICIO}</span></td>
+                <td class="border-center"><span class="valor-end-date">${fecha.FECHA_FIN}</span></td>
+                <td class="border-center"><span class="valor-idioma">${fecha.IDIOMA}</span></td>
+                <td class="border-center"><span class="valor-timeZone">${fecha.TIME_ZONE}</span></td>
+                <td><span class="valor-enroll">${fecha.ENROLL}</span></td>
             </tr>
         `;
     });
