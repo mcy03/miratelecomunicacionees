@@ -1,9 +1,9 @@
 <?php
 /*  
 =========================================================================
-                            CLASE Tecnologia
+                            CLASE calendario
 =========================================================================
-º Inicializamos la clase Tecnologia la cual contendra las tecnologias   º
+º Inicializamos la clase calendario la cual contendra las calendario    º
 º de la base de datos.                                                  º
 =========================================================================
 */

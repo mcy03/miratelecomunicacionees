@@ -28,11 +28,7 @@
             </div>
             <div class="opcion-filtro filtro-categorias">
                 <h3 class="title-filtros">> Categorías</h3>
-                <div class="enlaces">
-                    <a href="#">categoria</a>
-                    <a href="#">categoria</a>
-                    <a href="#">categoria</a>
-                    <a href="#">categoria</a>
+                <div id="enlaces-categorias" class="enlaces">
                 </div>
             </div>
             <div class="opcion-filtro filtro-ultimas">
@@ -54,9 +50,9 @@
                 </div>
             </div>
        </section>
-       <section class="entradas">
+        <section id="entradas" class="entradas">
             <article class="entrada">
-                <div class="img-entrada"></div>
+                <div class="img-entrada" style="background-image: url('../resource/backgroundEjemplo.jpg');"></div>
                 <div class="body-entrada">
                     <ul>
                         <li><img src="./resource/iconos/calendario.png" alt="">Ene 17, 2024</li>
@@ -67,7 +63,7 @@
                 </div>
             </article>
             <article class="entrada">
-                <div class="img-entrada"></div>
+                <div class="img-entrada" style="background-image: url('../resource/backgroundEjemplo.jpg');"></div>
                 <div class="body-entrada">
                     <ul>
                         <li><img src="./resource/iconos/calendario.png" alt="">Ene 17, 2024</li>
@@ -78,7 +74,7 @@
                 </div>
             </article>
             <article class="entrada">
-                <div class="img-entrada"></div>
+                <div class="img-entrada" style="background-image: url('../resource/backgroundEjemplo.jpg');"></div>
                 <div class="body-entrada">
                     <ul>
                         <li><img src="./resource/iconos/calendario.png" alt="">Ene 17, 2024</li>
@@ -88,7 +84,11 @@
                     </ul>
                 </div>
             </article>
-       </section>
+        </section>
     </div>
+
+    <script src="./script/blog/blog.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
 </body>
 </html>

@@ -1,28 +1,12 @@
 <?php
-include_once 'controller/viewsController/homeController.php';
-include_once 'controller/viewsController/formacionController.php';
-include_once 'controller/viewsController/cursoController.php';
-include_once 'controller/viewsController/calendarioController.php';
-include_once 'controller/viewsController/serviciosITController.php';
-include_once 'controller/viewsController/libreriaDigitalController.php';
-include_once 'controller/viewsController/laboratorioController.php';
-include_once 'controller/viewsController/miraController.php';
-include_once 'controller/viewsController/blogController.php';
-
-include_once 'controller/api/ApiCertificacionController.php';
-include_once 'controller/api/ApiCursoController.php';
-include_once 'controller/api/ApiLaboratorioController.php';
-include_once 'controller/api/ApiTecnologiaController.php';
-include_once 'controller/api/ApiCalendarioController.php';
-
-include_once 'Model/db.php';
-include_once 'Model/Certificacion.php';
-include_once 'Model/Curso.php';
-include_once 'Model/Laboratorio.php';
-include_once 'Model/Tecnologia.php';
-include_once 'Model/Calendario.php';
-
 include_once 'config/parameters.php';
+
+array_map(function($view_controller) { include_once 'controller/viewsController/'.$view_controller; }, views_controller);
+array_map(function($api) { include_once 'controller/api/'.$api; }, apis);
+array_map(function($model) { include_once 'Model/'.$model; }, model);
+array_map(function($model_entrie) { include_once 'Model/Entries/'.$model_entrie; }, model_entries);
+
+
 
 if (!isset($_GET['controller'])) {
     //Si no le pasamos nada se pasara pagina principal de productos

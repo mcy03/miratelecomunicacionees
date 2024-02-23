@@ -72,10 +72,11 @@
     height: 100%;
     width: 80%;
     border-right: 1px solid #EA1C24;
-    background-image: url('../resource/backgroundEjemplo.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+}
+
+.img-entrada img{
+    height: 100%;
+    width: 100%;
 }
 
 .body-entrada{
