@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-02-2024 a las 08:43:23
+-- Tiempo de generación: 23-02-2024 a las 11:22:52
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -48,6 +48,29 @@ INSERT INTO `calendario` (`REGISTRO_ID`, `CURSO_ID`, `FECHA_INICIO`, `FECHA_FIN`
 (5, 4, '2024-05-25', '2024-04-12', 'Español', 'GMT+1', 'contact'),
 (6, 1, '2024-01-25', '2024-04-12', 'Español', 'UCT+1', 'contact'),
 (7, 3, '2024-12-25', '2024-04-12', 'Español', 'UCT+1', 'contact');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoria`
+--
+
+CREATE TABLE `categoria` (
+  `CATEGORIA_ID` int(11) NOT NULL,
+  `NOMBRE` varchar(200) NOT NULL,
+  `DESCRIPCION` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`CATEGORIA_ID`, `NOMBRE`, `DESCRIPCION`) VALUES
+(1, 'Blog mira', 'Publicaciones de la actualidad de Mira telecomunicacions'),
+(2, 'Ciberseguridad', 'Publicaciones sobre Ciberseguridad'),
+(3, 'Cisco training', 'Publicaciones sobre Cisco training'),
+(4, 'Noticias Cisco', 'Publicaciones sobre noticias  de Cisco'),
+(5, 'Casos de Éxito', 'Publicaciones sobre Casos de Éxito');
 
 -- --------------------------------------------------------
 
@@ -98,7 +121,46 @@ INSERT INTO `curso` (`CURSO_ID`, `NOMBRE_CURSO`, `DESCRIPCION`, `DETALLES`, `IMG
 (2, 'DNAPF', 'Cisco DNA programmability fundamentals', 'detalles', 'img'),
 (3, 'SDAINT', 'Introduction to SDN DNA center', 'detalles', 'img'),
 (4, 'PRGSDA', 'SD-access and catalyst 9k programmability', 'detalles', 'img'),
-(6, 'SD-ACCESS', 'Cisco SD access', 'detalles', 'img');
+(5, 'SD-ACCESS', 'Cisco SD access', 'detalles', 'img');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `iframe`
+--
+
+CREATE TABLE `iframe` (
+  `IFRAME_ID` int(11) NOT NULL,
+  `PUBLICACION_ID` int(11) NOT NULL,
+  `IFRAME` varchar(2000) NOT NULL,
+  `WIDTH` int(4) NOT NULL,
+  `HEIGHT` int(4) NOT NULL,
+  `POSICION` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `img`
+--
+
+CREATE TABLE `img` (
+  `IMG_ID` int(11) NOT NULL,
+  `PUBLICACION_ID` int(11) NOT NULL,
+  `IMG` varchar(200) NOT NULL,
+  `POSICION` int(11) NOT NULL,
+  `ALT` varchar(500) NOT NULL,
+  `WIDTH` int(4) NOT NULL,
+  `HEIGHT` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `img`
+--
+
+INSERT INTO `img` (`IMG_ID`, `PUBLICACION_ID`, `IMG`, `POSICION`, `ALT`, `WIDTH`, `HEIGHT`) VALUES
+(1, 1, 'backgroundEjemplo.jpg', 0, 'Pilares de una estructura romana con filtro en blanco y negro.', 100, 100),
+(2, 1, 'backgroundEjemplo.jpg', 2, 'Pilares de una estructura romana con filtro en blanco y negro.', 100, 100);
 
 -- --------------------------------------------------------
 
@@ -109,7 +171,6 @@ INSERT INTO `curso` (`CURSO_ID`, `NOMBRE_CURSO`, `DESCRIPCION`, `DETALLES`, `IMG
 CREATE TABLE `laboratorio` (
   `LABORATORIO_ID` int(11) NOT NULL,
   `CURSO_ID` int(11) DEFAULT NULL,
-  `NOMBRE_LABORATORIO` varchar(250) NOT NULL,
   `DESCRIPCION_LABORTORIO` varchar(250) DEFAULT NULL,
   `DURACION` int(5) DEFAULT NULL,
   `PODS_AVALIABLE` int(5) DEFAULT NULL
@@ -119,8 +180,42 @@ CREATE TABLE `laboratorio` (
 -- Volcado de datos para la tabla `laboratorio`
 --
 
-INSERT INTO `laboratorio` (`LABORATORIO_ID`, `CURSO_ID`, `NOMBRE_LABORATORIO`, `DESCRIPCION_LABORTORIO`, `DURACION`, `PODS_AVALIABLE`) VALUES
-(1, 1, 'NOMBRE DE EJEMPLO LAB', 'descripcion de ejemplo lab 1', 40, 8);
+INSERT INTO `laboratorio` (`LABORATORIO_ID`, `CURSO_ID`, `DESCRIPCION_LABORTORIO`, `DURACION`, `PODS_AVALIABLE`) VALUES
+(1, 1, 'descripcion de ejemplo lab', 40, 8),
+(2, 2, 'Descripcion de laboratorio.', 20, 4),
+(3, 3, 'Descripcion de laboratorio.', 30, 8),
+(4, 4, 'Descripcion de laboratorio.', 40, 6),
+(5, 5, 'Descripcion de laboratorio.', 30, 8),
+(10, 2, 'descripcion lab', 40, 2),
+(11, 3, 'descripcion lab', 50, 2),
+(12, 1, 'descripcion lab', 10, 2),
+(14, 2, 'descripcion lab', 40, 2),
+(15, 3, 'descripcion lab', 50, 2),
+(16, 1, 'descripcion lab', 10, 2),
+(17, 5, 'descripcion lab', 20, 2),
+(18, 2, 'descripcion lab', 15, 2),
+(19, 1, 'descripcion lab', 10, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `publicacion`
+--
+
+CREATE TABLE `publicacion` (
+  `PUBLICACION_ID` int(11) NOT NULL,
+  `CATEGORIA_ID` int(11) NOT NULL,
+  `TITULO` varchar(200) NOT NULL,
+  `DESCRIPCION` varchar(250) NOT NULL,
+  `FECHA` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `publicacion`
+--
+
+INSERT INTO `publicacion` (`PUBLICACION_ID`, `CATEGORIA_ID`, `TITULO`, `DESCRIPCION`, `FECHA`) VALUES
+(1, 1, 'Publicacion de prueba de entradas.', 'En esta publicacion encontraras pruebas sobre las entradas', '2024-02-23');
 
 -- --------------------------------------------------------
 
@@ -154,6 +249,27 @@ INSERT INTO `tecnologia` (`TECNOLOGIA_ID`, `NOMBRE_TECNOLOGIA`, `DESCRIPCION`, `
 (12, 'Cloud', 'Descripcion de tecnologia ', './resource/iconosTecnologias/cloud.png'),
 (13, 'CyberOPs', 'Descripcion de tecnologia ', './resource/iconosTecnologias/CyberOPs.png');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `texto`
+--
+
+CREATE TABLE `texto` (
+  `TEXTO_ID` int(11) NOT NULL,
+  `PUBLICACION_ID` int(11) NOT NULL,
+  `TEXTO` varchar(2000) NOT NULL,
+  `POSICION` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `texto`
+--
+
+INSERT INTO `texto` (`TEXTO_ID`, `PUBLICACION_ID`, `TEXTO`, `POSICION`) VALUES
+(1, 1, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 1),
+(2, 1, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 3);
+
 --
 -- Índices para tablas volcadas
 --
@@ -164,6 +280,12 @@ INSERT INTO `tecnologia` (`TECNOLOGIA_ID`, `NOMBRE_TECNOLOGIA`, `DESCRIPCION`, `
 ALTER TABLE `calendario`
   ADD PRIMARY KEY (`REGISTRO_ID`),
   ADD KEY `fk_calendario_curso_id` (`CURSO_ID`);
+
+--
+-- Indices de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  ADD PRIMARY KEY (`CATEGORIA_ID`);
 
 --
 -- Indices de la tabla `certificacion`
@@ -178,16 +300,45 @@ ALTER TABLE `curso`
   ADD PRIMARY KEY (`CURSO_ID`);
 
 --
+-- Indices de la tabla `iframe`
+--
+ALTER TABLE `iframe`
+  ADD PRIMARY KEY (`IFRAME_ID`),
+  ADD KEY `fk_iframe_publicacion_id` (`PUBLICACION_ID`);
+
+--
+-- Indices de la tabla `img`
+--
+ALTER TABLE `img`
+  ADD PRIMARY KEY (`IMG_ID`),
+  ADD KEY `fk_img_publicacion_id` (`PUBLICACION_ID`);
+
+--
 -- Indices de la tabla `laboratorio`
 --
 ALTER TABLE `laboratorio`
-  ADD PRIMARY KEY (`LABORATORIO_ID`);
+  ADD PRIMARY KEY (`LABORATORIO_ID`),
+  ADD KEY `fk_lab_curso_id` (`CURSO_ID`);
+
+--
+-- Indices de la tabla `publicacion`
+--
+ALTER TABLE `publicacion`
+  ADD PRIMARY KEY (`PUBLICACION_ID`),
+  ADD KEY `fk_publicacion_categoria_id` (`CATEGORIA_ID`);
 
 --
 -- Indices de la tabla `tecnologia`
 --
 ALTER TABLE `tecnologia`
   ADD PRIMARY KEY (`TECNOLOGIA_ID`);
+
+--
+-- Indices de la tabla `texto`
+--
+ALTER TABLE `texto`
+  ADD PRIMARY KEY (`TEXTO_ID`),
+  ADD KEY `fk_tetxo_publicacion_id` (`PUBLICACION_ID`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -198,6 +349,12 @@ ALTER TABLE `tecnologia`
 --
 ALTER TABLE `calendario`
   MODIFY `REGISTRO_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `CATEGORIA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `certificacion`
@@ -212,16 +369,40 @@ ALTER TABLE `curso`
   MODIFY `CURSO_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de la tabla `iframe`
+--
+ALTER TABLE `iframe`
+  MODIFY `IFRAME_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `img`
+--
+ALTER TABLE `img`
+  MODIFY `IMG_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de la tabla `laboratorio`
 --
 ALTER TABLE `laboratorio`
-  MODIFY `LABORATORIO_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `LABORATORIO_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT de la tabla `publicacion`
+--
+ALTER TABLE `publicacion`
+  MODIFY `PUBLICACION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `tecnologia`
 --
 ALTER TABLE `tecnologia`
   MODIFY `TECNOLOGIA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT de la tabla `texto`
+--
+ALTER TABLE `texto`
+  MODIFY `TEXTO_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
@@ -232,6 +413,36 @@ ALTER TABLE `tecnologia`
 --
 ALTER TABLE `calendario`
   ADD CONSTRAINT `fk_calendario_curso_id` FOREIGN KEY (`CURSO_ID`) REFERENCES `curso` (`CURSO_ID`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `iframe`
+--
+ALTER TABLE `iframe`
+  ADD CONSTRAINT `fk_iframe_publicacion_id` FOREIGN KEY (`PUBLICACION_ID`) REFERENCES `publicacion` (`PUBLICACION_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `img`
+--
+ALTER TABLE `img`
+  ADD CONSTRAINT `fk_img_publicacion_id` FOREIGN KEY (`PUBLICACION_ID`) REFERENCES `publicacion` (`PUBLICACION_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `laboratorio`
+--
+ALTER TABLE `laboratorio`
+  ADD CONSTRAINT `fk_lab_curso_id` FOREIGN KEY (`CURSO_ID`) REFERENCES `curso` (`CURSO_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `publicacion`
+--
+ALTER TABLE `publicacion`
+  ADD CONSTRAINT `fk_publicacion_categoria_id` FOREIGN KEY (`CATEGORIA_ID`) REFERENCES `categoria` (`CATEGORIA_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `texto`
+--
+ALTER TABLE `texto`
+  ADD CONSTRAINT `fk_tetxo_publicacion_id` FOREIGN KEY (`PUBLICACION_ID`) REFERENCES `publicacion` (`PUBLICACION_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -23,7 +23,7 @@ class ApiLaboratorioController{
 
             echo json_encode($array_laboratorios, JSON_UNESCAPED_UNICODE);
             return;
-
+            
         }elseif(trim($accion) == "get_labs_table_format"){  
             $laboratorios = Laboratorio::getLabs();
 
