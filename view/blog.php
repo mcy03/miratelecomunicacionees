@@ -25,65 +25,38 @@
        <section class="filtro">
             <div class="buscador">
                 <input type="text" placeholder="Search...">
+                <p class="drop-filter" id="quitar-categoria">X</p>
             </div>
             <div class="opcion-filtro filtro-categorias">
-                <h3 class="title-filtros">> Categorías</h3>
-                <div id="enlaces-categorias" class="enlaces">
+                <div class="title-close">
+                    <h3 class="title-filtros" id="filtro-por-categoria">> Categorías</h3>
+                </div>
+                
+                <div id="enlaces-categorias" class="enlaces" style="display: none;">
                 </div>
             </div>
             <div class="opcion-filtro filtro-ultimas">
-                <h3 class="title-filtros">> Ultimas publicaciones</h3>
-                <div class="enlaces">
-                    <a href="#">publicacion</a>
-                    <a href="#">publicacion</a>
-                    <a href="#">publicacion</a>
-                    <a href="#">publicacion</a>
+                <div class="title-close">
+                    <h3 class="title-filtros" id="filtro-por-ultima">> Ultimas publicaciones</h3>
+                </div>
+                <div id="enlaces-last-entries" class="enlaces" style="display: none;">
                 </div>
             </div>
             <div class="opcion-filtro filtro-por-fecha">
-                <h3 class="title-filtros">> Por fecha</h3>
-                <div class="enlaces">
-                    <a href="#">enero 2024</a>
-                    <a href="#">febrero 2024</a>
-                    <a href="#">marzo 2024</a>
-                    <a href="#">abril 2024</a>
+                <div class="title-close">
+                    <h3 class="title-filtros" id="filtro-por-fecha">> Por fecha</h3>
+                </div>
+
+                <div id="enlaces-por-fecha" class="enlaces" style="display: none;">
+                    <p class="fecha">enero 2024</p>
+                    <p class="fecha">febrero 2024</p>
+                    <p class="fecha">marzo 2024</p>
+                    <p class="fecha">abril 2024</p>
                 </div>
             </div>
        </section>
         <section id="entradas" class="entradas">
-            <article class="entrada">
-                <div class="img-entrada" style="background-image: url('../resource/backgroundEjemplo.jpg');"></div>
-                <div class="body-entrada">
-                    <ul>
-                        <li><img src="./resource/iconos/calendario.png" alt="">Ene 17, 2024</li>
-                        <li><img src="./resource/iconos/etiqueta.png" alt="">Blog Cisco Training</li>
-                        <li><img src="./resource/iconos/usuario.png" alt="">Mira</li>
-                        <li><img src="./resource/iconos/calendario.png" alt="">12</li>
-                    </ul>
-                </div>
-            </article>
-            <article class="entrada">
-                <div class="img-entrada" style="background-image: url('../resource/backgroundEjemplo.jpg');"></div>
-                <div class="body-entrada">
-                    <ul>
-                        <li><img src="./resource/iconos/calendario.png" alt="">Ene 17, 2024</li>
-                        <li><img src="./resource/iconos/etiqueta.png" alt="">Blog Cisco Training</li>
-                        <li><img src="./resource/iconos/usuario.png" alt="">Mira</li>
-                        <li><img src="./resource/iconos/calendario.png" alt="">12</li>
-                    </ul>
-                </div>
-            </article>
-            <article class="entrada">
-                <div class="img-entrada" style="background-image: url('../resource/backgroundEjemplo.jpg');"></div>
-                <div class="body-entrada">
-                    <ul>
-                        <li><img src="./resource/iconos/calendario.png" alt="">Ene 17, 2024</li>
-                        <li><img src="./resource/iconos/etiqueta.png" alt="">Blog Cisco Training</li>
-                        <li><img src="./resource/iconos/usuario.png" alt="">Mira</li>
-                        <li><img src="./resource/iconos/calendario.png" alt="">12</li>
-                    </ul>
-                </div>
-            </article>
+
         </section>
     </div>
 

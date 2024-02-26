@@ -1,0 +1,24 @@
+body{
+    background-color: #EFEFEF;
+}
+
+.contenido{
+    height: 500px;
+    margin: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenido-entrada{
+    width: 73%;
+    height: 500px;
+    background-color: #fff;
+}
+
+.publi{
+    width: 25%;
+    height: 500px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+

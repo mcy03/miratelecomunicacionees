@@ -16,8 +16,12 @@
 .filtro{
     width: 25%;
 }
+.buscador{
+    display: flex;
+    justify-content: space-between;
+}
 .buscador input{
-    width: 100%;
+    width: 80%;
     border-radius: 15px;
     border: 1px solid grey;
     font-size: 14px;
@@ -29,9 +33,25 @@
     border-radius: 10px;
     padding: 15px 30px;
 }
-
+.title-close{
+    display: flex;
+    justify-content: space-between;
+}
 .title-filtros{
+    width: 70%;
     font-size: 14px;
+    cursor: pointer;
+}
+
+.drop-filter{
+    color: #EA1C24;
+    width: 5%;
+    margin: 0;
+    display: none;
+}
+
+.drop-filter:hover{
+    color: grey;
     cursor: pointer;
 }
 
@@ -40,14 +60,16 @@
     flex-direction: column;
     padding: 0 25px;
 }
-.enlaces a{
+.enlaces p{
     text-decoration: none;
     font-size: 12px;
     color: #000;
-    margin-bottom: 4px;
+    cursor: pointer;
+    margin: 8px 0;
 }
-.enlaces a:hover, .title-filtros:hover{
+.enlaces p:hover, .title-filtros:hover{
     color: #EA1C24;
+    cursor: pointer;
 }
 
 
@@ -66,6 +88,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .img-entrada{
@@ -78,6 +101,7 @@
     height: 100%;
     width: 100%;
 }
+
 
 .body-entrada{
     width: 25%;
