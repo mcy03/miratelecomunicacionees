@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Juntar los dos arrays
     let contenido = text.concat(img);
 
-    // Ordenar el array resultante por el campo "edad"
+    // Ordenar el array resultante por el campo "POSICION"
     contenido.sort(function(a, b) {
         return a.POSICION - b.POSICION;
     });
@@ -44,14 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         contEntrada.innerHTML += valor;
     });
-
-    
-})
-
-
-
-
-
+});
 
 async function getEntrieId(id){
     let formData = new FormData();

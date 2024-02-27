@@ -2,7 +2,8 @@
     define('views_controller',array(
         'homeController.php', 'formacionController.php', 'cursoController.php', 
         'calendarioController.php','serviciosITController.php', 'libreriaDigitalController.php', 
-        'laboratorioController.php', 'miraController.php', 'blogController.php', 'entradaController.php'));
+        'laboratorioController.php', 'miraController.php', 'blogController.php', 'entradaController.php',
+        'entrieAdminController.php', 'loginController.php'));
     
     define('apis', array(
         'ApiCertificacionController.php', 'ApiCursoController.php', 'ApiLaboratorioController.php', 
