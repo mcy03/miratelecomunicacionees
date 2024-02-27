@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     
     
-
+    listenerEntrie();
 })
 
 
@@ -214,7 +214,11 @@ async function listEntries(entries) {
     entries.forEach(entrie => {
         contenidoEntradas += `
             <article class="entrada">
-                <div class="img-entrada"><img src="./resource/${entrie.IMG}" alt="${entrie.ALT_IMG}"></div>
+                <div class="img-entrada">
+                    <input type="hidden" value="${entrie.PUBLICACION_ID}">
+                    <img src="./resource/${entrie.IMG}" alt="${entrie.ALT_IMG}">
+                    <h4>${entrie.TITULO}</h4>
+                </div>
                 <div class="body-entrada">
                     <ul>
                         <li><img src="./resource/iconos/calendario.png" alt="">${entrie.FECHA}</li>
@@ -264,4 +268,35 @@ async function getEntries(){
     } catch (error) {
         console.error('Error:', error.message);
     }
+}
+
+async function getEntrieName(name){
+    let formData = new FormData();
+        formData.append('accion', 'get_entrie_byName');
+        formData.append('name', name);
+
+    const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiPublicacion&action=api';
+
+    try {
+        const response = await axios.post(url, formData);
+
+        return response.data;
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+}
+
+async function listenerEntrie() {
+    let entriesView = document.getElementsByClassName('entrada');
+    for (let index = 0; index < entriesView.length; index++) {
+        const element = entriesView[index];
+        element.addEventListener('click', async function () {
+            let titulo = element.childNodes[1];
+            let entrie_id = titulo.childNodes[1].value;
+            
+            window.location.href = '?controller=entrada&entrie='+entrie_id;
+        });
+    }
+    
+    
 }

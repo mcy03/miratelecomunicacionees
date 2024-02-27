@@ -2,8 +2,9 @@ body{
     background-color: #EFEFEF;
 }
 
+
+
 .contenido{
-    height: 500px;
     margin: 40px;
     display: flex;
     justify-content: space-between;
@@ -11,9 +12,24 @@ body{
 
 .contenido-entrada{
     width: 73%;
-    height: 500px;
     background-color: #fff;
+    padding: 30px;
 }
+
+.contenido-entrada h3{
+    font-size: 20px;
+}
+
+.contenido-entrada p{
+    text-align: left;
+}
+
+.contenido-entrada img{
+    margin: 30px;
+    width: 90%;
+    height: 300px;
+}
+
 
 .publi{
     width: 25%;
@@ -21,4 +37,3 @@ body{
     border-radius: 20px;
     background-color: #fff;
 }
-

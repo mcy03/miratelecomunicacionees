@@ -8,22 +8,29 @@
     <title>Document</title>
 </head>
 <body>
+    <input id='input-entradaId' type="hidden" value="<?=$entrada?>">
     <section class="banner-principal">
         <div class="title-page">
-            <h1>On the Go</h1>
+            <h1></h1>   
         </div>
     </section>
     <section class="ubicacion">
-        <p class="ruta-page">Home / On the Go / </p><p class="page">On the Go</p>
+        <div class="ruta-ubi">
+            <a class="ruta-page" href="<?=url?>">Home / </a><a class="ruta-page"  href="<?=url.'?controller=blog'?>">On the Go / </a><p class="page"></p>
+        </div>
     </section>
 
     <div class="contenido">
         <div class="contenido-entrada">
-
+            
         </div>
         <div class="publi">
 
         </div>
     </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>   
+    <script src="./script/blog/entrie.js"></script> 
 </body>
 </html>

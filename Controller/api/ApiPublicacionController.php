@@ -49,6 +49,44 @@ class ApiPublicacionController{
             echo json_encode($array_entries, JSON_UNESCAPED_UNICODE);
             return;
 
+        }elseif(trim($accion) == "get_entrie_byName"){
+            $name = $_POST['name'];
+
+            $entries = Publicacion::getEntrieByName($name);
+
+            $array_entries = [];
+            foreach ($entries as $entrie) {
+                $array_entries[] = array(
+                    "PUBLICACION_ID" => $entrie->getPUBLICACION_ID(),
+                    "CATEGORIA_ID" => $entrie->getCATEGORIA_ID(),
+                    "TITULO" => $entrie->getTITULO(),
+                    "DESCRIPCION" => $entrie->getDESCRIPCION(),
+                    "FECHA" => $entrie->getFECHA()
+                );
+            }
+        
+            echo json_encode($array_entries, JSON_UNESCAPED_UNICODE);
+            return;
+
+        }elseif(trim($accion) == "get_entrie_byId"){
+            $id = $_POST['id'];
+
+            $entries = Publicacion::getEntrieById($id);
+
+            $array_entries = [];
+            foreach ($entries as $entrie) {
+                $array_entries[] = array(
+                    "PUBLICACION_ID" => $entrie->getPUBLICACION_ID(),
+                    "CATEGORIA_ID" => $entrie->getCATEGORIA_ID(),
+                    "TITULO" => $entrie->getTITULO(),
+                    "DESCRIPCION" => $entrie->getDESCRIPCION(),
+                    "FECHA" => $entrie->getFECHA()
+                );
+            }
+        
+            echo json_encode($array_entries, JSON_UNESCAPED_UNICODE);
+            return;
+
         }
 
         

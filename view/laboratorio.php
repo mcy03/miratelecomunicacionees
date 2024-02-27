@@ -19,7 +19,9 @@
             Ut in placerat erat.</span>
     </section>
     <section class="ubicacion">
-        <p class="ruta-page">Home/</p><p class="page">formación</p>
+        <div class="ruta-ubi">
+            <a class="ruta-page" href="<?=url?>">Home / </a><p class="page">Laboratorios</p>
+        </div>
     </section>
     <div class="pagina">
         <section class="lab">

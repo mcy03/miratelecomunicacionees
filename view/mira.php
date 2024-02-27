@@ -21,7 +21,9 @@
             su infraestructura con tecnología Cisco</span>
     </section>
     <section class="ubicacion">
-        <p class="ruta-page">Home/</p><p class="page">Mira</p>
+        <div class="ruta-ubi">
+            <a class="ruta-page" href="<?=url?>">Home / </a><p class="page">Mira</p>
+        </div>
     </section>
     <div class="pagina">
         <h2>¿Que ofrecemos?</h2>

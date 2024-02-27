@@ -32,6 +32,34 @@ class Publicacion {
         }
     }
 
+    public static function getEntrieById($id){
+        $conn = db::connect();
+        $consulta = "SELECT * FROM publicacion WHERE PUBLICACION_ID = '$id'";
+
+        if ($resultado = $conn->query($consulta)) {
+            while ($obj = $resultado->fetch_object('Publicacion')) {
+                $arrayEntries []= $obj;
+            }
+            
+            $resultado->close();
+            return $arrayEntries;
+        }
+    }
+
+    public static function getEntrieByName($name){
+        $conn = db::connect();
+        $consulta = "SELECT * FROM publicacion WHERE TITULO = '$name'";
+
+        if ($resultado = $conn->query($consulta)) {
+            while ($obj = $resultado->fetch_object('Publicacion')) {
+                $arrayEntries []= $obj;
+            }
+            
+            $resultado->close();
+            return $arrayEntries;
+        }
+    }
+
     /**
      * Get the value of PUBLICACION_ID
      */ 

@@ -39,13 +39,17 @@
 
     background-color: grey;
     color:#fff;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .title-page h1{
     font-size: 25px;
-    width: 240px;
-    height: 30px;
-    margin-top: 15%;
+    width: 500px;
+    height: 50px;
+    margin: 30px 0;
     text-align: center;
 }
 
@@ -63,11 +67,28 @@
     background-color: #fff;
 }
 
+.ruta-ubi{
+    display: flex;
+    
+}
+
+.ruta-ubi a{
+    text-decoration: none;
+    
+}
+
+.ruta-ubi :hover{
+    color: #EA1C24;
+}
+
+
 .ruta-page{
     color: #000;
     margin: 0;
+    margin-left: 5px;
 }
 .page{
     color: #EA1C24;
     margin: 0;
+    margin-left: 5px;
 }
