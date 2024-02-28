@@ -95,11 +95,11 @@ header{
     height: auto;
 }
 
-nav{
+.nav-header{
     width: 70%;
 }
 
-nav ul {
+.nav-header ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -107,14 +107,14 @@ nav ul {
     justify-content: space-between;
 }
 
-nav a {
+.nav-header a {
     text-decoration: none;
     color: #000000;
     padding: 10px;
     display: block;
 }
 
-nav a:hover {
+.nav-header a:hover {
     text-decoration: none;
     color: #EA1C24;
     padding: 10px;
@@ -137,18 +137,18 @@ nav a:hover {
     .header-two{
         justify-content: space-between;
     }
-    nav {
+    .nav-header {
         display: none;
         flex-direction: column;
         width: 100%;
         text-align: center;
     }
 
-    nav.active {
+    .nav-header.active {
         display: flex;
     }
 
-    nav a {
+    .nav-header a {
         border-top: 1px solid #fff;
         border-bottom: 1px solid #fff;
     }

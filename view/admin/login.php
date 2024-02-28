@@ -8,20 +8,40 @@
     <title>Login</title>
 </head>
 <body>
+    <?php   if (isset($error)) { ?>
+        <input id="input-error" type="hidden" value="<?=$error?>">
+    <?php   }else{ ?>
+        <input id="input-error" type="hidden" value="0">
+    <?php   } 
+
+            if (isset($_COOKIE['error'])) {
+                setcookie('error', '', time() - 3600, "/");
+            }
+    ?>
     <div class="contenido">
         <section class="login">
             <h1>Login Mira telecomunicacions</h1>
             <form id="form-login" action="<?=url.'?controller=login&action=loguear'?>" method="post">
-                <label for="email">email</label>
-                <input type="email" name="email" id="" placeholder="">
-                <label for="user">user</label>
-                <input type="text" name="user" id="" placeholder="">
-                <label for="password">password</label>
-                <input type="password" name="password" id="" placeholder="">
+                <div class="divEmail">
+                    <label for="email">Email</label>
+                    <input type="email" name="email"  placeholder="email">
+                </div>
+                <div class="divUser">
+                    <label for="user">User</label>
+                    <input type="text" name="user"  placeholder="user">
+                </div>
+                <div class="divPassword">
+                    <label for="password">Password</label>
+                    <input type="password" name="password"  placeholder="password">
+                </div>
 
                 <input type="submit" value="Entrar">
             </form>
         </section>
     </div>
+
+    <script src="./script/login.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
 </body>
 </html>

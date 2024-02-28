@@ -1,0 +1,14 @@
+.contenido{
+    display: flex;
+    justify-content: space-between;
+    background-color: #E5E5E5;
+}
+
+.contenido-inicio{
+    width: 80%;
+    background-color: #D9D9D9;
+}
+
+.contenido-entradas, .contenido-categorias, .contenido-paginas, .contenido-cursos{
+    display: none;
+}

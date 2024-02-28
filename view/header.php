@@ -28,7 +28,7 @@
             <div class="logo">
             <a href="<?=url.'?controller=home'?>"><img class="logo-mira" src="./resource/Miralogo/Mira.png" alt=""></a>
             </div>
-            <nav>
+            <nav class="nav-header">
                 <div class="menu-toggle" id="mobile-menu">
                     <span></span>
                     <span></span>
@@ -48,6 +48,11 @@
                 <img src="./resource/lupa.png" alt="Icono de búsqueda">
             </div>
         </div>
+        <?php if (isset($_SESSION['admin'])) { ?>
+            <div class="cabecera-admin">
+                <a href="<?=url.'?controller=admin'?>" class="inicio-admin">Mi sitio</a>
+            </div>
+        <?php } ?>
     </header>
     <script src="./script/header.js"></script>
 </body>

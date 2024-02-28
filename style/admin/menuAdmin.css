@@ -1,0 +1,39 @@
+.menuLateral{
+    width: 20%;
+    margin-bottom: 50px;
+}
+
+.menuLateral ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 3px solid #EA1C24;
+}
+
+.menuLateral li{
+    padding: 8px 30px;   
+    background-color: #FFF;  
+    font-size: 12px;
+}
+
+.menuLateral li:hover{
+    background-color: #EFEFEF;    
+}
+
+
+.menuLateral a{
+    text-decoration: none;
+    color: #000;
+    width: 100%;
+}
+
+.menuLateral a:hover{
+    text-decoration: none;
+    color: #EA1C24;
+}
+
+.enlaces-cerrar li{
+    color: #EA1C24;
+}

@@ -5,9 +5,8 @@
     padding: 50px 0;
 }
 
-
 .login{
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,10 +16,31 @@
     font-size: 25px;
 } 
 #form-login{
+    width: 60%;
     display: flex;
     flex-direction: column;
 }
 
+#form-login div{
+    display: flex;
+    flex-direction: column;
+}
+
+#form-login label{
+    margin-top: 20px;
+}
+
 #form-login input{
-    margin-bottom: 20px;
+    padding: 3px 15px;
+}
+
+#form-login input[type=submit]{
+    align-self: center;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.p-error{
+    color: #EA1C24;
+    margin: 0;
 }

@@ -3,7 +3,7 @@
         'homeController.php', 'formacionController.php', 'cursoController.php', 
         'calendarioController.php','serviciosITController.php', 'libreriaDigitalController.php', 
         'laboratorioController.php', 'miraController.php', 'blogController.php', 'entradaController.php',
-        'entrieAdminController.php', 'loginController.php'));
+        'adminController.php', 'loginController.php'));
     
     define('apis', array(
         'ApiCertificacionController.php', 'ApiCursoController.php', 'ApiLaboratorioController.php', 
@@ -11,8 +11,8 @@
         'ApiPublicacionController.php'));
     
     define('model', array(
-        'db.php', 'Certificacion.php', 'Laboratorio.php', 
-        'Curso.php','Tecnologia.php', 'Calendario.php'));
+        'db.php', 'Certificacion.php', 'Laboratorio.php', 'Curso.php','Tecnologia.php', 'Calendario.php', 
+        'User.php', 'email_permiso.php'));
     
     define('model_entries', array(
         'Categoria.php', 'Publicacion.php', 'Texto.php', 
