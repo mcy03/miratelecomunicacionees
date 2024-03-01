@@ -1,19 +1,19 @@
-.content-entries{
+.content-page-entrie{
     background-color: #fff;
     margin-top: 20px;
 }
 
-.filter-seeker{
+.content-page-entrie .filter-seeker{
     display: flex;
     justify-content: space-between;
     height: 50px;
 }
 
-.filter-entries{
+.filter{
     display: flex;
 }
 
-.filter-entries button{
+.filter button{
     background-color: #fff;
     border: 0;
     height: 100%;
@@ -22,13 +22,13 @@
     padding: 0 15px;
 }
 
-.button-create-entrie{
+.button-create{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.button-create-entrie a{
+.button-create a{
     text-decoration: none;
     color: #fff;
     background-color: #EA1C24;
@@ -36,11 +36,11 @@
     padding: 2px 10px;
 }
 
-.button-create-entrie a:hover{
+.button-create a:hover{
     background-color: #d1181e;
 }
 
-.filter-entries button:hover{
+.filter button:hover{
     background-color: #F1F1F1;
     color: #EA1C24;
 }
@@ -57,25 +57,25 @@
     cursor: pointer;
 }
 
-.inputs-seeker{
+.seeker .inputs-seeker{
     display: none;
 }
-.entrie{
+.data{
     border-bottom: 1px solid #4D4D4D;
     position: relative;
 }
-.entrie, .body-entrie{
+.data, .body-data{
     height: 100px;
     display: flex;
     justify-content: space-between;
 }
 
-.entrie-img img{
+.data-img img{
     width: 350px;
     height: 99px;
 }
 
-.info-entrie{
+.info-data{
     display: flex;
     justify-content: center;
     align-items: left;
@@ -83,22 +83,22 @@
     padding: 0 30px;
 }
 
-.info-entrie h4{
+.info-data h4{
     font-size: 12px;
 }
-.info-entrie p{
+.info-data p{
     font-size: 12px;
     color: #7A7A7A;
     margin: 0;
 }
 
-.options-entrie{
+.options-data{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 30px;
 }
-.options-entrie p{
+.options-data p{
     font-size: 10px;
     margin: 0;
     color: #EA1C24;
@@ -106,3 +106,208 @@
 }
 
 
+
+/*
+    CATEGORIES PAGE
+*/
+.content-categories{
+    background-color: #fff;
+}
+
+.content-categories .filter-seeker{
+    border: 1px solid #7A7A7A;
+    display: flex;
+    justify-content: left;
+    height: 50px;
+}
+
+.seeker-categories{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 70%;
+}
+
+.seeker-categories .inputs-seeker{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.seeker-categories .inputs-seeker input{
+    width: 100%;
+    border: 0;
+    padding: 0 10px;
+    margin: 0 7px;
+    height: 100%;
+    flex: 1;
+}
+
+.seeker-categories .inputs-seeker input[type="text"]:focus{
+    outline: none;
+    border: 1px solid #EA1C24;
+}
+
+.seeker-categories .inputs-seeker .search-button {
+    width: 25px;
+    height: 25px;
+    padding: 5px 10px;
+    margin: 0 10px;
+    background-color: #ffffff00;
+    background-image: url('../../resource/lupa.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.list-categories .category{
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #7A7A7A;
+}
+
+.category .body-category{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-category h4{
+    font-size: 13px;
+}
+
+.info-category p{
+    margin: 0;
+    font-size: 11px;
+    color: #7A7A7A;
+}
+
+.num-entries-category{
+    margin-top: 12px;
+    font-size: 11px;
+    color: #7A7A7A;
+}
+
+.options-category p{
+    margin-top: 12px;
+    font-size: 10px;
+    cursor: pointer;
+    color: #EA1C24;
+}
+
+
+/*
+    COURSES PAGE
+*/
+.content-data-objects{
+    display: flex;
+    flex-direction: column;
+    background-color: #efefef;
+}
+
+.row-objects{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.object{
+    width: 49%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.object-img, .object-img img{
+    min-width: 160px;
+    width: 20%;
+    min-height: 100px;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px 0 0 5px;
+}
+
+.object-body{
+    cursor: pointer;
+}
+
+.object-body:hover{
+    color: #EA1C24;
+}
+
+.object-body h4{
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.object-body p{
+    font-size: 10px;
+    margin: 0;
+}
+
+.options-object{
+    margin-right: 20px;
+}
+
+.options-object p{
+    font-size: 10px;
+    margin: 0;
+    color: #EA1C24;
+    cursor: pointer;
+}
+
+.options-object p:hover{
+    color: #d1181e  ;
+}
+
+/*
+    LABS PAGE
+*/
+.labs-table{
+    width: 98%;
+    margin: 2%;
+}
+
+.id-lab-th{
+    font-size: 14px;
+}
+
+.data-table{
+    font-size: 12px;
+    height: 50px;
+    text-align: center;
+}
+
+.data-table-th{
+    text-align: center;
+}
+
+.data-table-th-desc{
+    width: 400px;
+}
+/*
+    SERVICES PAGE
+*/
+
+/*
+    CERTIFICATION PAGE
+*/
+
+/*
+    TECNOLOGIES PAGE
+*/
+
+/*
+    CALENDAR PAGE
+*/

@@ -19,8 +19,8 @@
                 <a class="enlacesMenu" id="paginas" href="#"><li>Páginas</li></a>
             </ul>
             <ul>
-                <a class="enlacesMenu" id="laboratorios" href="#"><li>Laboratorios</li></a>
                 <a class="enlacesMenu" id="cursos" href="#"><li>Cursos</li></a>
+                <a class="enlacesMenu" id="laboratorios" href="#"><li>Laboratorios</li></a>
                 <a class="enlacesMenu" id="servicios" href="#"><li>Servicios IT</li></a>
                 <a class="enlacesMenu" id="certificacion" href="#"><li>Certificación</li></a>
                 <a class="enlacesMenu" id="tecnologias" href="#"><li>Tecnologías</li></a>
@@ -156,18 +156,18 @@
             <h2>Entradas</h2>
             <p>Crea, edita y gestiona las entradas de la web.</p>
         </div>
-        <div class="content-entries">
+        <div class="content-page-entrie content-entries">
             <div class="filter-seeker">
-                <div class="filter-entries">
+                <div class="filter filter-entries">
                     <button>Publicadas</button>
                     <button>Borradores</button>
                     <button>Papelera</button>
-                    <div class="button-create-entrie">
+                    <div class="button-create button-create-entrie">
                         <a href="" class="create-entrie">Nueva entrada</a>
                     </div>
                 </div>
                 
-                <div class="seeker">
+                <div class="seeker seeker-entries">
                     <div class="icon-open-seeker">
                         <img src="./resource/lupa.png" alt="">
                     </div>
@@ -177,23 +177,23 @@
                     </div>
                 </div>
             </div>  
-            <div class="list-entries">
+            <div class="list list-entries">
                 <?php for ($i=0; $i < 6; $i++) { ?>
-                    <div class="entrie">
-                        <div class="body-entrie">
-                            <div class="entrie-img">
+                    <div class="data entrie">
+                        <div class="body-data body-entrie">
+                            <div class="data-img entrie-img">
                                 <img src="./resource/backgroundEjemplo.jpg" alt="">
                             </div>
-                            <div class="info-entrie">
+                            <div class="info-data info-entrie">
                                 <h4>Nombre Entrada</h4>
-                                <p class="date-entrie">7 de oct. de 2021 a las 11:31</p>
+                                <p class="date-data date-entrie">7 de oct. de 2021</p>
                             </div>
                         </div>
-                        <div class="options-entrie">
+                        <div class="options-data options-entrie">
                             <p>Opciones...</p>
                         </div>
                     </div>
-                    <?php } ?>
+                <?php } ?>
                 
             </div>
         </div>
@@ -204,6 +204,44 @@
             <h2>Categorias</h2>
             <p>Crea, edita y gestiona las categorias de la web.</p>
         </div>
+
+        <div class="content-categories">
+            <div class="filter-seeker">                
+                <div class="seeker-categories">
+                    <div class="inputs-seeker">
+                        <button type="submit" class="search-button"></button>
+                        <input type="text" placeholder="Nombre de la categoria..." name="name-category-seeker">
+                    </div>
+                </div>
+                <div class="button-create create-category">
+                    <div class="button-create-category">
+                        <a href="" class="create-category">Crear categoria</a>
+                    </div>
+                </div>
+            </div>  
+
+            <div class="list-categories">
+                <?php for ($i=0; $i < 6; $i++) { ?>
+                    <div class="category">
+                        <div class="body-category">
+                            <div class="info-category">
+                                <h4>Nombre Categoria</h4>
+                                <p class="date-category">7 de oct. de 2021</p>
+                            </div>
+                            <div class="entries-category">
+                                <p class="num-entries-category">7 entradas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="options-category">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                <?php } ?>
+                
+            </div>
+        </div>
+
     </section>
 
     <section class="contenido-paginas desactivated">
@@ -211,28 +249,314 @@
             <h2>Paginas</h2>
             <p>Crea, edita y gestiona las páginas de la web.</p>
         </div>
-    </section>
-    
 
-
-    <section class="contenido-laboratorios desactivated">
-        <div class="intro intro-admin">
-            <h2>Laboratorios</h2>
-            <p>Crea, edita y gestiona los laboratorios de la base de datos.</p>
+        <div class="content-page-entrie content-pages">
+            <div class="filter-seeker">
+                <div class="filter filter-pages">
+                    <button>Publicadas</button>
+                    <button>Borradores</button>
+                    <button>Papelera</button>
+                </div>
+                
+                <div class="seeker seeker-pages">
+                    <div class="icon-open-seeker">
+                        <img src="./resource/lupa.png" alt="">
+                    </div>
+                    <div class="inputs-seeker">
+                        <input type="date" name="date-page-seeker">
+                        <input type="text" placeholder="Nombre de la entrada..." name="name-page-seeker">
+                    </div>
+                </div>
+            </div>  
+            <div class="list list-pages">
+                <?php for ($i=0; $i < 6; $i++) { ?>
+                    <div class="data page">
+                        <div class="body-data body-page">
+                            <div class="data-img page-img">
+                                <img src="./resource/backgroundEjemplo.jpg" alt="">
+                            </div>
+                            <div class="info-data info-page">
+                                <h4>Nombre Pagina</h4>
+                                <p class="date-data date-page">7 de oct. de 2021</p>
+                            </div>
+                        </div>
+                        <div class="options-data options-page">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                <?php } ?>
+                
+            </div>
         </div>
     </section>
+    
 
     <section class="contenido-cursos desactivated">
         <div class="intro intro-admin">
             <h2>Cursos</h2>
             <p>Crea, edita y gestiona los cursos de la base de datos.</p>
         </div>
+        <div class="content-page-entrie content-pages">
+            <div class="filter-seeker">
+                <div class="filter filter-pages">
+                    <button>Publicadas</button>
+                    <button>Papelera</button>
+                    <div class="button-create create-category">
+                        <div class="button-create-category">
+                            <a href="" class="create-category">Crear curso</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="seeker seeker-pages">
+                    <div class="icon-open-seeker">
+                        <img src="./resource/lupa.png" alt="">
+                    </div>
+                    <div class="inputs-seeker">
+                        <input type="date" name="date-page-seeker">
+                        <input type="text" placeholder="Nombre de la entrada..." name="name-page-seeker">
+                    </div>
+                </div>
+            </div>  
+            
+            <div class="content-data-objects content-courses">
+                <div class="row-objects">
+                    <div class="object course">
+                        <div class="object-img course-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body course-body">
+                            <h4 class="id-object id-course">nombre curso</h4>
+                            <p class="name-object name-course">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-course">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+
+                    <div class="object course">
+                        <div class="object-img course-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body course-body">
+                            <h4 class="id-object id-course">nombre curso</h4>
+                            <p class="name-object name-course">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-course">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-objects">
+                    <div class="object course">
+                        <div class="object-img course-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body course-body">
+                            <h4 class="id-object id-course">nombre curso</h4>
+                            <p class="name-object name-course">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-course">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+
+                    <div class="object course">
+                            <div class="object-img course-img">
+                                <img src="./resource/backgroundEjemplo.jpg" alt="">
+                            </div>
+
+                        <div class="object-body course-body">
+                            <h4 class="id-object id-course">nombre curso</h4>
+                            <p class="name-object name-course">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-course">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section class="contenido-laboratorios desactivated">
+        <div class="intro intro-admin">
+            <h2>Laboratorios</h2>
+            <p>Crea, edita y gestiona los laboratorios de la base de datos.</p>
+        </div>
+
+        <div class="content-page-entrie content-pages">
+            <div class="filter-seeker">
+                <div class="filter filter-pages">
+                    <button>Publicadas</button>
+                    <button>Papelera</button>
+                    <div class="button-create create-category">
+                        <div class="button-create-category">
+                            <a href="" class="create-category">Crear curso</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="seeker seeker-pages">
+                    <div class="icon-open-seeker">
+                        <img src="./resource/lupa.png" alt="">
+                    </div>
+                    <div class="inputs-seeker">
+                        <input type="date" name="date-page-seeker">
+                        <input type="text" placeholder="Nombre de la entrada..." name="name-page-seeker">
+                    </div>
+                </div>
+            </div>  
+            
+            <div class="content-table-object">
+                <table class="labs-table">
+                    <tr>
+                        <th class="data-table-th">ID LAB</th>
+                        <th class="data-table-th">CURSO</th>
+                        <th class="data-table-th data-table-th-desc">DESCRIPCION</th>
+                        <th class="data-table-th">DURACIÓN</th>
+                        <th class="data-table-th">CAPACIDAD PODS</th>
+                        <th class="data-table-th"></th>
+                    </tr>
+                    <tr>
+                        <td class="data-table">1</td>
+                        <td class="data-table">DNA</td>
+                        <td class="data-table"><span>Laboratorio que se centra en la tecnologia dna center</span></td>
+                        <td class="data-table">40</td>
+                        <td class="data-table">4</td>
+                        <td class="data-table">opciones</td>
+                    </tr>
+                    <tr>
+                        <td class="data-table">2</td>
+                        <td class="data-table">ACII</td>
+                        <td class="data-table"><span>Laboratorio que se centra en la tecnologia acii</span></td>
+                        <td class="data-table">40</td>
+                        <td class="data-table">4</td>
+                        <td class="data-table">opciones</td>
+                    </tr>
+                    <tr>
+                        <td class="data-table">3</td>
+                        <td class="data-table">DCACI</td>
+                        <td class="data-table"><span>Laboratorio que se centra en la tecnologia dcaci</span></td>
+                        <td class="data-table">40</td>
+                        <td class="data-table">4</td>
+                        <td class="data-table">opciones</td>
+                    </tr>
+                    <tr>
+                        <td class="data-table">4</td>
+                        <td class="data-table">SISE</td>
+                        <td class="data-table"><span>Laboratorio que se centra en la tecnologia sise</span></td>
+                        <td class="data-table">40</td>
+                        <td class="data-table">4</td>
+                        <td class="data-table">opciones</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    
 
     <section class="contenido-servicios desactivated">
         <div class="intro intro-admin">
             <h2>Servicios</h2>
             <p>Crea, edita y gestiona los servicios IT de la base de datos.</p>
+        </div>
+
+        <div class="content-page-entrie content-pages">
+            <div class="filter-seeker">
+                <div class="filter filter-pages">
+                    <button>Publicadas</button>
+                    <button>Papelera</button>
+                    <div class="button-create create-category">
+                        <div class="button-create-category">
+                            <a href="" class="create-category">Crear curso</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="seeker seeker-pages">
+                    <div class="icon-open-seeker">
+                        <img src="./resource/lupa.png" alt="">
+                    </div>
+                    <div class="inputs-seeker">
+                        <input type="date" name="date-page-seeker">
+                        <input type="text" placeholder="Nombre de la entrada..." name="name-page-seeker">
+                    </div>
+                </div>
+            </div>  
+            
+            <div class="content-data-objects content-labs">
+                <div class="row-objects">
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-objects">
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+
+                    <div class="object lab">
+                            <div class="object-img lab-img">
+                                <img src="./resource/backgroundEjemplo.jpg" alt="">
+                            </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -241,6 +565,95 @@
             <h2>Certificación</h2>
             <p>Crea, edita y gestiona las certificaciones de la base de datos.</p>
         </div>
+
+        <div class="content-page-entrie content-pages">
+            <div class="filter-seeker">
+                <div class="filter filter-pages">
+                    <button>Publicadas</button>
+                    <button>Papelera</button>
+                    <div class="button-create create-category">
+                        <div class="button-create-category">
+                            <a href="" class="create-category">Crear curso</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="seeker seeker-pages">
+                    <div class="icon-open-seeker">
+                        <img src="./resource/lupa.png" alt="">
+                    </div>
+                    <div class="inputs-seeker">
+                        <input type="date" name="date-page-seeker">
+                        <input type="text" placeholder="Nombre de la entrada..." name="name-page-seeker">
+                    </div>
+                </div>
+            </div>  
+            
+            <div class="content-data-objects content-labs">
+                <div class="row-objects">
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-objects">
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+
+                    <div class="object lab">
+                            <div class="object-img lab-img">
+                                <img src="./resource/backgroundEjemplo.jpg" alt="">
+                            </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="contenido-tecnologias desactivated">
@@ -248,12 +661,190 @@
             <h2>Tecnologias</h2>
             <p>Crea, edita y gestiona las tecnologias de la base de datos.</p>
         </div>
+
+        <div class="content-page-entrie content-pages">
+            <div class="filter-seeker">
+                <div class="filter filter-pages">
+                    <button>Publicadas</button>
+                    <button>Papelera</button>
+                    <div class="button-create create-category">
+                        <div class="button-create-category">
+                            <a href="" class="create-category">Crear curso</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="seeker seeker-pages">
+                    <div class="icon-open-seeker">
+                        <img src="./resource/lupa.png" alt="">
+                    </div>
+                    <div class="inputs-seeker">
+                        <input type="date" name="date-page-seeker">
+                        <input type="text" placeholder="Nombre de la entrada..." name="name-page-seeker">
+                    </div>
+                </div>
+            </div>  
+            
+            <div class="content-data-objects content-labs">
+                <div class="row-objects">
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-objects">
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+
+                    <div class="object lab">
+                            <div class="object-img lab-img">
+                                <img src="./resource/backgroundEjemplo.jpg" alt="">
+                            </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="contenido-calendario desactivated">
         <div class="intro intro-admin">
             <h2>Calendario</h2>
             <p>Crea, edita y gestiona los registros del calendario de la base de datos.</p>
+        </div>
+
+        <div class="content-page-entrie content-pages">
+            <div class="filter-seeker">
+                <div class="filter filter-pages">
+                    <button>Publicadas</button>
+                    <button>Papelera</button>
+                    <div class="button-create create-category">
+                        <div class="button-create-category">
+                            <a href="" class="create-category">Crear curso</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="seeker seeker-pages">
+                    <div class="icon-open-seeker">
+                        <img src="./resource/lupa.png" alt="">
+                    </div>
+                    <div class="inputs-seeker">
+                        <input type="date" name="date-page-seeker">
+                        <input type="text" placeholder="Nombre de la entrada..." name="name-page-seeker">
+                    </div>
+                </div>
+            </div>  
+            
+            <div class="content-data-objects content-labs">
+                <div class="row-objects">
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-objects">
+                    <div class="object lab">
+                        <div class="object-img lab-img">
+                            <img src="./resource/backgroundEjemplo.jpg" alt="">
+                        </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+
+                    <div class="object lab">
+                            <div class="object-img lab-img">
+                                <img src="./resource/backgroundEjemplo.jpg" alt="">
+                            </div>
+
+                        <div class="object-body lab-body">
+                            <h4 class="id-object id-lab">nombre curso</h4>
+                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        </div>
+
+                        <div class="options-object options-lab">
+                            <p>Opciones...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
