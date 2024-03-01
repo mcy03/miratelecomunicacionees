@@ -4,11 +4,115 @@
     background-color: #E5E5E5;
 }
 
-.contenido-inicio{
+.contenido-inicio, .contenido-entradas, 
+.contenido-categorias, .contenido-paginas, 
+.contenido-cursos{
     width: 80%;
-    background-color: #D9D9D9;
+    background-color: #EFEFEF;
+    flex-direction: column;
+    padding: 20px 50px;
 }
 
-.contenido-entradas, .contenido-categorias, .contenido-paginas, .contenido-cursos{
-    display: none;
+.contenido-laboratorios, .contenido-cursos, 
+.contenido-servicios, .contenido-certificacion, 
+.contenido-tecnologias, .contenido-calendario{
+    width: 80%;
+    background-color: #EFEFEF;
+    flex-direction: column;
+    padding: 20px 50px;
+}
+
+.intro{
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 15px;
+}
+.intro p{
+    margin: 0;
+    color: #4D4D4D;
+    font-size: 12px;
+}
+
+h2, h3{
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.content-home-admin{
+    display: flex;
+    justify-content: space-between;
+}
+
+.resumes{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.resumes .info{
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #9A9A9A;
+    border-radius: 10px;
+}
+
+.resumes .info table{
+    width: 100%;
+    font-size: 12px;
+}
+
+.resumes .info p{
+    margin-bottom: 8px;
+    padding-left: 25px;
+}
+
+.resumes .info .data-table{
+    color: #404040;
+    text-align: right;
+}
+
+.quick-access{
+    width: 28%;
+}
+
+.quick-access .quick{
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.quick-access .quick{
+    margin-bottom: 20px;
+}
+.title-quick{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.title-quick h3{
+    font-size: 13px;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.title-quick img{
+    width: 20px;
+    height: 20px;
+}
+.quick-access .quick li{
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.quick-access .quick li a{
+    text-decoration: none;
+    color: #000;
+}
+
+.quick-access .quick li a:hover{
+    color: #EA1C24;
 }

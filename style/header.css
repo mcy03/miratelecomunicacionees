@@ -184,3 +184,21 @@ header{
     margin-bottom: 5px;
     display: block;
 }
+
+.cabecera-admin{
+    background-color: #fff;
+    padding: 5px 10px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.cabecera-admin a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #000;
+    height: 100%;
+}
+
+.cabecera-admin a:hover{
+    color: #EA1C24;
+}
