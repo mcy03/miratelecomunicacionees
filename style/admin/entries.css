@@ -7,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     height: 50px;
+    border-bottom: 1px solid black;
 }
 
 .filter{
@@ -20,6 +21,7 @@
     margin-right: 15px;
     font-size: 14px;
     padding: 0 15px;
+    border-right: 1px solid black;
 }
 
 .button-create{
@@ -81,6 +83,15 @@
     align-items: left;
     flex-direction: column;
     padding: 0 30px;
+}
+
+.info-data a{
+    text-decoration: none;
+    color: #000;
+}
+
+.info-data a:hover{
+    color: #EA1C24;
 }
 
 .info-data h4{
@@ -176,6 +187,15 @@
     justify-content: space-between;
 }
 
+.info-category{
+    cursor: pointer;
+}
+
+
+.info-category:hover{
+    color:#EA1C24;
+}
+
 .info-category h4{
     font-size: 13px;
 }
@@ -191,6 +211,15 @@
     font-size: 11px;
     color: #7A7A7A;
 }
+
+.num-entries-category:hover{
+    color: #EA1C24;
+}
+
+.enlaceEntriesCategory{
+    text-decoration: none;
+}
+
 
 .options-category p{
     margin-top: 12px;
@@ -239,6 +268,7 @@
 
 .object-body{
     cursor: pointer;
+    width: 45%;
 }
 
 .object-body:hover{
@@ -275,8 +305,8 @@
     LABS PAGE
 */
 .labs-table{
-    width: 98%;
-    margin: 2%;
+    width: 100%;
+    margin-top: 50px;
 }
 
 .id-lab-th{
@@ -295,6 +325,16 @@
 
 .data-table-th-desc{
     width: 400px;
+    
+}
+.tr-header{
+    border-bottom: 1px solid black;
+}
+.tr-body{
+    border-bottom: 1px solid #7A7A7A;
+}
+.tr-body td{
+    padding: 20px 0;
 }
 /*
     SERVICES PAGE

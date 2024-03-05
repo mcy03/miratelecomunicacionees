@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="contenido">
-    <section class="menuLateral">
+    <section id="menuLateral" class="menuLateral">
         <nav>
             <ul>
                 <a class="enlacesMenu" id="entradas" href="#"><li>Entradas</li></a>
@@ -178,22 +178,6 @@
                 </div>
             </div>  
             <div class="list list-entries">
-                <?php for ($i=0; $i < 6; $i++) { ?>
-                    <div class="data entrie">
-                        <div class="body-data body-entrie">
-                            <div class="data-img entrie-img">
-                                <img src="./resource/backgroundEjemplo.jpg" alt="">
-                            </div>
-                            <div class="info-data info-entrie">
-                                <h4>Nombre Entrada</h4>
-                                <p class="date-data date-entrie">7 de oct. de 2021</p>
-                            </div>
-                        </div>
-                        <div class="options-data options-entrie">
-                            <p>Opciones...</p>
-                        </div>
-                    </div>
-                <?php } ?>
                 
             </div>
         </div>
@@ -221,23 +205,6 @@
             </div>  
 
             <div class="list-categories">
-                <?php for ($i=0; $i < 6; $i++) { ?>
-                    <div class="category">
-                        <div class="body-category">
-                            <div class="info-category">
-                                <h4>Nombre Categoria</h4>
-                                <p class="date-category">7 de oct. de 2021</p>
-                            </div>
-                            <div class="entries-category">
-                                <p class="num-entries-category">7 entradas</p>
-                            </div>
-                        </div>
-                        
-                        <div class="options-category">
-                            <p>Opciones...</p>
-                        </div>
-                    </div>
-                <?php } ?>
                 
             </div>
         </div>
@@ -269,22 +236,6 @@
                 </div>
             </div>  
             <div class="list list-pages">
-                <?php for ($i=0; $i < 6; $i++) { ?>
-                    <div class="data page">
-                        <div class="body-data body-page">
-                            <div class="data-img page-img">
-                                <img src="./resource/backgroundEjemplo.jpg" alt="">
-                            </div>
-                            <div class="info-data info-page">
-                                <h4>Nombre Pagina</h4>
-                                <p class="date-data date-page">7 de oct. de 2021</p>
-                            </div>
-                        </div>
-                        <div class="options-data options-page">
-                            <p>Opciones...</p>
-                        </div>
-                    </div>
-                <?php } ?>
                 
             </div>
         </div>
@@ -320,68 +271,7 @@
             </div>  
             
             <div class="content-data-objects content-courses">
-                <div class="row-objects">
-                    <div class="object course">
-                        <div class="object-img course-img">
-                            <img src="./resource/backgroundEjemplo.jpg" alt="">
-                        </div>
-
-                        <div class="object-body course-body">
-                            <h4 class="id-object id-course">nombre curso</h4>
-                            <p class="name-object name-course">descripcion con nombre del curso</p>
-                        </div>
-
-                        <div class="options-object options-course">
-                            <p>Opciones...</p>
-                        </div>
-                    </div>
-
-                    <div class="object course">
-                        <div class="object-img course-img">
-                            <img src="./resource/backgroundEjemplo.jpg" alt="">
-                        </div>
-
-                        <div class="object-body course-body">
-                            <h4 class="id-object id-course">nombre curso</h4>
-                            <p class="name-object name-course">descripcion con nombre del curso</p>
-                        </div>
-
-                        <div class="options-object options-course">
-                            <p>Opciones...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row-objects">
-                    <div class="object course">
-                        <div class="object-img course-img">
-                            <img src="./resource/backgroundEjemplo.jpg" alt="">
-                        </div>
-
-                        <div class="object-body course-body">
-                            <h4 class="id-object id-course">nombre curso</h4>
-                            <p class="name-object name-course">descripcion con nombre del curso</p>
-                        </div>
-
-                        <div class="options-object options-course">
-                            <p>Opciones...</p>
-                        </div>
-                    </div>
-
-                    <div class="object course">
-                            <div class="object-img course-img">
-                                <img src="./resource/backgroundEjemplo.jpg" alt="">
-                            </div>
-
-                        <div class="object-body course-body">
-                            <h4 class="id-object id-course">nombre curso</h4>
-                            <p class="name-object name-course">descripcion con nombre del curso</p>
-                        </div>
-
-                        <div class="options-object options-course">
-                            <p>Opciones...</p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -417,7 +307,7 @@
             
             <div class="content-table-object">
                 <table class="labs-table">
-                    <tr>
+                    <tr class="tr-header">
                         <th class="data-table-th">ID LAB</th>
                         <th class="data-table-th">CURSO</th>
                         <th class="data-table-th data-table-th-desc">DESCRIPCION</th>
@@ -425,7 +315,7 @@
                         <th class="data-table-th">CAPACIDAD PODS</th>
                         <th class="data-table-th"></th>
                     </tr>
-                    <tr>
+                    <tr class="tr-body">
                         <td class="data-table">1</td>
                         <td class="data-table">DNA</td>
                         <td class="data-table"><span>Laboratorio que se centra en la tecnologia dna center</span></td>
@@ -433,7 +323,7 @@
                         <td class="data-table">4</td>
                         <td class="data-table">opciones</td>
                     </tr>
-                    <tr>
+                    <tr class="tr-body">
                         <td class="data-table">2</td>
                         <td class="data-table">ACII</td>
                         <td class="data-table"><span>Laboratorio que se centra en la tecnologia acii</span></td>
@@ -441,7 +331,7 @@
                         <td class="data-table">4</td>
                         <td class="data-table">opciones</td>
                     </tr>
-                    <tr>
+                    <tr class="tr-body">
                         <td class="data-table">3</td>
                         <td class="data-table">DCACI</td>
                         <td class="data-table"><span>Laboratorio que se centra en la tecnologia dcaci</span></td>
@@ -449,7 +339,7 @@
                         <td class="data-table">4</td>
                         <td class="data-table">opciones</td>
                     </tr>
-                    <tr>
+                    <tr class="tr-body">
                         <td class="data-table">4</td>
                         <td class="data-table">SISE</td>
                         <td class="data-table"><span>Laboratorio que se centra en la tecnologia sise</span></td>
@@ -493,65 +383,65 @@
                 </div>
             </div>  
             
-            <div class="content-data-objects content-labs">
+            <div class="content-data-objects content-services">
                 <div class="row-objects">
-                    <div class="object lab">
-                        <div class="object-img lab-img">
+                    <div class="object service">
+                        <div class="object-img service-img">
                             <img src="./resource/backgroundEjemplo.jpg" alt="">
                         </div>
 
-                        <div class="object-body lab-body">
-                            <h4 class="id-object id-lab">nombre curso</h4>
-                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        <div class="object-body service-body">
+                            <h4 class="id-object id-service">nombre servicio</h4>
+                            <p class="name-object name-service">descripcion con nombre del servicio</p>
                         </div>
 
-                        <div class="options-object options-lab">
+                        <div class="options-object options-service">
                             <p>Opciones...</p>
                         </div>
                     </div>
 
-                    <div class="object lab">
-                        <div class="object-img lab-img">
+                    <div class="object service">
+                        <div class="object-img service-img">
                             <img src="./resource/backgroundEjemplo.jpg" alt="">
                         </div>
 
-                        <div class="object-body lab-body">
-                            <h4 class="id-object id-lab">nombre curso</h4>
-                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        <div class="object-body service-body">
+                            <h4 class="id-object id-service">nombre servicio</h4>
+                            <p class="name-object name-service">descripcion con nombre del servicio</p>
                         </div>
 
-                        <div class="options-object options-lab">
+                        <div class="options-object options-service">
                             <p>Opciones...</p>
                         </div>
                     </div>
                 </div>
                 <div class="row-objects">
-                    <div class="object lab">
-                        <div class="object-img lab-img">
+                    <div class="object service">
+                        <div class="object-img service-img">
                             <img src="./resource/backgroundEjemplo.jpg" alt="">
                         </div>
 
-                        <div class="object-body lab-body">
-                            <h4 class="id-object id-lab">nombre curso</h4>
-                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        <div class="object-body service-body">
+                            <h4 class="id-object id-service">nombre servicio</h4>
+                            <p class="name-object name-service">descripcion con nombre del servicio</p>
                         </div>
 
-                        <div class="options-object options-lab">
+                        <div class="options-object options-service">
                             <p>Opciones...</p>
                         </div>
                     </div>
 
-                    <div class="object lab">
-                            <div class="object-img lab-img">
+                    <div class="object service">
+                            <div class="object-img service-img">
                                 <img src="./resource/backgroundEjemplo.jpg" alt="">
                             </div>
 
-                        <div class="object-body lab-body">
-                            <h4 class="id-object id-lab">nombre curso</h4>
-                            <p class="name-object name-lab">descripcion con nombre del curso</p>
+                        <div class="object-body service-body">
+                            <h4 class="id-object id-service">nombre servicio</h4>
+                            <p class="name-object name-service">descripcion con nombre del servicio</p>
                         </div>
 
-                        <div class="options-object options-lab">
+                        <div class="options-object options-service">
                             <p>Opciones...</p>
                         </div>
                     </div>
@@ -850,6 +740,8 @@
 
 </div>
     <script src="./script/admin.js"></script>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
 </body>

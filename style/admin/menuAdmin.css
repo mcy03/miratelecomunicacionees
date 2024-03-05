@@ -1,6 +1,8 @@
 .menuLateral{
     width: 20%;
     margin-bottom: 50px;
+    resize: both;
+    overflow: auto;
 }
 
 .menuLateral ul{

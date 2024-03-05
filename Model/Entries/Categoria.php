@@ -11,6 +11,7 @@ class Categoria {
     protected $CATEGORIA_ID;
     protected $NOMBRE;
     protected $DESCRIPCION;
+    protected $FECHA;
 
     public function ___construct(){
         
@@ -43,6 +44,21 @@ class Categoria {
             return $arrayCategorias;
         }
     }
+
+    public static function countEntriesCategory($category_id){
+        $conn = db::connect();
+        $consulta = "SELECT COUNT(*) as entries FROM publicacion WHERE CATEGORIA_ID = '$category_id'";
+        
+        $resultado = $conn->query($consulta);
+    
+        if ($resultado) {
+            $fila = $resultado->fetch_assoc(); // Obtener la primera fila del resultado como un array asociativo
+            return $fila['entries']; // Devolver el valor de la columna 'entries'
+        } else {
+            return 0; // Si la consulta no se ejecuta correctamente, devolver 0
+        }
+    }
+    
 
     /**
      * Get the value of CATEGORIA_ID
@@ -100,6 +116,26 @@ class Categoria {
     public function setDESCRIPCION($DESCRIPCION)
     {
         $this->DESCRIPCION = $DESCRIPCION;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of FECHA
+     */ 
+    public function getFECHA()
+    {
+        return $this->FECHA;
+    }
+
+    /**
+     * Set the value of FECHA
+     *
+     * @return  self
+     */ 
+    public function setFECHA($FECHA)
+    {
+        $this->FECHA = $FECHA;
 
         return $this;
     }

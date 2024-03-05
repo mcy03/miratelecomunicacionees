@@ -17,6 +17,13 @@ class entradaController{
         require_once("view/footer.php");
     }
 
+    public function insertEntrieAdmin(){
+        session_start(); // Inicia la sesión
+        
+        // Incluye archivos de vista para la cabecera, la página principal (home) y el footer
+        require_once("view/admin/insertEntrie.php");
+    }
+
     public function prueba(){
         session_start(); // Inicia la sesión
         
