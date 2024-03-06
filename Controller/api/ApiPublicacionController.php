@@ -169,6 +169,64 @@ class ApiPublicacionController{
             echo json_encode($array_imgs, JSON_UNESCAPED_UNICODE);
             return;
 
+        }elseif(trim($accion) == "insert_entrie"){
+            $titulo = $_POST["titulo"];
+            $subtitulo = $_POST["subtitulo"];
+            $categoria_id = $_POST["categoria_id"];
+            $cantidad = $_POST["cantidad"];
+            
+            $directorioDestino = "resource/publicaciones/$titulo/";
+
+            if (!file_exists($directorioDestino)) {
+                if (mkdir($directorioDestino, 0777, true)) {
+                    $confirm = '';
+                }
+            }
+            
+            $nombrePortada = $_FILES["img_portada"]['name'];
+            $rutaTemporalPortada = $_FILES["img_portada"]['tmp_name'];
+
+            $rutaDestinoPortada = $directorioDestino . $nombrePortada;
+
+            if (move_uploaded_file($rutaTemporalPortada, $rutaDestinoPortada)) {
+                $portada = $_FILES["img_portada"]['name'];
+            }
+
+            $contenido = array();
+            for ($i=1; $i <= $cantidad; $i++) {
+                if (isset($_FILES["contenido$i"])) {
+
+                    $nombreArchivo = $_FILES["contenido$i"]['name'];
+                    $rutaTemporal = $_FILES["contenido$i"]['tmp_name'];
+
+                    $rutaDestino = $directorioDestino . $nombreArchivo;
+
+                    if (move_uploaded_file($rutaTemporal, $rutaDestino)) {
+                        $contenido[$i-1] = "IMGseparator".$_FILES["contenido$i"]['name'];
+                    }
+                }else{
+                    $contenido[$i-1] = "TXTseparator".$_POST["contenido$i"];
+                }
+                
+            }
+
+            $entrie = Publicacion::setEntrie($categoria_id, $titulo, $subtitulo, $titulo."/".$portada);
+
+            if ($entrie) {
+                foreach ($contenido as $key => $value) {
+                    $valor = explode("separator", $value);
+                    if ($valor[0] == "TXT") {
+                        Texto::setText($entrie, $valor[1], $key + 1);
+                    } else {
+                        Img::setImgEnt($entrie, $titulo."/".$valor[1], $key + 1, 'alt', 100, 100);
+                    }
+                }
+                
+                echo(json_encode("insertada correctamente", JSON_UNESCAPED_UNICODE));
+                return;
+            }else {
+                return false;
+            }
         }
     }
 }

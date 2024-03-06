@@ -62,6 +62,21 @@ class Img {
         }
     }
 
+    public static function setImgEnt($publicacion_id, $img, $pos, $alt, $width, $height){
+        $conn = db::connect();
+        $consulta = "INSERT INTO img (PUBLICACION_ID, IMG, POSICION, ALT, WIDTH, HEIGHT) 
+        VALUES (?, ?, ?, ?, ?, ?)";
+
+        $stmt = $conn->prepare($consulta);
+        $stmt->bind_param('isisii', $publicacion_id, $img, $pos, $alt, $width, $height);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * Get the value of IMG_ID
      */ 

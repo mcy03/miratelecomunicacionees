@@ -74,6 +74,45 @@ class Publicacion {
         }
     }
 
+    public static function setEntrie($category_id, $titulo, $subtitulo, $img){
+        $conn = db::connect();
+        // Consulta para insertar un nuevo producto
+        $consulta = "INSERT INTO publicacion (CATEGORIA_ID, TITULO, DESCRIPCION, FECHA) 
+        VALUES (?, ?, ?, SYSDATE())";
+
+        $stmt = $conn->prepare($consulta);
+        $stmt->bind_param('iss', $category_id, $titulo, $subtitulo);
+
+        if ($stmt->execute()) {
+            $stmt_select = $conn->prepare("SELECT PUBLICACION_ID FROM publicacion WHERE TITULO = ?");
+            $stmt_select->bind_param('s', $titulo);
+
+            $stmt_select->execute();
+            $result = $stmt_select->get_result();            
+            $id = $result->fetch_assoc();
+
+            $consulta_insert_img = "INSERT INTO img (PUBLICACION_ID, IMG, POSICION, ALT, WIDTH, HEIGHT) 
+            VALUES (?, ?, ?, ?, ?, ?)";
+
+            $alt = 'alt img';
+            $posicion = 0;
+            $width = 100;
+            $height = 100;
+
+            $stmt_insert_img = $conn->prepare($consulta_insert_img);
+            $stmt_insert_img->bind_param('isisii', $id['PUBLICACION_ID'], $img, $posicion, $alt, $width, $height);
+
+            if ($stmt_insert_img->execute()) {
+                return $id['PUBLICACION_ID'];
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+    }
+
     /**
      * Get the value of PUBLICACION_ID
      */ 

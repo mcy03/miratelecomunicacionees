@@ -3,6 +3,40 @@ initOptionCategory();
 const addText = document.getElementById('add-text');
 addText.addEventListener('click', addTextArea);
 
+const addImg = document.getElementById('add-img');
+addImg.addEventListener('click', addInputFile);
+
+const form = document.getElementById('form-create');
+
+form.addEventListener('submit', generateEntrie);
+
+function generateEntrie(e) {
+    e.preventDefault();
+
+    let titulo = document.getElementById('titulo').value;
+
+    const archivo = document.getElementById('imagen-principal').files[0];
+
+    const categoria = document.getElementById('select-categoria').value;
+
+    const contentEntrie = document.getElementById('contentEntrie').childNodes;
+    const contentEntrieImg = document.getElementsByClassName('inputFile');
+
+    let index = 1;
+    let contentA = [];
+    contentEntrie.forEach(content => {
+        if (content.className == 'textareaWrapper') {
+            contentA.push(content.querySelector('textarea').value);
+        }else if(content.className == 'inputFileWrapper'){
+            contentA.push(content.querySelector('input[type="file"]').files[0]);
+        }
+        index++;
+    });
+    
+
+    insertEntrie(titulo, archivo, categoria, contentA);
+}
+
 function addTextArea(e) {
     e.preventDefault();
     const textAreas = document.getElementsByClassName('textArea');
@@ -32,10 +66,6 @@ function addTextArea(e) {
     contentEntrie.appendChild(textareaWrapper);
 }
 
-const addImg = document.getElementById('add-img');
-
-addImg.addEventListener('click', addInputFile);
-
 function addInputFile(e) {
     e.preventDefault();
     const inputFiles = document.getElementsByClassName('inputFile');
@@ -48,7 +78,7 @@ function addInputFile(e) {
 
     const inputFile = document.createElement("input");
     inputFile.type = "file";
-    inputFile.className = `inputFile`;
+    inputFile.className = `inputFile data-content`;
     inputFile.name = `file-${cantInputFiles}`;
     inputFile.id = `file-${cantInputFiles}`;
     inputFileWrapper.appendChild(inputFile);
@@ -64,14 +94,6 @@ function addInputFile(e) {
 
     contentEntrie.appendChild(inputFileWrapper);
 }
-
-
-
-
-
-
-
-
 
 async function initOptionCategory() {
     let categorias = await getCategories();
@@ -107,4 +129,31 @@ function generateOptions(categories) {
     
 }
 
+
+async function insertEntrie(titulo, img_portada, categoria, contentA){
+    let formData = new FormData();
+    formData.append('accion', 'insert_entrie');
+    formData.append('titulo', titulo);
+    formData.append('subtitulo', 'subtitulo');
+    formData.append('img_portada', img_portada);
+    formData.append('categoria_id', categoria);
+    formData.append('cantidad', contentA.length);
+    console.log(img_portada);
+    let index = 1;
+    contentA.forEach(content => {
+        formData.append(`contenido${index}`, content);
+        index++;
+    });
+    
+
+    const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiPublicacion&action=api';
+
+    try {
+        const response = await axios.post(url, formData);
+
+        console.log(response.data);
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+}
 

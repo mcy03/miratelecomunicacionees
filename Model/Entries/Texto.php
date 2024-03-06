@@ -59,6 +59,23 @@ class Texto {
         }
     }
 
+    public static function setText($publicacion_id, $texto, $posicion){
+        $conn = db::connect();
+        // Consulta para insertar un nuevo producto
+        $consulta = "INSERT INTO texto (PUBLICACION_ID, TEXTO, POSICION) 
+        VALUES (?, ?, ?)";
+
+        $stmt = $conn->prepare($consulta);
+        $stmt->bind_param('isi', $publicacion_id, $texto, $posicion);
+
+        if ($stmt->execute()) {
+            return false;
+        } else {
+            return false;
+        }
+            
+    }
+
     /**
      * Get the value of TEXTO_ID
      */ 

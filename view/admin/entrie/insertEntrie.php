@@ -11,17 +11,19 @@
         <h1 class="title">Insertar Entrada</h1>
 
         <div class="form-insert-entrie">
-            <form enctype="multipart/form-data">
+            <form id="form-create" enctype="multipart/form-data">
                 <div class="cont-titulo">
-                    <input type="text" placeholder="Nombre de la entrada">
+                    <input id="titulo" type="text" placeholder="Nombre de la entrada" required>
                 </div>
                 
-                
+                <div class="cont-subtitulo">
+                    <input id="subtitulo" type="text" placeholder="Subtitulo de la entrada">
+                </div>
 
                 <div class="valores">
                     <div class="cont-img">
                         <label for="imagen-principal">Imagen de cabecera de la entrada: </label>
-                        <input type="file" name="imagen-principal" accept="image/*">
+                        <input type="file" id="imagen-principal" name="imagen-principal" accept="image/*" required> 
                     </div>
                     <div class="cont-cat">
                         <label for="categoria">Categoria entrada:</label>
@@ -31,9 +33,7 @@
                     </div>
                 </div>
                 
-                <div id="contentEntrie">
-
-                </div>
+                <div id="contentEntrie"></div>
                 <div class="add">
                     <a href="" id="add-text" class="add-button">Añadir texto</a>
                     <a href="" id="add-img" class="add-button">Añadir imagen</a>
@@ -48,7 +48,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
     <script src="./script/entrie/insertEntrie.js"></script>
-
-    
 </body>
 </html>
