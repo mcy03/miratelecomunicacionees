@@ -18,16 +18,23 @@
     background-color: #fff;
     border: 0;
     height: 100%;
-    margin-right: 15px;
     font-size: 14px;
     padding: 0 15px;
     border-right: 1px solid black;
+}
+
+.filter-entries button.selected{
+    color: #EA1C24;
+    background-color: #F1F1F1;
+    border: 1px solid black;
+    border-bottom: 0;
 }
 
 .button-create{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 15px;
 }
 
 .button-create a{
@@ -84,13 +91,11 @@
     flex-direction: column;
     padding: 0 30px;
 }
-
-.info-data a{
+.enlaceEntrie{
     text-decoration: none;
     color: #000;
 }
-
-.info-data a:hover{
+.enlaceEntrie:hover{
     color: #EA1C24;
 }
 
@@ -109,11 +114,12 @@
     align-items: center;
     margin-right: 30px;
 }
-.options-data p{
+.options-data select{
     font-size: 10px;
     margin: 0;
     color: #EA1C24;
     cursor: pointer;
+    border: 0;
 }
 
 

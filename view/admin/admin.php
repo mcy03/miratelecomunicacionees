@@ -113,7 +113,7 @@
                     <ul>
                         <li><a href="">Editar entrada</a></li>
                         <li><a href="">Eliminar entrada</a></li>
-                        <li><a href="">Añadir entrada</a></li>
+                        <li><a href="<?=url.'?controller=admin&action=insertEntrieAdmin'?>">Añadir entrada</a></li>
                         <li><a href="">Ver entradas</a></li>
                     </ul>
                 </div>
@@ -159,11 +159,11 @@
         <div class="content-page-entrie content-entries">
             <div class="filter-seeker">
                 <div class="filter filter-entries">
-                    <button>Publicadas</button>
-                    <button>Borradores</button>
-                    <button>Papelera</button>
+                    <button class="public selected">Publicadas</button>
+                    <button class="draft">Borradores</button>
+                    <button class="trash">Papelera</button>
                     <div class="button-create button-create-entrie">
-                        <a href="" class="create-entrie">Nueva entrada</a>
+                        <a href="<?=url.'?controller=admin&action=insertEntrieAdmin'?>" class="create-entrie">Nueva entrada</a>
                     </div>
                 </div>
                 
@@ -739,10 +739,10 @@
     </section>
 
 </div>
-    <script src="./script/admin.js"></script>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
+    <script src="./script/admin.js"></script>
 </body>
 </html>

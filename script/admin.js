@@ -1,3 +1,5 @@
+    
+    
     const enlaces = Array.from(document.getElementsByClassName('enlacesMenu'));
 
     let lastContent;
@@ -14,28 +16,97 @@
             const contenido = document.getElementsByClassName('contenido-'+id)[0];
             contenido.classList.remove("desactivated");
             contenido.classList.add("activated");
+
+            await data(id);
             
-            if (id == 'entradas') {
-                let allEntries = await getEntries();
-                viewEntries(allEntries);
-            }else if (id == 'categorias') {
-                let allCategories = await getCategories();
-                viewCategories(allCategories);
-            }else if (id == 'paginas') {
-                let allPages = await getPages();
-                viewPages(allPages);
-            }else if (id == 'cursos') {
-                let allCourses = await getCourses();
-                viewCourses(allCourses);
-            }
         })
     });
 
-
-    async function getEntries() {
+    
+    
+    async function getEntries(button) {
         let formData = new FormData();
             formData.append('accion', 'get_entries_view_blog');
+
+            if (button.hasClass('public')) {
+                formData.append('estado', 'PUBLIC');
+            }else if(button.hasClass('draft')){
+                formData.append('estado', 'DRAFT');
+            }else if(button.hasClass('trash')){
+                formData.append('estado', 'TRASH');
+            }
+
+        
     
+        const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiPublicacion&action=api';
+    
+        try {
+            const response = await axios.post(url, formData);
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+    
+    function viewEntries(data) {
+        listContainer = document.querySelector('.list.list-entries');
+        listContainer.innerHTML = '';
+        data.forEach(entry => {
+            const entryHTML = `
+                <div class="data entrie">
+                <a id="entrie-${entry.PUBLICACION_ID}" class="enlaceEntrie" href="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entry.PUBLICACION_ID}">
+                    <div class="body-data body-entrie">
+                        <div class="data-img entrie-img">
+                            <img src="./resource/publicaciones/${entry.IMG}" alt="">
+                        </div>
+
+                            <div class="info-data info-entrie">
+                                <h4>${entry.TITULO}</h4>
+                                <p class="date-data date-entrie">${entry.FECHA}</p>
+                            </div>
+                        
+                    </div>
+                </a>
+                    <div class="options-data options-entrie">
+                        <select id="entrie-${entry.PUBLICACION_ID}" class="selectOption">
+                            <option value="">Opciones</option>
+                            <option value="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entry.PUBLICACION_ID}">Ver</option>
+                            <option value="eliminar">Eliminar</option>
+                            <option value="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entry.PUBLICACION_ID}">Editar</option>
+                        </select>
+                    </div>
+                </div>
+            `;
+            listContainer.innerHTML += entryHTML;
+
+
+        });
+
+        document.querySelectorAll('.selectOption').forEach(function(select) {
+            select.addEventListener('change', async function(e) {
+                e.preventDefault();
+                var selectedValue = this.value;
+                if (selectedValue === 'eliminar') {
+                    result = deleteEntrie(this.id.split('-')[1]);
+
+                    if (result) {
+                        const enlace = document.getElementsByClassName('activated')[0];
+                        await data(enlace.id);
+                    }
+                }else{
+                    window.location.href = this.value;
+                }
+            });
+        });
+
+    }
+
+    async function deleteEntrie(id) {
+        let formData = new FormData();
+        formData.append('accion', 'delete_entrie');
+        formData.append('id', id);
+
         const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiPublicacion&action=api';
     
         try {
@@ -46,36 +117,6 @@
             console.error('Error:', error.message);
         }
     }
-    
-    function viewEntries(data) {
-        listContainer = document.querySelector('.list.list-entries');
-    
-        data.forEach(entry => {
-            const entryHTML = `
-                <div class="data entrie">
-                    <div class="body-data body-entrie">
-                        <div class="data-img entrie-img">
-                            <img src="./resource/${entry.IMG}" alt="">
-                        </div>
-                        
-                            <div class="info-data info-entrie">
-                            <a id="entrie-${entry.PUBLICACION_ID}" class="enlaceEntrie" href="#">
-                                <h4>${entry.TITULO}</h4>
-                                <p class="date-data date-entrie">${entry.FECHA}</p>
-                            </a>
-                            </div>
-                        
-                    </div>
-                    <div class="options-data options-entrie">
-                        <p>Opciones...</p>  
-                    </div>
-                </div>
-            `;
-            listContainer.innerHTML += entryHTML;
-        });
-    }
-
-
 
     async function getCategories() {
         let formData = new FormData();
@@ -224,4 +265,38 @@
             html += generarDosCursosEnFilaHTML(curso1, curso2);
         }
         return html;
+    }
+
+    async function data(id) {
+        if (id == 'entradas') {
+            let selectedButton = $('.filter-entries button.selected');
+
+            let aentries = await getEntries(selectedButton);
+            viewEntries(aentries);
+            $('.filter-entries button').click(async function() {
+
+                $('.filter-entries button').removeClass('selected');
+
+                $(this).addClass('selected');
+                let entries;
+                if ($(this).hasClass('public selected')) {
+                    entries = await getEntries($(this));
+                } else if ($(this).hasClass('draft selected')) {
+                    entries = await getEntries($(this));
+                } else if ($(this).hasClass('trash selected')) {
+                    entries = await getEntries($(this));
+                }
+
+                viewEntries(entries);
+            });
+        }else if (id == 'categorias') {
+            let allCategories = await getCategories();
+            viewCategories(allCategories);
+        }else if (id == 'paginas') {
+            let allPages = await getPages();
+            viewPages(allPages);
+        }else if (id == 'cursos') {
+            let allCourses = await getCourses();
+            viewCourses(allCourses);
+        }
     }

@@ -6,6 +6,6 @@
     <title>Edit entrie</title>
 </head>
 <body>
-    update entrie
+    <?= $_POST['entrie']?>
 </body>
 </html>

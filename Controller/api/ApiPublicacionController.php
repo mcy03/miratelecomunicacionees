@@ -28,8 +28,13 @@ class ApiPublicacionController{
             return;
 
         }elseif(trim($accion) == "get_entries_view_blog"){
-            $entries = Publicacion::getEntries();
             
+            if (isset($_POST["estado"])) {
+                $entries = Publicacion::getEntriesWhere($_POST["estado"]);
+            }else{
+                $entries = Publicacion::getEntries();
+            }
+
             $array_entries = [];
             foreach ($entries as $entrie) {
                 $img = Img::getImg_ByPubliId_Pos($entrie->getPUBLICACION_ID(), 0);
@@ -87,6 +92,21 @@ class ApiPublicacionController{
             echo json_encode($array_entries, JSON_UNESCAPED_UNICODE);
             return;
 
+        }elseif(trim($accion) == "delete_entrie"){
+            $id = $_POST['id'];
+
+            $entrie = Publicacion::getEntrieById($id);
+
+            if($entrie[0]->getESTADO() == "TRASH"){
+                $definitive = true;
+            }else{
+                $definitive = false;
+            }
+
+            $result = Publicacion::deleteEntrie($id, $definitive);
+
+            echo json_encode($result, JSON_UNESCAPED_UNICODE);
+            return;
         }
 
         
@@ -195,7 +215,6 @@ class ApiPublicacionController{
             $contenido = array();
             for ($i=1; $i <= $cantidad; $i++) {
                 if (isset($_FILES["contenido$i"])) {
-
                     $nombreArchivo = $_FILES["contenido$i"]['name'];
                     $rutaTemporal = $_FILES["contenido$i"]['tmp_name'];
 
@@ -204,13 +223,13 @@ class ApiPublicacionController{
                     if (move_uploaded_file($rutaTemporal, $rutaDestino)) {
                         $contenido[$i-1] = "IMGseparator".$_FILES["contenido$i"]['name'];
                     }
-                }else{
+                }else{  
                     $contenido[$i-1] = "TXTseparator".$_POST["contenido$i"];
                 }
                 
             }
 
-            $entrie = Publicacion::setEntrie($categoria_id, $titulo, $subtitulo, $titulo."/".$portada);
+            $entrie = Publicacion::setEntrie($categoria_id, $titulo, $subtitulo, $titulo."/".$portada, 'DRAFT');
 
             if ($entrie) {
                 foreach ($contenido as $key => $value) {

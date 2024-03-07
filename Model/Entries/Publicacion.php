@@ -13,6 +13,7 @@ class Publicacion {
     protected $TITULO;
     protected $DESCRIPCION;
     protected $FECHA;
+    protected $ESTADO;
 
     public function ___construct(){
         
@@ -31,6 +32,59 @@ class Publicacion {
             return $arrayEntries;
         }
     }
+
+    public static function getEntriesWhere($estado){
+        $conn = db::connect();
+        $consulta = "SELECT * FROM publicacion WHERE ESTADO = '$estado'";
+
+        if ($resultado = $conn->query($consulta)) {
+            while ($obj = $resultado->fetch_object('Publicacion')) {
+                $arrayEntries []= $obj;
+            }
+            
+            $resultado->close();
+            return $arrayEntries;
+        }
+    }
+
+    public static function deleteEntrie($id, $definitive) {
+        $conn = db::connect();
+        
+        if ($definitive) {
+            // Consulta para eliminar la entrada según el ID y el tipo de eliminación
+            $consulta = "DELETE FROM publicacion WHERE PUBLICACION_ID = ?";
+
+            // Preparar la consulta
+            $stmt = $conn->prepare($consulta);
+            
+            // Vincular el parámetro ID
+            $stmt->bind_param('i', $id);
+        }else{
+            $consulta = "UPDATE publicacion SET ESTADO = ? WHERE PUBLICACION_ID = ?";
+
+            // Preparar la consulta
+            $stmt = $conn->prepare($consulta);
+            
+            $estado = 'TRASH';
+
+            // Vincular el parámetro ID
+            $stmt->bind_param('si', $estado, $id);
+        }
+
+        
+        
+        
+        
+        // Ejecutar la consulta
+        if ($stmt->execute()) {
+            // Si se ejecuta correctamente, devolver verdadero
+            return true;
+        } else {
+            // Si hay un error, devolver falso
+            return false;
+        }
+    }
+    
 
     public static function getEntrieById($id){
         $conn = db::connect();
@@ -74,14 +128,14 @@ class Publicacion {
         }
     }
 
-    public static function setEntrie($category_id, $titulo, $subtitulo, $img){
+    public static function setEntrie($category_id, $titulo, $subtitulo, $img, $estado){
         $conn = db::connect();
         // Consulta para insertar un nuevo producto
-        $consulta = "INSERT INTO publicacion (CATEGORIA_ID, TITULO, DESCRIPCION, FECHA) 
-        VALUES (?, ?, ?, SYSDATE())";
+        $consulta = "INSERT INTO publicacion (CATEGORIA_ID, TITULO, DESCRIPCION, FECHA, ESTADO) 
+        VALUES (?, ?, ?, SYSDATE(), ?)";
 
         $stmt = $conn->prepare($consulta);
-        $stmt->bind_param('iss', $category_id, $titulo, $subtitulo);
+        $stmt->bind_param('isss', $category_id, $titulo, $subtitulo, $estado);
 
         if ($stmt->execute()) {
             $stmt_select = $conn->prepare("SELECT PUBLICACION_ID FROM publicacion WHERE TITULO = ?");
@@ -209,6 +263,26 @@ class Publicacion {
     public function setFECHA($FECHA)
     {
         $this->FECHA = $FECHA;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of ESTADO
+     */ 
+    public function getESTADO()
+    {
+        return $this->ESTADO;
+    }
+
+    /**
+     * Set the value of ESTADO
+     *
+     * @return  self
+     */ 
+    public function setESTADO($ESTADO)
+    {
+        $this->ESTADO = $ESTADO;
 
         return $this;
     }
