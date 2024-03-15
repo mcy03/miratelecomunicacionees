@@ -36,16 +36,35 @@ class Publicacion {
     public static function getEntriesWhere($estado){
         $conn = db::connect();
         $consulta = "SELECT * FROM publicacion WHERE ESTADO = '$estado'";
-
-        if ($resultado = $conn->query($consulta)) {
-            while ($obj = $resultado->fetch_object('Publicacion')) {
-                $arrayEntries []= $obj;
+        
+        // Realizar una consulta para verificar si hay registros
+        $consulta_existencia = "SELECT COUNT(*) AS cantidad FROM publicacion WHERE ESTADO = '$estado'";
+        $resultado_existencia = $conn->query($consulta_existencia);
+        $fila_existencia = $resultado_existencia->fetch_assoc();
+        $cantidad_registros = $fila_existencia['cantidad'];
+        $resultado_existencia->close();
+        
+        // Verificar si existen registros
+        if ($cantidad_registros > 0) {
+            // Si existen registros, realizar la consulta principal
+            if ($resultado = $conn->query($consulta)) {
+                $arrayEntries = [];
+                while ($obj = $resultado->fetch_object('Publicacion')) {
+                    $arrayEntries []= $obj;
+                }
+                $resultado->close();
+                return $arrayEntries;
+            } else {
+                // Manejar el caso en que la consulta principal falle
+                // Por ejemplo, podrías lanzar una excepción o retornar un mensaje de error
+                return [];
             }
-            
-            $resultado->close();
-            return $arrayEntries;
+        } else {
+            // Si no existen registros, retornar un array vacío o un mensaje de aviso
+            return [];
         }
     }
+    
 
     public static function deleteEntrie($id, $definitive) {
         $conn = db::connect();

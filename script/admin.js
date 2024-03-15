@@ -1,5 +1,3 @@
-    
-    
     const enlaces = Array.from(document.getElementsByClassName('enlacesMenu'));
 
     let lastContent;
@@ -18,11 +16,8 @@
             contenido.classList.add("activated");
 
             await data(id);
-            
         })
     });
-
-    
     
     async function getEntries(button) {
         let formData = new FormData();
@@ -36,8 +31,6 @@
                 formData.append('estado', 'TRASH');
             }
 
-        
-    
         const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiPublicacion&action=api';
     
         try {
@@ -52,53 +45,56 @@
     function viewEntries(data) {
         listContainer = document.querySelector('.list.list-entries');
         listContainer.innerHTML = '';
-        data.forEach(entry => {
-            const entryHTML = `
-                <div class="data entrie">
-                <a id="entrie-${entry.PUBLICACION_ID}" class="enlaceEntrie" href="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entry.PUBLICACION_ID}">
-                    <div class="body-data body-entrie">
-                        <div class="data-img entrie-img">
-                            <img src="./resource/publicaciones/${entry.IMG}" alt="">
-                        </div>
-
-                            <div class="info-data info-entrie">
-                                <h4>${entry.TITULO}</h4>
-                                <p class="date-data date-entrie">${entry.FECHA}</p>
+        if (data.length < 1) {
+            listContainer.innerHTML = '<p class="no-data">No existen entradas en este estado</p>';
+        }else{
+            data.forEach(entry => {
+                const entryHTML = `
+                    <div class="data entrie">
+                        <a id="entrie-${entry.PUBLICACION_ID}" class="enlaceEntrie" href="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entry.PUBLICACION_ID}">
+                        <div class="body-data body-entrie">
+                            <div class="data-img entrie-img">
+                                <img src="./resource/publicaciones/${entry.IMG}" alt="">
                             </div>
-                        
+
+                                <div class="info-data info-entrie">
+                                    <h4>${entry.TITULO}</h4>
+                                    <p class="date-data date-entrie">${entry.FECHA}</p>
+                                </div>
+                            
+                        </div>
+                    </a>
+                        <div class="options-data options-entrie">
+                            <select id="entrie-${entry.PUBLICACION_ID}" class="selectOption">
+                                <option value="">Opciones</option>
+                                <option value="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entry.PUBLICACION_ID}">Ver</option>
+                                <option value="eliminar">Eliminar</option>
+                                <option value="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entry.PUBLICACION_ID}">Editar</option>
+                            </select>
+                        </div>
                     </div>
-                </a>
-                    <div class="options-data options-entrie">
-                        <select id="entrie-${entry.PUBLICACION_ID}" class="selectOption">
-                            <option value="">Opciones</option>
-                            <option value="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entry.PUBLICACION_ID}">Ver</option>
-                            <option value="eliminar">Eliminar</option>
-                            <option value="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entry.PUBLICACION_ID}">Editar</option>
-                        </select>
-                    </div>
-                </div>
-            `;
-            listContainer.innerHTML += entryHTML;
+                `;
+                listContainer.innerHTML += entryHTML;
 
-
-        });
-
-        document.querySelectorAll('.selectOption').forEach(function(select) {
-            select.addEventListener('change', async function(e) {
-                e.preventDefault();
-                var selectedValue = this.value;
-                if (selectedValue === 'eliminar') {
-                    result = deleteEntrie(this.id.split('-')[1]);
-
-                    if (result) {
-                        const enlace = document.getElementsByClassName('activated')[0];
-                        await data(enlace.id);
-                    }
-                }else{
-                    window.location.href = this.value;
-                }
+                document.querySelectorAll('.selectOption').forEach(function(select) {
+                    select.addEventListener('change', async function(e) {
+                        e.preventDefault();
+                        var selectedValue = this.value;
+                        if (selectedValue === 'eliminar') {
+                            result = deleteEntrie(this.id.split('-')[1]);
+        
+                            if (result) {
+                                const enlace = document.getElementsByClassName('activated')[0];
+                                await data(enlace.id);
+                            }
+                        }else{
+                            window.location.href = this.value;
+                        }
+                    });
+                });
             });
-        });
+        }
+        
 
     }
 

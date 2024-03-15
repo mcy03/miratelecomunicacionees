@@ -49,6 +49,16 @@
         </div>
     </section>
 
+    <section class="certificaciones">
+        <div class="cont-title-section">
+            <h2 class="title-section">Por Certificación</h2>
+        </div>
+
+        <div id="cont-certificaciones" class="cont-certificaciones">
+            
+        </div>
+    </section>
+
 
     <script src="./script/formacion/dataFormacion.js"></script>
 

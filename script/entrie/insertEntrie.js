@@ -46,12 +46,9 @@ function addTextArea(e) {
     const textareaWrapper = document.createElement("div"); // Crear un contenedor para el textarea y el enlace
     textareaWrapper.className = 'textareaWrapper';
 
-    const textarea = document.createElement("textarea");
-    textarea.className = `textArea data-content`;
+    const textarea = document.createElement("<textarea></textarea>");
+    textarea.className = `default`;
     textarea.name = `texto-${cantTextArea}`;
-    textarea.id = `text-${cantTextArea}`;
-    textarea.cols = "30";
-    textarea.rows = "10";
     textareaWrapper.appendChild(textarea);
 
     const deleteLink = document.createElement("a"); // Crear el enlace para eliminar
@@ -64,6 +61,11 @@ function addTextArea(e) {
     textareaWrapper.appendChild(deleteLink);
 
     contentEntrie.appendChild(textareaWrapper);
+
+    tinymce.init({
+        selector: 'textarea',
+        apiKey: '8si8uxohaxopw3ewmt35wkkah54gbz52yrqkugcwna7ajscw'
+    });
 }
 
 function addInputFile(e) {

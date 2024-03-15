@@ -121,7 +121,11 @@
     cursor: pointer;
     border: 0;
 }
-
+.no-data{
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+}
 
 
 /*

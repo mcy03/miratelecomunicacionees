@@ -61,8 +61,12 @@ body{
     width: 40%;
 }
 
-.form-insert-entrie form div{
+.input-div {
     margin: 20px 0;
+}
+
+div#contentEntrie{
+    margin: 50px 0;
 }
 
 .form-insert-entrie form input{
@@ -95,8 +99,6 @@ body{
     border: 1px solid #EA1C24;
     text-decoration: none;
     color: #EA1C24;
-
-
 }
 
 .add-button:hover{
@@ -115,9 +117,7 @@ body{
     text-decoration: none;
     border: 1px solid #EA1C24;
     background-color: #EA1C24;
-    border: 1px solid #EA1C24;
     color: #ffffff;
-    
 }
 
 .submit input:hover{
