@@ -54,7 +54,7 @@
             <h2 class="title-section">Por Certificación</h2>
         </div>
 
-        <div id="cont-certificaciones" class="cont-certificaciones">
+        <div id="cont-certificaciones-partners" class="cont-certificaciones">
             
         </div>
     </section>

@@ -120,3 +120,70 @@
     text-decoration: none;
     color: #EA1C24;
 }
+
+
+.certifications-button{
+    border-radius: 0;
+    min-width: 300px;
+}
+
+.certifications-button:hover{
+    border-radius: 0;
+    border: 1px solid #EA1C24;
+    background-color: #EE4950;
+}
+
+/* / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / */
+.certifications{
+    padding: 0;
+    margin: 0;
+    border: 1px solid black;
+    height: 10px;
+    width: 10px;
+}
+
+#mecaer{
+    padding: 0cap;
+    text-align: end;
+    display: flex;
+    max-width: 100px;
+    min-width: none;
+    height: auto;
+    background-color: #EA1C24;
+    cursor: pointer;
+    top: 10;
+    left: 10px;
+}
+
+
+/* / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / */
+
+.page-certifications{
+    min-width: 300px;
+    min-height: 100px;
+}
+
+.page-certifications p{
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    margin: 0;
+    cursor: pointer;
+    background-color: aliceblue;
+   
+}
+
+.page-certifications p:hover{
+    background-color: darkgray;
+}
+
+.page-certifications {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.page-certifications.show {
+    opacity: 1;
+    transform: scale(1);
+}
