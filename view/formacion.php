@@ -13,10 +13,12 @@
             <h1>Formación</h1>
         </div>
 
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        <span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Quisque a risus non sapien facilisis egestas. 
             Vivamus scelerisque ex ipsum, a tempor velit tristique id. 
-            Ut in placerat erat.</span>
+            Ut in placerat erat.
+        </span>
     </section>
 
     <section class="ubicacion">
@@ -51,7 +53,7 @@
 
     <section class="certificaciones">
         <div class="cont-title-section">
-            <h2 class="title-section">Por Certificación</h2>
+            <h2 class="title-section">Certificación Partners</h2>
         </div>
 
         <div id="cont-certificaciones-partners" class="cont-certificaciones">
@@ -59,6 +61,7 @@
         </div>
     </section>
 
+    
 
     <script src="./script/formacion/dataFormacion.js"></script>
 

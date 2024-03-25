@@ -90,6 +90,25 @@ class Certificacion {
         }
     }
 
+    public static function getNombreById($id){
+        if (is_null($id)) {
+            return false;
+        }
+
+        $conn = db::connect();
+        $consulta = "SELECT NOMBRE_CERTIFICACION FROM certificacion WHERE CERTIFICACION_ID = $id";
+    
+        if ($resultado = $conn->query($consulta)) {
+            if ($fila = $resultado->fetch_assoc()) {
+                $nombre_certificacion = $fila['NOMBRE_CERTIFICACION'];
+                $resultado->close();
+                return $nombre_certificacion;
+            }
+        }
+        return null; // Si no se encuentra ninguna certificación con el ID proporcionado
+    }
+    
+
     /**
      * Get the value of CERTIFICACION_ID
      */ 

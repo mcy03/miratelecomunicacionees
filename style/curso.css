@@ -36,6 +36,12 @@ body{
     margin: 0 50px;
     padding-bottom: 70px;
 }
+
+.list-courses{
+    display: flex;
+    flex-direction: column;
+}
+
 .filtro{
     background-color: #fff;
     padding: 25px;
@@ -45,7 +51,7 @@ body{
     font-size: 15px;
 }
 
-.tecnologias-filtro h4, .certificacion-filtro h4{
+.tecnologias h4, .certificacion h4{
     font-size: 15px;
     color: #4D4D4D;
     padding: 25px;
@@ -59,7 +65,7 @@ body{
 }
 
 .cursos{
-    width: 75%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -68,10 +74,12 @@ body{
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
+
 .curso{
     background-color: #fff;
-    width: 33.33%;
+    width: 30%;
     margin: 0 30px;
     margin-bottom: 30px;
     padding: 20px;
@@ -93,3 +101,33 @@ body{
     color: #383838;
 }
 
+.paginacion{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.paginacion a{
+    text-decoration: none;
+    width: 70px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 500;
+    transition: .4s linear;
+
+}
+
+.paginacion a:hover, .paginacion a.select:hover{
+    background-color: #EE4950;
+    color: white;
+    /*#EA1C24*/
+}
+
+.paginacion a.select{
+    color: #EA1C24;
+    /*#EA1C24*/
+}

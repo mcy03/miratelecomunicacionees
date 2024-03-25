@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/assets.css">
     <link rel="stylesheet" type="text/css" href="./style/curso.css?1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Cursos Mira</title>
 </head>
 <body>
@@ -48,57 +49,31 @@
     <div class="contenido">
         <section class="filtro">
             <h3>Filtrar</h3>
-            <div class="tecnologias-filtro">
+            <div class="tecnologias">
                 <h4>Tecnologías</h4>
-                <p>Securitiy</p>
-                <p>Networking</p>
-                <p>Wireless</p>
-                <p>Customer Experience</p>
-                <p>Data Center</p>
-                <p>Collaboration</p>
-                <p>DevNet</p>
-                <p>Internet of Things</p>
-                <p>Automation</p>
-                <p>Service Provider</p>
-                <p>Foundation</p>
-                <p>Cloud</p>
-                <p>CyberOPs</p>
+                <div class="tecnologias-filtro">
+
+                </div>
             </div>
 
-            <div class="certificacion-filtro">
+            <div class="certificacion">
                 <h4>Certificación</h4>
-                <p>CCNA</p>
-                <p>DevNet Associate</p>
-                <p>Wireless</p>
-                <p>CCNP Enterprise</p>
+                <div class="certificacion-filtro">
+
+                </div>
             </div>
         </section>
-        <section class="cursos">
-            <?php for ($i=0; $i < 6; $i++) { ?>
-                <div class="fila-cursos">
-                    <article class="curso">
-                        <h2>IMPLEMENTING CISCO INTRUSION PREVENTION SYSTEM(IPS 7)</h2>
-                        <p>tecnologia</p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Quisque a risus non sapien facilisis egestas. Lorem ipsum dolor 
-                        sit amet, consectetur adipiscing elit. Quisque a risus non sapien facilisis egestas.</span>
-                    </article>
-                    <article class="curso">
-                        <h2>nombre curso</h2>
-                        <p>tecnologia</p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Quisque a risus non sapien facilisis egestas. Lorem ipsum dolor 
-                        sit amet, consectetur adipiscing elit. Quisque a risus non sapien facilisis egestas.</span>
-                    </article>
-                    <article class="curso">
-                        <h2>nombre curso</h2>
-                        <p>tecnologia</p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Quisque a risus non sapien facilisis egestas.</span>
-                    </article>
-                </div>
-            <?php } ?>
-        </section>
+        <div class="list-courses">
+            <section class="cursos">
+
+            </section>
+            <div class="paginacion">
+                
+            </div>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
+    <script src="./script/curso/curso.js"></script> 
 </body>
 </html>

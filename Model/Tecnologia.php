@@ -59,6 +59,24 @@ class Tecnologia {
         }
     }
 
+    public static function getNombreById($id){
+        if (is_null($id)) {
+            return false;
+        }
+
+        $conn = db::connect();
+        $consulta = "SELECT NOMBRE_TECNOLOGIA FROM tecnologia WHERE TECNOLOGIA_ID = $id";
+        
+        if ($resultado = $conn->query($consulta)) {
+            if ($fila = $resultado->fetch_assoc()) {
+                $nombre_tecnologia = $fila['NOMBRE_TECNOLOGIA'];
+                $resultado->close();
+                return $nombre_tecnologia;
+            }
+        }
+        return null; // Si no se encuentra ninguna certificación con el ID proporcionado
+    }
+
     /**
      * Get the value of TECNOLOGIA_ID
      */ 

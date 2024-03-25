@@ -13,6 +13,8 @@ class Curso {
     protected $DESCRIPCION;
     protected $DETALLES;
     protected $IMG_CURSO;
+    protected $TECNOLOGIA_ID;
+    protected $CERTIFICACION_ID;
 
     public function ___construct(){
             
@@ -21,6 +23,21 @@ class Curso {
     public static function getCourses(){
         $conn = db::connect();
         $consulta = "SELECT * FROM curso";
+
+        if ($resultado = $conn->query($consulta)) {
+            while ($obj = $resultado->fetch_object('Curso')) {
+                $arrayCursos []= $obj;
+            }
+            
+            $resultado->close();
+            return $arrayCursos;
+        }
+    }
+
+    public static function getCoursesFilter($select, $skip){
+        $conn = db::connect();
+        $consulta = "SELECT * FROM curso ORDER BY NOMBRE_CURSO LIMIT $select OFFSET $skip";
+
 
         if ($resultado = $conn->query($consulta)) {
             while ($obj = $resultado->fetch_object('Curso')) {
@@ -202,6 +219,46 @@ class Curso {
     public function setIMG_CURSO($IMG_CURSO)
     {
         $this->IMG_CURSO = $IMG_CURSO;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of TECNOLOGIA_ID
+     */ 
+    public function getTECNOLOGIA_ID()
+    {
+        return $this->TECNOLOGIA_ID;
+    }
+
+    /**
+     * Set the value of TECNOLOGIA_ID
+     *
+     * @return  self
+     */ 
+    public function setTECNOLOGIA_ID($TECNOLOGIA_ID)
+    {
+        $this->TECNOLOGIA_ID = $TECNOLOGIA_ID;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of CERTIFICACION_ID
+     */ 
+    public function getCERTIFICACION_ID()
+    {
+        return $this->CERTIFICACION_ID;
+    }
+
+    /**
+     * Set the value of CERTIFICACION_ID
+     *
+     * @return  self
+     */ 
+    public function setCERTIFICACION_ID($CERTIFICACION_ID)
+    {
+        $this->CERTIFICACION_ID = $CERTIFICACION_ID;
 
         return $this;
     }
