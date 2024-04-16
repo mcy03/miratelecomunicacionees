@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <section class="banner-principal">
         <div class="title-page">
             <h1>Formación</h1>
@@ -33,7 +34,9 @@
         </div>
         
         <div id="cont-tecnologias" class="cont-tecnologias">
-           
+            <div class="contenedor_carga">
+                <div class="carga"></div>
+            </div>
         </div>
     </section>
 
@@ -47,7 +50,9 @@
         </div>
 
         <div id="cont-certificaciones" class="cont-certificaciones">
-            
+            <div class="contenedor_carga">
+                <div class="carga"></div>
+            </div>
         </div>
     </section>
 
@@ -57,7 +62,9 @@
         </div>
 
         <div id="cont-certificaciones-partners" class="cont-certificaciones">
-            
+            <div class="contenedor_carga">
+                <div class="carga"></div>
+            </div>
         </div>
     </section>
 

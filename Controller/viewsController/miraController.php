@@ -5,8 +5,8 @@ class miraController{
         session_start(); // Inicia la sesión
         
         // Verifica si no existe la variable de sesión 'selecciones' y la inicializa como un array vacío si es así
-        if (!isset($_SESSION['selecciones'])) {
-            $_SESSION['selecciones'] = array();
+        if (isset($_GET['section'])) {
+            $section = $_GET['section'];
         }
     
         // Incluye archivos de vista para la cabecera, la página principal (home) y el footer

@@ -21,8 +21,10 @@
     </section>
 
     <div class="contenido">
-        <div class="contenido-entrada">
-            
+        <div class="contenido-entrada"> 
+            <div id="loader-entrie" class="contenedor_carga">
+                <div class="carga"></div>
+            </div>
         </div>
         <div class="publi">
 

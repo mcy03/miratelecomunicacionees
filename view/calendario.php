@@ -47,6 +47,13 @@
                     <td><h3 class="title-timeZone">Time Zone</h3></td>
                     <td class="esquina-derecha"><h3 class="title-enroll">Enroll</h3></td>
                 </tr>
+                <tr id="load-hr">
+                    <td colspan=7>
+                        <div class="contenedor_carga">
+                            <div class="carga"></div>
+                        </div>
+                    </td>
+                </tr>
             </table>    
         </section>
         <section class="publi">

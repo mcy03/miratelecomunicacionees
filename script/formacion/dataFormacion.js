@@ -1,7 +1,30 @@
 window.addEventListener("load", async function() {
-    mostrarCategorias();
-    mostrarCertificaciones();
+    await mostrarCategorias();
+
+    let contenedorPadre = document.getElementById('cont-tecnologias');
+
+    let contenedorCarga = contenedorPadre.querySelector('.contenedor_carga');
+
+    contenedorCarga.style.display = 'none';
+
+    await mostrarCertificaciones();
+
+    contenedorPadre = document.getElementById('cont-certificaciones');
+
+    contenedorCarga = contenedorPadre.querySelector('.contenedor_carga');
+    
+    contenedorCarga.style.display = 'none';
+
     await mostrarCertificacionesPartners();
+
+    contenedorPadre = document.getElementById('cont-certificaciones-partners');
+
+    contenedorCarga = contenedorPadre.querySelector('.contenedor_carga');
+    
+    contenedorCarga.style.display = 'none';
+    
+
+    
 })
 
 
@@ -31,10 +54,11 @@ async function mostrarCategorias(){
     function generarArticuloTecnologia(tecnologia) {
         return `
             <article class="tecnologia">
-                <a href="#">
+                <a href="http://127.0.0.1/miratelecomunicacionees/?controller=curso&action=select&tecnology=${tecnologia.TECNOLOGIA_ID}">
                     <div class="img-tecnologia">
                         <img src="${tecnologia.ICONO_TECNOLOGIA}" alt="">
                     </div>
+                    
                     <div class="cont-nombre-tecnologia">
                         <div class="nombre-tecnologia">${tecnologia.NOMBRE_TECNOLOGIA}</div>
                     </div>
@@ -72,7 +96,7 @@ async function mostrarCertificaciones(){
             <article class="certificacion">
                 <h3 class="name-certificacion">${certificacion.NOMBRE_CERTIFICACION}</h3>
                 <p class="description-certificacion">${certificacion.DESCRIPCION}</p>
-                <a href="#" class="saber-mas">Saber más...</a>
+                <a href="http://127.0.0.1/miratelecomunicacionees/?controller=curso&action=select&certification=${certificacion.CERTIFICACION_ID}" class="saber-mas">Saber más...</a>
             </article>
         `;
     }

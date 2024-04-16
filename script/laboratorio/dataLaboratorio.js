@@ -1,6 +1,10 @@
 window.addEventListener("load", async function() {
     const labs = await getLabsTable();
-    console.log(labs);
+    
+    let hr = document.getElementById('tr-loader');
+
+    hr.style.display = 'none';
+
     listLabs(labs);
     
 })

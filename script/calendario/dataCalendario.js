@@ -1,8 +1,12 @@
 window.addEventListener("load", async function() {
     const dates = await getDates();
 
+    let hr = document.getElementById('load-hr');
+
+    hr.style.display = 'none';
+
     listCourses(dates);
-    //listCourses(courses);
+    
     
 })
 

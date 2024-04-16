@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="./style/footer.css">
+
+    <link href="https://db.onlinewebfonts.com/c/8b8212e1382f2d794fae8b8d3d69ce30?family=Bundt+Cake" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/0b0e6caf1e87745dc5b17b461d7d873b?family=Shelley+Script+LT+W04+Regular" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <footer>
         <div class="section-one-footer">
             <div class="mira-watchword">
-                <p class="sentence-mira first-sentence-mira">Nuestra visión</p>
-                <p class="sentence-mira center-sentence-mira">“SER UN PARTNER ESTRATÉGICO”</p>
-                <p class="sentence-mira final-sentence-mira">Facilitar servicios de valor IT que ayuden tanto a partners como a clientes</p>
+                <p class="sentence-mira final-sentence-mira">Facilitar servicios de valor IT</p>
             </div>
         </div>
 
@@ -30,10 +31,7 @@
                         <img src="./resource/icon-gmail.png" alt="Descripción de la imagen">
                         <p>mira@miratelecomunicacions.com</p>
                     </li>
-                    <li>
-                        <img src="./resource/icon-phone.png" alt="Descripción de la imagen">
-                        <p>Tel: +34 902 876 701</p>
-                    </li>
+                    
                 </ul>
                 <h6 class="subtitle-contact">Spain</h6>
                 <ul>
@@ -41,12 +39,21 @@
                         <img src="./resource/ubicacion.png" alt="Descripción de la imagen">
                         <p>Av. Corts Catalanes, 2, 08173 Sant Cugat del Vallès, Barcelona</p>
                     </li>
+                    <li>
+                        <img src="./resource/icon-phone.png" alt="Descripción de la imagen">
+                        <p>Tel: +34 902 876 701</p>
+                    </li>
                 </ul>
                 <h6 class="subtitle-contact">México</h6>
                 <ul>
                     <li>
                         <img src="./resource/ubicacion.png" alt="Descripción de la imagen">
-                        <p>Av. Corts Catalanes, 2, 08173 Sant Cugat del Vallès, Barcelona</p>
+                        <p>Presidente Masaryk 61 - 901B Polanco Miguel
+                            Hidalgo Ciudad de México  C.P. 11560</p>
+                    </li>
+                    <li>
+                        <img src="./resource/icon-phone.png" alt="Descripción de la imagen">
+                        <p>Tel: 55 4040 8261</p>
                     </li>
                 </ul>
             </div>

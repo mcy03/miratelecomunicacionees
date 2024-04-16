@@ -17,16 +17,17 @@ body{
 }
 .buscador form{
     display: flex;
-    justify-content: space-between;
-    width: 50%;
+    justify-content: center;
+    width: 70%;
 }
 
-.buscador select, .buscador input[type='text']{
+.buscador input[type='text']{
     background-color: #fff;
     border: 0;
     border-radius: 15px;
     padding: 5px 30px;
     margin-right: 20px;
+    width: 35%;
 }
 
 .contenido{
@@ -40,44 +41,87 @@ body{
 .list-courses{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .filtro{
+    width: 20%;
+}
+
+.filtro h3{
+    font-size: 15px;
+}
+
+.tecnologias, .certificacion{
     background-color: #fff;
     padding: 25px;
     border-radius: 30px;
-}
-.filtro h3{
-    font-size: 15px;
+    margin-bottom: 20px;
 }
 
 .tecnologias h4, .certificacion h4{
     font-size: 15px;
     color: #4D4D4D;
-    padding: 25px;
     padding-bottom: 10px;
 }
 
 .tecnologias-filtro p, .certificacion-filtro p{
     font-size: 13px;
     color: #000000;
-    padding: 0 50px;
+    padding-left: 30px;
+    cursor: pointer;
 }
 
-.cursos{
+.tecnologias, .certificacion{
+    height: 100%;
+}
+
+#loading-tecnologies div, #loading-certifications div{
+    height: 20px;
+    width: 200px;
+    background-color: #8D8D8D;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding-left: 30px; 
+}
+
+.tecnologias-filtro p.selected, .certificacion-filtro p.selected{
+    color: #EA1C24;
+    background-color: #dbdbdb;
+    border-radius: 50px;
+}
+
+.tecnologias-filtro p:hover, .certificacion-filtro p:hover{
+    color: #EA1C24;
+}
+
+.cursos, #loading-courses{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+#loading-courses{
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .fila-cursos{
+    width: 140%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.fila-loading-cursos{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.curso{
+.curso, .course-loading{
     background-color: #fff;
     width: 30%;
     margin: 0 30px;
@@ -85,6 +129,10 @@ body{
     padding: 20px;
     text-align: center;
     border-radius: 15px;
+}
+
+.course-loading{
+    height: 180px;
 }
 
 .curso h2{
@@ -130,4 +178,18 @@ body{
 .paginacion a.select{
     color: #EA1C24;
     /*#EA1C24*/
+}
+
+
+.no-content{
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 100px;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+.no-content h3{
+    color: #EA1C24;
+    font-size: 20px;
 }

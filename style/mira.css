@@ -65,7 +65,8 @@
     transition: width 0.3s; 
 }
 
-.image img:hover {
+
+.image.selected img{
     width: 400px;
     margin: 0;
     opacity: 1;

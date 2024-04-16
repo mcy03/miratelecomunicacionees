@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     let text = await getTextEntrie(entradaId);
     let img = await getImgEntrie(entradaId);
     
+    let loader = document.getElementById('loader-entrie');
+
+    loader.style.display = 'none';
+
 
     let bannerPrincipal = document.getElementsByClassName('banner-principal')[0];
     bannerPrincipal.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./resource/backgroundEjemplo.jpg)';
@@ -31,15 +35,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     contenido.forEach(function(elemento) {
         if (elemento.hasOwnProperty("IMG_ID")) {
-            // Si es una imagen
             valor = `<img src="./resource/${elemento.IMG}" alt="" class="imagen">`;
-            console.log("Es una imagen:", elemento);
-            // Aquí puedes realizar las operaciones específicas para manejar imágenes
         } else if (elemento.hasOwnProperty("TEXTO_ID")) {
-            // Si es un texto
             valor = `<p class="text">${elemento.TEXTO}</p>`;
-            console.log("Es un texto:", elemento);
-            // Aquí puedes realizar las operaciones específicas para manejar texto
         }
 
         contEntrada.innerHTML += valor;

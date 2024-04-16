@@ -41,6 +41,13 @@
                     <td><h3 class="title-start-date">Duración</h3></td>
                     <td class="esquina-derecha"><h3 class="title-end-date">Pods Avaliable</h3></td>
                 </tr>
+                <tr id="tr-loader">
+                    <td colspan=4>
+                        <div class="contenedor_carga">
+                            <div class="carga"></div>
+                        </div>
+                    </td>
+                </tr>
             </table>    
         </section>
         <section class="publi">

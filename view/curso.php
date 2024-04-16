@@ -9,6 +9,18 @@
     <title>Cursos Mira</title>
 </head>
 <body>
+    <?php if (isset($_COOKIE['tecnology'])) { ?>
+        <input type="hidden" id="selectTecnology" value="<?=$_COOKIE['tecnology']?>">
+        <?php // Eliminar la cookie de tecnología
+            setcookie('tecnology', '', time() - 3600, '/');
+        ?>
+    <?php }else if (isset($_COOKIE['certification'])) {?>
+        <input type="hidden" id="selectCertification" value="<?=$_COOKIE['certification']?>">
+        <?php // Eliminar la cookie de certificación
+            setcookie('certification', '', time() - 3600, '/');
+        ?>
+    <?php } ?>
+    
     <section class="banner-principal">
         <div class="title-page">
             <h1>Formación</h1>
@@ -26,49 +38,101 @@
     </section>
     <div class="buscador">
         <form action="" method="post">
-            <input type="text" name="nombreCurso" id="inputCurso" placeholder="Enter course name">
-            <select name="tecnologia" id="selectTecnologia">
-                <option value="Securitiy">Securitiy</option>
-                <option value="Networking">Networking</option>
-                <option value="Wireless">Wireless</option>
-                <option value="CustomerExperience">Customer Experience</option>
-                <option value="DataCenter">Data Center</option>
-                <option value="Collaboration">Collaboration</option>
-                <option value="DevNet">DevNet</option>
-                <option value="InternetofThings">Internet of Things</option>
-                <option value="Automation">Automation</option>
-                <option value="ServiceProvider">Service Provider</option>
-                <option value="Foundation">Foundation</option>
-                <option value="Cloud">Cloud</option>
-                <option value="CyberOPs">CyberOPs</option>
-            </select>
-            <input class="button-red" type="submit" value="SEARCH">
+            <input type="text" name="nombreCurso" id="inputCurso" placeholder="Introducir nombre del curso">
         </form>
     </div>
 
     <div class="contenido">
         <section class="filtro">
-            <h3>Filtrar</h3>
             <div class="tecnologias">
                 <h4>Tecnologías</h4>
-                <div class="tecnologias-filtro">
-
+                <div id="loading-tecnologies">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="tecnologias-filtro" style="display: none;">
+                    
                 </div>
             </div>
 
             <div class="certificacion">
                 <h4>Certificación</h4>
-                <div class="certificacion-filtro">
+                <div id="loading-certifications">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="certificacion-filtro" style="display: none;">
 
                 </div>
             </div>
         </section>
-        <div class="list-courses">
+        <div class="list-courses" style="display: none;">
             <section class="cursos">
 
             </section>
             <div class="paginacion">
                 
+            </div>
+            <div class="no-content" style="display: none;">
+                <h3 class="title-no-content">Ups...</h3>
+                <p>No se han encontrado cursos con las características seleccionadas.</p>
+            </div>
+        </div>
+        <div id="loading-courses">
+            <div class="fila-loading-cursos">
+                <div class="course-loading">
+                    <div class="contenedor_carga">
+                        <div class="carga"></div>
+                    </div>
+                </div>
+                <div class="course-loading">
+                    <div class="contenedor_carga">
+                        <div class="carga"></div>
+                    </div>
+                </div>
+                <div class="course-loading">
+                    <div class="contenedor_carga">
+                        <div class="carga"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila-loading-cursos">
+                <div class="course-loading">
+                    <div class="contenedor_carga">
+                        <div class="carga"></div>
+                    </div>
+                </div>
+                <div class="course-loading">
+                    <div class="contenedor_carga">
+                        <div class="carga"></div>
+                    </div>
+                </div>
+                <div class="course-loading">
+                    <div class="contenedor_carga">
+                        <div class="carga"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila-loading-cursos">
+                <div class="course-loading">
+                    <div class="contenedor_carga">
+                        <div class="carga"></div>
+                    </div>
+                </div>
+                <div class="course-loading">
+                    <div class="contenedor_carga">
+                        <div class="carga"></div>
+                    </div>
+                </div>
+                <div class="course-loading">
+                    <div class="contenedor_carga">
+                        <div class="carga"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

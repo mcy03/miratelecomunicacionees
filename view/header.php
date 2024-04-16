@@ -40,8 +40,8 @@
                     <li><a href="<?=url.'?controller=serviciosIT'?>">Servicios IT</a></li>
                     <li><a href="<?=url.'?controller=laboratorio'?>">Laboratorios</a></li>
                     <li><a href="<?=url.'?controller=libreriaDigital'?>">Librería Digital</a></li>
-                    <li><a href="<?=url.'?controller=mira'?>">Mira</a></li>
-                    <li><a href="<?=url.'?controller=blog'?>">On the Go</a></li>
+                    <li><a href="<?=url.'?controller=mira'?>">Conoce a Mira</a></li>
+                    <li><a href="<?=url.'?controller=blog'?>">Blog on the Go</a></li>
                 </ul>
             </nav>
             <div class="search-icon">

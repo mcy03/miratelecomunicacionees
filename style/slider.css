@@ -71,7 +71,6 @@
     cursor: pointer;
     padding-bottom: 15px;
     flex-direction: column;
-    border: 1px solid black;
     border-radius: 8px;
     transition: transform 0.3s ease; /* Agrega una transición */
   }
@@ -122,9 +121,10 @@
   .carousel .card span{
     color: rgb(72, 72, 72);
     font-size: 12px;
-    padding: 0 15px;
+    padding: 0 10px;
+    text-align: center;
   }
-  
+
   @media screen and (max-width: 1400px) {
     .wrapper .carousel {
       grid-auto-columns: calc((100% / 2) - 9px);
@@ -149,15 +149,44 @@
   
   @media screen and (max-width: 860px) {
     .wrapper .carousel {
-      grid-auto-columns: 120%;
-      margin-left: 100px;
+      /*grid-auto-columns: 120%;*/
+      width: 90%;
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% / 1.8));
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      border-radius: 8px;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      margin-left: 0px;
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
-    .wrapper{
+    .wrapper .card{
+      width: 170px;
+      height: 220px;
+      margin: 0 30px;
+    }
+    .text-card-slider{
+      width: 80%;
+    }
+    .card h3{
+      font-size: 15px;
       width: 100%;
+    }
+    .card .download-link{
+      font-size: 10px;
+    }
+    .card span{
+      display: none;
+    }
+
+    .wrapper{
+      width: 120%;
       margin-right: 30px;
       margin-left: 25px;
     }
-    .noticias .fila-noticias{
-      flex-direction: column;
-    }
+
   }

@@ -8,6 +8,15 @@
     <title>Miratelecomunicacions</title>
 </head>
 <body>
+    <?php
+        if (isset($section)) {
+    ?>
+            <input id="seccion-seleccionada" type="hidden" value="<?=$section?>">
+    <?php
+        }
+    ?>
+   
+    
     <section class="banner-principal">
         <div class="title-page">
             <h1>Mira Telecomunicacions</h1>
@@ -28,14 +37,14 @@
     <div class="pagina">
         <h2>¿Que ofrecemos?</h2>
         <section class="gallery-image">
+            <div class="image selected"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
             <div class="image"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
             <div class="image"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
             <div class="image"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
             <div class="image"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
             <div class="image"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
             <div class="image"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
-            <div class="image"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
-            <div class="image"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
+            <div id="queHacemos" class="image"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
         </section>
 
         <section class="sobre-nosotros">
@@ -68,5 +77,7 @@
             </div>
         </section>
     </div>
+
+    <script src="./script/mira.js"></script>
 </body>
 </html>
