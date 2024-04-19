@@ -14,7 +14,7 @@
     <footer>
         <div class="section-one-footer">
             <div class="mira-watchword">
-                <p class="sentence-mira final-sentence-mira">Facilitar servicios de valor IT</p>
+                <p class="sentence-mira final-sentence-mira">Conectamos un mundo con diferencia</p>
             </div>
         </div>
 

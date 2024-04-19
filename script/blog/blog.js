@@ -217,7 +217,7 @@ async function listEntries(entries) {
                 <div class="img-entrada">
                     <input type="hidden" value="${entrie.PUBLICACION_ID}">
                     <img src="./resource/${entrie.IMG}" alt="${entrie.ALT_IMG}">
-                    <h4>${entrie.TITULO}</h4>
+                    <h4 style="display:none;">${entrie.TITULO}</h4>
                 </div>
                 <div class="body-entrada">
                     <ul>

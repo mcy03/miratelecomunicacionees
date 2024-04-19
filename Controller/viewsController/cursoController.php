@@ -1,19 +1,34 @@
 <?php
-
+//include_once('/Model/Curso.php');
 class cursoController{
     public function index(){
         session_start(); // Inicia la sesión
-        
-        // Verifica si no existe la variable de sesión 'selecciones' y la inicializa como un array vacío si es así
-        if (!isset($_SESSION['selecciones'])) {
-            $_SESSION['selecciones'] = array();
-        }
     
-        // Incluye archivos de vista para la cabecera, la página principal (home) y el footer
+        
         require_once("view/header.php");
         require_once("view/curso.php");
         require_once("view/footer.php");
     }
+
+    public function view(){
+        session_start(); // Inicia la sesión
+    
+        if (sizeof($_GET) == 3) {
+            $keys = array_keys($_GET);
+    
+            $courseName = $keys[2];
+
+
+            $course = Curso::getCourseByName($courseName)[0];
+        }else {
+            header('Location: http://127.0.0.1/miratelecomunicacionees/');
+        }
+
+        require_once("view/header.php");
+        require_once("view/courseView.php");
+        require_once("view/footer.php");
+    }
+
 
     public function select(){
         // Verifica si se ha proporcionado la tecnología o la certificación y establece la cookie correspondiente
@@ -30,13 +45,7 @@ class cursoController{
 
     public function prueba(){
         session_start(); // Inicia la sesión
-        
-        // Verifica si no existe la variable de sesión 'selecciones' y la inicializa como un array vacío si es así
-        if (!isset($_SESSION['selecciones'])) {
-            $_SESSION['selecciones'] = array();
-        }
     
-        // Incluye archivos de vista para la cabecera, la página principal (home) y el footer
         require_once("view/prueba.html");
     }
 }

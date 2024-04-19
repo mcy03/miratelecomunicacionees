@@ -1,0 +1,100 @@
+
+.content{
+    padding: 60px 70px;
+}
+
+#value-description{
+    padding: 30px;
+    font-size: 12px;
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 60px;
+}  
+
+#value-description h5{
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}  
+
+#course-view p{
+    font-size: 12px;
+}  
+
+.hidden{
+    display: none;
+}
+
+.display{
+    display: block;
+}
+
+.pagination h5{
+    font-size: 13px;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    margin-right: 3px;
+}
+
+.pagination h5:hover{
+    border-bottom: 3px solid #EA1C24;
+    color: #EA1C24;
+    cursor: pointer;
+}
+
+.selected-page{
+    border-bottom: 3px solid #EA1C24;
+    color: #EA1C24;
+}
+
+.data-pagination{
+    border: 1px solid #d5d5d5;
+    padding: 30px;
+    width: 960px;
+}
+
+.content-value h6{
+    font-size: 13px;
+}
+
+.content-value p, .content-value li{
+    font-size: 11px;
+}
+
+.data-course{
+    display: flex;
+    justify-content: space-between;
+}
+
+.boxes{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.box-duration{
+    margin-bottom: 30px;
+}
+
+.boxes h5{
+    color: #EA1C24;
+    font-size: 15px;
+}
+
+.box{
+    margin: 20px 25px;
+    border: 1px solid #d5d5d5;
+    padding: 10px;
+}
+
+.data-box{
+    display: flex;
+    align-items: end;
+}
+
+.data-box img{
+    width: 50px;
+}

@@ -27,7 +27,24 @@
             </div>
         </div>
         <div class="publi">
-
+            <h5>Ultimas entradas</h5>
+            <div class="last-entries">
+                <div class="entrie efect3">
+                    Entrada de prueba
+                </div>
+                
+                <div class="entrie efect3">
+                    Lo ultimo sobre CLC
+                </div>
+                
+                <div class="entrie efect3">
+                    Entrada de prueba
+                </div>
+                
+                <div class="entrie efect3">
+                    Lo ultimo sobre CLC
+                </div>
+            </div>
         </div>
     </div>
 

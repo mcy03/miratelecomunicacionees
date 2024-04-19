@@ -10,9 +10,14 @@
 class Curso {
     protected $CURSO_ID;
     protected $NOMBRE_CURSO;
+    protected $COMPLETE_NAME;
     protected $DESCRIPCION;
-    protected $DETALLES;
-    protected $IMG_CURSO;
+    protected $PREREQUISITOS;
+    protected $JOB_ROLES;
+    protected $COURSE_OBJECTIVE;
+    protected $COURSE_CONTENT;
+    protected $LAB_OUTLINE;
+    protected $DURATION;
     protected $TECNOLOGIA_ID;
     protected $CERTIFICACION_ID;
 
@@ -65,17 +70,31 @@ class Curso {
     
     public static function getCourseByName($name){
         $conn = db::connect();
-        $consulta = "SELECT * FROM curso WHERE NOMBRE_CURSO = $name";
-
-        if ($resultado = $conn->query($consulta)) {
+    
+        // Preparar la consulta
+        $consulta = "SELECT * FROM curso WHERE NOMBRE_CURSO = ?";
+        if ($stmt = $conn->prepare($consulta)) {
+            // Vincular parámetro y ejecutar la consulta
+            $stmt->bind_param("s", $name);
+            $stmt->execute();
+    
+            // Obtener resultados
+            $resultado = $stmt->get_result();
+            $arrayCurso = array();
             while ($obj = $resultado->fetch_object('Curso')) {
                 $arrayCurso []= $obj;
             }
             
+            // Cerrar recursos y devolver resultados
             $resultado->close();
+            $stmt->close();
             return $arrayCurso;
+        } else {
+            // Manejar el caso de consulta no válida
+            return array();
         }
     }
+    
 
     public static function getNameById($id){
         $conn = db::connect();
@@ -104,14 +123,14 @@ class Curso {
         $conn = db::connect();
 
         // Consulta SQL para obtener el nombre del usuario con el ID dado
-        $sql = "SELECT DESCRIPCION FROM curso WHERE CURSO_ID = $id";
+        $sql = "SELECT COMPLETE_NAME FROM curso WHERE CURSO_ID = $id";
 
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             // Obtener el primer resultado (asumiendo que el ID es único)
             $row = $result->fetch_assoc();
-            $desc_curso = $row["DESCRIPCION"];
+            $desc_curso = $row["COMPLETE_NAME"];
         }else {
             return false;
         }
@@ -259,6 +278,146 @@ class Curso {
     public function setCERTIFICACION_ID($CERTIFICACION_ID)
     {
         $this->CERTIFICACION_ID = $CERTIFICACION_ID;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of PREREQUISITOS
+     */ 
+    public function getPREREQUISITOS()
+    {
+        return $this->PREREQUISITOS;
+    }
+
+    /**
+     * Set the value of PREREQUISITOS
+     *
+     * @return  self
+     */ 
+    public function setPREREQUISITOS($PREREQUISITOS)
+    {
+        $this->PREREQUISITOS = $PREREQUISITOS;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of JOB_ROLES
+     */ 
+    public function getJOB_ROLES()
+    {
+        return $this->JOB_ROLES;
+    }
+
+    /**
+     * Set the value of JOB_ROLES
+     *
+     * @return  self
+     */ 
+    public function setJOB_ROLES($JOB_ROLES)
+    {
+        $this->JOB_ROLES = $JOB_ROLES;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of COURSE_OBJECTIVE
+     */ 
+    public function getCOURSE_OBJECTIVE()
+    {
+        return $this->COURSE_OBJECTIVE;
+    }
+
+    /**
+     * Set the value of COURSE_OBJECTIVE
+     *
+     * @return  self
+     */ 
+    public function setCOURSE_OBJECTIVE($COURSE_OBJECTIVE)
+    {
+        $this->COURSE_OBJECTIVE = $COURSE_OBJECTIVE;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of COURSE_CONTENT
+     */ 
+    public function getCOURSE_CONTENT()
+    {
+        return $this->COURSE_CONTENT;
+    }
+
+    /**
+     * Set the value of COURSE_CONTENT
+     *
+     * @return  self
+     */ 
+    public function setCOURSE_CONTENT($COURSE_CONTENT)
+    {
+        $this->COURSE_CONTENT = $COURSE_CONTENT;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of LAB_OUTLINE
+     */ 
+    public function getLAB_OUTLINE()
+    {
+        return $this->LAB_OUTLINE;
+    }
+
+    /**
+     * Set the value of LAB_OUTLINE
+     *
+     * @return  self
+     */ 
+    public function setLAB_OUTLINE($LAB_OUTLINE)
+    {
+        $this->LAB_OUTLINE = $LAB_OUTLINE;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of DURATION
+     */ 
+    public function getDURATION()
+    {
+        return $this->DURATION;
+    }
+
+    /**
+     * Set the value of DURATION
+     *
+     * @return  self
+     */ 
+    public function setDURATION($DURATION)
+    {
+        $this->DURATION = $DURATION;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of COMPLETE_NAME
+     */ 
+    public function getCOMPLETE_NAME()
+    {
+        return $this->COMPLETE_NAME;
+    }
+
+    /**
+     * Set the value of COMPLETE_NAME
+     *
+     * @return  self
+     */ 
+    public function setCOMPLETE_NAME($COMPLETE_NAME)
+    {
+        $this->COMPLETE_NAME = $COMPLETE_NAME;
 
         return $this;
     }
