@@ -60,6 +60,10 @@ body{
     font-size: 13px;
 }
 
+.efect-button:hover{
+    border: 1px solid #EA1C24;
+}
+
 
 /*
 .entrie:hover{

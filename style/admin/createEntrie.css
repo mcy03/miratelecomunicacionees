@@ -1,126 +1,38 @@
-body{
-    background-color: #EFEDEA;
+.button-option-entrie{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
 }
 
-.content{
-    background-color: #fff;
-    width: 80%;
-    border: 1px solid black;
+.button-option-entrie button{
     border-radius: 20px;
-    margin: 50px 10%;
-    padding: 30px;
+    background-color: white;
 }
 
-.title{
-    font-size: 20px;
-    margin-bottom: 30px;
-    text-align: center;
+.button-option-entrie button:hover{
+    border-color: #EA1C24;
+    color: #EA1C24;
+    
 }
 
-.form-insert-entrie form{
-    display: flex;
-    flex-direction: column;
-    font-size: 15px;
-}
-
-.cont-titulo{
-    width: 80%;
-    align-self: center;
+#input-file{
     display: flex;
     flex-direction: column;
 }
 
-.cont-titulo input{
-    width: 70%;
-    height: 40px;
-    text-align: center;
-    align-self: center;
+.button-tag{
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 12px;
 }
 
-.cont-subtitulo{
-    width: 80%;
-    align-self: center;
-}
-
-.cont-subtitulo input{
-    width: 100%;
-    height: 30px;
-    text-align: center;
-}
-
-.valores{
-    display: flex;
-    justify-content: space-between;
-}
-
-.cont-img{
-    width: 55%;
-}
-
-.cont-cat{
-    width: 40%;
-}
-
-.input-div {
-    margin: 20px 0;
-}
-
-div#contentEntrie{
-    margin: 50px 0;
-}
-
-.form-insert-entrie form input{
-    font-size: 13px;
-}
-
-#contentEntrie{
-    align-self: center;
-    width: 80%;
-}
-
-.data-content{
-    margin: 20px 0; 
-}
-
-#contentEntrie textarea{
-    width: 100%;
-}
-
-.add{
-    width: 35%;
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-}
-
-.add-button{
-    padding: 5px 10px;
-    background-color: #fff;
-    border: 1px solid #EA1C24;
-    text-decoration: none;
+.button-tag:hover{
+    border-color: #EA1C24;
     color: #EA1C24;
 }
 
-.add-button:hover{
-    background-color: #EA1C24;
-    border: 1px solid #EA1C24;
-    color: #ffffff;
-}
-
-.submit{
-    width: 10%;
-    align-self:self-end;
-}
-
-.submit input{
-    padding: 5px 10px;
-    text-decoration: none;
-    border: 1px solid #EA1C24;
-    background-color: #EA1C24;
-    color: #ffffff;
-}
-
-.submit input:hover{
-    background-color: #fff;
-    color: #EA1C24;
+#textarea-content{
+    width: 100%;
+    height: 200px;
 }

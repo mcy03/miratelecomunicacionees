@@ -3,66 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/admin/createEntrie.css">
-    <title>Insert entrie</title>
-    <!-- Place the first <script> tag in your HTML's <head> -->
-    <script src="js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="stylesheet" href="./style/assets.css">
+    <link rel="stylesheet" type="text/css" href="./style/entrada.css?1.0">
+    <link rel="stylesheet" type="text/css" href="./style/admin/createEntrie.css?1.0">   
+    <title>Document</title>
 </head>
 <body>
-    <div id="content-insert" class="content">
-        <h1 class="title">Insertar Entrada</h1>
-
-        <div class="form-insert-entrie">
-            <form id="form-create" enctype="multipart/form-data">
-                <div class="input-div cont-titulo">
-                    <input id="titulo" type="text" placeholder="Nombre de la entrada" required>
-                </div>
-                
-                <div class="input-div cont-subtitulo">
-                    <input id="subtitulo" type="text" placeholder="Subtitulo de la entrada">
-                </div>
-
-                <div class="input-div valores">
-                    <div class="cont-img">
-                        <label for="imagen-principal">Imagen de cabecera de la entrada: </label>
-                        <input type="file" id="imagen-principal" name="imagen-principal" accept="image/*" required> 
-                    </div>
-                    <div class="cont-cat">
-                        <label for="categoria">Categoria entrada:</label>
-                        <select name="categoria" id="select-categoria">
-                            <option value="0">Sin categoria</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div id="contentEntrie">
-                    <textarea id="default">Hello, World!</textarea>
-                </div>
-                
-                <div class="input-div add">
-                    <a href="" id="add-text" class="add-button">Añadir texto</a>
-                    <a href="" id="add-img" class="add-button">Añadir imagen</a>
-                </div>
-
-                
-
-                <div class="submit">
-                    <input type="submit" value="Crear">
-                </div>
-            </form>
+    <input id='input-entradaId' type="hidden" value="<?=$entrada?>">
+    <section class="banner-principal">
+        <div class="title-page">
+            <input type="text" placeholder="Nombre de la entrada"> 
         </div>
-        
-    </div>
-    
+    </section>
+    <section class="ubicacion">
+        <div class="ruta-ubi">
+            <a class="ruta-page" href="<?=url?>">Home / </a><a class="ruta-page"  href="<?=url.'?controller=blog'?>">On the Go / </a><p class="page"></p>
+        </div>
+    </section>
 
-    <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
-    <script>
-        tinymce.init({
-            selector: 'textarea#default',
-            apiKey: '8si8uxohaxopw3ewmt35wkkah54gbz52yrqkugcwna7ajscw'
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
-    <script src="./script/entrie/insertEntrie.js"></script>
+    <div class="contenido">
+        <div class="contenido-entrada">
+            <div id="contentEntrie">
+
+            </div> 
+            <div id="div-buttons-obtions" class="button-option-entrie">
+                <button id="button-text">Contenido</button>
+                <button id="button-img">Imagen</button>
+                <button id="button-resource">Recurso</button>
+            </div>
+        </div>
+        <div class="publi">
+            <h5>Ultimas entradas</h5>
+            <div class="last-entries">
+                <div class="entrie efect-button">
+                    Entrada de prueba
+                </div>
+
+                <div class="entrie efect-button">   
+                    Lo ultimo sobre CLC
+                </div>
+
+                <div class="entrie efect-button">
+                    Brueba de vista de ultima entrada
+                </div>
+                
+                <div class="entrie efect-button">
+                    Entrada de prueba
+                </div>
+                
+            
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>   
+    <script src="./script/entrie/newEntrie.js"></script> 
 </body>
 </html>
