@@ -184,7 +184,7 @@ async function displayCourses(page, courses) {
                         curso.innerHTML += `<p>${coursesSelected[j].NOMBRE_CERTIFICACION}</p>`;
                     }
 
-                    curso.innerHTML += `<span>${coursesSelected[j].DESCRIPCION}</span>`;
+                    curso.innerHTML += `<span>${coursesSelected[j].COMPLETE_NAME}</span>`;
             
                     // Agregar el artículo al div de la fila de cursos
                     filaCursos.appendChild(curso);
@@ -324,4 +324,3 @@ async function getCertifications() {
         console.error('Error:', error.message);
     }
 }
-

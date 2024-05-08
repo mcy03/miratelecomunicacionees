@@ -32,7 +32,7 @@
             </ul>
         </nav>
     </section>
-    
+    <input id="input-selection" type="hidden" value="<?=$selection?>">
     <section class="contenido-inicio activated">
         <div class="intro intro-admin">
             <h2>Administrador</h2>
@@ -53,16 +53,12 @@
                                 <td class="data-table"><p>miratelecomunicacions.com</p></td>
                             </tr>
                             <tr>
-                                <td><p>Entradas publicadas:</p></td>
-                                <td class="data-table"><p>47</p></td>
-                            </tr>
-                            <tr>
                                 <td><p>Categorías de entrada:</p></td>
-                                <td class="data-table"><p>10</p></td>
+                                <td class="data-table"><p><?=$numCategories?></p></td>
                             </tr>
                             <tr>
-                                <td><p>Paginas:</p></td>
-                                <td class="data-table"><p>9</p></td>
+                                <td><p>Entradas publicadas:</p></td>
+                                <td class="data-table"><p><?=$numEntries?></p></td>
                             </tr>
                         </tbody>
                     </table>
@@ -78,27 +74,27 @@
                         <tbody>
                             <tr>
                                 <td><p>Laboratorios:</p></td>
-                                <td class="data-table"><p>15</p></td>
+                                <td class="data-table"><p><?=$numLabs?></p></td>
                             </tr>
                             <tr>
                                 <td><p>Cursos:</p></td>
-                                <td class="data-table"><p>20</p></td>
+                                <td class="data-table"><p><?=$numCourse?></p></td>
                             </tr>
                             <tr>
                                 <td><p>Servicios IT:</p></td>
-                                <td class="data-table"><p>5</p></td>
+                                <td class="data-table"><p><?=$numCategories?></p></td>
                             </tr>
                             <tr>
                                 <td><p>Certificaciones:</p></td>
-                                <td class="data-table"><p>25</p></td>
+                                <td class="data-table"><p><?=$numCertifications?></p></td>
                             </tr>
                             <tr>
                                 <td><p>Tecnologías:</p></td>
-                                <td class="data-table"><p>10</p></td>
+                                <td class="data-table"><p><?=$numTecnologies?></p></td>
                             </tr>
                             <tr>
                                 <td><p>Fechas Calendario:</p></td>
-                                <td class="data-table"><p>4</p></td>
+                                <td class="data-table"><p><?=$numCalendario?></p></td>
                             </tr>
                         </tbody>
                     </table>
@@ -111,10 +107,10 @@
                         <h3>Enlaces entradas</h3>
                     </div>
                     <ul>
-                        <li><a href="">Editar entrada</a></li>
-                        <li><a href="">Eliminar entrada</a></li>
+                        <li><a href="<?=url.'?controller=admin&action=insertEntrieAdmin'?>">Ver entradas</a></li>
+                        <li><a href="<?=url.'?controller=admin&action=insertEntrieAdmin'?>">Gestionar entradas</a></li>
                         <li><a href="<?=url.'?controller=admin&action=insertEntrieAdmin'?>">Añadir entrada</a></li>
-                        <li><a href="">Ver entradas</a></li>
+                        
                     </ul>
                 </div>
                 <div id="quick-entries" class="quick">
@@ -123,14 +119,15 @@
                         <h3>Enlaces rápidos contenido</h3>
                     </div>
                     <ul>
-                        <li><a href="">Añadir laboratorio</a></li>
-                        <li><a href="">Añadir curso</a></li>
-                        <li><a href="">Añadir servicio IT</a></li>
-                        <li><a href="">Añadir Certificación</a></li>
-                        <li><a href="">Añadir Tecnología</a></li>
-                        <li><a href="">Añadir Fecha Calendario</a></li>
+                        <li><a href="<?=url.'?controller=admin&action=insertEntrieAdmin'?>">Añadir laboratorio</a></li>
+                        <li><a href="<?=url.'?controller=admin&action=insertEntrieAdmin'?>">Añadir curso</a></li>
+                        <li><a href="<?=url.'?controller=admin&action=insertEntrieAdmin'?>">Añadir servicio IT</a></li>
+                        <li><a href="<?=url.'?controller=admin&action=insertEntrieAdmin'?>">Añadir Certificación</a></li>
+                        <li><a href="<?=url.'?controller=admin&action=insertEntrieAdmin'?>">Añadir Tecnología</a></li>
+                        <li><a href="<?=url.'?controller=admin&action=insertEntrieAdmin'?>">Añadir Fecha Calendario</a></li>
                     </ul>
                 </div>
+                <!--
                 <div id="quick-entries" class="quick">
                     <div class="title-quick">
                         <img src="./resource/admin/icon-edit.png" alt="">
@@ -147,6 +144,7 @@
                         <li><a href="">Editar On the Go</a></li>
                     </ul>
                 </div>
+                -->
             </div>
         </div>
     </section>

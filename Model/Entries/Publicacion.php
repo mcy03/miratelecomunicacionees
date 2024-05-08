@@ -12,12 +12,29 @@ class Publicacion {
     protected $CATEGORIA_ID;
     protected $TITULO;
     protected $DESCRIPCION;
+    protected $IMG_ENTRIE;
+    protected $CONTENIDO;
     protected $FECHA;
     protected $ESTADO;
 
     public function ___construct(){
         
     }
+
+    public static function countEntries(){
+        $conn = db::connect();
+        $consulta = "SELECT COUNT(*) as total FROM publicacion";
+    
+        if ($resultado = $conn->query($consulta)) {
+            $fila = $resultado->fetch_assoc();
+            $total = $fila['total'];
+            $resultado->close();
+            return $total;
+        } else {
+            return false;
+        }
+    }
+    
 
     public static function getEntries(){
         $conn = db::connect();
@@ -33,20 +50,34 @@ class Publicacion {
         }
     }
 
+
+
+    public static function getLastEntries(){
+        $conn = db::connect();
+        $consulta = "SELECT * FROM publicacion ORDER BY PUBLICACION_ID DESC LIMIT 4";
+    
+        if ($resultado = $conn->query($consulta)) {
+            while ($obj = $resultado->fetch_object('Publicacion')) {
+                $arrayEntries []= $obj;
+            }
+            
+            $resultado->close();
+            return $arrayEntries;
+        }
+    }
+    
+
     public static function getEntriesWhere($estado){
         $conn = db::connect();
         $consulta = "SELECT * FROM publicacion WHERE ESTADO = '$estado'";
-        
-        // Realizar una consulta para verificar si hay registros
+
         $consulta_existencia = "SELECT COUNT(*) AS cantidad FROM publicacion WHERE ESTADO = '$estado'";
         $resultado_existencia = $conn->query($consulta_existencia);
         $fila_existencia = $resultado_existencia->fetch_assoc();
         $cantidad_registros = $fila_existencia['cantidad'];
         $resultado_existencia->close();
         
-        // Verificar si existen registros
         if ($cantidad_registros > 0) {
-            // Si existen registros, realizar la consulta principal
             if ($resultado = $conn->query($consulta)) {
                 $arrayEntries = [];
                 while ($obj = $resultado->fetch_object('Publicacion')) {
@@ -55,12 +86,9 @@ class Publicacion {
                 $resultado->close();
                 return $arrayEntries;
             } else {
-                // Manejar el caso en que la consulta principal falle
-                // Por ejemplo, podrías lanzar una excepción o retornar un mensaje de error
                 return [];
             }
         } else {
-            // Si no existen registros, retornar un array vacío o un mensaje de aviso
             return [];
         }
     }
@@ -70,36 +98,24 @@ class Publicacion {
         $conn = db::connect();
         
         if ($definitive) {
-            // Consulta para eliminar la entrada según el ID y el tipo de eliminación
             $consulta = "DELETE FROM publicacion WHERE PUBLICACION_ID = ?";
 
-            // Preparar la consulta
             $stmt = $conn->prepare($consulta);
-            
-            // Vincular el parámetro ID
+
             $stmt->bind_param('i', $id);
         }else{
             $consulta = "UPDATE publicacion SET ESTADO = ? WHERE PUBLICACION_ID = ?";
 
-            // Preparar la consulta
             $stmt = $conn->prepare($consulta);
             
             $estado = 'TRASH';
 
-            // Vincular el parámetro ID
             $stmt->bind_param('si', $estado, $id);
         }
 
-        
-        
-        
-        
-        // Ejecutar la consulta
         if ($stmt->execute()) {
-            // Si se ejecuta correctamente, devolver verdadero
             return true;
         } else {
-            // Si hay un error, devolver falso
             return false;
         }
     }
@@ -147,43 +163,20 @@ class Publicacion {
         }
     }
 
-    public static function setEntrie($category_id, $titulo, $subtitulo, $img, $estado){
+    public static function setEntrie($category_id, $titulo, $subtitulo, $img_entrie, $contenido, $estado){
         $conn = db::connect();
-        // Consulta para insertar un nuevo producto
-        $consulta = "INSERT INTO publicacion (CATEGORIA_ID, TITULO, DESCRIPCION, FECHA, ESTADO) 
-        VALUES (?, ?, ?, SYSDATE(), ?)";
+
+        $consulta = "INSERT INTO publicacion (CATEGORIA_ID, TITULO, DESCRIPCION, IMG_ENTRIE, CONTENIDO, FECHA, ESTADO) 
+        VALUES (?, ?, ?, ?, ?, SYSDATE(), ?)";
 
         $stmt = $conn->prepare($consulta);
-        $stmt->bind_param('isss', $category_id, $titulo, $subtitulo, $estado);
+        $stmt->bind_param('isssss', $category_id, $titulo, $subtitulo, $img_entrie, $contenido, $estado);
 
         if ($stmt->execute()) {
-            $stmt_select = $conn->prepare("SELECT PUBLICACION_ID FROM publicacion WHERE TITULO = ?");
-            $stmt_select->bind_param('s', $titulo);
-
-            $stmt_select->execute();
-            $result = $stmt_select->get_result();            
-            $id = $result->fetch_assoc();
-
-            $consulta_insert_img = "INSERT INTO img (PUBLICACION_ID, IMG, POSICION, ALT, WIDTH, HEIGHT) 
-            VALUES (?, ?, ?, ?, ?, ?)";
-
-            $alt = 'alt img';
-            $posicion = 0;
-            $width = 100;
-            $height = 100;
-
-            $stmt_insert_img = $conn->prepare($consulta_insert_img);
-            $stmt_insert_img->bind_param('isisii', $id['PUBLICACION_ID'], $img, $posicion, $alt, $width, $height);
-
-            if ($stmt_insert_img->execute()) {
-                return $id['PUBLICACION_ID'];
-            } else {
-                return false;
-            }
+            return true;
         } else {
             return false;
         }
-
     }
 
     /**
@@ -302,6 +295,46 @@ class Publicacion {
     public function setESTADO($ESTADO)
     {
         $this->ESTADO = $ESTADO;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of CONTENIDO
+     */ 
+    public function getCONTENIDO()
+    {
+        return $this->CONTENIDO;
+    }
+
+    /**
+     * Set the value of CONTENIDO
+     *
+     * @return  self
+     */ 
+    public function setCONTENIDO($CONTENIDO)
+    {
+        $this->CONTENIDO = $CONTENIDO;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of IMG_ENTRIE
+     */ 
+    public function getIMG_ENTRIE()
+    {
+        return $this->IMG_ENTRIE;
+    }
+
+    /**
+     * Set the value of IMG_ENTRIE
+     *
+     * @return  self
+     */ 
+    public function setIMG_ENTRIE($IMG_ENTRIE)
+    {
+        $this->IMG_ENTRIE = $IMG_ENTRIE;
 
         return $this;
     }

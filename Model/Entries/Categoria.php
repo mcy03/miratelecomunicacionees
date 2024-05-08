@@ -17,6 +17,20 @@ class Categoria {
         
     }
 
+    public static function countCategories(){
+        $conn = db::connect();
+        $consulta = "SELECT COUNT(*) as total FROM categoria";
+    
+        if ($resultado = $conn->query($consulta)) {
+            $fila = $resultado->fetch_assoc();
+            $total = $fila['total'];
+            $resultado->close();
+            return $total;
+        } else {
+            return false;
+        }
+    }
+    
     public static function getCategorias(){
         $conn = db::connect();
         $consulta = "SELECT * FROM categoria";

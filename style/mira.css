@@ -4,10 +4,13 @@
     align-items: center;
 
     background: rgba(0, 0, 0, 0.44);
-    background-image: linear-gradient( rgba(0, 0, 0, 0.8)20%, rgba(141, 141, 141, 0.8)60%), url('../resource/backgroundEjemplo.jpg');
+    
+    background-image: url('../resource/imagenes prueba web/img_home/IMG MIRA SECTION.png');
+    /*background-image: linear-gradient( rgba(0, 0, 0, 0.8)20%, rgba(141, 141, 141, 0.8)60%), url('../resource/backgroundEjemplo.jpg');*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 400px;
 }
 
 
@@ -17,12 +20,20 @@
     text-align: center;
 }
 
-.banner-principal h1{
-    width: 100%;
-    margin: 0;
-    color: #EA1C24;
-    font-size: 30px;
+.title-page{
+    width: 900px;
 }
+
+.banner-principal h1{
+    width: 120%;
+    margin: 0;
+    color: #fff;
+    font-size: 30px;
+    text-shadow: 0 0 5px rgba(255,255,255,0.3), /* Sombra blanca */
+               0 0 10px rgba(255,255,255,0.3), /* Sombra más grande */
+               0 0 15px rgba(255,255,255,0.3); /* Sombra más grande */
+}
+
 
 .banner-principal p{
     color: #fff;
@@ -30,7 +41,7 @@
 }
 
 .banner-principal span{
-    color: #000;
+    color: #fff;
     font-size: 15px;
 }
 

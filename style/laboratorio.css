@@ -1,9 +1,141 @@
 .banner-principal{
     background: rgba(0, 0, 0, 0.44);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg');
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg'); */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url('../resource/imagenes prueba web/img_home/Red.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.banner-principal span{
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .banner-principal{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .banner-principal h1{
+        width: 100%;
+    }
+
+    .banner-principal span{
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.intro-labs{
+    font-size: 14px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    padding: 30px;
+}
+.buttons-scrollDown{
+    margin: 60px 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-scrollDown button{
+    margin: 0 30px;
+    padding: 4px 20px;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 1px solid #EA1C24;
+    color: #EA1C24;
+}
+.buttons-scrollDown button:hover{
+    background-color: #EA1C24;
+    color: #fff;
+}
+
+.buttons-scrollDown button a{
+    color: #EA1C24;
+    text-decoration: none;
+}
+.buttons-scrollDown button a:hover{
+    color: #fff;
+}
+
+@media (max-width: 1200px) {
+    .buttons-scrollDown button{
+        margin: 15px;
+    }
+}
+
+.aprendizaje-practico{
+    font-size: 13px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 80px 0;
+}
+
+.title-section{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EA1C24;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.title-section h3{
+    text-align: center;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .title-section{
+        height: 120px;
+        border-radius: 20px 20px 0 0;
+    }
+    .content-section{
+        border: 1px solid grey;
+        padding: 40px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .reverse{
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+}
+
+.title-opciones{
+    display: flex;
+    justify-content: center;
+}
+.title-opciones h3{
+    font-size: 18px;
+
+    width: 60%;
+    text-align: center;
+}
+
+.opciones h4{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50px;
+}
+.opciones ul{
+    list-style: none;
+}
+
+.list-package p{
+    color: #fff;
+    background-color: #EA1C24;
+    padding: 10px 20px;
+    width: 380px;
+    text-align: center;
 }
 
 
@@ -82,13 +214,12 @@ table{
 .pagina{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     padding: 30px;
 }
 
 .publi{
     margin-top: 50px;
-    margin-right: 20px;
-    margin-left: 20px;
 }
 
 .publi article{

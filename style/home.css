@@ -11,6 +11,11 @@
 }
 
 section.ofertas{
+     background-image:  url('../resource/imagenes prueba web/img_home/Conectividad.png');  
+     /*Libreria digital background-image:  url('../resource/imagenes prueba web/img_home/Hexagonos Rojos.png');*/  
+     /*Mira background-image:  url('../resource/imagenes prueba web/img_home/Mundo.png');  */
+     /*background-image:  url('../resource/imagenes prueba web/img_home/Pantallas.png');*/
+     /*background-image:  url('../resource/imagenes prueba web/img_home/Satin Negro.png');  */
     margin: 0;
     max-width: 100%;
     height: 283px;
@@ -19,17 +24,27 @@ section.ofertas{
     align-items: center;
     flex-direction: column;
     color: #fff;
+     /*background-image:  url('../resource/imagenes prueba web/img_home/Global.png');*/
+   
+   
+    /*background-image:  url('../resource/imagenes prueba web/img_home/Grey.png');  */
     
-    background: rgb(114, 114, 114);
-    /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg');*/    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    /*Servicios IT background-image:  url('../resource/imagenes prueba web/img_home/Iconos.png');  */
+    /*background-image:  url('../resource/imagenes prueba web/img_home/Integracion.png');  */
+    /*background-image:  url('../resource/imagenes prueba web/img_home/Learning.png');*/
+    /*background-image:  url('../resource/imagenes prueba web/img_home/Learning Glass.png');*/  
+    
+    
+    
+    
+    
+    /* background-image:  url('../resource/imagenes prueba web/img_home/Tech Red.png'); */
 }
 
 .title-home{
-    font-size: 60px;
+    font-size: 25px;
     letter-spacing: 4px;
+    width: 700px;
 }
 
 @media (max-width: 768px) {
@@ -58,6 +73,7 @@ section.ofertas{
     background-color: #ffffff; /* Puedes cambiar el color de fondo según tu diseño */
     box-sizing: border-box;
     padding: 20px;
+    padding-left: 0;
     text-align: center;
     float: left;
 }
@@ -99,14 +115,27 @@ section.ofertas{
     flex-direction: column;
 }
 
+.titulo-que-ofrecemos{
+    display: flex;
+    margin-bottom: 80px;
+}
 h3.title {
     font-size: 18px;
     align-self:flex-start;
-    margin-left: 20px;
+    padding: 10px 20px;
     margin-bottom: auto;
+    background-color:#ea1c23;
+    width: 400px;
+    color: #fff;
 }
 
-.que-ofrecemos div{
+.gradient-red{
+    width: 90px;
+    height: 100%;
+    background: linear-gradient(to bottom left, transparent 49.5%, #ea1c23 49.5%, #ea1c23 50%);
+}
+
+.que-ofrecemos .fila-que{
     display: flex;
     justify-content: center;
     align-content: center;
@@ -127,7 +156,7 @@ h3.title {
 }
 
 .segunda-fila{
-    margin-bottom: auto;
+    margin-bottom: 0;
 }
 
 .quienes-somos{
@@ -136,6 +165,7 @@ h3.title {
     justify-content: center;
     align-content: center;
     flex-direction: column;
+    padding: 30px;
 }
 .preguntas-sobre-nosotros {
     width: 70%;
@@ -297,7 +327,10 @@ h3.title {
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    background-color: #8d8d8d;
+    background-image:  linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('../resource/imagenes prueba web/img_home/Background Comunidad de Aprendizaje.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .card{
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);

@@ -25,6 +25,21 @@ class Curso {
             
     }
 
+    public static function countCourses(){
+        $conn = db::connect();
+        $consulta = "SELECT COUNT(*) as total FROM curso";
+    
+        if ($resultado = $conn->query($consulta)) {
+            $fila = $resultado->fetch_assoc();
+            $total = $fila['total'];
+            $resultado->close();
+            return $total;
+        } else {
+            return false;
+        }
+    }
+    
+
     public static function getCourses(){
         $conn = db::connect();
         $consulta = "SELECT * FROM curso";
@@ -142,6 +157,8 @@ class Curso {
         return $desc_curso;
     }
 
+  
+
     /**
      * Get the value of CURSO_ID
      */ 
@@ -183,6 +200,26 @@ class Curso {
     }
 
     /**
+     * Get the value of COMPLETE_NAME
+     */ 
+    public function getCOMPLETE_NAME()
+    {
+        return $this->COMPLETE_NAME;
+    }
+
+    /**
+     * Set the value of COMPLETE_NAME
+     *
+     * @return  self
+     */ 
+    public function setCOMPLETE_NAME($COMPLETE_NAME)
+    {
+        $this->COMPLETE_NAME = $COMPLETE_NAME;
+
+        return $this;
+    }
+
+    /**
      * Get the value of DESCRIPCION
      */ 
     public function getDESCRIPCION()
@@ -198,86 +235,6 @@ class Curso {
     public function setDESCRIPCION($DESCRIPCION)
     {
         $this->DESCRIPCION = $DESCRIPCION;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of DETALLES
-     */ 
-    public function getDETALLES()
-    {
-        return $this->DETALLES;
-    }
-
-    /**
-     * Set the value of DETALLES
-     *
-     * @return  self
-     */ 
-    public function setDETALLES($DETALLES)
-    {
-        $this->DETALLES = $DETALLES;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of IMG_CURSO
-     */ 
-    public function getIMG_CURSO()
-    {
-        return $this->IMG_CURSO;
-    }
-
-    /**
-     * Set the value of IMG_CURSO
-     *
-     * @return  self
-     */ 
-    public function setIMG_CURSO($IMG_CURSO)
-    {
-        $this->IMG_CURSO = $IMG_CURSO;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of TECNOLOGIA_ID
-     */ 
-    public function getTECNOLOGIA_ID()
-    {
-        return $this->TECNOLOGIA_ID;
-    }
-
-    /**
-     * Set the value of TECNOLOGIA_ID
-     *
-     * @return  self
-     */ 
-    public function setTECNOLOGIA_ID($TECNOLOGIA_ID)
-    {
-        $this->TECNOLOGIA_ID = $TECNOLOGIA_ID;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of CERTIFICACION_ID
-     */ 
-    public function getCERTIFICACION_ID()
-    {
-        return $this->CERTIFICACION_ID;
-    }
-
-    /**
-     * Set the value of CERTIFICACION_ID
-     *
-     * @return  self
-     */ 
-    public function setCERTIFICACION_ID($CERTIFICACION_ID)
-    {
-        $this->CERTIFICACION_ID = $CERTIFICACION_ID;
 
         return $this;
     }
@@ -403,21 +360,41 @@ class Curso {
     }
 
     /**
-     * Get the value of COMPLETE_NAME
+     * Get the value of TECNOLOGIA_ID
      */ 
-    public function getCOMPLETE_NAME()
+    public function getTECNOLOGIA_ID()
     {
-        return $this->COMPLETE_NAME;
+        return $this->TECNOLOGIA_ID;
     }
 
     /**
-     * Set the value of COMPLETE_NAME
+     * Set the value of TECNOLOGIA_ID
      *
      * @return  self
      */ 
-    public function setCOMPLETE_NAME($COMPLETE_NAME)
+    public function setTECNOLOGIA_ID($TECNOLOGIA_ID)
     {
-        $this->COMPLETE_NAME = $COMPLETE_NAME;
+        $this->TECNOLOGIA_ID = $TECNOLOGIA_ID;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of CERTIFICACION_ID
+     */ 
+    public function getCERTIFICACION_ID()
+    {
+        return $this->CERTIFICACION_ID;
+    }
+
+    /**
+     * Set the value of CERTIFICACION_ID
+     *
+     * @return  self
+     */ 
+    public function setCERTIFICACION_ID($CERTIFICACION_ID)
+    {
+        $this->CERTIFICACION_ID = $CERTIFICACION_ID;
 
         return $this;
     }

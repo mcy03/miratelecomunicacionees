@@ -19,15 +19,8 @@
     
     <section class="banner-principal">
         <div class="title-page">
-            <h1>Mira Telecomunicacions</h1>
+            <h1>Conectamos con un mundo con diferencia</h1>
         </div>
-
-        <p class="subtitle">Contactamos con un mundo con diferencia</p>
-        
-        <span>Somos un grupo de ingenieros y profesionales que poseemos el nivel de experiencia, 
-            conocimiento y convicción para convertirnos en la mejor alternativa del mercado para capacitar 
-            y gestionar el conocimiento tecológico tanto de las TIC como de los clientes finales que soporten 
-            su infraestructura con tecnología Cisco</span>
     </section>
     <section class="ubicacion">
         <div class="ruta-ubi">

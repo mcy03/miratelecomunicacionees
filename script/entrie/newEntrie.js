@@ -1,108 +1,143 @@
-const btnText = document.getElementById('button-text');
-const btnImg = document.getElementById('button-img');
-const btnResource = document.getElementById('button-resource');
-
-const contentEntrie = document.getElementById('contentEntrie');
-
-btnText.addEventListener('click', () => {
-
-
-    contentEntrie.innerHTML += '<div class="input-content">'
-        + '<div id="editor-container">'
-        + "<textarea id='textarea-content' placeholder='Escribe aquí tu contenido...'></textarea>"
-            + "<div id='toolbar'>"
-                + "<button class='button-tag' onclick='addTag(\"<strong>\", \"</strong>\")'>Negrita</button>"
-                + "<button class='button-tag' onclick='addTag(\"<em>\", \"</em>\")'>Cursiva</button>"
-                + "<button class='button-tag' onclick='addTag(\"<u>\", \"</u>\")'>Subrayado</button>"
-            + "</div>"
-        + "</div>"
-    + "<button id='confirm-button'>Confirmar</button>"
-    + '</div>';
+const confirmName = document.getElementById('confirm-name');
+confirmName.addEventListener('click', () => {
+    const nameEntrie = document.getElementById('input-name').value;
     
-    const confirmButton = document.getElementById('confirm-button');
-    confirmButton.addEventListener('click', () => {
-        const textarea = document.getElementById('textarea-content').value;
+    const divTitle = document.getElementById('title-page');
+    divTitle.innerHTML = `<h1>${nameEntrie}</h1>`;
 
-        contentEntrie.innerHTML += '<div>';
-            contentEntrie.innerHTML += textarea;
-        contentEntrie.innerHTML += '</div>';
+    const page = document.getElementById('page');
 
-       
-        const divInputContent = document.querySelector('.input-content');
-        if (divInputContent) {
-            divInputContent.remove();
-        }
-    });
+    page.innerHTML = nameEntrie;
 });
 
-btnImg.addEventListener('click', () => {
-    contentEntrie.innerHTML += '<div class="input-img">';
-        contentEntrie.innerHTML += '<input type="file" accept="image/*">';
-        contentEntrie.innerHTML += "<button id='confirm-button'>Confirmar</button>";
-    contentEntrie.innerHTML += '</div>';
+const textForm = document.getElementById('textarea-form');
+const contentEntrie = document.getElementById('contentEntrie');
+textForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-    const confirmButtonImg = document.getElementById('confirm-button-img');
-    confirmButtonImg.addEventListener('click', () => {
-        const archivoImagen = document.getElementById('input-file-img').files[0];
+    const textoIntroducido = document.getElementsByClassName('ck-content')[0];
+    contentEntrie.innerHTML += `<div>`
+    +textoIntroducido.innerHTML
+    +"</div>";
+});
 
-        // Verificar si se seleccionó un archivo
-        if (archivoImagen) {
-            // Crear un objeto FormData para enviar el archivo
+const imgForm = document.getElementById('img-form');
+
+let archivoImagen = [];
+let cantImg = 0;
+imgForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const inputImagen = document.getElementById('addImg');
+    
+    if (inputImagen.files.length > 0) {
+        archivoImagen.push(inputImagen.files[0]);
+        cantImg++;
+        
+        const lectorImagen = new FileReader();
+
+        const inputAnchura = document.getElementById('input-anchura');
+        const inputAltura = document.getElementById('input-altura');
+        const selectPosition = document.querySelector('.select-position select');
+
+        let width = 300;
+        let height = 300;
+        if (inputAnchura.value != '') {
+            width = inputAnchura.value;
+        }
+
+        if (inputAltura.value != '') {
+            height = inputAltura.value;
+        }
+
+        lectorImagen.onload = function(evento) {
+            const urlImagen = evento.target.result;
+
+            const imagen = document.createElement('img');
+            imagen.src = urlImagen;
+            imagen.className += 'img-entrie';
+            imagen.style.width = width + 'px';
+            imagen.style.height = height + 'px';
+            
+            const divContenedor = document.createElement('div');
+            divContenedor.style.display = 'flex';
+            divContenedor.style.justifyContent = selectPosition.value;
+            divContenedor.appendChild(imagen);
+
+            contentEntrie.appendChild(divContenedor); 
+        };
+
+        lectorImagen.readAsDataURL(archivoImagen[cantImg-1]);
+    }
+});
+
+let imagenBannerGuardar = '';
+const formImgBanner = document.getElementById('img-entrie');
+formImgBanner.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const inputImagen = document.getElementById('addImg-banner');
+    
+    if (inputImagen.files.length > 0) {
+        imagenBannerGuardar = inputImagen.files[0];
+        
+        const lector = new FileReader();
+
+        lector.onload = function(evento) {
+            const urlImagen = evento.target.result;
+
+            const contenedor = document.getElementById('banner-principal');
+            contenedor.style.backgroundImage = `url('${urlImagen}')`;
+        };
+
+        lector.readAsDataURL(imagenBannerGuardar);
+    }
+});
+
+let buttonCreate = document.getElementById('button-create');
+
+buttonCreate.addEventListener('click', async () => {
+    const divTitlePage = document.getElementById('title-page');
+    const h1Element = divTitlePage.querySelector('h1');
+    let nameEntrie = '';
+        if (h1Element !== null) {
+            const h1Element = document.querySelector('#title-page h1');
+            const nameEntrie = h1Element ? h1Element.textContent : '';
+            const path = `./resource/publicaciones/${nameEntrie}/`;
+
+            const imagenes = document.querySelectorAll('.img-entrie');
             const formData = new FormData();
-            formData.append('imagen', archivoImagen);
+            let aux = 0;
+            imagenes.forEach((imagen, index) => {
+                formData.append(`imagen-${index}`, archivoImagen[aux]);
 
-            // Realizar una solicitud POST para subir la imagen al servidor
-            fetch('/ruta-para-subir-imagen', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                // Verificar si la solicitud fue exitosa
-                if (response.ok) {
-                    // Mostrar la imagen en la página
-                    const divImagen = document.createElement('div');
-                    const img = document.createElement('img');
-                    img.src = URL.createObjectURL(archivoImagen);
-                    divImagen.appendChild(img);
-                    contentEntrie.appendChild(divImagen);
-                } else {
-                    console.error('Error al subir la imagen:', response.statusText);
-                }
-            })
-            .catch(error => {
-                console.error('Error al subir la imagen:', error);
+                imagen.src = `${path}${archivoImagen[aux].name}`;
+                aux++;
             });
-        } else {
-            console.error('No se seleccionó ningún archivo de imagen.');
+
+            let description = document.getElementById('value-description').value;
+            let category = document.getElementById('option-category').value;
+
+            formData.append('accion', 'insert_entrie');
+            formData.append('nombre', nameEntrie);
+            formData.append('description', description);
+            formData.append('imgEntrie', imagenBannerGuardar);
+            formData.append('category', category);
+            formData.append('content', contentEntrie.innerHTML);
+            formData.append('cant_img', cantImg);
+            
+            const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiPublicacion&action=api';
+
+            try {
+                const response = await axios.post(url, formData);
+                console.log(response.data);
+            } catch (error) {
+                console.error('Error:', error.message);
+            }
+
+        }else{
+            console.log("introduce nombre de entrada");
         }
-    });
-});
-
-btnResource.addEventListener('click', () => {
-    contentEntrie.innerHTML += '<div class="input-file">';
-        contentEntrie.innerHTML += '<input id="hipervinculo" type="text" placeholder="Texto hipervinculo">';
-        contentEntrie.innerHTML += '<input id="input-file" type="file">';
-        contentEntrie.innerHTML += "<button id='confirm-button'>Confirmar</button>";
-    contentEntrie.innerHTML += '</div>';
-
-    const confirmButton = document.getElementById('confirm-button');
-    confirmButton.addEventListener('click', () => {
-        const textoHipervinculo = document.getElementById('hipervinculo').value;
-        const archivo = document.getElementById('input-file').files[0]; 
-
-
-    });
 });
 
 
-function addTag(startTag, endTag) {
-    const editor = document.getElementById('textarea-content');
-    const startPos = editor.selectionStart;
-    const endPos = editor.selectionEnd;
-    const selectedText = editor.value.substring(startPos, endPos);
-    const replacement = startTag + selectedText + endTag;
-    editor.value = editor.value.substring(0, startPos) + replacement + editor.value.substring(endPos);
-    editor.focus();
-    editor.setSelectionRange(endPos + startTag.length, endPos + startTag.length);
-  }
-  

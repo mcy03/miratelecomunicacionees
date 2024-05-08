@@ -16,7 +16,7 @@ body{
 }
 
 .contenido-entrada{
-    width: 73%;
+    width: 78%;
     background-color: #fff;
     padding: 30px;
 }
@@ -37,86 +37,33 @@ body{
 }
 
 
+.publis{
+    width: 20%;
+}
+
 .publi{
-    width: 25%;
-    height: 500px;
     border-radius: 20px;
     background-color: #fff;
     padding: 25px;
+    margin-bottom: 30px;
 }
 
 .publi h5{
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
 }
 
-.last-entries{
-    padding: 20px;
-}
 
 .entrie{
-    padding: 20px 40px;
+    padding: 10px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 12px;
+}
+
+.last-entries{
+    padding: 0 10px;
 }
 
 .efect-button:hover{
-    border: 1px solid #EA1C24;
+    border-bottom: 1px solid #EA1C24;
 }
-
-
-/*
-.entrie:hover{
-    color: #EA1C24;
-
-}
-
-.entrie span{
-    position: absolute;
-    background: #EA1C24;    
-    transition: .5s;
-}
-
-.entrie span:nth-child(1){
-    width: 100%;
-    height: 1px;
-    top: 0;
-    left: -100%;
-}
-.entrie span:nth-child(2){
-    width: 100%;
-    height: 1px;
-    bottom: 0;
-    right: -100%;
-}
-
-.entrie span:nth-child(3){
-    width: 1px;
-    height: 100%;
-    bottom: -100%;
-    left: 0;
-}
-.entrie span:nth-child(4){
-    width: 1px;
-    height: 100%;
-    top: -100%;
-    right: 0;
-}
-
-.entrie:hover span:nth-child(1){
-    left: 0;
-}
-
-.entrie:hover span:nth-child(2){
-    right: 0;
-}
-
-.entrie:hover span:nth-child(3){
-    bottom: 0;
-}
-
-.entrie:hover span:nth-child(4){
-    top: 0;
-}
-
-*/

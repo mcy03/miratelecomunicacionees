@@ -9,7 +9,7 @@ class ApiPublicacionController{
 
     public function api(){
         $accion = isset($_POST["accion"]) ? $_POST["accion"] : '';
- 
+        
         if(trim($accion) == "get_entries"){
             $entries = Publicacion::getEntries();
 
@@ -37,7 +37,6 @@ class ApiPublicacionController{
 
             $array_entries = [];
             foreach ($entries as $entrie) {
-                $img = Img::getImg_ByPubliId_Pos($entrie->getPUBLICACION_ID(), 0);
                 $categoria = Categoria::getCategoria_ById($entrie->getCATEGORIA_ID());
 
                 $array_entries[] = array(
@@ -45,9 +44,9 @@ class ApiPublicacionController{
                     "CATEGORIA" => $categoria[0]->getNOMBRE(),
                     "TITULO" => $entrie->getTITULO(),
                     "DESCRIPCION" => $entrie->getDESCRIPCION(),
+                    "IMG_ENTRIE" => $entrie->getIMG_ENTRIE(),
+                    "CONTENIDO" => $entrie->getCONTENIDO(),
                     "FECHA" => $entrie->getFECHA(),
-                    'IMG' => $img[0]->getImg(),
-                    'ALT_IMG' => $img[0]->getALT()
                 );
             }
             
@@ -66,6 +65,8 @@ class ApiPublicacionController{
                     "CATEGORIA_ID" => $entrie->getCATEGORIA_ID(),
                     "TITULO" => $entrie->getTITULO(),
                     "DESCRIPCION" => $entrie->getDESCRIPCION(),
+                    "IMG_ENTRIE" => $entrie->getIMG_ENTRIE(),
+                    "CONTENIDO" => $entrie->getCONTENIDO(),
                     "FECHA" => $entrie->getFECHA()
                 );
             }
@@ -85,6 +86,7 @@ class ApiPublicacionController{
                     "CATEGORIA_ID" => $entrie->getCATEGORIA_ID(),
                     "TITULO" => $entrie->getTITULO(),
                     "DESCRIPCION" => $entrie->getDESCRIPCION(),
+                    "IMG_ENTRIE" => $entrie->getIMG_ENTRIE(),
                     "FECHA" => $entrie->getFECHA()
                 );
             }
@@ -92,60 +94,33 @@ class ApiPublicacionController{
             echo json_encode($array_entries, JSON_UNESCAPED_UNICODE);
             return;
 
-        }elseif(trim($accion) == "delete_entrie"){
+        }elseif(trim($accion) == "delete_entrie") {
             $id = $_POST['id'];
-
             $entrie = Publicacion::getEntrieById($id);
-
-            if($entrie[0]->getESTADO() == "TRASH"){
+        
+            if($entrie[0]->getESTADO() == "TRASH") {
                 $definitive = true;
-            }else{
+                $titulo = $entrie[0]->getTITULO();
+                $carpeta = './resource/publicaciones/'.$titulo;
+        
+                if (is_dir($carpeta)) {
+                    if (!rmdir($carpeta)) {
+                        echo json_encode(array("success" => false, "message" => "No se pudo eliminar la carpeta."), JSON_UNESCAPED_UNICODE);
+                        return;
+                    }
+                }
+            } else {
                 $definitive = false;
             }
-
+        
             $result = Publicacion::deleteEntrie($id, $definitive);
-
+        
             echo json_encode($result, JSON_UNESCAPED_UNICODE);
             return;
         }
+        
 
         
-        if(trim($accion) == "get_text_byPubli"){
-            $publicacion_id = $_POST["publicacion_id"];
-            $textos = Texto::getTxt_ByPubliId($publicacion_id);
-
-            $array_textos = [];
-            foreach ($textos as $texto) {
-                $array_textos[] = array(
-                    "TEXTO_ID" => $texto->getTEXTO_ID(),
-                    "PUBLICACION_ID" => $texto->getPUBLICACION_ID(),
-                    "TEXTO" => $texto->getTEXTO(),
-                    "POSICION" => $texto->getPOSICION()
-                );
-            }
-            
-            echo json_encode($array_textos, JSON_UNESCAPED_UNICODE);
-            return;
-
-        }elseif(trim($accion) == "get_text_byPubli_pos"){
-            $publicacion_id = $_POST["publicacion_id"];
-            $pos = $_POST["pos"];
-            $textos = Texto::getTxt_ByPubliId_Pos($publicacion_id, $pos);
-
-            $array_textos = [];
-            foreach ($textos as $texto) {
-                $array_textos[] = array(
-                    "TEXTO_ID" => $texto->getTEXTO_ID(),
-                    "PUBLICACION_ID" => $texto->getPUBLICACION_ID(),
-                    "TEXTO" => $texto->getTEXTO(),
-                    "POSICION" => $texto->getPOSICION()
-                );
-            }
-            
-            echo json_encode($array_textos, JSON_UNESCAPED_UNICODE);
-            return;
-
-        }
 
 
         if(trim($accion) == "get_img_byPubli"){
@@ -190,61 +165,42 @@ class ApiPublicacionController{
             return;
 
         }elseif(trim($accion) == "insert_entrie"){
-            $titulo = $_POST["titulo"];
-            $subtitulo = $_POST["subtitulo"];
-            $categoria_id = $_POST["categoria_id"];
-            $cantidad = $_POST["cantidad"];
+            $titulo = $_POST["nombre"];
+            $description = $_POST["description"];
+            $imgEntrie = $_FILES["imgEntrie"];
+            $category = $_POST["category"];
+            $content = $_POST["content"];
+            $cant = $_POST["cant_img"];
+            $imagenes = array();
+            for ($i=0; $i < $cant; $i++) { 
+                $imagenes[$i] = $_FILES["imagen-$i"];
+            }
             
             $directorioDestino = "resource/publicaciones/$titulo/";
 
             if (!file_exists($directorioDestino)) {
                 if (mkdir($directorioDestino, 0777, true)) {
-                    $confirm = '';
-                }
-            }
-            
-            $nombrePortada = $_FILES["img_portada"]['name'];
-            $rutaTemporalPortada = $_FILES["img_portada"]['tmp_name'];
+                    foreach ($imagenes as $imagen) {
+                        $nombreArchivo = $imagen["name"];
+                        $archivoTemporal = $imagen["tmp_name"];
 
-            $rutaDestinoPortada = $directorioDestino . $nombrePortada;
+                        $rutaDestinoCompleta = $directorioDestino . $nombreArchivo;
 
-            if (move_uploaded_file($rutaTemporalPortada, $rutaDestinoPortada)) {
-                $portada = $_FILES["img_portada"]['name'];
-            }
+                        if (move_uploaded_file($archivoTemporal, $rutaDestinoCompleta)) {
+                            $nombreArchivo = $imgEntrie["name"];
+                            $archivoTemporal = $imgEntrie["tmp_name"];
 
-            $contenido = array();
-            for ($i=1; $i <= $cantidad; $i++) {
-                if (isset($_FILES["contenido$i"])) {
-                    $nombreArchivo = $_FILES["contenido$i"]['name'];
-                    $rutaTemporal = $_FILES["contenido$i"]['tmp_name'];
-
-                    $rutaDestino = $directorioDestino . $nombreArchivo;
-
-                    if (move_uploaded_file($rutaTemporal, $rutaDestino)) {
-                        $contenido[$i-1] = "IMGseparator".$_FILES["contenido$i"]['name'];
-                    }
-                }else{  
-                    $contenido[$i-1] = "TXTseparator".$_POST["contenido$i"];
-                }
-                
-            }
-
-            $entrie = Publicacion::setEntrie($categoria_id, $titulo, $subtitulo, $titulo."/".$portada, 'DRAFT');
-
-            if ($entrie) {
-                foreach ($contenido as $key => $value) {
-                    $valor = explode("separator", $value);
-                    if ($valor[0] == "TXT") {
-                        Texto::setText($entrie, $valor[1], $key + 1);
-                    } else {
-                        Img::setImgEnt($entrie, $titulo."/".$valor[1], $key + 1, 'alt', 100, 100);
+                            $rutaDestinoCompleta = $directorioDestino . $nombreArchivo;
+                            if (move_uploaded_file($archivoTemporal, $rutaDestinoCompleta)) {
+                                Publicacion::setEntrie($category, $titulo, $description, $rutaDestinoCompleta, $content, 'PUBLIC');
+                                echo json_encode($imagenes, JSON_UNESCAPED_UNICODE);
+                                return;
+                            } else {
+                                echo "Error al mover la imagen '$nombreArchivo'.\n";
+                            }
+                        }
                     }
                 }
-                
-                echo(json_encode("insertada correctamente", JSON_UNESCAPED_UNICODE));
-                return;
-            }else {
-                return false;
             }
         }
     }

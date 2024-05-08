@@ -154,18 +154,14 @@ function resetColours() {
 //      Function para listar cursos en la tabla de calendario, 
 //----------------------
 async function listCategories(categorias) {
-    // Obtener el contenedor donde se colocarán los enlaces generados
     const contenedorCategorias = document.getElementById('enlaces-categorias');
 
-    // Variable para almacenar el HTML generado
     let contenidoEnlaces = "";
 
-    // Bucle para generar los enlaces
     categorias.forEach(categoria => {
         contenidoEnlaces += `<p class="categorias">${categoria.NOMBRE}</p>`;
     });
 
-    // Asignar el contenido generado al contenedor
     contenedorCategorias.innerHTML += contenidoEnlaces;
 }
 
@@ -204,19 +200,15 @@ function listFechas() {
 }
 
 async function listEntries(entries) {
-    // Obtener el contenedor donde se colocará el contenido generado
     const contenedorEntradas = document.getElementById('entradas');
-
-    // Variable para almacenar el HTML generado
     let contenidoEntradas = '';
 
-    // Bucle para generar las entradas
     entries.forEach(entrie => {
         contenidoEntradas += `
             <article class="entrada">
                 <div class="img-entrada">
                     <input type="hidden" value="${entrie.PUBLICACION_ID}">
-                    <img src="./resource/${entrie.IMG}" alt="${entrie.ALT_IMG}">
+                    <img src="./${entrie.IMG_ENTRIE}">
                     <h4 style="display:none;">${entrie.TITULO}</h4>
                 </div>
                 <div class="body-entrada">
@@ -231,7 +223,6 @@ async function listEntries(entries) {
         `;
     });
 
-    // Asignar el contenido generado al contenedor
     contenedorEntradas.innerHTML = contenidoEntradas;
 }
 
@@ -293,10 +284,8 @@ async function listenerEntrie() {
         element.addEventListener('click', async function () {
             let titulo = element.childNodes[1];
             let entrie_id = titulo.childNodes[1].value;
-            
-            window.location.href = '?controller=entrada&entrie='+entrie_id;
+            console.log(titulo.childNodes[1]);
+            //window.location.href = '?controller=entrada&entrie='+entrie_id;
         });
     }
-    
-    
 }

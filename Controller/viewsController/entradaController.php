@@ -4,35 +4,33 @@ class entradaController{
         session_start(); // Inicia la sesión
         if (isset($_GET['entrie'])) {
             if ($_GET['entrie'] != '') {
-                $entrada = $_GET['entrie'];
+                $entrada_id = $_GET['entrie'];
+                $entrada = Publicacion::getEntrieById($entrada_id);
+                $entradas = Publicacion::getLastEntries();
+                $categorias = Categoria::getCategorias();
+                $entrada = $entrada[0];
             }else {
                 header("Location: ".url);
-            }
+            }   
         }else{
             header("Location: ".url);
         }
-        // Incluye archivos de vista para la cabecera, la página principal (home) y el footer
+
         require_once("view/header.php");
         require_once("view/entrada.php");
         require_once("view/footer.php");
     }
 
     public function insertEntrieAdmin(){
-        session_start(); // Inicia la sesión
+        session_start();
         
-        // Incluye archivos de vista para la cabecera, la página principal (home) y el footer
+        $categories = Categoria::getCategorias();
         require_once("view/admin/insertEntrie.php");
     }
 
     public function prueba(){
-        session_start(); // Inicia la sesión
-        
-        // Verifica si no existe la variable de sesión 'selecciones' y la inicializa como un array vacío si es así
-        if (!isset($_SESSION['selecciones'])) {
-            $_SESSION['selecciones'] = array();
-        }
-    
-        // Incluye archivos de vista para la cabecera, la página principal (home) y el footer
+        session_start();
+
         require_once("view/prueba.html");
     }
 }

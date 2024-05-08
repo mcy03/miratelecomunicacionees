@@ -12,7 +12,7 @@
             <div class="contacto-header">
                 <div class="div-mail">
                     <img class="img-contact" src="./resource/icon-gmail.png" alt="">
-                    <a href="mailto:miratelecomunicacions.com" class="text-contacto">miratelecomunicacions.com</a>
+                    <a href="mailto:miratelecomunicacions.com" class="text-contacto">mira@miratelecomunicacions.com</a>
                 </div>
                 <div class="div-phone">
                     <img class="img-contact" src="./resource/icon-phone.png" alt="">

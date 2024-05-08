@@ -17,6 +17,21 @@ class Tecnologia {
         
     }
 
+    public static function countTechnologies(){
+        $conn = db::connect();
+        $consulta = "SELECT COUNT(*) as total FROM tecnologia";
+    
+        if ($resultado = $conn->query($consulta)) {
+            $fila = $resultado->fetch_assoc();
+            $total = $fila['total'];
+            $resultado->close();
+            return $total;
+        } else {
+            // Manejar el error si la consulta falla
+            return false;
+        }
+    }    
+
     public static function getTecnologies(){
         $conn = db::connect();
         $consulta = "SELECT * FROM tecnologia";

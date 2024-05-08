@@ -1,7 +1,23 @@
+    window.addEventListener('DOMContentLoaded', async function() {
+        const inputSelection = document.getElementById('input-selection');
+        const selectedValue = inputSelection.value;
+        const contenido = document.querySelector('.contenido-'+selectedValue);
+
+        lastContent = document.getElementsByClassName('activated')[0];
+        lastContent.classList.remove("activated");
+        lastContent.classList.add("desactivated");
+        
+        contenido.classList.remove("desactivated");
+        contenido.classList.add("activated");
+
+        await data(selectedValue);
+    });
+
+
     const enlaces = Array.from(document.getElementsByClassName('enlacesMenu'));
 
     let lastContent;
-
+    
     enlaces.forEach(enlace => {
         enlace.addEventListener('click', async function name(e) {
             e.preventDefault();
@@ -54,7 +70,7 @@
                         <a id="entrie-${entry.PUBLICACION_ID}" class="enlaceEntrie" href="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entry.PUBLICACION_ID}">
                         <div class="body-data body-entrie">
                             <div class="data-img entrie-img">
-                                <img src="./resource/publicaciones/${entry.IMG}" alt="">
+                                <img src="./resource/publicaciones/${entry.IMG_ENTRIE}" alt="">
                             </div>
 
                                 <div class="info-data info-entrie">
@@ -85,7 +101,7 @@
         
                             if (result) {
                                 const enlace = document.getElementsByClassName('activated')[0];
-                                await data(enlace.id);
+                                
                             }
                         }else{
                             window.location.href = this.value;
@@ -94,8 +110,6 @@
                 });
             });
         }
-        
-
     }
 
     async function deleteEntrie(id) {
@@ -104,10 +118,10 @@
         formData.append('id', id);
 
         const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiPublicacion&action=api';
-    
+        
         try {
             const response = await axios.post(url, formData);
-    
+            data('entradas');
             return response.data;
         } catch (error) {
             console.error('Error:', error.message);

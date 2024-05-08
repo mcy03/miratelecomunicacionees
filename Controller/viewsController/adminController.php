@@ -7,13 +7,23 @@ class adminController{
             header("Location: ".url."?controller=login");
         }else{
             
-            // Incluye archivos de vista para la cabecera, la página principal (home) y el footer
+            $numEntries = Publicacion::countEntries();
+            $numCategories = Categoria::countCategories();
+            $numLabs = Laboratorio::countLabs();
+            $numCourse = Curso::countCourses();
+            $numCertifications = Certificacion::countCertifications();
+            $numTecnologies = Tecnologia::countTechnologies();
+            $numCalendario = Calendario::countCalendario();
+
+
+            if (isset($_GET['selection'])) {
+                $selection = $_GET['selection'];
+            }
+            
             require_once("view/header.php");
             require_once("view/admin/admin.php");
             require_once("view/footer.php");
         }
-
-        
     }
 
     public function deloguear(){
@@ -31,6 +41,7 @@ class adminController{
         if (!isset($_SESSION['admin'])) {
             header("Location: ".url."?controller=login");
         }else{
+            $categories = Categoria::getCategorias();
             require_once("view/header.php");
             require_once("view/admin/entrie/insertEntrie.php");
             require_once("view/footer.php");

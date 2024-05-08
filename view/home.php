@@ -18,10 +18,7 @@
                 <div class="col-md-12 text-center col-oferta">
                     <div class="contenido-ofertas">
                         <h1 class="title-home">
-                            Todo lo que necesita saber sobre
-                        </h1>
-                        <h1 class="title-home">
-                            Cisco Learning & Certifications
+                            Todo lo que necesita saber sobre Cisco Learning & Certifications
                         </h1>
                     </div>
                 </div>
@@ -30,13 +27,16 @@
         
         <div class="primera-seccion">
             <section class="que-ofrecemos">
-                <h3 class="title">¿En que podemos ayudarte?</h3>
-                <div class="primera-fila">
+                <div class="titulo-que-ofrecemos">
+                    <h3 class="title">¿En que podemos ayudarte?</h3>
+                    <div class="gradient-red"></div>
+                </div>
+                <div class="primera-fila fila-que">
                     <a href=""><img src="./resource/moneda-clc.svg" alt=""><p>Cisco Learning Credits</p></a>
                     <a href=""><img src="./resource/gorro-certificacion.svg" alt=""><p>Certificaciones Cisco</p></a>
                     <a href=""><img src="./resource/calidad.svg" alt=""><p>Certificaciones para Partners</p></a>
                 </div>
-                <div class="segunda-fila">
+                <div class="segunda-fila fila-que">
                     <a href=""><img src="./resource/calidad.svg" alt=""><p>Continuing Education Program (CE)</p></a>
                     <a href=""><img src="./resource/moneda-clc.svg" alt=""><p>Cursos Cisco</p></a>
                     <a href=""><img src="./resource/gorro-certificacion.svg" alt=""><p>Formación Meraki</p></a>
@@ -72,7 +72,7 @@
             <div class="wrapper">
                 <ul class="carousel">
                     <li class="card">
-                        <div class="img" style="background-image: url('resource/MiraLogo/Mira.png'); "></div>
+                        <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Cisco CCIE Elite Tech.png'); "></div>
                         <div class="text-card-slider">
                             <h3>Cisco CCIE Elite Tech</h3>
                             <span>Redes en manos de expertos capaces de resolver 
@@ -83,15 +83,15 @@
                         </div>
                     </li>
                     <li class="card">
-                    <div class="img" style="background-image: url('resource/backgroundEjemplo.jpg'); "></div>
+                    <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Talleres pràcticos.png');"></div>
                         <div class="text-card-slider">
                             <h3>Talleres pràcticos</h3>
                             <span>Desde el 2003 somos un Cisco Learning Partner y 
-                            actuamos como un catalizador.</span>
+                            actuamos como un catalizador como un catalizador..</span>
                         </div>
                     </li>
                     <li class="card">
-                        <div class="img"><img src="resource/MiraLogo/Mira.png" alt="img" draggable="false"></div>
+                        <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Formación customizada.png');"></div>
                         <div class="text-card-slider">
                             <h3>Formación customizada</h3>
                             <span>Desde el 2003 somos un Cisco Learning Partner y 
@@ -99,7 +99,7 @@
                         </div>
                     </li>
                     <li class="card">
-                        <div class="img"><img src="resource/MiraLogo/Mira.png" alt="img" draggable="false"></div>
+                        <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Cursos de colaboración avanzados.png');"></div>
                         <div class="text-card-slider">
                             <h3>Parte de colaboración con Sunset</h3>
                             <span>Desde el 2003 somos un Cisco Learning Partner y 
@@ -107,7 +107,7 @@
                         </div>
                     </li>
                     <li class="card">
-                        <div class="img"><img src="resource/MiraLogo/Mira.png" alt="img" draggable="false"></div>
+                        <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Certificación Cisco Cloud.png');"></div>
                         <div class="text-card-slider">
                             <h3>Certificación Cisco Cloud</h3>
                             <span>Desde el 2003 somos un Cisco Learning Partner y 
@@ -115,15 +115,15 @@
                         </div>
                     </li>
                     <li class="card">
-                        <div class="img"><img src="resource/MiraLogo/Mira.png" alt="img" draggable="false"></div>
+                        <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Impacto social.png');"></div>
                         <div class="text-card-slider">
                             <h3>Impacto social</h3>
                             <span>Desde el 2003 somos un Cisco Learning Partner y 
-                            actuamos como un catalizador.</span>
+                            actuamos como un catalizador como un catalizador.</span>
                         </div>
                     </li>
                     <li class="card">
-                        <div class="img"><img src="resource/MiraLogo/Mira.png" alt="img" draggable="false"></div>
+                        <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Soluciones Cisco seguridad.png');"></div>
                         <div class="text-card-slider">
                             <h3>Soluciones Cisco seguridad</h3>
                             <span>Desde el 2003 somos un Cisco Learning Partner y 
