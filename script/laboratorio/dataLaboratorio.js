@@ -23,8 +23,8 @@ async function listLabs(labs) {
     labs.forEach(lab => {
         contenidoTabla += `
             <tr class="body-table">
-                <td><span class="valor-id">${lab.CURSO_ID}</span></td>
-                <td class="border-center"><span class="valor-name">${lab.CURSO}</span></td>
+                <td class="id-course-table"><span class="valor-id">${lab.CURSO_ID}</span></td>
+                <td class="border-center name-course-table"><span class="valor-name">${lab.CURSO}</span></td>
                 <td class="border-center"><span class="valor-start-date">${lab.DURACION}</span></td>
                 <td class="border-center"><span class="valor-end-date">${lab.PODS_AVALIABLE}</span></td>
             </tr>

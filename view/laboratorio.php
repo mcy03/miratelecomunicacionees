@@ -70,37 +70,43 @@
                 <h3>¿A quién nos dirigimos?</h3>
             </div>
         </section>
-        <hr>
+
         <section id="opciones" class="opciones">
             <div class="title-opciones">
-                <h3><u>¿Qué opciones ofrecemos para usuarios, empresas y Learning Partners?</u></h3>
+                <h3>¿Qué opciones ofrecemos para usuarios, empresas y Learning Partners?</h3>
             </div>
-            <h4>usuarios y compañías</h4>
-            <div class="list-package access-package">
-                <p>Paquete de acceso</p>
+            <div class="container-user-company">
+                <h4>usuarios y compañías</h4>
+                <div class="packages">
+                    <div class="list-package access-package">
+                        <p>Paquete de acceso</p>
+                        <ul>
+                            <li><img class="img-icon-package" src="./resource/iconos/labs-page/user.png" alt=""> Por usuario</li>
+                            <li><img class="img-icon-package" src="./resource/iconos/labs-page/calendario.png" alt=""> Por horas y días de acceso</li>
+                            <li><img class="img-icon-package" src="./resource/iconos/labs-page/tech-support.png" alt=""> Solo soporte de recuperación</li>
+                        </ul>
+                    </div>
+                    <div class="list-package mentor-package">
+                        <p>Paquete de acceso con mentor</p>
+                        <ul>
+                            <li><img class="img-icon-package" src="./resource/iconos/labs-page/user.png" alt=""> Por usuario</li>
+                            <li><img class="img-icon-package" src="./resource/iconos/labs-page/calendario.png" alt=""> Por horas y días de acceso</li>
+                            <li><img class="img-icon-package" src="./resource/iconos/labs-page/reloj.png" alt=""> Horas de mentoriía</li>
+                            <li><img class="img-icon-package" src="./resource/iconos/labs-page/tech-support.png" alt=""> Soporte y chat de resolución de dudas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-package-partner">
+                <h4>Learning Partner</h4>
                 <ul>
-                    <li>Por usuario</li>
-                    <li>Por horas y días de acceso</li>
-                    <li>Solo soporte de recuperación</li>
+                    <li id="link-learningPartner"><a onclick="scrollToSection('#labs')">Ver nuestra barra de laboratorios</a></li>
                 </ul>
             </div>
-            <div class="list-package mentor-package">
-                <p>Paquete de acceso con mentor</p>
-                <ul>
-                    <li>Por usuario</li>
-                    <li>Por horas y días de acceso</li>
-                    <li>Horas de mentoriía</li>
-                    <li>Soporte y chat de resolución de dudas</li>
-                </ul>
-            </div>
-            <h4>Learning Partner</h4>
-                <ul>
-                    <li>Ver nuestra barra de laboratorios</li>
-                </ul>
-                
         </section>
-        <hr>
+
         <section id="labs" class="lab col-12 col-md-12 col-xl-12">
+            <h4 id="title-labs">Listado de nuestros laboratorios</h4>
             <table id="tabla-lab" class="tabla-lab">
                 <tr class="buscador">
                     <td><input type="text" name="input-id" id="input-id" placeholder="id"></td>
@@ -112,8 +118,8 @@
                     <td></td>
                 </tr>
                 <tr class="head-table">
-                    <td class="esquina-izquierda"><h3 class="title-id">ID Curso</h3></td>
-                    <td><h3 class="title-name">Descripción curso</h3></td>
+                    <td class="esquina-izquierda id-course-table"><h3 class="title-id">ID Curso</h3></td>
+                    <td class="name-course-table"><h3 class="title-name">Descripción curso</h3></td>
                     <td><h3 class="title-start-date">Duración</h3></td>
                     <td class="esquina-derecha"><h3 class="title-end-date">Pods Avaliable</h3></td>
                 </tr>
@@ -140,7 +146,7 @@
 
             window.scrollTo({
                 top: scrollDestino,
-                behavior: 'smooth' // Desplazamiento suave
+                behavior: 'smooth'
             });
         }
 

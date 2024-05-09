@@ -1,8 +1,7 @@
 <?php
-//include_once('/Model/Curso.php');
 class cursoController{
     public function index(){
-        session_start(); // Inicia la sesión
+        session_start();
     
         
         require_once("view/header.php");
@@ -11,14 +10,11 @@ class cursoController{
     }
 
     public function view(){
-        session_start(); // Inicia la sesión
+        session_start();
     
         if (sizeof($_GET) == 3) {
             $keys = array_keys($_GET);
-    
             $courseName = $keys[2];
-
-
             $course = Curso::getCourseByName($courseName)[0];
         }else {
             header('Location: http://127.0.0.1/miratelecomunicacionees/');
@@ -31,22 +27,20 @@ class cursoController{
 
 
     public function select(){
-        // Verifica si se ha proporcionado la tecnología o la certificación y establece la cookie correspondiente
         if (isset($_GET['tecnology'])) {
             setcookie('tecnology', $_GET['tecnology'], time() + (100 * 1), "/");
         } else if (isset($_GET['certification'])) {
             setcookie('certification', $_GET['certification'], time() + (100 * 1), "/");
         }
-        
-        // Redirige a la URL deseada
+
         header('Location: http://127.0.0.1/miratelecomunicacionees/?controller=curso');
-        exit; // Asegura que no se ejecute más código después de la redirección
+        exit;
     }
 
     public function prueba(){
-        session_start(); // Inicia la sesión
-    
+        session_start();
+
         require_once("view/prueba.html");
     }
-}
+} 
 ?>

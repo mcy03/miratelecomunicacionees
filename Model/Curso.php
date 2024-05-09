@@ -138,14 +138,14 @@ class Curso {
         $conn = db::connect();
 
         // Consulta SQL para obtener el nombre del usuario con el ID dado
-        $sql = "SELECT DESCRIPCION FROM curso WHERE CURSO_ID = $id";
+        $sql = "SELECT COMPLETE_NAME FROM curso WHERE CURSO_ID = $id";
 
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             // Obtener el primer resultado (asumiendo que el ID es único)
             $row = $result->fetch_assoc();
-            $desc_curso = $row["DESCRIPCION"];
+            $desc_curso = $row["COMPLETE_NAME"];
         }else {
             return false;
         }
