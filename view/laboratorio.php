@@ -45,20 +45,22 @@
             <button class="col-10 col-md-5 col-xl-2" onclick="scrollToSection('#labs')">Labs. Bar List</button>
         </section>
         <hr>
-        <section id="aprendizaje-practico" class="aprendizaje-practico row">
-            <div class="title-section col-12 col-md-4 col-xl-3">
+        <section id="aprendizaje-practico" class="aprendizaje-practico col-6 flex-column">
+            <div class="title-section">
                 <h3>Aprendizaje práctico</h3>
             </div>
             
-            <div class="content-section col-12 col-md-7 col-xl-8">
+            <div class="content-section">
                 <p>Nuestra área de negocio Learning Bar Labs. ofrece a los profesionales IT la oportunidad de acceder a laboratorios a su propio ritmo para implementar configuraciones y adoptar soluciones Cisco.</p>
                 <p>Le ayudará a seguir desarrollando habilidades en un entorno guiado, estructurado que simula escenarios reales y le preparará para la certificación. </p>
                 <p>Es la oportunidad perfecta para reducir el riesgo en la implementación ya que después de asistir a alguna formación usted podrá seguir en contacto y familiarizarse con la solución Cisco.</p>
             </div>
         </section>
-        <hr>
-        <section id="target" class="aprendizaje-practico row reverse">
-            <div class="content-section col-12 col-md-7 col-xl-8">
+        <section id="target" class="aprendizaje-practico col-6 flex-column">
+            <div class="title-section">
+                <h3>¿A quién nos dirigimos?</h3>
+            </div>
+            <div class="content-section">
                 <ul>
                     <li>Estudiantes que hayan finalizado una capacitación dirigida por instructor</li>
                     <li>Estudiantes que estén asociados a alguna membresía digital y quieran practicar con un entorno adicional de pruebas. </li>
@@ -66,12 +68,9 @@
                     <li>A empresas de capacitación Cisco que tengan la necesidad de alquilar laboratorios para aquellos cursos oficiales que son free bundle.</li>
                 </ul>
             </div>
-            <div class="title-section col-12 col-md-4 col-xl-3">
-                <h3>¿A quién nos dirigimos?</h3>
-            </div>
         </section>
 
-        <section id="opciones" class="opciones">
+        <section id="opciones" class="opciones col-12">
             <div class="title-opciones">
                 <h3>¿Qué opciones ofrecemos para usuarios, empresas y Learning Partners?</h3>
             </div>

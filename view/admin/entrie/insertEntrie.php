@@ -16,8 +16,8 @@
             <input id="input-name" type="text" placeholder="Nombre de la entrada"> 
             <button id="confirm-name" class="button-tag">Confirmar</button>
         </div>
-        
     </section>
+    
     <section class="ubicacion">
         <div class="ruta-ubi">
             <a class="ruta-page" href="<?=url?>">Home / </a><a class="ruta-page"  href="<?=url.'?controller=blog'?>">On the Go / </a><p id="page" class="page"></p>
@@ -42,8 +42,6 @@
                         <input class="button-tag" type="submit" value="Añadir">
                     </div>
                 </form>
-
-                
             </div>
             <button id="button-create">CREAR</button>
         </div>
@@ -83,8 +81,7 @@
                 </form>
             </div>
         </div>
-    </div>
-                                
+    </div>              
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>   
     <script src="./script/entrie/newEntrie.js"></script> 
 

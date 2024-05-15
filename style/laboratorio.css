@@ -74,13 +74,13 @@
 .aprendizaje-practico{
     font-size: 13px;
     display: flex;
-    justify-content: space-around;
     align-items: center;
     margin: 80px 0;
 }
 
 .title-section{
-    height: 100%;
+    width: 80%;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,6 +94,17 @@
     font-size: 18px;
 }
 
+.content-section{
+    margin-top: 20px;
+    padding: 0 50px;
+}
+
+#aprendizaje-practico .title-section{
+    background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Izquierda.png');
+}
+#target .title-section{
+    background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Derecha.png');
+}
 @media (max-width: 768px) {
     .title-section{
         height: 120px;

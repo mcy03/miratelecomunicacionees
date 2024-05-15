@@ -6,8 +6,6 @@ array_map(function($api) { include_once 'controller/api/'.$api; }, apis);
 array_map(function($model) { include_once 'Model/'.$model; }, model);
 array_map(function($model_entrie) { include_once 'Model/Entries/'.$model_entrie; }, model_entries);
 
-
-
 if (!isset($_GET['controller'])) {
     //Si no le pasamos nada se pasara pagina principal de productos
     header("location:" . url . '?controller=home');

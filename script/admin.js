@@ -1,16 +1,25 @@
     window.addEventListener('DOMContentLoaded', async function() {
+        console.log('hola');
         const inputSelection = document.getElementById('input-selection');
-        const selectedValue = inputSelection.value;
-        const contenido = document.querySelector('.contenido-'+selectedValue);
 
-        lastContent = document.getElementsByClassName('activated')[0];
-        lastContent.classList.remove("activated");
-        lastContent.classList.add("desactivated");
-        
-        contenido.classList.remove("desactivated");
-        contenido.classList.add("activated");
+        if (inputSelection) {
+            const selectedValue = inputSelection.value;
+            const contenido = document.querySelector('.contenido-' + selectedValue);
 
-        await data(selectedValue);
+            // Remover la clase "activated" y añadir "desactivated" al último elemento activado
+            const lastContent = document.querySelector('.activated');
+            if (lastContent) {
+                lastContent.classList.remove("activated");
+                lastContent.classList.add("desactivated");
+            }
+            
+            // Añadir la clase "activated" al contenido seleccionado
+            contenido.classList.remove("desactivated");
+            contenido.classList.add("activated");
+
+            await data(selectedValue);
+        }
+
     });
 
 

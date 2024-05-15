@@ -14,8 +14,9 @@ class adminController{
             $numCertifications = Certificacion::countCertifications();
             $numTecnologies = Tecnologia::countTechnologies();
             $numCalendario = Calendario::countCalendario();
-
-
+            
+            $categorias = Categoria::getCategorias();
+            
             if (isset($_GET['selection'])) {
                 $selection = $_GET['selection'];
             }

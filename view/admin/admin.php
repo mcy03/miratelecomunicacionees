@@ -32,7 +32,11 @@
             </ul>
         </nav>
     </section>
-    <input id="input-selection" type="hidden" value="<?=$selection?>">
+
+    <?php if (isset($selection)) { ?>
+        <input id="input-selection" type="hidden" value="<?=$selection?>">
+    <?php } ?>
+    
     <section class="contenido-inicio activated">
         <div class="intro intro-admin">
             <h2>Administrador</h2>
@@ -203,7 +207,25 @@
             </div>  
 
             <div class="list-categories">
-                
+            <?php foreach ($categorias as $categoria) { ?>
+                <div class="category">
+                    <div class="body-category">
+                        <div class="info-category">
+                            <h4><?=$categoria->getNOMBRE()?></h4>
+                            <p class="date-category"><?=$categoria->getFecha()?></p>
+                        </div>
+                        <div class="entries-category">
+                            <a id="modal<?=$categoria->getCATEGORIA_ID()?>" class="enlaceEntriesCategory" href="#" data-toggle="modal" data-target="#miModal<?=$categoria->getCATEGORIA_ID()?>">
+                                <p class="num-entries-category">entradas</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="options-category">
+                        <p>Opciones...</p>
+                    </div>
+                </div>
+            <?php } ?>   
+
             </div>
         </div>
 
@@ -738,6 +760,28 @@
 
 </div>
 
+<!-- Modales -->
+<?php foreach ($categorias as $categoria) { ?>
+<div class="modal fade" id="miModal<?=$categoria->getCATEGORIA_ID()?>" tabindex="-1" role="dialog" aria-labelledby="miModalLabel<?=$categoria->getCATEGORIA_ID()?>" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="miModalLabel<?=$categoria->getCATEGORIA_ID()?>">Modal de <?=$categoria->getNOMBRE()?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Este es el modal de <?=$categoria->getNOMBRE()?>. Puedes colocar aquí cualquier contenido que desees mostrar en el modal.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
