@@ -20,39 +20,63 @@
             <a class="ruta-page" href="<?=url?>">Home / </a><p class="page">Servicios IT</p>
         </div>
     </section>
-    <div class="content">
-        <section class="intro-txt">
+    <div class="content row">
+        <section class="intro-txt col-12">
             <p>
                 Somos un partner tecnológico de extremo a extremo. 
                 La nutrida combinación de ser un partner de capacitación y de servicios profesionales en apoyo al partner, 
                 nos convierte en el aliado estratégico que cualquier partner Cisco necesita para llevar a cabo sus proyectos.
             </p>
         </section>
-        <section class="compromiso">
+        <section class="compromiso col-12">
             <h3 class="title-section">NUESTRO COMPROMISO</h3>
             <div id="img_compromiso"></div>
         </section>
-        <section class="fases">
-            <div class="txt-fases">
+        <section class="fases row">
+            <div class="txt-fases col-12 col-md-6 col-lg-8">
                 <h3 class="title-section">FASES DEL PROYECTO</h3>
                 <ul>
-                    <li>Consultoría Estratégica</li>
-                    <p>
-                        Nuestro equipo de expertos podrá ayudarle a tomar la decisión, 
-                        analizar la viabilidad e innovar acorde a la estrategia de cada compañía, 
-                        con el objetivo de transformar el negocio creando un valor diferencial.
-                    </p>
-                    <li>Consultoría tecnológica</li>
-                    <p>
-                        Le ayudará al partner a determinar y le asesorará en la estrategia adecuada para la arquitectura de red 
-                        y la traducción de la estrategia técnica que requiere su cliente en una solución real de Cisco.
-                    </p>
-                    <li>Retorno de la inversión</li>
-                    <li>Soporte</li>
+                    <div class="content-list">
+                        <li id="btn-content1">Consultoría Estratégica</li>
+                        <p class="text-content text-content1">
+                            Nuestro equipo de expertos podrá ayudarle a tomar la decisión, 
+                            analizar la viabilidad e innovar acorde a la estrategia de cada compañía, 
+                            con el objetivo de transformar el negocio creando un valor diferencial.
+                        </p>
+                        <ul class="list-two text-content text-content1">
+                            <li>Soluciones en cloud</li>
+                            <li>Automatización</li>
+                            <li>Arquitecturas centrales de Cisco</li>
+                            <li>Tecnología de futuro</li>
+                            <li>Retorno de la inversión</li>
+                        </ul>
+                    </div>
+                    <div class="content-list">
+                        <li id="btn-content2">Consultoría tecnológica</li>
+                        <p class="text-content text-content2">
+                            Le ayudará al partner a determinar y le asesorará en la estrategia adecuada para la arquitectura de red 
+                            y la traducción de la estrategia técnica que requiere su cliente en una solución real de Cisco.
+                        </p>
+                    </div>
+                    <div class="content-list">
+                        <li id="btn-content3">Retorno de la inversión</li>
+                        <p class="text-content text-content3">Acompañamos al partner en la ejecución y la integración de sus proyectos.</p>
+                    </div>
+                    <div class="content-list">
+                        <li id="btn-content4">Soporte</li>
+                        <p class="text-content text-content4">Bolsa de horas para dar mantenimiento y soporte a los proyectos de los clientes.</p>
+                    </div>
                 </ul>
+
+            </div>
+            <div class="cont-img-fases col-12 col-md-6 col-lg-4">
+                <div class="img-fases">
+
+                </div>
             </div>
         </section>
     </div>
-    
+
+    <script src="./script/responsive/toggle-servicios.js"></script>
 </body>
 </html>
