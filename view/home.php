@@ -28,7 +28,7 @@
         <div class="primera-seccion">
             <section class="que-ofrecemos">
                 <div class="titulo-que-ofrecemos">
-                    <h3 class="title">¿En que podemos ayudarte?</h3>
+                    <h3 class="title">¿En qué podemos ayudarte?</h3>
                     <div class="gradient-red"></div>
                 </div>
                 <div class="primera-fila fila-que">
@@ -90,6 +90,7 @@
                             actuamos como un catalizador como un catalizador..</span>
                         </div>
                     </li>
+                    <!--
                     <li class="card">
                         <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Formación customizada.png');"></div>
                         <div class="text-card-slider">
@@ -98,6 +99,7 @@
                             actuamos como un catalizador.</span>
                         </div>
                     </li>
+                        
                     <li class="card">
                         <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Cursos de colaboración avanzados.png');"></div>
                         <div class="text-card-slider">
@@ -114,6 +116,7 @@
                             actuamos como un catalizador.</span>
                         </div>
                     </li>
+                    -->
                     <li class="card">
                         <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Impacto social.png');"></div>
                         <div class="text-card-slider">

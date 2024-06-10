@@ -78,6 +78,7 @@
                     <h4>Misión como Cisco Learning Partner</h4>
                     <div class="ifselected">
                         <p>La transformación digital trae nuevos retos que exigen tener las habilidades y capacidades para entender las necesidades de los clientes</p>
+                        <a href="">Saber más</a>
                     </div>
                 </div>
                 <div class="image unselected">
@@ -85,7 +86,8 @@
                     <img src="./resource/slader_img/IMG Conoce MIRA L/Inicios.png" alt="" class="b">
                     <h4>Somos una realidad empresarial</h4>
                     <div class="ifselected">
-                        <p>La transformación digital trae nuevos retos que exigen tener las habilidades y capacidades para entender las necesidades de los clientes</p>
+                        <p>Iniciamos nuestra actividad en 2003 y tras más de 20 años como Cisco Learning Partner hemos alcanzado ser un partner de referencia tecnológica para el mercado IT. </p>
+                        <a href="">Saber más</a>
                     </div>
                 </div>
                 <div class="image unselected">
@@ -93,7 +95,8 @@
                     <img src="./resource/slader_img/IMG Conoce MIRA L/Tecnologia.png" alt="" class="b">
                     <h4>Tecnología para todos</h4>
                     <div class="ifselected">
-                        <p>La transformación digital trae nuevos retos que exigen tener las habilidades y capacidades para entender las necesidades de los clientes</p>
+                        <p>MIRA Telecomunicacions puede ayudarle a seguir avanzando en el mundo IT gracias a las certificaciones y especializaciones Cisco que son altamente reconocidas. </p>
+                        <a href="">Saber más</a>
                     </div>
                 </div>
                 <div class="image unselected">
@@ -104,6 +107,7 @@
                     <h4>Premios y reconocimientos</h4>
                     <div class="ifselected">
                         <p>La transformación digital trae nuevos retos que exigen tener las habilidades y capacidades para entender las necesidades de los clientes</p>
+                        <a href="">Saber más</a>
                     </div>
                 </div>
                 <div class="image unselected">
@@ -111,7 +115,8 @@
                     <img src="./resource/slader_img/IMG Conoce MIRA L/Global.png" alt="" class="b">
                     <h4>MIRA a nivel global</h4>
                     <div class="ifselected">
-                        <p>La transformación digital trae nuevos retos que exigen tener las habilidades y capacidades para entender las necesidades de los clientes</p>
+                        <p>Nuestra metodología ILT (Instructor Led Training) virtual, mediante Webex, nos permite atender a clientes de EMEA y América Latina, así como cualquier otro lugar del mundo, adaptándonos a la zona horaria del cliente. </p>
+                        <a href="">Saber más</a>
                     </div>
                 </div>
                 <div class="image unselected">
@@ -119,7 +124,8 @@
                     <img src="./resource/slader_img/IMG Conoce MIRA L/Team.png" alt="" class="b">
                     <h4>Nuestro equipo</h4>
                     <div class="ifselected">
-                        <p>La transformación digital trae nuevos retos que exigen tener las habilidades y capacidades para entender las necesidades de los clientes</p>
+                        <p>Somos un grupo de profesionales PROFUNDAMENTE especializados en todas las arquitecturas de Cisco.  </p>
+                        <a href="">Saber más</a>
                     </div>
                 </div>
                 <div class="image unselected">
@@ -127,7 +133,8 @@
                     <img src="./resource/slader_img/IMG Conoce MIRA L/Corporate.png" alt="" class="b">
                     <h4>Marco corporativo</h4>
                     <div class="ifselected">
-                        <p>La transformación digital trae nuevos retos que exigen tener las habilidades y capacidades para entender las necesidades de los clientes</p>
+                        <p>En Mira telecomunicacions somos conscientes de que el bienestar de los empleados influye directamente en su motivación, inspiración y eficiencia. </p>
+                        <a href="">Saber más</a>
                     </div>
                 </div>
             </section>

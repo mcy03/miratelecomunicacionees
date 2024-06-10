@@ -11,7 +11,7 @@
     
     <section class="banner-principal">
         <div class="title-page">
-            <h1>Formación</h1>
+            <h1>Formación CISCO</h1>
         </div>
 
         <span>

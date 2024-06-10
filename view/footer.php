@@ -53,13 +53,13 @@
                     </li>
                     <li>
                         <img src="./resource/icon-phone.png" alt="Descripción de la imagen">
-                        <p>Tel: 55 4040 8261</p>
+                        <p>Tel: +52 55 4040 8261</p>
                     </li>
                 </ul>
             </div>
 
             <div class="contact-resources">
-                <h5 class="title-contact">Artículos destacados</h5>
+                <h5 class="title-contact">Destacados</h5>
                 
                 <ul>
                     <li>
@@ -111,11 +111,11 @@
                     </li>
                     <li>
                         <img src="./resource/mas.png" alt="Descripción de la imagen">
-                        <p>MIRA</p>
+                        <p>Conoce a MIRA</p>
                     </li>
                     <li>
                         <img src="./resource/mas.png" alt="Descripción de la imagen">
-                        <p>On the Go</p>
+                        <p>Blog on the Go</p>
                     </li>
                 </ul>
             </div>
