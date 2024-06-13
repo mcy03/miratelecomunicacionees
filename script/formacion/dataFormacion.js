@@ -79,8 +79,8 @@ async function mostrarCertificaciones(){
 
     // Generar y añadir al DOM las filas de certificaciones
     certifications.forEach((certificacion, index) => {
-        if (index % 3 === 0) { // Inserta una nueva fila cada 3 certificaciones
-            contenedorCertificaciones.innerHTML += generarFilaCertificaciones(certifications.slice(index, index + 3));
+        if (index % 4 === 0) { // Inserta una nueva fila cada 3 certificaciones
+            contenedorCertificaciones.innerHTML += generarFilaCertificaciones(certifications.slice(index, index + 4));
         }
     });
 
@@ -104,7 +104,7 @@ async function mostrarCertificaciones(){
 
 async function mostrarCertificacionesPartners() {
     const certifications = await getCertificationsPartner();
-    console.log(certifications);
+
     // Obtener el contenedor donde se colocará el contenido generado
     const contenedorCertificaciones = document.getElementById('cont-certificaciones-partners');
 
@@ -125,41 +125,23 @@ async function mostrarCertificacionesPartners() {
     function generarArticuloCertificacion(certificacion) {
         return `
             <div class="certification">
-                <button class="button-red certifications-button" onclick="mostrarContenido(${certificacion.CERTIFICACION_ID})">
+                <button class="button-red certifications-button" onclick="mostrarContenido(${certificacion.CERTIFICACION_ID})" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <span>${certificacion.NOMBRE_CERTIFICACION}</span>
                 </button>
-                <div id="partner-${certificacion.CERTIFICACION_ID}" class="page-certifications show">
-                </div>
             </div>
         `;
     }
 }
 
-async function mostrarContenido(certificacionId) {
-    const selectedPage = document.getElementById(`partner-${certificacionId}`);
+function mostrarContenido(certificacionId) {
+    // Lógica para cargar el contenido dinámico en el modal
+    console.log(`Cargando contenido para la certificación con ID: ${certificacionId}`);
 
-    // Verificar si el contenido ya está visible
-    if (selectedPage.classList.contains('show')) {
-        // Si el contenido ya está visible, ocultarlo
-        selectedPage.classList.remove('show');
-    } else {
-        // Si el contenido no está visible, mostrarlo
-        const certificationsContent = `
-                <p>Página 1</p>    
-                <p>Página 2</p>  
-                <p>Página 3</p>  
-        `;
-
-        // Ocultar todos los demás contenidos
-        const allPages = document.querySelectorAll('.page-certifications');
-        allPages.forEach(page => {
-            page.classList.remove('show');
-        });
-
-        // Mostrar el contenido del botón seleccionado
-        selectedPage.innerHTML = certificationsContent;
-        selectedPage.classList.add('show');
-    }
+    // Ejemplo: Cambiar el título del modal
+    document.querySelector('#exampleModal .modal-title').innerText = `Certificación ID: ${certificacionId}`;
+    
+    // Ejemplo: Cambiar el cuerpo del modal
+    document.querySelector('#exampleModal .modal-body p').innerText = `Contenido para la certificación ID: ${certificacionId}`;
 }
 
 

@@ -77,7 +77,7 @@
                             <h3>Cisco CCIE Elite Tech</h3>
                             <span>Redes en manos de expertos capaces de resolver 
                                 problemas complicados y diseñar soluciones eficientes</span>
-                            <a class="download-link" href="/resource\pdf\home\Cisco CCIE Elite Tech 2024 SP.pdf" download="Cisco CCIE Elite Tech 2024 SP.pdf">
+                            <a class="download-link" href="./resource/pdf/home/Cisco CCIE Elite Tech 2024 SP.pdf" download="Cisco CCIE Elite Tech 2024 SP.pdf">
                                 Descargar Información
                             </a>
                         </div>
@@ -152,28 +152,30 @@
                 </article>
 
                 <article class="noticia-img">
-                    <div class="img-noticia"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
-                    <div class="gradient-overlay"></div>
+                    <div class="img-noticia"></div>
                     <div class="text-img-noticia">
-                        <h4>Convocatorias confirmadas</h4>
+                        
                     </div>
                 </article>
             </div>
 
-            <div class="fila-noticias reverse">
-                <article class="noticia-text">
-                    <div class="img-noticia"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
-                    <div class="noticia-body">
-                        <h4>CALENDARIO</h4>
+            <div class="fila-noticias">
+                <article class="noticia-text noticia-text-100">
+                    
+                    <div class="noticia-body noticia-body-max">
+                        <h4>CONECTAMOS TALENTO</h4>
                         <div class="text-body">
-                            <h3>Consulta nuestras fechas</h3>
-                            <span>Accede a nuestro calendario para informarte de nuestra programación.</span>
+                            <h3>CONECTAMOS TALENTO</h3>
+                            <span>
+                                Mira Telecomunicacions agrega una nueva experiencia tanto para el Partner como para el cliente final, 
+
+                                diversificando sus procesos, agregando a su cadena de valor un área que focalizará procesos en el reclutamiento 
+
+                                y la selección de Talentos IT.
+                            </span>
                         </div>
                     </div>
-                </article>
-
-                <article class="noticia-img">
-                    <div class="img-noticia"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
+                    <div class="img-noticia img-noticia-max"><img src="./resource/conectamos.png" alt=""></div>
                 </article>
             </div>
         </section>

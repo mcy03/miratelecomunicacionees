@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/assets.css">
     <link rel="stylesheet" type="text/css" href="./style/serviciosIT.css?1.0">
+
     <title>Servicios IT Miratelecomunicacions</title>
 </head>
 <body>
@@ -72,6 +73,66 @@
             <div class="cont-img-fases col-12 col-md-6 col-lg-4">
                 <div class="img-fases">
 
+                </div>
+            </div>
+        </section>
+        <section class="casos row">
+            <div class="fila col-12 row">
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-Saica" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Saica</h4>
+                            <a href="">Ver más -></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-Aena" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Aena T1</h4>
+                            <a href="">Ver más -></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-F1" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>F1 Valencia Street Circuit</h4>
+                            <a href="">Ver más -></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila col-12 row">
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-Adif" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Adif</h4>
+                            <a href="">Ver más -></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-Nexica" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Nexica</h4>
+                            <a href="">Ver más -></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div  id="img-Holcim"class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Holcim</h4>
+                            <a href="">Ver más -></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

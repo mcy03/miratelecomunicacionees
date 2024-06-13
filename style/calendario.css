@@ -6,9 +6,14 @@
     background-repeat: no-repeat;
 }
 
-
+.pagina{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
 table{
-    margin: 50px 30px;
+    margin: 0 30px;
 }
 
 .buscador input{
@@ -77,25 +82,17 @@ table{
     font-size: 10px;
 }
 
-.pagina{
-    display: flex;
-    flex-direction: row;
-    padding: 30px;
-}
 
-.publi{
-    margin-top: 50px;
-    margin-right: 20px;
-    margin-left: 20px;
-}
 
 .publi article{
-    margin-bottom: 150px;
-    border-radius: 10px;
+    margin-bottom: 50px;
+    border-radius: 20px;
     min-height: 200px;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    border: 1px solid grey;
+    padding: 20px;
 }
 
 .publi-text h4{
@@ -109,6 +106,15 @@ table{
     align-items: center;
 }
 
+.publi-text button{
+    font-size: 14px;
+}
+
 .publi-text button:hover{
     border: 1px solid rgb(0, 0, 0);
+}
+
+.logo_p{
+    width: 100%;
+
 }

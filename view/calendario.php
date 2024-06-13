@@ -23,8 +23,8 @@
             <a class="ruta-page" href="<?=url?>">Home / </a><p class="page">Calendario</p>
         </div>
     </section>
-    <div class="pagina">
-        <section class="calendario">
+    <div class="pagina row">
+        <section class="calendario col-9">
             <table id="tabla-calendario" class="tabla-calendario">
                 <tr class="buscador">
                     <td><input type="text" name="input-id" id="input-id" placeholder="id"></td>
@@ -56,30 +56,16 @@
                 </tr>
             </table>    
         </section>
-        <section class="publi">
+        <section class="publi  col-2">
             <article class="publi-text">
-                <h4>publicidad</h4>
-                <p>
-                    Esto es contenido publicitario para otras 
-                    entradas de la web.
-                </p>
-                <button class="button-red">Ver</button>
+                <img src="./resource/logos/clp_logo.png" alt="" class="logo_p">
+                <button class="button-red">Cursos CISCO</button>
             </article>
             <article class="publi-text">
-                <h4>publicidad</h4>
-                <p>
-                    Esto es contenido publicitario para otras 
-                    entradas de la web.
-                </p>
-                <button class="button-red">Ver</button>
+                <img src="./resource/logos/tripartita_logo.png" alt="" class="logo_p">
             </article>
             <article class="publi-text">
-                <h4>publicidad</h4>
-                <p>
-                    Esto es contenido publicitario para otras 
-                    entradas de la web.
-                </p>
-                <button class="button-red">Ver</button>
+                <img src="./resource/logos/Pearson VUE-logo.jpg" alt="" class="logo_p">
             </article>
         </section>
     </div>

@@ -8,7 +8,6 @@
 
     <link href="https://db.onlinewebfonts.com/c/8b8212e1382f2d794fae8b8d3d69ce30?family=Bundt+Cake" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/0b0e6caf1e87745dc5b17b461d7d873b?family=Shelley+Script+LT+W04+Regular" rel="stylesheet">
-    <title>Document</title>
 </head>
 <body>
     <footer>
@@ -64,23 +63,23 @@
                 <ul>
                     <li>
                         <img src="./resource/mas.png" alt="Descripción de la imagen">
-                        <p>Se necesitan expertos en ciberseguridad</p>
+                        <a href="<?=url.'?controller=formacion'?>">Cursos CISCO</a>
                     </li>
                     <li>
                         <img src="./resource/mas.png" alt="Descripción de la imagen">
-                        <p>Talento ideal para headhunter IT</p>
+                        <a href="<?=url.'?controller=formacion'?>">Preguntas más frecuentes</a>
                     </li>
                     <li>
                         <img src="./resource/mas.png" alt="Descripción de la imagen">
-                        <p>Buscamos - Técnicos en comunicaciones</p>
+                        <a href="<?=url.'?controller=formacion'?>">Links de interés L&C</a>
                     </li>
                     <li>
                         <img src="./resource/mas.png" alt="Descripción de la imagen">
-                        <p>MIRA Certificados</p>
+                        <a href="<?=url.'?controller=formacion'?>">Preguntas más frecuentes</a>
                     </li>
                     <li>
                         <img src="./resource/mas.png" alt="Descripción de la imagen">
-                        <p>Gracias</p>
+                        <a href="<?=url.'?controller=formacion'?>">Última noticia</a>
                     </li>
                 </ul>
             </div>
@@ -123,6 +122,15 @@
 
         <div class="logo-mira-footer">
             <img class="logo-mira" src="./resource/Miralogo/Mira.png" alt="">
+        </div>
+        <div class="container-logos">
+            <div class="logos">
+                <img src="./resource/logos/octalia-LSSI-logo.png" alt="">
+                <img src="./resource/logos/logo_iso.png" alt="">
+                <img src="./resource/logos/Pearson VUE-logo.jpg" alt="">
+                <img src="./resource/logos/tripartita_logo.png" alt="">
+                <img src="./resource/logos/clp_logo.png" alt="">
+            </div>
         </div>
         <div class="social-media-container">
             <div class="hr-container">

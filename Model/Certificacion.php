@@ -66,7 +66,7 @@ class Certificacion {
 
     public static function getSixCertifications(){
         $conn = db::connect();
-        $consulta = "SELECT * FROM certificacion LIMIT 6";
+        $consulta = "SELECT * FROM certificacion LIMIT 8";
 
         if ($resultado = $conn->query($consulta)) {
             while ($obj = $resultado->fetch_object('Certificacion')) {

@@ -27,8 +27,8 @@
             <a class="ruta-page" href="<?=url?>">Home / </a><p class="page">Mira</p>
         </div>
     </section>
-    <div class="pagina">
-        <section class="intro-page row">
+    <div class="pagina row">
+        <section class="intro-page row col-12">
             <div class="row-intro col-11 row">
                 <div class="line col-2"><hr><hr></div>
                 <div class="content-intro content-intro-center col-8">
@@ -67,7 +67,7 @@
                 </div>
             </div>
         </section>
-        <div class="section-gallery">
+        <div class="section-gallery col-12">
             <div class="title-section">
                 <h2>EL CAMINO QUE GENERA CAMBIOS</h2>
             </div>
@@ -142,7 +142,7 @@
         
 
 
-        <section class="slader-info">
+        <section class="slader-info  col-12">
             <div class="title-section">
                 <h2>CISCO BUILDERS</h2>
             </div>
@@ -186,7 +186,7 @@
             
         </section>
 
-        <section class="questions">
+        <section class="questions  col-12">
             <div class="title-section">
                 <h2>PREGUNTAS MÁS FRECUENTES</h2>
             </div>
@@ -235,35 +235,33 @@
             </div>
         </section>
 
-        <section class="questions">
-            <div>
-                <div class="title-section">
-                    <h2>PREGUNTAS MÁS FRECUENTES</h2>
-                </div>
+        <section class="links-interes row col-12">
+            <div class="title-section col-12">
+                <h2>TOP LINKS DE INTERÉS SOBRE L&C</h2>
+            </div>
 
-                <div class="question">
-                    <h3>Cisco Learning Credits</h3>
-                </div>
+            <div class="link-interes col-3">
+                <a href="">Recertificaciones Cisco</a>
+            </div>
+        
+            <div class="link-interes col-3">
+                <a href="">Education Program</a>
+            </div>
+
+            <div class="link-interes col-3">
+                <a href="">Cisco Learning Credits tool</a>
+            </div>
+
+            <div class="link-interes col-3">
+                <a href="">Cisco Learning Locator</a>
             </div>
             
-            <div>
-                <div class="title-section">
-                    <h2>PREGUNTAS MÁS FRECUENTES</h2>
-                </div>
-
-                <div class="question">
-                    <h3>Cisco Learning Credits</h3>
-                </div>
+            <div class="link-interes col-3">
+                <a href="">Cisco Learning Network Space</a>
             </div>
 
-            <div>
-                <div class="title-section">
-                    <h2>PREGUNTAS MÁS FRECUENTES</h2>
-                </div>
-
-                <div class="question">
-                    <h3>Cisco Learning Credits</h3>
-                </div>
+            <div class="link-interes col-3">
+                <a href="">Cisco Learning & Certifications</a>
             </div>
         </section>
     </div>
