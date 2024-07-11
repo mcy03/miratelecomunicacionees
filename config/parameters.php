@@ -3,7 +3,7 @@
         'homeController.php', 'formacionController.php', 'cursoController.php', 
         'calendarioController.php','serviciosITController.php', 'libreriaDigitalController.php', 
         'laboratorioController.php', 'miraController.php', 'blogController.php', 'entradaController.php',
-        'adminController.php', 'loginController.php'));
+        'adminController.php', 'loginController.php', 'politicasController.php'));
     
     define('apis', array(
         'ApiCertificacionController.php', 'ApiCursoController.php', 'ApiLaboratorioController.php', 

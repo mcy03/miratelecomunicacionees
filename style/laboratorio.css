@@ -93,10 +93,19 @@
     text-align: center;
     font-size: 18px;
 }
-
+#aprendizaje-practico{
+    border-right: 1px solid #848484;
+}
 .content-section{
     margin-top: 20px;
-    padding: 0 50px;
+    padding: 0 70px;
+}
+
+.content-section ol{
+    padding: 0;
+}
+.content-section ol li{
+    margin: 10px 0;
 }
 
 #aprendizaje-practico .title-section{
@@ -123,11 +132,12 @@
 }
 
 .opciones{
-    padding: 50px 100px;
+    padding: 50px;
     background-image: url('../resource/imagenes prueba web/img_home/Fondo Labs Web Mira.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    width: 100%;
 }
 
 .title-opciones{
@@ -142,10 +152,6 @@
     margin-bottom: 40px;
 }
 
-.container-user-company{
-    background-color: #ea1c2390;
-    padding: 30px;
-}
 
 .opciones h4{
     color: #fff;
@@ -171,7 +177,12 @@
 .packages{
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
+}
+
+.list-package{
+    background-color: #ea1c2390;
+    padding: 40px 50px;
+    width: 600px;
 }
 
 .list-package p{

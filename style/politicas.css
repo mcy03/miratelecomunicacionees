@@ -1,0 +1,59 @@
+.banner-principal{
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../resource/banners/Banner Tecnologia.png');
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.text-content{
+    margin-bottom: 50px;
+}
+.page-content{
+    padding: 40px 100px;
+}
+
+.title strong{
+    font-size: 14px;
+    color: #6F6F6F;
+}
+
+.text{
+    font-size: 13px;
+    color: #6F6F6F;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.lista li{
+    font-size: 13px;
+    color: #6F6F6F;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+a.text{
+    color: #EA1C24;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+a.text:hover{
+    color: #6F6F6F;
+}
+
+.enlaces{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tabla-cookies, .tabla-cookies td{
+    border: 1px solid #6F6F6F;
+    font-size: 13px;
+    color:#6F6F6F;
+}
+.tabla-cookies td.title-table{
+    text-align: center;
+    width: 350px;
+}
+.tabla-cookies td{
+    padding: 20px;
+}

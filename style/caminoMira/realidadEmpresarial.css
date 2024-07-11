@@ -1,0 +1,62 @@
+.banner-principal{
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../../resource/banners/Banner Inicios.png');
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.page-content{
+    padding: 50px 150px;
+}
+
+.page-content p{
+    font-size: 15px;
+}
+.motivos{
+    padding: 50px 0 0 0 ;
+}
+.row-motivos{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.row-motivos-two{
+    justify-content: space-evenly;
+}
+.motivo{
+    width: 320px;
+}
+.img-motivo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.img-motivo img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+.title-motivo{
+    display: flex;
+    justify-content: center;
+}
+
+.title-motivo h4{
+    font-size: 13px;
+    text-align: center;
+    background-color: #EA1C24;
+    color: #fff;
+    width: 250px;
+    padding: 10px 0;
+}
+
+.content-motivo p{
+    font-size: 11px;
+    text-align: center;
+    margin-top: 10px;
+}

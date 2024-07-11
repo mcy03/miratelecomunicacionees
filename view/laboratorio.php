@@ -31,51 +31,54 @@
                 Están ubicados un lugar seguro y disponibles en cualquier momento. 
             </p>
             <p>
-                Ofrecemos laboratorios en vivo basados en hardware y software que permite a nuestros estudiantes practicar y perfeccionar sus habilidades 
+                Ofrecemos laboratorios en vivo basados en hardware y software que permite a nuestros estudiantes practicar y perfeccionar sus habilidades. 
+            </p>
+            <p>
                 Si bien la mayoría de los proveedores de capacitación utilizan simulaciones para permitir que los estudiantes practiquen lo que aprenden, nosotros brindamos experiencia práctica del mundo real con equipos y/o software reales en la mayoría de nuestros laboratorios.
             </p>
             <p>Para más información dirigirse a: <a href="mailto:mira@miratelecomunicacions.com">mira@miratelecomunicacions.com</a></p>
         </section>
         <div class="col-0 col-md-1 col-xl-1"></div>
-
+        <!--
         <section class="buttons-scrollDown col-12 row">
             <button class="col-10 col-md-5 col-xl-2" onclick="scrollToSection('#aprendizaje-practico')">Aprendizaje práctico</button>
             <button class="col-10 col-md-5 col-xl-2" onclick="scrollToSection('#target')">¿A quién nos dirigimos?</button>
             <button class="col-10 col-md-5 col-xl-2" onclick="scrollToSection('#opciones')">¿Qué opciones ofrecemos?</button>
             <button class="col-10 col-md-5 col-xl-2" onclick="scrollToSection('#labs')">Labs. Bar List</button>
         </section>
-        <hr>
-        <section id="aprendizaje-practico" class="aprendizaje-practico col-6 flex-column">
-            <div class="title-section">
-                <h3>Aprendizaje práctico</h3>
-            </div>
-            
-            <div class="content-section">
-                <p>Nuestra área de negocio Learning Bar Labs. ofrece a los profesionales IT la oportunidad de acceder a laboratorios a su propio ritmo para implementar configuraciones y adoptar soluciones Cisco.</p>
-                <p>Le ayudará a seguir desarrollando habilidades en un entorno guiado, estructurado que simula escenarios reales y le preparará para la certificación. </p>
-                <p>Es la oportunidad perfecta para reducir el riesgo en la implementación ya que después de asistir a alguna formación usted podrá seguir en contacto y familiarizarse con la solución Cisco.</p>
-            </div>
-        </section>
-        <section id="target" class="aprendizaje-practico col-6 flex-column">
-            <div class="title-section">
-                <h3>¿A quién nos dirigimos?</h3>
-            </div>
-            <div class="content-section">
-                <ul>
-                    <li>Estudiantes que hayan finalizado una capacitación dirigida por instructor</li>
-                    <li>Estudiantes que estén asociados a alguna membresía digital y quieran practicar con un entorno adicional de pruebas. </li>
-                    <li>A profesionales que necesitan implementar una solución y necesitan probar configuraciones de red en otro entorno antes de implementarlas.</li>
-                    <li>A empresas de capacitación Cisco que tengan la necesidad de alquilar laboratorios para aquellos cursos oficiales que son free bundle.</li>
-                </ul>
-            </div>
-        </section>
+        -->
+        <div class="row col-12">
+            <section id="aprendizaje-practico" class="aprendizaje-practico col-6 flex-column row">
+                <div class="title-section col-12">
+                    <h3>Aprendizaje práctico</h3>
+                </div>
+                
+                <div class="content-section col-12">
+                    <p>Nuestra área de negocio Learning Bar Labs. ofrece a los profesionales IT la oportunidad de acceder a laboratorios a su propio ritmo para implementar configuraciones y adoptar soluciones Cisco.</p>
+                    <p>Le ayudará a seguir desarrollando habilidades en un entorno guiado, estructurado que simula escenarios reales y le preparará para la certificación. </p>
+                    <p>Es la oportunidad perfecta para reducir el riesgo en la implementación ya que después de asistir a alguna formación usted podrá seguir en contacto y familiarizarse con la solución Cisco.</p>
+                </div>
+            </section>
+            <section id="target" class="aprendizaje-practico col-6 flex-column">
+                <div class="title-section">
+                    <h3>¿A quién nos dirigimos?</h3>
+                </div>
+                <div class="content-section content-setion-list">
+                    <ol>
+                        <li>Estudiantes que hayan finalizado una capacitación dirigida por instructor</li>
+                        <li>Estudiantes que estén asociados a alguna membresía digital y quieran practicar con un entorno adicional de pruebas. </li>
+                        <li>A profesionales que necesitan implementar una solución y necesitan probar configuraciones de red en otro entorno antes de implementarlas.</li>
+                        <li>A empresas de capacitación Cisco que tengan la necesidad de alquilar laboratorios para aquellos cursos oficiales que son free bundle.</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
 
         <section id="opciones" class="opciones col-12">
             <div class="title-opciones">
-                <h3>¿Qué opciones ofrecemos para usuarios, empresas y Learning Partners?</h3>
+                <h3>¿Qué opciones ofrecemos para usuarios y empresas?</h3>
             </div>
             <div class="container-user-company">
-                <h4>usuarios y compañías</h4>
                 <div class="packages">
                     <div class="list-package access-package">
                         <p>Paquete de acceso</p>
@@ -90,17 +93,11 @@
                         <ul>
                             <li><img class="img-icon-package" src="./resource/iconos/labs-page/user.png" alt=""> Por usuario</li>
                             <li><img class="img-icon-package" src="./resource/iconos/labs-page/calendario.png" alt=""> Por horas y días de acceso</li>
-                            <li><img class="img-icon-package" src="./resource/iconos/labs-page/reloj.png" alt=""> Horas de mentoriía</li>
-                            <li><img class="img-icon-package" src="./resource/iconos/labs-page/tech-support.png" alt=""> Soporte y chat de resolución de dudas</li>
+                            <li><img class="img-icon-package" src="./resource/iconos/labs-page/reloj.png" alt=""> Horas de mentoría</li>
+                            <li><img class="img-icon-package" src="./resource/iconos/labs-page/tech-support.png" alt=""> Soporte de recuperación y chat de resolución de dudas</li>
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="container-package-partner">
-                <h4>Learning Partner</h4>
-                <ul>
-                    <li id="link-learningPartner"><a onclick="scrollToSection('#labs')">Ver nuestra barra de laboratorios</a></li>
-                </ul>
             </div>
         </section>
 

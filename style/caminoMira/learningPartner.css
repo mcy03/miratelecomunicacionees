@@ -1,0 +1,68 @@
+.banner-principal{
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../../resource/banners/Banner Mision.png');
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
+    background-repeat: no-repeat;
+}
+
+.page-content{
+    padding: 30px 0 10px 0;
+    width: 100%;
+}
+
+.content-text{
+    padding: 30px 60px;
+    margin-bottom: 30px;
+}
+h2{
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.points h2{
+    color: #fff;
+}
+
+.content-text p{
+    font-size: 15px;
+}
+
+
+.points{
+    padding: 30px 70px;
+    background-color: #EA1C24;
+}
+.point{
+    display: flex;
+    margin: 20px 0;
+    padding: 15px 30px;
+    background-color: #fff;
+}
+.img-point{
+    border-radius: 20px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+
+
+.img-point img{
+    width: 85%;
+}
+
+.point p{
+    width: 90%;
+    font-size: 13px;
+    margin: 0;
+    margin-left: 30px;
+    
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}

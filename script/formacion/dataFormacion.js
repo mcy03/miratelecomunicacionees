@@ -7,15 +7,19 @@ window.addEventListener("load", async function() {
 
     contenedorCarga.style.display = 'none';
 
-    await mostrarCertificaciones();
+    let certificaciones = await getCertifications();
+
+    await mostrarCertificaciones(certificaciones.slice(0, 8));
 
     contenedorPadre = document.getElementById('cont-certificaciones');
 
     contenedorCarga = contenedorPadre.querySelector('.contenedor_carga');
     
     contenedorCarga.style.display = 'none';
-
-    await mostrarCertificacionesPartners();
+    
+    
+    
+    await mostrarCertificacionesPartners(certificaciones.slice(8, 11));
 
     contenedorPadre = document.getElementById('cont-certificaciones-partners');
 
@@ -71,8 +75,7 @@ async function mostrarCategorias(){
 //----------------------
 //      Function para mostrar certificaciones en pagina de formacion.
 //----------------------
-async function mostrarCertificaciones(){
-    const certifications = await getCertifications();
+async function mostrarCertificaciones(certifications){
     console.log(certifications);
     // Obtener el contenedor donde se colocará el contenido generado
     const contenedorCertificaciones = document.getElementById('cont-certificaciones');
@@ -102,9 +105,7 @@ async function mostrarCertificaciones(){
     }
 }
 
-async function mostrarCertificacionesPartners() {
-    const certifications = await getCertificationsPartner();
-
+async function mostrarCertificacionesPartners(certifications) {
     // Obtener el contenedor donde se colocará el contenido generado
     const contenedorCertificaciones = document.getElementById('cont-certificaciones-partners');
 
@@ -124,29 +125,66 @@ async function mostrarCertificacionesPartners() {
     // Función para generar el HTML de un artículo de certificación
     function generarArticuloCertificacion(certificacion) {
         return `
-            <div class="certification">
-                <button class="button-red certifications-button" onclick="mostrarContenido(${certificacion.CERTIFICACION_ID})" data-bs-toggle="modal" data-bs-target="#exampleModal">
+           <div class="certification">
+                <button class="button-red certifications-button" onclick="mostrarContenido('${certificacion.NOMBRE_CERTIFICACION}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <span>${certificacion.NOMBRE_CERTIFICACION}</span>
                 </button>
             </div>
+
         `;
     }
 }
 
-function mostrarContenido(certificacionId) {
-    // Lógica para cargar el contenido dinámico en el modal
-    console.log(`Cargando contenido para la certificación con ID: ${certificacionId}`);
+async function mostrarContenido(certificacion) {
+    let title = certificacion;
+    let content = '';
+    let resource = '';
+    if (certificacion == "SELECT") {
+        content = "Obtenga informacion sobre los requisitos y registre su empresa como socio de Cisco";
+        resource = "<a class='download-link-red' href='./resource/pdf/partner_resource/select-integrator-reqs.pdf' target='_blank'>Ver requisitos</a>";
+    }else if (certificacion == "PREMIER") {
+        content = "Genere cuevas oportunidades y recompensas con su rol de integrador Premier";
+        resource = "<a class='download-link-red' href='./resource/pdf/partner_resource/premier-integrator-requirements.pdf' target='_blank'>Ver requisitos</a>";
+    }else if (certificacion == "GOLD") {
+        content = "Alcance al más alto nivel de reconocimiento frente a los clientes con su rol de integrador Gold partner";
+        resource = "<a class='download-link-red' href='./resource/pdf/partner_resource/gold-integrator-requirements.pdf' target='_blank'>Ver requisitos</a>";
+        console.log('gold');
+    }
 
-    // Ejemplo: Cambiar el título del modal
-    document.querySelector('#exampleModal .modal-title').innerText = `Certificación ID: ${certificacionId}`;
-    
-    // Ejemplo: Cambiar el cuerpo del modal
-    document.querySelector('#exampleModal .modal-body p').innerText = `Contenido para la certificación ID: ${certificacionId}`;
+    document.querySelector('#exampleModal .modal-title').textContent = `Certificaciones ${title}`;
+    document.querySelector('#exampleModal .modal-body p').textContent = `${content}`;
+    document.querySelector('#exampleModal .modal-footer').innerHTML += `${resource}`;
+
+    const modal = document.getElementById('exampleModal');
+
+    modal.addEventListener('hidden.bs.modal', function (event) {
+        // Limpiar el contenido adicional del modal
+        const modalFooter = modal.querySelector('.modal-footer');
+        modalFooter.innerHTML = `
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        `;
+    });
 }
 
 
-
-
+/*
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+*/
 
 
 
@@ -171,7 +209,22 @@ async function getTecnologies() {
 
 async function getCertifications() {
     let formData = new FormData();
-        formData.append('accion', 'get_six_certifications');
+        formData.append('accion', 'get_certifications');
+
+    const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiCertificacion&action=api';
+
+    try {
+        const response = await axios.post(url, formData);
+
+        return response.data;
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+}
+
+async function getCertificationByName(name) {
+    let formData = new FormData();
+        formData.append('accion', 'get_certifications_byName');
 
     const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiCertificacion&action=api';
 

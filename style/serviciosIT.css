@@ -1,3 +1,11 @@
+.banner-principal{
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../resource/imagenes prueba web/img_home/nuevas/Servicios IT.png');
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .banner-principal span{
     text-align: center;
     height: 30px;
@@ -5,7 +13,7 @@
 }
 
 .content{
-    height: 2500px;
+    height: 2700px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -25,7 +33,7 @@
 }
 .title-section{
     font-size: 20px;
-    padding: 50px;
+    padding: 30px 50px;
 }
 .intro-txt p{
     font-size: 15px;
@@ -201,13 +209,92 @@
 .content-card h4{
     font-size: 16px;
 }
-.content-card a{
+.content-card .button-caso-exito{
     align-self: flex-end;
     color: #EA1C24;
     text-decoration: none;
     font-size: 12px;
+    background-color: #00000000;
+    border: 0;
 }
 
 .content-card a:hover{
     color: #ea1c239d;
+}
+
+.content-solutions{
+    padding: 30px 50px;
+}
+
+
+.headers-solutions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.header-solution{
+    border: 1px solid #fff;
+    width: 60%;
+    padding: 15px 0;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.header-solution h4{
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+}
+
+.header-solution:hover{
+    border-bottom: 1px solid #EA1C24;
+    color: #EA1C24;
+    box-shadow: 5px 5px 15px rgba(234, 28, 36, 0.5);
+}
+
+.header-solution.selected{
+    border-bottom: 1px solid #EA1C24;
+    color: #EA1C24;
+    box-shadow: 5px 5px 15px rgba(234, 28, 36, 0.5);
+}
+
+.text-solution{
+    display: none;
+    margin-left: 140px;
+}
+
+.text-solution h4{
+    font-size: 16px;
+}
+
+.text-solution p{
+    width: 300px;
+    font-size: 13px;
+    margin: 30px 0;
+}
+.text-solution img{
+    width: 300px;
+}
+
+.text-solution.selected{
+    display: block;
+}
+
+
+/* Ensanchar el modal */
+.modal-dialog {
+    max-width: 80%; /* Ajusta el porcentaje según necesites */
+}
+
+/* Cambiar el fondo del encabezado del modal a rojo */
+.modal-header {
+    background-color: red;
+    color: white; /* Cambiar el color del texto si es necesario */
+}
+
+.modal-body{
+    font-size: 14px;
 }

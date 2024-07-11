@@ -32,7 +32,6 @@ class Certificacion {
         }
     }
     
-
     public static function getCertifications(){
         $conn = db::connect();
         $consulta = "SELECT * FROM certificacion";
@@ -50,6 +49,22 @@ class Certificacion {
     public static function getCertificationsPartner(){
         $conn = db::connect();
         $consulta = "SELECT * FROM certificacion WHERE PARTNER = 1";
+    
+        if ($resultado = $conn->query($consulta)) {
+            $arrayCertificacion = array(); // Inicializar el array
+    
+            while ($obj = $resultado->fetch_object('Certificacion')) {
+                $arrayCertificacion[] = $obj;
+            }
+            
+            $resultado->close();
+            return $arrayCertificacion;
+        }
+    }
+
+    public static function getCertificationsByName($name){
+        $conn = db::connect();
+        $consulta = "SELECT * FROM certificacion WHERE NOMBRE_CERTIFICACION = $name";
     
         if ($resultado = $conn->query($consulta)) {
             $arrayCertificacion = array(); // Inicializar el array

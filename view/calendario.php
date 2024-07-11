@@ -59,7 +59,7 @@
         <section class="publi  col-2">
             <article class="publi-text">
                 <img src="./resource/logos/clp_logo.png" alt="" class="logo_p">
-                <button class="button-red">Cursos CISCO</button>
+                <a href="<?=url.'?controller=curso'?>" class="button-red">Cursos CISCO</a>
             </article>
             <article class="publi-text">
                 <img src="./resource/logos/tripartita_logo.png" alt="" class="logo_p">

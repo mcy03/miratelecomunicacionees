@@ -1,0 +1,39 @@
+.banner-principal{
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../../resource/banners/Banner Global.png');
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.page-content{
+    padding: 50px 150px;
+}
+
+.button-red{
+    border-radius: 0;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.button-red:hover{
+    background-color: #fff;
+    color: #ea1c23;
+    border: 1px solid #ea1c23;
+    border-radius: 0;
+    
+}
+.container-training-latam{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-training-latam{
+    height: 100px;
+}
+
+.link-mail{
+    display: flex;
+    justify-content: space-evenly;
+}

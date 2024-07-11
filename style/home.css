@@ -117,7 +117,7 @@ section.ofertas{
 
 .titulo-que-ofrecemos{
     display: flex;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 h3.title {
     font-size: 18px;
@@ -131,8 +131,25 @@ h3.title {
 
 .gradient-red{
     width: 90px;
-    height: 100%;
+    height: auto;
     background: linear-gradient(to bottom left, transparent 49.5%, #ea1c23 49.5%, #ea1c23 50%);
+}
+.container-header-que-ofrecemos{
+    display: flex;
+    justify-content: space-between;
+}
+.logos-home{
+    width: 120px;
+    height: 120px;
+}
+.logo-clp{
+    margin-right: 20px;
+    margin-top: -40px;
+}
+.logo-latam{
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
 }
 
 .que-ofrecemos .fila-que{
@@ -158,24 +175,26 @@ h3.title {
 .segunda-fila{
     margin-bottom: 0;
 }
-
+.container-quienes{
+    width: 80%;
+}
 .quienes-somos{
     background-color: #EA1C24;
     display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+    justify-content: left;
+    align-content: space-between;
+    flex-direction: row;
     padding: 30px;
 }
 .preguntas-sobre-nosotros {
-    width: 70%;
-    height: 100%;
+    width: auto;
+    height: 180px;
     text-align: left;
     color: #fff;
     display: flex;
     justify-content:space-evenly;
     flex-direction: column;
-    margin-left: 30px;
+    margin-left: 50px;
 }
 .quienes-somos h2{
     width: 50%;
@@ -505,19 +524,6 @@ h2.title-slider{
   
 .reverse .noticia-img{
    order: 1;
-}
-
-
-
-.download-link{
-    text-decoration: none;
-    color: #ea1c23;
-    font-size: 10px;
-    margin-top: 15px;
-}
-
-.download-link:hover{
-    text-decoration: underline;
 }
 
 @media screen and (max-width: 860px) {

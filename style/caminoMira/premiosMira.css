@@ -1,0 +1,130 @@
+.banner-principal{
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../../resource/banners/Banner Premios.png');
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title{
+    display: flex;
+    justify-content: left;
+    padding-bottom: 30px;
+}
+.title h2{
+    text-align: left;
+    font-size: 18px;
+    width: 60%;
+}
+
+.time-line{
+    display: flex;
+    justify-content: center;
+    padding: 50px 150px;
+}
+.time-line button{
+    width: 200px;
+    font-size: 15px;
+}
+.button-red-line{
+    background-color:#EA1C24;
+    border: 1px solid #EA1C24;
+    color: #fff;
+}
+
+.button-grey-line{
+    background-color:#EDEDED;
+    border: 1px solid #EDEDED;
+    color: #000;
+}
+
+.title-primary{
+    display: flex;
+    justify-content: center;
+}
+.title-primary h2{
+    text-align: center;
+}
+
+.content{
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.award{
+    padding: 50px 150px;
+    margin: 0;
+}
+
+.content-award{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.award-info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.award-info p{
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.img-award{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-award img{
+    max-width: 200px;
+}
+.img-award a{
+    color: #fff;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.img-award.double{
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img-award.double img{
+    max-width: 250px;
+}
+
+.space-red{
+    background-color: #ea1c23cd;
+    height: 5px;
+}
+.award-grey{
+    background-color: #EDEDED;
+    width: 100%;
+    color: #000;
+}
+
+.award-grey .title {
+    padding-bottom: 30px;
+}
+.award-grey .title h2{
+    width: 100%;
+}
+
+.award-grey .title h2{
+    width: 100%;
+}
+
+.img-award a{
+    color: #EA1C24;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.img-award a:hover{
+    color: #000000;
+    font-size: 13px;
+}

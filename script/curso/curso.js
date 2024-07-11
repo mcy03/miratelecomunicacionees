@@ -169,26 +169,33 @@ async function displayCourses(page, courses) {
             
                 // Iterar sobre los cursos en la fila actual
                 for (let j = i; j < i + 3 && j < coursesSelected.length; j++) {
-                    // Crear un nuevo artículo para el curso
+                    const link = document.createElement('a');
+                    link.href = `http://127.0.0.1/miratelecomunicacionees/?controller=curso&action=view&${coursesSelected[j].NOMBRE_CURSO}`;
+                    link.style.textDecoration = 'none'; // Asegura que el enlace no tenga subrayado
+                    link.style.color = 'inherit'; // Asegura que el enlace herede el color del texto
+                    link.target = "_blank";
+                    
+                    // Crear el artículo para el curso
                     const curso = document.createElement('article');
                     curso.classList.add('curso');
                     
                     // Crear el contenido del artículo
-                    curso.innerHTML = `<h2>${coursesSelected[j].NOMBRE_CURSO}</h2>`;
-    
+                    link.innerHTML = `<h2>${coursesSelected[j].NOMBRE_CURSO}</h2>`;
                     if (coursesSelected[j].NOMBRE_TECNOLOGIA) {
-                        curso.innerHTML += `<p>${coursesSelected[j].NOMBRE_TECNOLOGIA}</p>`;
+                        link.innerHTML += `<p>${coursesSelected[j].NOMBRE_TECNOLOGIA}</p>`;
                     }
-
                     if (coursesSelected[j].NOMBRE_CERTIFICACION) {
-                        curso.innerHTML += `<p>${coursesSelected[j].NOMBRE_CERTIFICACION}</p>`;
+                        link.innerHTML += `<p>${coursesSelected[j].NOMBRE_CERTIFICACION}</p>`;
                     }
-
-                    curso.innerHTML += `<span>${coursesSelected[j].COMPLETE_NAME}</span>`;
-            
-                    // Agregar el artículo al div de la fila de cursos
+                    link.innerHTML += `<span>${coursesSelected[j].COMPLETE_NAME}</span>`;
+                
+                    // Agregar el artículo dentro del enlace
+                    curso.appendChild(link);
+                
+                    // Agregar el enlace al div de la fila de cursos
                     filaCursos.appendChild(curso);
                 }
+                
             
                 // Agregar la fila de cursos a la sección de cursos
                 cursosSection.appendChild(filaCursos);

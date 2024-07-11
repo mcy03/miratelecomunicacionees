@@ -1,0 +1,263 @@
+.banner-principal{
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../../resource/banners/Banner Team.png');
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner-principal h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-principal p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 20px;
+}
+.page-content h4{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.page-content p{
+    font-size: 15px;
+}
+
+.back{
+    padding: 50px;
+}
+.back-red{
+    color: #000;
+    background-color: #D9D9D9;
+}
+
+
+.back-white{
+    color: #000;
+    background-color: #fff  ;
+}
+.back a{
+  color:  #EA1C24;
+}
+.puntuacions h4{
+    margin-bottom: 20px;
+}
+
+
+#container-img-mapa{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.img-mapa{
+  max-width: 800px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.graficos{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0;
+}
+
+/* RESET STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.chart-skills {
+    margin: 0 30px;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .chart-skills *,
+  .chart-skills::before {
+    box-sizing: border-box;
+  }
+  
+  
+  /* CHART-SKILLS STYLES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  .chart-skills {
+    position: relative;
+    width: 250px;
+    height: 125px;
+    overflow: hidden;
+  }
+  
+  .chart-skills::before,
+  .chart-skills::after {
+    position: absolute;
+  }
+  
+  .chart-skills::before {
+    content: '';
+    width: inherit;
+    height: inherit;
+    border: 25px solid rgba(211, 211, 211, .3);
+    border-bottom: none;
+    border-top-left-radius: 175px;
+    border-top-right-radius: 175px;
+  }
+  
+  .chart-skills1::after {
+    content: 'Instructor';
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: cadetblue;
+    text-align: center;
+  }
+  .chart-skills2::after {
+    content: 'Laboratorios';
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: cadetblue;
+    text-align: center;
+  }
+  .chart-skills3::after {
+    content: 'Experiencia';
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: cadetblue;
+    text-align: center;
+  }
+  
+  .chart-skills li {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border: 25px solid;
+    border-top: none;
+    border-bottom-left-radius: 175px;
+    border-bottom-right-radius: 175px;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    animation-fill-mode: forwards;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+  }
+  
+  .chart-skills1 li:nth-child(1) {
+    z-index: 4;
+    border-color: #EA1C24;
+    animation-name: rotate-one;
+  }
+  
+  .chart-skills2 li:nth-child(1) {
+    z-index: 3;
+    border-color: #EA1C24;
+    animation-name: rotate-two;
+    animation-delay: .4s;
+  }
+  
+  .chart-skills3 li:nth-child(1) {
+    z-index: 2;
+    border-color: #EA1C24;
+    animation-name: rotate-three;
+    animation-delay: .8s;
+  }
+  
+
+  .chart-skills span {
+    position: absolute;
+    font-size: .85rem;
+    backface-visibility: hidden;
+    animation: fade-in .4s linear forwards;
+  }
+  
+  .chart-skills1 li:nth-child(1) span {
+    top: 99%;
+    left: 30%;
+    transform: rotate(187deg);
+    color: #fff;
+  }
+  
+  .chart-skills2 li:nth-child(1) span {
+    top: 98%;
+    left: 25%;
+    transform: rotate(194deg);
+    color: #fff;
+    animation-delay: .4s;
+  }
+  
+  .chart-skills3 li:nth-child(1) span {
+    top: 99%;
+    left: 30%;
+    transform: rotate(187deg);
+    color: #fff;
+    animation-delay: .8s;
+  }
+  
+  /* ANIMATIONS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+
+  /* 1.8 = 1% */
+  @keyframes rotate-one {
+    100% {
+      transform: rotate(172.8deg);
+      /**
+       * 12% => 21.6deg
+       */
+    }
+  }
+  
+  @keyframes rotate-two {
+    100% {
+      transform: rotate(165.6deg);
+      /**
+       * 32% => 57.6deg 
+       * 57.6 + 21.6 => 79.2deg
+       */
+    }
+  }
+  
+  @keyframes rotate-three {
+    100% {
+      transform: rotate(172.8deg);
+      /**
+       * 34% => 61.2deg 
+       * 61.2 + 79.2 => 140.4deg
+       */
+    }
+  }
+  
+  @keyframes fade-in {
+    0%,
+    90% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

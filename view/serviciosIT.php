@@ -77,13 +77,17 @@
             </div>
         </section>
         <section class="casos row">
+            <h3 class="title-section">CASOS DE ÉXITO</h3>
+
             <div class="fila col-12 row">
                 <div class="col-4">
                     <div class="caso">
                         <div id="img-Saica" class="img-card"></div>
                         <div class="content-card">
                             <h4>Saica</h4>
-                            <a href="">Ver más -></a>
+                            <button class="button-caso-exito" onclick="mostrarContenido('saica')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -92,7 +96,9 @@
                         <div id="img-Aena" class="img-card"></div>
                         <div class="content-card">
                             <h4>Aena T1</h4>
-                            <a href="">Ver más -></a>
+                            <button class="button-caso-exito" onclick="mostrarContenido('aenaT1')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -101,7 +107,9 @@
                         <div id="img-F1" class="img-card"></div>
                         <div class="content-card">
                             <h4>F1 Valencia Street Circuit</h4>
-                            <a href="">Ver más -></a>
+                            <button class="button-caso-exito" onclick="mostrarContenido('f1valencia')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -112,7 +120,9 @@
                         <div id="img-Adif" class="img-card"></div>
                         <div class="content-card">
                             <h4>Adif</h4>
-                            <a href="">Ver más -></a>
+                            <button class="button-caso-exito" onclick="mostrarContenido('adif')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -121,23 +131,109 @@
                         <div id="img-Nexica" class="img-card"></div>
                         <div class="content-card">
                             <h4>Nexica</h4>
-                            <a href="">Ver más -></a>
+                            <button class="button-caso-exito" onclick="mostrarContenido('nexica')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
                         </div>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="caso">
-                        <div  id="img-Holcim"class="img-card"></div>
+                        <div id="img-Holcim" class="img-card"></div>
                         <div class="content-card">
                             <h4>Holcim</h4>
-                            <a href="">Ver más -></a>
+                            <button class="button-caso-exito" onclick="mostrarContenido('holcim')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="soluciones col-12 row">
+            <h3 class="title-section">NUESTRO COMPROMISO</h3>
+            <div class="content-solutions col-12 row">
+                <div class="texts-solutions col-8">
+                    <div class="text-solution selected">
+                        <h4>Centro de Datos</h4>
+                        <p>
+                            Cisco ACI, Hyperflex, Nexus, UCS.
+                        </p>
+                        <img src="./resource/serviciosIT/Soluciones Cisco/Centro de Datos.png" alt="">
+                    </div>
+                    <div class="text-solution">
+                        <h4>Colaboración</h4>
+                        <p>
+                            DNA, SD-Wan, Controladoras 9K, Catalyst.
+                        </p>
+                        <img src="./resource/serviciosIT/Soluciones Cisco/Colaboracion.png" alt="">
+                    </div>
+                    <div class="text-solution">
+                        <h4>Service provider</h4>
+                        <p>
+                            ISE, Firewall, Umbrella, DUO, Cyber.
+                        </p>
+                        <img src="./resource/serviciosIT/Soluciones Cisco/Service Provider.png" alt="">
+                    </div>
+                    <div class="text-solution">
+                        <h4>Seguridad</h4>
+                        <p>
+                            CUCM, Webex Team, Calling, Jabber.
+                        </p>
+                        <img src="./resource/serviciosIT/Soluciones Cisco/Seguridad.png" alt="">
+                    </div>
+                    <div class="text-solution">
+                        <h4>Networking y Wireless</h4>
+                        <p>
+                            OSPF, Multicasting, BGP, IP for Media IPFM.
+                        </p>
+                        <img src="./resource/serviciosIT/Soluciones Cisco/Networking+Wireless.png" alt="">
+                    </div>
+                </div>
+                <div class="headers-solutions col-4">
+                    <div class="header-solution selected">
+                        <h4>Centro de Datos</h4>
+                    </div>
+                    <div class="header-solution">
+                        <h4>Colaboración</h4>
+                    </div>
+                    <div class="header-solution">
+                        <h4>Service provider</h4>
+                    </div>
+                    <div class="header-solution">
+                        <h4>Seguridad</h4>
+                    </div>
+                    <div class="header-solution">
+                        <h4>Networking y Wireless</h4>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalContent"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script/serviciosIT.js"></script>
     <script src="./script/responsive/toggle-servicios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

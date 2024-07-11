@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Biome Std';
+    src: url('../fonts/BiomeStd-Wide.otf') format('opentype'); /* Formato especificado */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 .button-red{
     font-family: "Biome Std";
     font-size: 20;
@@ -24,9 +32,6 @@
     padding-right: 15px;
 }
 
-.font{
-    font-family: "Biome Std";
-}
 
 
 
@@ -37,7 +42,6 @@
     display: flex;
     justify-content: space-between;
 
-    background-color: grey;
     color:#fff;
 
     background-size: cover;
@@ -160,4 +164,3 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
-

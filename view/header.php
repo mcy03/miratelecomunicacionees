@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/header.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./resource/faviconMira.png" type="image/png">
 </head>
 <body>
     <header>
@@ -17,6 +20,9 @@
                 <div class="div-phone">
                     <img class="img-contact" src="./resource/icon-phone.png" alt="">
                     <a href="tel:+34 902 876 701" class="text-contacto">+34 902 876 701</a>
+                </div>
+                <div class="div-phone"> 
+                    <a href="tel:+52 55 4040 8261" class="text-contacto">+52 55 4040 8261</a>
                 </div>
             </div>
             <div class="idioma-header">
@@ -44,9 +50,11 @@
                     <li><a href="<?=url.'?controller=blog'?>">Blog on the Go</a></li>
                 </ul>
             </nav>
+            <!--
             <div class="search-icon">
                 <img src="./resource/lupa.png" alt="Icono de búsqueda">
             </div>
+            -->
         </div>
         <?php if (isset($_SESSION['admin'])) { ?>
             <div class="cabecera-admin">

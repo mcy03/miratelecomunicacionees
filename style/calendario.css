@@ -1,8 +1,8 @@
 .banner-principal{
     background: rgba(0, 0, 0, 0.44);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../resource/imagenes prueba web/img_home/nuevas/Calendario de cursos.png');
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -106,11 +106,13 @@ table{
     align-items: center;
 }
 
-.publi-text button{
+.publi-text .button-red{
     font-size: 14px;
+    text-decoration: none;
+    text-align: center;
 }
 
-.publi-text button:hover{
+.publi-text .button-red:hover{
     border: 1px solid rgb(0, 0, 0);
 }
 

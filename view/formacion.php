@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/assets.css">
     <link rel="stylesheet" href="./style/formacion.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        html {
+            scroll-behavior: smooth; /* Para un desplazamiento suave */
+        }
+    </style>
     <title>Formación CISCO</title>
 </head>
 <body>
@@ -14,13 +19,6 @@
         <div class="title-page">
             <h1>Formación CISCO</h1>
         </div>
-
-        <span>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Quisque a risus non sapien facilisis egestas. 
-            Vivamus scelerisque ex ipsum, a tempor velit tristique id. 
-            Ut in placerat erat.
-        </span>
     </section>
 
     <section class="ubicacion">
@@ -47,7 +45,7 @@
 
     <section class="certificaciones">
         <div class="cont-title-section">
-            <h2 class="title-section">Por Certificación</h2>
+            <h2 id="certificaciones" class="title-section">Por Certificación</h2>
         </div>
 
         <div id="cont-certificaciones" class="cont-certificaciones">
@@ -61,7 +59,11 @@
         <div class="cont-title-section">
             <h2 class="title-section">Certificación Partners</h2>
         </div>
-
+        <div id="certificaciones-partners" class="contentCertificacionesPartner">
+            <p class="intro-section">
+                Las certificaciones para los partners Select, Premier y Gold reflejan el nivel de habilidad en nuestras tecnologías.
+            </p>
+        </div>
         <div id="cont-certificaciones-partners" class="cont-certificaciones">
             <div class="contenedor_carga">
                 <div class="carga"></div>
@@ -69,33 +71,29 @@
         </div>
     </section>
 
-
-
-    <div class="modal fade" id="exampleModal" tabindex="-1">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Modal body text goes here.</p>
+                    <p></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="link-grey" data-bs-dismiss="modal">Cerrar</button>
+                    
                 </div>
             </div>
         </div>
     </div>
 
     <script src="./script/formacion/dataFormacion.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
-
-    <!-- Bootstrap JS y dependencias -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

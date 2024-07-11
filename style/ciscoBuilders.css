@@ -1,0 +1,27 @@
+.banner-principal{
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/IMG MIRA SECTION.png');
+    /*background-image: linear-gradient( rgba(0, 0, 0, 0.8)20%, rgba(141, 141, 141, 0.8)60%), url('../resource/backgroundEjemplo.jpg');*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content{
+    padding: 50px 100px;
+    background: rgb(2,0,36);
+    background: linear-gradient(145deg, rgba(246,227,227,1) 0%, rgba(246,227,227,1) 30%, rgba(246,227,227,0) 30%, rgba(246,227,227,0) 70%, rgba(246,227,227,1) 70%, rgba(246,227,227,1) 100%);
+}
+
+.content-text{
+    font-size: 14px;
+}
+
+.sub-content-text{
+    padding-left: 30px;
+}
+
+.bases{
+    font-size: 10px;
+    padding: 30px;
+}   

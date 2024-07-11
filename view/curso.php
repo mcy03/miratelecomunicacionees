@@ -70,6 +70,7 @@
                 </div>
             </div>
         </section>
+        
         <div class="list-courses" style="display: none;">
             <section class="cursos">
 

@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/assets.css">
-    <link rel="stylesheet" type="text/css" href="./style/esqueletoServiciosLibreria.css?1.0">
-    <link rel="stylesheet" type="text/css" href="./style/serviciosIT.css?1.0">
+    <link rel="stylesheet" type="text/css" href="./style/libreriaDigital.css?1.0">
     <title>Librería Digital Miratelecomunicacions</title>
 </head>
 <body>
@@ -14,26 +13,111 @@
             <h1>Librería Digital</h1>
         </div>
 
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Quisque a risus non sapien facilisis egestas. 
-            Vivamus scelerisque ex ipsum, a tempor velit tristique id. 
-            Ut in placerat erat.</span>
     </section>
     <section class="ubicacion">
         <div class="ruta-ubi">
             <a class="ruta-page" href="<?=url?>">Home / </a><p class="page">Librería Digital</p>
         </div>
     </section>
-    <section class="content section-one">
-        <div></div>
+    <section class="intro-libreria row">
+        <div class="col-2 lines"><hr><hr></div>
+        <div class="col-8"><p>Entrene desde cualquier lugar con clases dirigidas por instructor o librería digital.</p></div>
+        <div class="col-2 lines"><hr><hr></div>
+        <div class="col-4 text-intro border-right"><p>Encuentre la capacitación más adecuada y que mejor se adapte a su “life style” para alcanzar sus objetivos profesionales.</p></div>
+        <div class="col-4 text-intro"><p>Los Cisco Learning Partner ofrecemos formación dirigida por instructor, pero también podemos ayudarle con la contratación de las diferentes opciones que presenta nuestra comunidad de aprendizaje.</p></div>
+        <div class="col-4 text-intro border-left"><p>Las suscripciones digitales son un complemento a las formaciones dirigidas en línea que también puede comprar con Cisco Learning Credits.</p></div>
     </section>
-    <section class="content section-two">
-    <div></div>
+    <section class="planesCisco row">
+        <div class="cont-title col-4">
+            <h4 class="title">PLANES CISCO U</h4>
+        </div>
+        
+        <div class="buttonPlan col-4">
+            <a class="btn-white" href="https://learningnetworkstore.cisco.com/ilt/specials/?src=14118&d=IGW1htsJd8ZWq0h2TxOCyP%2Fos7FGGr8y0oFwG91Y09sWQwHThehebmlHggYEcPFazugldvMa%2F%2BAe1xnNyfMtYg%3D%3D">
+                Essentials Acceso a la compra por CLC
+            </a>
+            
+        </div>
+        <div class="buttonPlan col-4">
+            <a class="btn-white" href="https://learningnetworkstore.cisco.com/ilt/specials/?src=14118&d=zxh%2BLRQTsnIEzRRdR8PsE5mEUB1zSqTcz%2FSd%2F0QevJoDzcZxwChJbO013yX0Orh6aNrcRrNbIZHK0F9Oe1A6UA%3D%3D">
+                Full Access Acceso a la compra por CLC
+            </a>
+        </div>
     </section>
-    <section class="content section-three">
-        <article><div></div></article>
-        <article><div></div></article>
-        <article><div></div></article>
+    <section class="subs row">
+        <h4 class="title col-12">SUSCRIPCIONES</h4>
+        <div class="options-sub col-12 row">
+            <div class="col-6">
+                <div class="sub">
+                    <div class="cont-titleSub">
+                        <h4 class="titleSub">LIBRERÍA DIGITAL</h4>
+                    </div>
+                    <form action="./config/sendMail.php" method="POST" class="form-sub" id="formLibrery">
+                        <input type="text" placeholder="Nombre">
+                        <input type="text" placeholder="Apellidos">
+                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Teléfono">
+                        <input type="text" placeholder="Empresa">
+                        <input type="text" placeholder="Cargo">
+                        <input type="text" placeholder="País">
+                        <input type="text" placeholder="Curso">
+                        
+                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> ¿Quiero adquirirlo con CLC?</label>
+                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Notificaciones de entrenamiento</label>
+                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Me gustaría recibir actualizaciones sobre oportunidades de capacitación y certificaciones TIC.</label>
+                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> 
+                            Consiento que MIRA TELECOMUNICACIONS, S.L. tratamiento de mis datos personales para la realización de los servicios solicitados así como análisis estadísticos y de marketing en MIRA TELECOMUNICACIONS, S.L. sitios web. Puede revocar su consentimiento en cualquier momento.
+                            <br><br> 
+                            *Consentimiento de <a href="<?=url.'?controller=politicas&action=aviso_legal'?>">Comunicación</a>, <a href="<?=url.'?controller=politicas&action=cookies'?>">Datos Personales</a> y <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">Privacidad</a>
+                        </label>
+
+                        <p class="note">
+                            Para obtener más información sobre cómo aseguramos y procesamos sus datos personales y protegemos sus derechos, 
+                            lea nuestra <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">política de privacidad</a>.
+                        </p>
+                    
+                        <button type="submit" class="btn-red">Enviar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="sub">
+                    <div class="cont-titleSub">
+                        <h4 class="titleSub">Bar Labs / horas mentoría</h4>
+                    </div>
+                    <form action="./config/sendMail.php" method="POST" class="form-sub" id="formLabs">
+                        <input type="text" placeholder="Nombre">
+                        <input type="text" placeholder="Apellidos">
+                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Teléfono">
+                        <input type="text" placeholder="Empresa">
+                        <input type="text" placeholder="Cargo">
+                        <input type="text" placeholder="País">
+
+                        <input type="text" placeholder="Servicio">
+                        <input type="text" placeholder="Lab">
+                        <input type="text" placeholder="Pack de horas">
+
+                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> ¿Quiero adquirirlo con CLC?</label>
+                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Notificaciones de entrenamiento</label>
+                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Me gustaría recibir actualizaciones sobre oportunidades de capacitación y certificaciones TIC.</label>
+                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> 
+                            Consiento que MIRA TELECOMUNICACIONS, S.L. tratamiento de mis datos personales para la realización de los servicios solicitados así como análisis estadísticos y de marketing en MIRA TELECOMUNICACIONS, S.L. sitios web. Puede revocar su consentimiento en cualquier momento.
+                            <br><br> 
+                            *Consentimiento de <a href="<?=url.'?controller=politicas&action=aviso_legal'?>">Comunicación</a>, <a href="<?=url.'?controller=politicas&action=cookies'?>">Datos Personales</a> y <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">Privacidad</a>
+                        </label>
+
+                        <p class="note">
+                            Para obtener más información sobre cómo aseguramos y procesamos sus datos personales y protegemos sus derechos, 
+                            lea nuestra <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">política de privacidad</a>.
+                        </p>
+
+                        <button type="submit" class="btn-red">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+       
     </section>
 </body>
 </html>

@@ -4,8 +4,8 @@ include_once 'Model/email_permiso.php';
 
 class loginController{
     public function index(){
-        session_start(); // Inicia la sesión
-
+        session_start();
+        //User::insertUser(3, 'prueba', '1234');
         // Verifica si no existe la variable de sesión 'selecciones' y la inicializa como un array vacío si es así
         if (isset($_SESSION['admin'])) {
             header("Location: ".url."?controller=admin");

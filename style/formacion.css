@@ -1,6 +1,7 @@
 .banner-principal{
     background: rgba(0, 0, 0, 0.44);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/Pantallas.png');
+    /*background-image: linear-gradient( rgba(0, 0, 0, 0.8)20%, rgba(141, 141, 141, 0.8)60%), url('../resource/backgroundEjemplo.jpg');*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -161,4 +162,49 @@
 .page-certifications.show {
     opacity: 1;
     transform: scale(1);
+}
+
+
+.download-link-red{
+    background-color: #EA1C24;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 5px 5px;
+}
+.download-link-red:hover{
+    background-color: #fff;
+    color: #EA1C24;
+    border: 1px solid #EA1C24;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 5px 5px;
+}
+
+
+
+.modal-footer {
+    justify-content: space-between;
+}
+.link-grey{
+    background-color: #fff;
+    color: #b3b3b3;
+    border: 1px solid #b3b3b3;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 5px 5px;
+}
+.link-grey:hover{
+    background-color: #b3b3b3;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 5px 5px;
+}
+
+.intro-section{
+    text-align: center;
+    font-size: 14px;
 }

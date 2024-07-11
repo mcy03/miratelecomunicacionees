@@ -1,0 +1,28 @@
+.page-content{
+    padding: 50px 80px;
+}
+
+.page-content h6{
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+.page-content ul{
+    list-style-type: circle;
+}
+
+.page-content li{
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.page-content p{
+    font-size: 16px;
+    padding-left: 0px;
+    margin: 15px 0;
+}
+
+.firma{
+    text-align: center;
+    margin-top: 60px;
+}

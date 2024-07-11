@@ -1,4 +1,13 @@
-*{font-family: "Biome Std";}
+@font-face {
+    font-family: 'Biome Std';
+    src: url('./fonts/BiomeStd-Wide.otf') format('opentype'); /* Formato especificado */
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Biome Std', sans-serif; /* Sans-serif como fallback */
+}
 
 body{
     margin: 0;
@@ -92,12 +101,12 @@ header{
     width: 10%;
 }
 .logo-mira{
-    max-width: 100%;
+    max-width: 130%;
     height: auto;
 }
 
 .nav-header{
-    width: 70%;
+    margin-right: 70px;
 }
 
 .nav-header ul {
@@ -113,6 +122,7 @@ header{
     color: #000000;
     padding: 10px;
     display: block;
+    width: 150px;
 }
 
 .nav-header a:hover {
