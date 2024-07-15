@@ -29,24 +29,24 @@
         </div>
         <div class="text-content col-12">
             <p class="border-bottom-p">
-                En Mira telecomunicacions somos conscientes de que el bienestar de los empleados influye directamente en su motivación, inspiración y eficiencia.<br><br>
-                Para garantizar el bienestar de sus empleados, Mira telecomunicacions ha aprobado un Plan de Prevención de Riesgos Laborales muy detallado centrado en la salud, la seguridad y el bienestar en el ámbito laboral.<br><br> 
+                En <strong>Mira telecomunicaciones</strong> somos conscientes de que el bienestar de los empleados influye directamente en su motivación, inspiración y eficiencia.<br><br>
+                Para garantizar el bienestar de sus empleados, <strong>Mira telecomunicaciones</strong> ha aprobado un Plan de Prevención de Riesgos Laborales muy detallado centrado en la salud, la seguridad y el bienestar en el ámbito laboral.<br><br> 
                 El Plan de Prevención de Riesgos Laborales subraya nuestro compromiso con la creación de un entorno de trabajo seguro y saludable. <br><br>
                 Este plan, recalca los valores de la empresa en la relación directa entre el bienestar de los empleados y su motivación, inspiración y eficiencia.
             </p>
 
             <p class="border-bottom-p">
-                Mira telecomunicacions, en su compromiso de mantener un entorno laboral respetuoso con la dignidad y libertad de las personas trabajadoras,
+                <strong>Mira telecomunicaciones</strong>, en su compromiso de mantener un entorno laboral respetuoso con la dignidad y libertad de las personas trabajadoras,
                 nos comprometemos a promover condiciones de trabajo que eviten el acoso laboral, sexual y/o por razón de género o sexo. 
                 <br><br>
                 A través del Protocolo de Actuación en Situaciones de Acoso Laboral, además de todas las Políticas,
-                Normas y Valores aprobados internamente, Mira telecomunicacions pone de manifiesto su intención de actuar con la debida diligencia para prevenir,
+                Normas y Valores aprobados internamente, <strong>Mira telecomunicaciones</strong> pone de manifiesto su intención de actuar con la debida diligencia para prevenir,
                 evitar, resolver y, en su caso, sancionar los supuestos de acoso laboral que puedan producirse, como medio imprescindible para garantizar la dignidad,
                 integridad y la igualdad de trato y oportunidades.
             </p>
 
             <p>
-                Mira telecomunicacions considera fundamental que los trabajadores tengan derecho a desconectar cuando sea necesario <br>
+                <strong>Mira telecomunicaciones</strong> considera fundamental que los trabajadores tengan derecho a desconectar cuando sea necesario <br>
                 y a establecer hábitos saludables en este aspecto.
                 <br><br>
                 La empresa promueve acciones de sensibilización / formación dirigidas a empleados a fin de informar sobre los riesgos,

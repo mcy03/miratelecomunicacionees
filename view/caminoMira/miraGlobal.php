@@ -26,7 +26,7 @@
         </div>
         <section class="text-content col-12">
             <p>
-                <b>MIRA Telecomunicacions</b> es una compañía con  un alcance global. Con operaciones en múltiples continentes y 
+                <strong>Mira telecomunicaciones</strong> es una compañía con  un alcance global. Con operaciones en múltiples continentes y 
                 una presencia en mercados clave de habla hispana alrededor del mundo, principalmente en España y México.
                 <br><br>
                 Nos dedicamos a ofrecer formación y servicios de la más alta calidad a nuestros clientes sin importar su ubicación.
@@ -43,7 +43,7 @@
                 <br><br>
                 Gracias a nuestro equipo diverso, estamos preparados para enfrentar los desafíos del futuro y seguir siendo una fuerza global de impacto positivo.
                 <br><br>
-                <b>MIRA Telecomunicacions</b> con una  trayectoria de más de 20 años en el sector IT como Cisco Learning Partner, 
+                <strong>Mira telecomunicaciones</strong> con una  trayectoria de más de 20 años en el sector IT como Cisco Learning Partner, 
                 se ha convertido en un referente y aliado estratégico para partners y clientes, ayudándoles en el desarrollo e 
                 implementación del plan de formación integral de su empresa.
                 <br><br>

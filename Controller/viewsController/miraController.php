@@ -44,7 +44,7 @@ class miraController{
     }
     public function mira_global(){
         session_start(); // Inicia la sesión
-        
+            
         require_once("view/header.php");
         require_once("view/caminoMira/miraGlobal.php");
         require_once("view/footer.php");

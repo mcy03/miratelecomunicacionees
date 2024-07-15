@@ -100,7 +100,7 @@
                     <img src="./resource/slader_img/IMG Conoce MIRA L/Tecnologia.png" alt="" class="b">
                     <h4>Tecnología para todos</h4>
                     <div class="ifselected">
-                        <p>MIRA Telecomunicacions puede ayudarle a seguir avanzando en el mundo IT gracias a las certificaciones y especializaciones Cisco que son altamente reconocidas. </p>
+                        <p><strong>Mira telecomunicaciones</strong> puede ayudarle a seguir avanzando en el mundo IT gracias a las certificaciones y especializaciones Cisco que son altamente reconocidas. </p>
                         <a href="<?=url.'?controller=mira&action=tecnologia_para_todos'?>">Saber más</a>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
                     partners como clientes están buscando para construir un futuro más exitoso.
                 </p>
                 <p class="right black">
-                    MIRA Telecomunicacions como Cisco Learning Partner está comprometido en desarrollar 
+                    Mira telecomunicaciones como Cisco Learning Partner está comprometido en desarrollar 
                     y validar los conocimientos adecuados adecuados para que los equipos IT de las organizaciones sean 
                     capaces de garantizar que sus redes estén en manos de expertos capaces de resolver problemas y diseñar soluciones eficientes.
                 </p>
@@ -180,7 +180,7 @@
             <div class="content-slader">
 
                 <p class="left black left2">
-                    Mira Telecomunicacions agrega una nueva experiencia tanto para el Partner como para el cliente final, 
+                    Mira telecomunicaciones agrega una nueva experiencia tanto para el Partner como para el cliente final, 
                     diversificando sus procesos, agregando a su cadena de valor un área que focalizará procesos en el reclutamiento y la selección de Talentos IT.
                 </p>
 
@@ -208,19 +208,19 @@
 
                         Los podrá utilizar en formación tanto dirigida por instructor como digital, vales de exámenes o entradas a Cisco Live. <br><br>
 
-                        ¡Usa tus Cisco Learning Credits acumulados y aprovecha al máximo tu inversión en formación! 🏆 <br><br>
+                        ¡Use sus Cisco Learning Credits acumulados y aproveche al máximo su inversión en formación! 🏆 <br><br>
 
-                        ¿Se te caducan los Cisco Learning Credits y necesitas soporte para canjearlos?, ¿Quieres saber cómo utilizarlos?, ¿Te gustaría conocer la ruta de certificaciones y prepararte para la certificación? 🤷♀️ <br> <br>
+                        ¿Se le caducan los Cisco Learning Credits y necesita soporte para canjearlos?, ¿Quiere saber cómo utilizarlos?, ¿le gustaría conocer la ruta de certificaciones y prepararte para la certificación? 🤷♀️ <br> <br>
 
-                        Puedo responderte las preguntas más frecuentes sobre los Cisco Learning Credits y guiarte en el canjeo de tus créditos de aprendizaje.<br><br>
+                        Puedo responderle las preguntas más frecuentes sobre los Cisco Learning Credits y guiarle en el canjeo de sus créditos de aprendizaje.<br><br>
                         
                         Es vital recordar a los clientes que disponen de CLC el valor que supone este programa y el beneficio que representa tener la oportunidad de que el equipo IT pueda seguir desarrollándose obteniendo un aprendizaje integral para la empresa. <br><br>
 
-                        Al dejar que se expiren, te estás perdiendo una gran oportunidad de mantenerte a la vanguardia y maximizar el rendimiento de las soluciones Cisco adquiridas. <br><br>
+                        Al dejar que se expiren, se está perdiendo una gran oportunidad de mantenerse a la vanguardia y maximizar el rendimiento de las soluciones Cisco adquiridas. <br><br>
 
-                        ¡No dejes que tus Cisco Learning Credits caduquen! 🆗 <br><br>
+                        ¡No deje que sus Cisco Learning Credits caduquen! 🆗 <br><br>
 
-                        Desde la comunidad de Learning estamos comprometidos en brindarte el mejor servicio. 
+                        Desde la comunidad de Learning estamos comprometidos en brindarle el mejor servicio. 
                     </p>
                 </div>
             </div>

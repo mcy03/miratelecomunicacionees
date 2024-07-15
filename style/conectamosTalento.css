@@ -20,3 +20,11 @@
 .sub-content-text{
     padding-left: 30px;
 }
+
+.lista-numerada li{
+    margin: 10px 0;
+}
+
+.add-margin{
+    margin-left: 20px;
+}

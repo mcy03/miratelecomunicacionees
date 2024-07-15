@@ -22,20 +22,22 @@
     <div class="content">
         <section class="content-text">
             <p>
-                Si tienes interés por empezar, cambiar o impulsar su carrera IT y prepararse para aprender las habilidades básicas de redes con la certificación 
+                Si tiene interés por empezar, cambiar o impulsar su carrera IT y prepararse para aprender las habilidades básicas de redes con la certificación 
                 CCNA (Cisco Certified Network Associate) o su interés es la certificación CCNP Enterprise ENCOR (Cisco Enterprise Network Core) para atender conceptos 
-                y redes más avanzadas, nuestro programa Cisco Builders es la respuesta a la necesidad de reforzar el ecosistema de Cisco que tanto profesionales, 
+                y redes más avanzadas.
+            </p>
+            <p>
+                Nuestro programa Cisco Builders es la respuesta a la necesidad de reforzar el ecosistema de Cisco que tanto profesionales, 
                 partners como clientes están buscando para construir un futuro más exitoso.
             </p>
-
             <p>
-                Mira Telecomunicacions como Cisco Learning Partner está comprometido en desarrollar y validar los conocimientos adecuados para que los equipos IT 
+                <strong>Mira telecomunicaciones</strong> como Cisco Learning Partner está comprometido en desarrollar y validar los conocimientos adecuados para que los equipos IT 
                 de las organizaciones sean capaces de garantizar que sus redes estén en manos de expertos capaces de resolver problemas y diseñar soluciones eficientes.
             </p>   
             <p>Su nueva aventura en redes Cisco empieza aquí:</p> 
 
             <div class="sub-content-text">
-                <p class="sub-title">¿Duda qué formación elegir? </p>
+                <p class="sub-title"><strong>¿Duda qué formación elegir?</strong> </p>
                 <p>
                     Nosotros le ayudamos. Realiza nuestros Quizzes de validación de conocimientos y le diremos qué formación resulta la más adecuada para usted. 
                     Además, obtendrás un descuento adicional en la formación en la que participes.
@@ -47,7 +49,7 @@
                 <p class="word-red">Es la oportunidad que estaba esperando para aprender tecnología y alcanzar sus metas profesionales!</p>
             </div>
         </section>
-
+<!--
         <section class="bases">
             <p class="sub-title">Bases del Programa:</p>
             <p>
@@ -110,5 +112,6 @@
                 ** Precio CCNA 1.250 euros más IVA- Precio CCNP ENCOR 1.375 euros más IVA
             </p>
         </section>
+-->
     </div>
 </body>

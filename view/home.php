@@ -44,7 +44,7 @@
                 </div>
                 <div class="segunda-fila fila-que">
                     <a href="<?=url.'?controller=curso'?>"><img src="./resource/iconos/home/graduado.png" alt=""><p>Cursos Cisco</p></a>
-                    <a href=""><img src="./resource/iconos/home/continuo.png" alt=""><p>Continuing Education Program (CE)</p></a>
+                    <a href="<?=url.'?controller=mira#questions'?>"><img src="./resource/iconos/home/continuo.png" alt=""><p>Continuing Education Program (CE)</p></a>
                     <a href="<?=url.'?controller=curso&action=select&tecnology=27'?>"><img src="./resource/iconos/home/Meraki M Logo draw circle.png" alt=""><p>Formación Meraki</p></a>
                 </div>
             </section>
@@ -68,7 +68,7 @@
                         <p class="content-oferta">
                             Prepárese para CCNA y CCNP enterprise.
                         </p>
-                        <button class="button-red">Ver más</button>
+                        <a href="<?=url.'?controller=mira&action=cisco_builders'?>" class="button-red">Ver más</a>
                     </div>
                 </section>
             </div>
@@ -131,18 +131,22 @@
                     </li>
                     -->
                     <li class="card">
-                        <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Impacto social.png');"></div>
-                        <div class="text-card-slider">
-                            <h3>Impacto social</h3>
-                            <span>Comprometidos con un marco corporativo responsable para toda la cadena de valor.</span>
-                        </div>
+                        <a class="download-link" href="<?=url.'?controller=mira&action=corporativo'?>">
+                            <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Impacto social.png');"></div>
+                            <div class="text-card-slider">
+                                <h3>Impacto social</h3>
+                                <span>Comprometidos con un marco corporativo responsable para toda la cadena de valor.</span>
+                            </div>
+                        </a>
                     </li>
                     <li class="card">
-                        <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Soluciones Cisco seguridad.png');"></div>
-                        <div class="text-card-slider">
-                            <h3>Cisco seguridad</h3>
-                            <span>Soluciones proporcionadas por Cisco seguridad</span>
-                        </div>
+                        <a class="download-link" href="<?=url.'?controller=curso&action=select&tecnology=1'?>">
+                            <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Soluciones Cisco seguridad.png');"></div>
+                            <div class="text-card-slider">
+                                <h3>Cisco seguridad</h3>
+                                <span>Soluciones proporcionadas por Cisco seguridad</span>
+                            </div>
+                        </a>
                     </li> 
                 </ul>
             </div>
@@ -166,10 +170,9 @@
                 <article class="noticia-img">
                     <div class="img-noticia">
                         <div class="text-img-noticia">
-
+                            <p>Texto encima de la imagen</p>
                         </div>
                     </div>
-                    
                 </article>
             </div>
 
@@ -183,8 +186,9 @@
                             <span>
                                 Agregamos una nueva experiencia tanto para el partner como para el cliente final. 
                                 <br><br>
-                                Externalice el proceso de seleccionar talento IT
-                                Mira Telecomunicacions agrega una nueva experiencia tanto para el Partner como para el cliente final, 
+                                Externalice el proceso de seleccionar talento IT 
+                                <br><br>
+                                <strong>Mira telecomunicaciones</strong> agrega una nueva experiencia tanto para el Partner como para el cliente final, 
                             </span>
                         </div>
                     </div>

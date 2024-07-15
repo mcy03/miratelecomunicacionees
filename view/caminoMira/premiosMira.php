@@ -57,8 +57,8 @@
                 </p>
             </div>
             <div class="img-award col-5">
-                <img src="./resource/mira_page/awards/screenshot-itLearning.png" alt="" >
-                <a href="./resource/pdf/awards/018-MIRA-Cisco Connect Post articulo la revista digital.pdf" class="link-resource" target="_blank">Ver artículo...</a>
+                <img src="./resource/mira_page/awards/screenshot-it.png" alt="" >
+                <a href="./resource/pdf/awards/Colaboracion Revista ITDigital Media Group.pdf" class="link-resource" target="_blank">Ver artículo...</a>
             </div>
         </section>
         <div class="space-red"></div>
@@ -108,8 +108,8 @@
                 <p class="content">Año 2015</p>
             </div>
             <div class="img-award col-5">
-                <img src="./resource/mira_page/awards/screenshot-it.png" alt="" >
-                <a href="./resource/pdf/awards/Colaboracion Revista ITDigital Media Group.pdf" class="link-resource" target="_blank">Ver artículo...</a>
+                <img src="./resource/mira_page/awards/screenshot-itLearning.png" alt="" >
+                <a href="./resource/pdf/awards/018-MIRA-Cisco Connect Post articulo la revista digital.pdf" class="link-resource" target="_blank">Ver artículo...</a>
             </div>
         </section>
         <div class="space-red"></div>

@@ -52,7 +52,7 @@
                 <br><br>
                 Estamos preparados para capacitar, gestionar y acompañar a los profesionales IT en su desarrollo tecnológico.
                 <br><br>
-                Entendemos cómo utilizar la tecnología Cisco, convirtiéndola en una herramienta estratégica para proporcionar ventajas competitivas, acelerando la introducción de las mismas en la organización y ofreciendo resultados comerciales.
+                Entendemos como utilizar la tecnología Cisco, convirtiéndola en una herramienta estratégica para proporcionar ventajas competitivas, acelerando la introducción de las mismas en la organización y ofreciendo resultados comerciales.
             </p>
         </div>
         <div class="back back-white">

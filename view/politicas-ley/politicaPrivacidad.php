@@ -44,7 +44,7 @@
                 <strong>RESPONSABLE DEL TRATAMIENTO</strong>
             </p>
             <p class="text">
-                MIRA TELECOMUNICACIONS SL
+                MIRA TELECOMUNICACIONES SL
             </p>
             <p class="text">
                 CIF: B63109789
@@ -126,7 +126,7 @@
                 <strong>REDES SOCIALES</strong>
             </p>
             <p class="text">
-                La visita a los perfiles públicos de MIRA TELECOMUNICACIONS en las redes sociales Básica no supone la captación de 
+                La visita a los perfiles públicos de <strong>MIRA TELECOMUNICACIONES</strong> en las redes sociales Básica no supone la captación de 
                 datos personales, a menos que se autorice expresamente.
             </p>
         </section>

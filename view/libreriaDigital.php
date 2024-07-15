@@ -66,7 +66,7 @@
                         <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Notificaciones de entrenamiento</label>
                         <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Me gustaría recibir actualizaciones sobre oportunidades de capacitación y certificaciones TIC.</label>
                         <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> 
-                            Consiento que MIRA TELECOMUNICACIONS, S.L. tratamiento de mis datos personales para la realización de los servicios solicitados así como análisis estadísticos y de marketing en MIRA TELECOMUNICACIONS, S.L. sitios web. Puede revocar su consentimiento en cualquier momento.
+                            Consiento que <strong>Mira telecomunicaciones</strong>, S.L. tratamiento de mis datos personales para la realización de los servicios solicitados así como análisis estadísticos y de marketing en <strong>Mira telecomunicaciones</strong>, S.L. sitios web. Puede revocar su consentimiento en cualquier momento.
                             <br><br> 
                             *Consentimiento de <a href="<?=url.'?controller=politicas&action=aviso_legal'?>">Comunicación</a>, <a href="<?=url.'?controller=politicas&action=cookies'?>">Datos Personales</a> y <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">Privacidad</a>
                         </label>
@@ -102,7 +102,7 @@
                         <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Notificaciones de entrenamiento</label>
                         <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Me gustaría recibir actualizaciones sobre oportunidades de capacitación y certificaciones TIC.</label>
                         <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> 
-                            Consiento que MIRA TELECOMUNICACIONS, S.L. tratamiento de mis datos personales para la realización de los servicios solicitados así como análisis estadísticos y de marketing en MIRA TELECOMUNICACIONS, S.L. sitios web. Puede revocar su consentimiento en cualquier momento.
+                            Consiento que <strong>Mira telecomunicaciones</strong>, S.L. tratamiento de mis datos personales para la realización de los servicios solicitados así como análisis estadísticos y de marketing en <strong>Mira telecomunicaciones</strong>, S.L. sitios web. Puede revocar su consentimiento en cualquier momento.
                             <br><br> 
                             *Consentimiento de <a href="<?=url.'?controller=politicas&action=aviso_legal'?>">Comunicación</a>, <a href="<?=url.'?controller=politicas&action=cookies'?>">Datos Personales</a> y <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">Privacidad</a>
                         </label>

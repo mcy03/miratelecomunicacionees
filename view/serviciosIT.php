@@ -209,7 +209,7 @@
                     </div>
                 </div>
             </div>
-            
+            <!-- como me dolio todo aquello, estoy my mal por todo esto, jdrrr -->
         </section>
     </div>
 

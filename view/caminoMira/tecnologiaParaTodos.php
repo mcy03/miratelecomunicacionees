@@ -27,7 +27,7 @@
             </p>
             <br>
             <p class="text">
-                MIRA Telecomunicacions puede ayudarle a seguir avanzando en el mundo IT gracias a las certificaciones y especializaciones Cisco que son altamente reconocidas.
+                <strong>MIRA Telecomunicaciones</strong> puede ayudarle a seguir avanzando en el mundo IT gracias a las certificaciones y especializaciones Cisco que son altamente reconocidas.
             </p>
             <br>
             <p class="text">
