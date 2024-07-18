@@ -10,10 +10,10 @@
     text-align: center;
     height: 30px;
     align-self: center;
+    font-size: 18px;
 }
 
 .content{
-    height: 2700px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -166,32 +166,126 @@
 /* Background img de casos de exito */
 .img-card{
     width: 100%;
-    height: 240px;
+    height: 210px;
     background-repeat: no-repeat;
     background-size: cover;
 }
 #img-Saica{
     background-image: url('../resource/Casos de Exito/Saica.png');
+    background-repeat: no-repeat;
+        background-size: contain;
 }
 
 #img-Aena{
     background-image: url('../resource/Casos de Exito/Aena.png');
+    background-repeat: no-repeat;
+        background-size: contain;
 }
 
 #img-F1{
     background-image: url('../resource/Casos de Exito/F1 Valencia Street Circuit.png');
+    background-repeat: no-repeat;
+        background-size: contain;
 }
 
 #img-Adif{
     background-image: url('../resource/Casos de Exito/Adif.png');
+    background-repeat: no-repeat;
+        background-size: contain;
 }
 
 #img-Nexica{
     background-image: url('../resource/Casos de Exito/Nexica.png');
+    background-repeat: no-repeat;
+        background-size: contain;
 }
 
 #img-Holcim{
     background-image: url('../resource/Casos de Exito/Holcim.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+
+#img-ayuntBcn{
+    background-image: url('../resource/Casos de Exito/Ayuntamiento Barcelona.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-ayuntMadrid{
+    background-image: url('../resource/Casos de Exito/Ayuntamoento de Madrid.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-Mapfre{
+    background-image: url('../resource/Casos de Exito/Mapfre.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-AndorraTelecom{
+    background-image: url('../resource/Casos de Exito/Andorra Telecom.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-CiscoLatam{
+    background-image: url('../resource/Casos de Exito/Cisco Latam.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-SchneiderEgipto{
+    background-image: url('../resource/Casos de Exito/Schneider.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-HyperflexAyuntRoquetas{
+    background-image: url('../resource/Casos de Exito/Ayuntamiento de Roquetas.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-telefonica-bancaMarch{
+    background-image: url('../resource/Casos de Exito/Banca March.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-telefonica-cajamar{
+    background-image: url('../resource/Casos de Exito/Cajamar.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-partnerPremierCisco{
+    background-image: url('../resource/Casos de Exito/Partner Premier de Cisco.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-clienteBingoRoma{
+    background-image: url('../resource/Casos de Exito/Bingo Roma.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-ClienteGonvarri{
+    background-image: url('../resource/Casos de Exito/Gonvarri.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+#img-serviciosCiscoColaboracion{
+    background-image: url('../resource/Casos de Exito/Cisco Colaboración Empresa de teleasistencia.png');
+    background-repeat: no-repeat;
+        background-size: contain;
+}
+
+
+.fila-hidden{
+    display: none;
+}
+
+#mostrar-mas-btn{
+    background-color: #00000000;
+    color: #EA1C24;
+    border: 0;
+    text-decoration:underline;
+}
+
+#mostrar-mas-btn:hover{
+    color: #902528;
 }
 
 /* ------------------------------------- */

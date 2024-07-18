@@ -127,6 +127,194 @@ function mostrarContenido(proyecto) {
                     El Nexus 1000v se configuró sobre una plataforma de Nexus 7000 configurando la conectividad entre Data Centers con OTV.
                 </p>
                 `
+        },
+
+        ayuntBcn: {
+            title: "Ayuntamiento de Barcelona",
+            content: `
+                <p>
+                    Alcance económico desconocido puesto que nos subcontrataron una parte del total del proyecto. Año 2011
+                </p>
+                <br>
+                <p>
+                    Instalación de piloto VDI para el Ayuntamiento de Barcelona con tecnología Cisco UCS y Netapp
+                </p>
+                `
+        },
+        ayuntMadrid: {
+            title: "Ayuntamiento de Madrid",
+            content: `
+                <p>
+                    Alcance económico desconocido puesto que nos subcontrataron una parte del total del proyecto. Año 2012.
+                </p>
+                <br>
+                <p>
+                    Instalación piloto de proyecto de consolidación de CPDs, configurando un cluster de UCS con blades chasis y aplicando un nivel 2
+                    con 2 Nexus 5000 en VPC.
+                </p>
+                `
+        },
+        mapfre: {
+            title: "Mapfre",
+            content: `
+                <p>
+                    Alcance económico desconocido puesto que nos subcontrataron para realizar la maqueta en base a las dudas/inquietudes que
+                    tenía el cliente. Año 2012.
+                </p>
+                <br>
+                <p>
+                    Recreamos la maqueta propuesta por Cisco y Telefonica para RFP de Data Center.
+                </p>
+                <br>
+                <p>
+                    El equipo utilizado, 2 Nexus 7000 y 2 Nexus 5000 simulando cada uno un DC diferente, configurando OTV entre ambos equipos y
+                    redactando las pruebas de alta disponibilidad de ISSU y comprobaciones de prevención de bucle de nivel 2.
+                </p>
+                `
+        },
+        andorraTelecom: {
+            title: "Andorra Telecom",
+            content: `
+                <p>
+                    Alcance económico aprox. del total de formación entregada: 150.000,00 euros. Año 2007-Actualidad (2 pliegos adjudicados 2010
+                    y 2012).
+                </p>
+                <br>
+                <p>
+                    Desde el 2007 hasta la actualidad somos su proveedor para la entrega de formaciones oficiales y a medida de Cisco.
+                </p>
+                <br>
+                <p>
+                    Durante todos estos años les hemos formado en las diferentes tecnologías Cisco:
+                </p>
+                <br>
+                <p>
+                    Routing y Switching, MPLS, BGP, MCAST, CCNA, DATA CENTER, WIRELESS …
+                </p>
+                `
+        },
+        ciscoLatam: {
+            title: "Cisco LATAM",
+            content: `
+                <p>
+                    Año 2011-Actualidad
+                </p>
+                <br>
+                <p>
+                    Entregamos unos Test Drive de UCS para Cisco LATAM, en los que los participantes pueden tener acceso a una maqueta de Data
+                    center versión 3.0 integrada Fabric Interconnect 6100, Switches nexus 2000 y 1000v y servidores de la serie B y C. interactuando
+                    en un entorno de virtualización y almacenamiento.
+                </p>
+                <br>
+                <p>
+                    Países: Ecuador, Puerto Rico, Brasil, México, Colombia, Chile, Guatemala, Honduras.
+                </p>
+                `
+        },
+        schneiderEgipto: {
+            title: "Schneider Egipto: Año 2021",
+            content: `
+            <p>
+                Preparación para pruebas FAT. Los equipos involucrados en este proyecto. Firepower, Catalyst 92xx, router ISR, 2 servidores NMS
+                para Cisco Prime, 1 servidor HP para Stealtwatch.
+            </p>
+            <br>
+            <p>
+                Levantamiento, creación de plantillas, configuración, validación entorno y plan de pruebas, …
+            </p>
+            `
+        },
+        hyperflexAyuntRoquetas: {
+            title: "Hyperflex Ayuntamiento de Roquetas: Año 2023",
+            content: `
+                <p>
+                    Preparar conectividad de gestión de los Nexus, CIMC de los servers, despliegue del vcenter en servidor existente, despliegue del
+                    cluster HX y upgrade a última versión, más migración de 27 máquinas.
+                </p>
+                `
+        },
+        telefonicaBancaMarch: {
+            title: "Bolsa de horas: Telefonica - Banca March. Año 2022-2023",
+            content: `
+            <p>
+                Llevamos más de 2 años, aportando bolsa de hora de mantenimiento al partner para que le ofrezca servicio de nivel 2 a su cliente
+                Banca March, dando soporte en la solución Cisco ISE, (Update, parches, mejoras, autenticación, …) y para la parte del Wireless lan
+                Controller.
+            </p>
+            `
+        },
+        telefonicaCajamar: {
+            title: "Bolsa de horas: Telefonica- Cajamar. Año 2022-Actualidad",
+            content: `
+                <p>
+                    Bolsa de horas de soporte anual para el mantenimiento de la parte de Cisco swithicng nivel 2 de la entiedad financiera.
+                    Contratación a través de un partner.
+                </p>
+                `
+        },
+
+        partnerPremierCisco: {
+            title: "Bolsa de horas: Partner Premier de Cisco. Año 2023-Actualidad",
+            content: `
+                <p>
+                    Bolsa de horas de soporte anual para el mantenimiento de toda la parte de soluciones de Cisco colaboración. Solución de
+                    problemas: Fallo Aplication Pandorring IVR DE c1, Attendant console Hospital de Móstoles, fallo llamadas entrantes, renovación
+                    de certificados Cluster, …
+                </p>
+                `
+        },
+        clienteBingoRoma: {
+            title: "Partner de Cisco: Cliente Bingo ROMA año 2024",
+            content: `
+                <p>
+                    Soporte y configuración Webex Calling y Cube.
+                </p>
+                `
+        },
+        clienteGonvarri: {
+            title: "Partner de Cisco: Cliente Gonvarri año 2024",
+            content: `
+                <p>
+                    Migración de 22 controladoras Cisco 9800-L, 9800-40, depuración de configuraciones migradas, actualización a versiones
+                    recomendadas y respaldo de las configuraciones.
+                </p>
+                <br>
+                <p>
+                    Actualmente dando soporte para validar el plan de migración que hace el propio cliente.
+                </p>
+                `
+        },
+        serviciosCiscoColaboracion: {
+            title: "Partner de Cisco: Servicios de Cisco Colaboración: Empresa de teleasistencia año 2024",
+            content: `
+                <p>
+                    Servicios profesionales para la migracion de Solucion de Colaborarion (CUCM, CUIC, Gateways, Telefonos)
+                </p>
+                <br>
+                <ul>
+                    <li>
+                        Traspaso de tareas del Proyecto
+                    </li>
+                    <li>
+                        Participacion en reuniones de planificacion, acorde el proyecto
+                    </li>
+                    <li>
+                        Tareas de coordinacion general
+                    </li>
+                    <li>
+                        Tareas de preconfiguracion equipos nuevos
+                    </li>
+                    <li>
+                        Pruebas de solucion nueva, antes de migracion
+                    </li>
+                    <li>
+                        Ventanas de mantenimiento Migracion
+                    </li>
+                    <li>
+                        Soporte de 1 semana post migracion
+                    </li>
+                </ul>
+                `
         }
     };
 

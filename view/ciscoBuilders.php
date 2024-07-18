@@ -23,8 +23,8 @@
         <section class="content-text">
             <p>
                 Si tiene interés por empezar, cambiar o impulsar su carrera IT y prepararse para aprender las habilidades básicas de redes con la certificación 
-                CCNA (Cisco Certified Network Associate) o su interés es la certificación CCNP Enterprise ENCOR (Cisco Enterprise Network Core) para atender conceptos 
-                y redes más avanzadas.
+                CCNA (Cisco Certified Network Associate) o su interés es la certificación CCNP Enterprise ENCOR (Cisco Enterprise Network Core) 
+                para atender conceptos y redes más avanzadas.
             </p>
             <p>
                 Nuestro programa Cisco Builders es la respuesta a la necesidad de reforzar el ecosistema de Cisco que tanto profesionales, 
@@ -33,21 +33,33 @@
             <p>
                 <strong>Mira telecomunicaciones</strong> como Cisco Learning Partner está comprometido en desarrollar y validar los conocimientos adecuados para que los equipos IT 
                 de las organizaciones sean capaces de garantizar que sus redes estén en manos de expertos capaces de resolver problemas y diseñar soluciones eficientes.
-            </p>   
-            <p>Su nueva aventura en redes Cisco empieza aquí:</p> 
+            </p>
 
             <div class="sub-content-text">
-                <p class="sub-title"><strong>¿Duda qué formación elegir?</strong> </p>
-                <p>
-                    Nosotros le ayudamos. Realiza nuestros Quizzes de validación de conocimientos y le diremos qué formación resulta la más adecuada para usted. 
-                    Además, obtendrás un descuento adicional en la formación en la que participes.
-                </p>
-
-                <p class="sub-title">Formación bonificable.</p>
-                <p>Fondos Tripartita de 520 euros por curso y alumno.</p>
-
-                <p class="word-red">Es la oportunidad que estaba esperando para aprender tecnología y alcanzar sus metas profesionales!</p>
+                <ul>
+                    <li>Lograr que los profesionales IT sigan desarrollándose y se profesionalicen en Cisco.</li>
+                    <li>Que puedan optar por las nuevas certificaciones y especializaciones de Cisco.</li>
+                    <li>Atraer y aumentar una bolsa de Talento IT para cubrir las necesidades de las compañías.</li>
+                </ul>
             </div>
+
+            <p>
+                Nuestra incubadora de talentos IT es una herramienta fundamental para formar a candidatos en el área de tecnología de la información.  
+            </p>
+            <p>
+                El programa Cisco Builders permite brindarles una formación especializada y personalizada que les ayudará a desarrollar sus habilidades y competencias de manera más eficaz.
+            </p>
+            <p>
+                Está diseñado para incorporarnos como “UN IMPLANTE” en la propia compañía como soporte al área de Recursos Humanos, integrando en el plan de acogida para las nuevas incorporaciones, un plan de capacitación que ofrezca las habilidades y competencias técnicas mínimas básicas que la organización requiere. 
+            </p>
+
+            <p>
+                La implementación de que les ayudemos a incorporar una incubadora de Talento IT in company les presenta una serie de ventajas que le ayudarán a desarrollar habilidades, retener el talento, mejorar el clima laboral, incremento de productividad, ...
+            </p>
+
+            <p>
+                <strong>MIRA Telecomunicaciones</strong> puede ofrecerle un aprendizaje continuo y actualizado, adaptado a las necesidades y requerimientos del mercado tecnológico actual y de la propia organización. Esto les permite a los candidatos estar al día en las últimas tendencias y tecnologías, lo que les brinda una ventaja competitiva empresarial. 
+            </p>
         </section>
 <!--
         <section class="bases">

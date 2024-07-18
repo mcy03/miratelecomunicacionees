@@ -12,7 +12,7 @@
         <div class="title-page">
             <h1>Librería Digital</h1>
         </div>
-
+        <span>Encuentre la capacitación más adecuada y que mejor se adapte a su “life style” para alcanzar sus objetivos profesionales.</span>
     </section>
     <section class="ubicacion">
         <div class="ruta-ubi">
@@ -23,9 +23,8 @@
         <div class="col-2 lines"><hr><hr></div>
         <div class="col-8"><p>Entrene desde cualquier lugar con clases dirigidas por instructor o librería digital.</p></div>
         <div class="col-2 lines"><hr><hr></div>
-        <div class="col-4 text-intro border-right"><p>Encuentre la capacitación más adecuada y que mejor se adapte a su “life style” para alcanzar sus objetivos profesionales.</p></div>
-        <div class="col-4 text-intro"><p>Los Cisco Learning Partner ofrecemos formación dirigida por instructor, pero también podemos ayudarle con la contratación de las diferentes opciones que presenta nuestra comunidad de aprendizaje.</p></div>
-        <div class="col-4 text-intro border-left"><p>Las suscripciones digitales son un complemento a las formaciones dirigidas en línea que también puede comprar con Cisco Learning Credits.</p></div>
+        <div class="col-6 text-intro"><p>Los Cisco Learning Partner ofrecemos formación dirigida por instructor, pero también podemos ayudarle con la contratación de las diferentes opciones que presenta nuestra comunidad de aprendizaje.</p></div>
+        <div class="col-6 text-intro border-left"><p>Las suscripciones digitales son un complemento a las formaciones dirigidas en línea que también puede comprar con Cisco Learning Credits.</p></div>
     </section>
     <section class="planesCisco row">
         <div class="cont-title col-4">
@@ -63,18 +62,13 @@
                         <input type="text" placeholder="Curso">
                         
                         <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> ¿Quiero adquirirlo con CLC?</label>
-                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Notificaciones de entrenamiento</label>
                         <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Me gustaría recibir actualizaciones sobre oportunidades de capacitación y certificaciones TIC.</label>
-                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> 
-                            Consiento que <strong>Mira telecomunicaciones</strong>, S.L. tratamiento de mis datos personales para la realización de los servicios solicitados así como análisis estadísticos y de marketing en <strong>Mira telecomunicaciones</strong>, S.L. sitios web. Puede revocar su consentimiento en cualquier momento.
-                            <br><br> 
-                            *Consentimiento de <a href="<?=url.'?controller=politicas&action=aviso_legal'?>">Comunicación</a>, <a href="<?=url.'?controller=politicas&action=cookies'?>">Datos Personales</a> y <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">Privacidad</a>
-                        </label>
 
-                        <p class="note">
-                            Para obtener más información sobre cómo aseguramos y procesamos sus datos personales y protegemos sus derechos, 
-                            lea nuestra <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">política de privacidad</a>.
-                        </p>
+                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> 
+                            He podido leer y entiendo la Política de <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">Privacidad</a>   y <a href="<?=url.'?controller=politicas&action=cookies'?>">Cookies</a>. Consiento a Mira Telecomunicacions, 
+                            S.L. el tratamiento de mis datos personales para la realización de los servicios solicitados 
+                            y comunicaciones comerciales. <a href="">Más info.</a>  
+                        </label>
                     
                         <button type="submit" class="btn-red">Enviar</button>
                     </form>
@@ -99,19 +93,14 @@
                         <input type="text" placeholder="Pack de horas">
 
                         <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> ¿Quiero adquirirlo con CLC?</label>
-                        <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Notificaciones de entrenamiento</label>
                         <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> Me gustaría recibir actualizaciones sobre oportunidades de capacitación y certificaciones TIC.</label>
+
                         <label class="radio"><input type="checkbox" id="cbox1" value="first_checkbox"/> 
-                            Consiento que <strong>Mira telecomunicaciones</strong>, S.L. tratamiento de mis datos personales para la realización de los servicios solicitados así como análisis estadísticos y de marketing en <strong>Mira telecomunicaciones</strong>, S.L. sitios web. Puede revocar su consentimiento en cualquier momento.
-                            <br><br> 
-                            *Consentimiento de <a href="<?=url.'?controller=politicas&action=aviso_legal'?>">Comunicación</a>, <a href="<?=url.'?controller=politicas&action=cookies'?>">Datos Personales</a> y <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">Privacidad</a>
+                            He podido leer y entiendo la Política de <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">Privacidad</a>   y <a href="<?=url.'?controller=politicas&action=cookies'?>">Cookies</a>. Consiento a Mira Telecomunicacions, 
+                            S.L. el tratamiento de mis datos personales para la realización de los servicios solicitados 
+                            y comunicaciones comerciales. <a href="">Más info.</a>  
                         </label>
-
-                        <p class="note">
-                            Para obtener más información sobre cómo aseguramos y procesamos sus datos personales y protegemos sus derechos, 
-                            lea nuestra <a href="<?=url.'?controller=politicas&action=politicas_privacidad'?>">política de privacidad</a>.
-                        </p>
-
+                           
                         <button type="submit" class="btn-red">Enviar</button>
                     </form>
                 </div>

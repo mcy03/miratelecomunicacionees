@@ -64,8 +64,14 @@
 
 .award-info{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
+
+}
+.award-info .title, .award-info .title h2{
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 .award-info p{
     max-width: 100%;
@@ -127,4 +133,24 @@
 .img-award a:hover{
     color: #000000;
     font-size: 13px;
+}
+
+.slogan{
+    margin-bottom: 20px;
+    font-size: 20px;
+    color:#EA1C24;
+}
+
+.award-info .title h2{
+    font-size: 18px;
+}
+
+.category, .year, .award-text{
+    font-size: 15px;
+}
+
+
+.award-info .title, .award-info p{
+    margin: 20px 0;
+    padding: 0;
 }

@@ -8,7 +8,7 @@
     <!-- Fontawesome Link for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="./style/home.css">
-
+    
     <!-- Favicon -->
     <link rel="icon" href="./resource/faviconMira.png" type="image/png">
     <title>Miratelecomunicacions</title>
@@ -154,8 +154,10 @@
 
         <section class="noticias">
             <div class="fila-noticias">
+                
                 <article class="noticia-text">
-                    <div class="img-noticia"><img src="./resource/fondo-ejemplo-ofertas.jpg" alt=""></div>
+                    <a href="<?=url.'?controller=calendario'?>">
+                    <div class="img-noticia"><img src="./resource/calendar.png" alt=""></div>
                     <div class="noticia-body">
                         <h4>CALENDARIO</h4>
                         <div class="text-body">
@@ -165,12 +167,15 @@
                             </span>
                         </div>
                     </div>
+                    </a>
                 </article>
+            
 
                 <article class="noticia-img">
                     <div class="img-noticia">
                         <div class="text-img-noticia">
-                            <p>Texto encima de la imagen</p>
+                            <h4>Cisco Scheduling On The Go</h4>
+                            <p>Consulte las próximas convocatorias de formación oficial de Cisco</p>
                         </div>
                     </div>
                 </article>
@@ -178,21 +183,21 @@
 
             <div class="fila-noticias">
                 <article class="noticia-text noticia-text-100">
-                    
-                    <div class="noticia-body noticia-body-max">
-                        <h4>TALENTOS IT</h4>
-                        <div class="text-body">
-                            <h3>CONECTAMOS TALENTO</h3>
-                            <span>
-                                Agregamos una nueva experiencia tanto para el partner como para el cliente final. 
-                                <br><br>
-                                Externalice el proceso de seleccionar talento IT 
-                                <br><br>
-                                <strong>Mira telecomunicaciones</strong> agrega una nueva experiencia tanto para el Partner como para el cliente final, 
-                            </span>
+                    <a href="<?=url.'?controller=mira&action=conectamos_talento'?>">
+                        <div class="noticia-body noticia-body-max">
+                            <h4>TALENTOS IT</h4>
+                            <div class="text-body">
+                                <h3>CONECTAMOS TALENTO</h3>
+                                <span>
+                                    Externalice el proceso de seleccionar talento IT 
+                                    <br><br>
+                                    <strong>Mira telecomunicaciones</strong> agrega una nueva experiencia tanto para el Partner como para el cliente final. 
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="img-noticia img-noticia-max"><img src="./resource/conectamos.png" alt=""></div>
+                        
+                        <div class="img-noticia img-noticia-max"><img src="./resource/conectamos.png" alt=""></div>
+                    </a>
                 </article>
             </div>
         </section>

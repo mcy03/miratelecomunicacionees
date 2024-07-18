@@ -32,7 +32,7 @@
         </div>
         <div class="header-two">
             <div class="logo">
-            <a href="<?=url.'?controller=home'?>"><img class="logo-mira" src="./resource/Miralogo/Mira.png" alt=""></a>
+                <a href="<?=url.'?controller=home'?>"><img class="logo-mira" src="./resource/MiraLogo/Mira.png" alt=""></a>
             </div>
             <nav class="nav-header">
                 <div class="menu-toggle" id="mobile-menu">

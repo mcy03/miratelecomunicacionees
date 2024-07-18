@@ -46,7 +46,7 @@
             </p>
 
             <p>
-                <strong>Mira telecomunicaciones</strong> considera fundamental que los trabajadores tengan derecho a desconectar cuando sea necesario <br>
+                <strong>Mira telecomunicaciones</strong> considera fundamental que los trabajadores tengan derecho a desconectar cuando sea necesario
                 y a establecer hábitos saludables en este aspecto.
                 <br><br>
                 La empresa promueve acciones de sensibilización / formación dirigidas a empleados a fin de informar sobre los riesgos,

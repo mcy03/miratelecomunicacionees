@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 500px;
 }
 
 @media (max-width: 768px) {
@@ -331,3 +332,7 @@ table{
 .publi-text button:hover{
     border: 1px solid rgb(0, 0, 0);
 }
+
+
+
+/* enlazar a desplegables y que salgan ya seleccionados*/

@@ -149,6 +149,169 @@
                     </div>
                 </div>
             </div>
+            <div class="fila col-12 row fila-hidden">
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-ayuntBcn" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Ayuntamiento de Barcelona</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('ayuntBcn')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-ayuntMadrid" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Ayuntamiento de Madrid</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('ayuntMadrid')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-Mapfre" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Mapfre</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('mapfre')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila col-12 row fila-hidden">
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-AndorraTelecom" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Andorra Telecom</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('andorraTelecom')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-CiscoLatam" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Cisco LATAM</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('ciscoLatam')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-SchneiderEgipto" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Schneider Egipto</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('schneiderEgipto')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila col-12 row fila-hidden">
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-HyperflexAyuntRoquetas" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Hyperflex Ayuntamiento de Roquetas</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('hyperflexAyuntRoquetas')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-telefonica-bancaMarch" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Bolsa de horas: Telefonica - Banca March</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('telefonicaBancaMarch')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-telefonica-cajamar" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Bolsa de horas: Telefonica- Cajamar</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('telefonicaCajamar')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fila col-12 row fila-hidden">
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-partnerPremierCisco" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Bolsa de horas: Partner Premier de Cisco</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('partnerPremierCisco')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-clienteBingoRoma" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>artner de Cisco: Cliente Bingo ROMA</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('clienteBingoRoma')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-ClienteGonvarri" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Partner de Cisco: Cliente Gonvarri año 2024</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('clienteGonvarri')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fila col-12 row fila-hidden">
+                <div class="col-4">
+                </div>
+
+                <div class="col-4">
+                    <div class="caso">
+                        <div id="img-serviciosCiscoColaboracion" class="img-card"></div>
+                        <div class="content-card">
+                            <h4>Servicios de Cisco Colaboración: Empresa de teleasistencia</h4>
+                            <button class="button-caso-exito" onclick="mostrarContenido('serviciosCiscoColaboracion')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span>Ver más -></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-4">
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mt-3" id="mostrar-mas-btn">Mostrar Más</button>
+            </div>
         </section>
 
         <section class="soluciones col-12 row">
@@ -163,32 +326,32 @@
                         <img src="./resource/serviciosIT/Soluciones Cisco/Centro de Datos.png" alt="">
                     </div>
                     <div class="text-solution">
+                        <h4>Networking y Wireless</h4>
+                        <p>
+                            DNA, SD-Wan, Controladoras 9K, Catalyst, …
+                        </p>
+                        <img src="./resource/serviciosIT/Soluciones Cisco/Networking+Wireless.png" alt="">
+                    </div>
+                    <div class="text-solution">
+                        <h4>Seguridad</h4>
+                        <p>
+                            ISE, Firewall, Umbrella, DUO, Cyber, …
+                        </p>
+                        <img src="./resource/serviciosIT/Soluciones Cisco/Seguridad.png" alt="">
+                    </div>
+                    <div class="text-solution">
                         <h4>Colaboración</h4>
                         <p>
-                            DNA, SD-Wan, Controladoras 9K, Catalyst.
+                            CUCM, Webex Team, Calling, Jabber, …
                         </p>
                         <img src="./resource/serviciosIT/Soluciones Cisco/Colaboracion.png" alt="">
                     </div>
                     <div class="text-solution">
                         <h4>Service provider</h4>
                         <p>
-                            ISE, Firewall, Umbrella, DUO, Cyber.
+                            OSPF, Multicasting, BGP, IP for Media IPFM, …
                         </p>
                         <img src="./resource/serviciosIT/Soluciones Cisco/Service Provider.png" alt="">
-                    </div>
-                    <div class="text-solution">
-                        <h4>Seguridad</h4>
-                        <p>
-                            CUCM, Webex Team, Calling, Jabber.
-                        </p>
-                        <img src="./resource/serviciosIT/Soluciones Cisco/Seguridad.png" alt="">
-                    </div>
-                    <div class="text-solution">
-                        <h4>Networking y Wireless</h4>
-                        <p>
-                            OSPF, Multicasting, BGP, IP for Media IPFM.
-                        </p>
-                        <img src="./resource/serviciosIT/Soluciones Cisco/Networking+Wireless.png" alt="">
                     </div>
                 </div>
                 <div class="headers-solutions col-4">
@@ -196,16 +359,16 @@
                         <h4>Centro de Datos</h4>
                     </div>
                     <div class="header-solution">
-                        <h4>Colaboración</h4>
-                    </div>
-                    <div class="header-solution">
-                        <h4>Service provider</h4>
+                        <h4>Networking y Wireless</h4>
                     </div>
                     <div class="header-solution">
                         <h4>Seguridad</h4>
                     </div>
                     <div class="header-solution">
-                        <h4>Networking y Wireless</h4>
+                        <h4>Colaboración</h4>
+                    </div>
+                    <div class="header-solution">
+                        <h4>Service provider</h4>
                     </div>
                 </div>
             </div>
@@ -228,7 +391,17 @@
             </div>
         </div>
     </div>
-
+    <script>
+        document.getElementById('mostrar-mas-btn').addEventListener('click', function() {
+            const filas = document.querySelectorAll('.fila-hidden');
+            for (let i = 0; i < filas.length; i++) {
+                if (filas[i].style.display === 'none' || filas[i].style.display === '') {
+                    filas[i].style.display = 'flex';
+                    break;
+                }
+            }
+        });
+    </script>
     <script src="./script/serviciosIT.js"></script>
     <script src="./script/responsive/toggle-servicios.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    

@@ -5,8 +5,9 @@
 .page-content{
     padding: 50px 80px;
 }
-h3{
+.page-content h3{
     font-size: 20px;
+    color: #ea1c23;
 }
 .page-content h6{
     font-size: 14px;
