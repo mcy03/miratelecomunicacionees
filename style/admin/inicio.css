@@ -116,3 +116,19 @@ h2, h3{
 .quick-access .quick li a:hover{
     color: #EA1C24;
 }
+
+
+.container-table-calendar{
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    margin: 0;
+    background-color: #fff;
+    padding-top: 10px;
+}
+
+.container-table-calendar table,
+.container-table-calendar table th,
+.container-table-calendar table td {
+    border: 1px solid black;
+}

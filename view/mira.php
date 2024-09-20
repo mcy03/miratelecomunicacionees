@@ -16,7 +16,6 @@
         }
     ?>
    
-    
     <section class="banner-principal">
         <div class="title-page">
             <h1>Conectamos con un mundo con diferencia</h1>
@@ -30,11 +29,11 @@
     <div class="pagina row">
         <section class="intro-page row col-12">
             <div class="row-intro col-11 row">
-                <div class="line col-2"><hr><hr></div>
-                <div class="content-intro content-intro-center col-8">
+                <div class="line col-0 col-md-0 col-lg-2"><hr><hr></div>
+                <div class="content-intro content-intro-center col-12 col-md-12 col-lg-8">
                     Desde el año 2023 somos un Cisco Learning Partner Global que actúa como catalizador de capacitación en las tecnologías centrales de Cisco.
                 </div>
-                <div class="line col-2"><hr><hr></div>
+                <div class="line col-0 col-md-0 col-lg-2"><hr><hr></div>
             </div>
             <div class="row-intro col-11 row">
                 <div class="content-intro borderBottom col-12">
@@ -50,24 +49,18 @@
                     </div>
                 <div class="content-intro list-intro col-12">
                     <ul>
-                        <li class="">:: Seguridad & Cyberops</li>
-                        <li class="">:: IA</li>
+                        <li class="">  :: Seguridad & Cyberops</li>
+                        <li class="">  :: IA</li>
+                        <li class="">  :: Observabilidad</li>
+                        <li class="">  :: Data Center</li>
+                        <li class="">  :: Collaboration</li>
                     </ul>
                     <ul>
-                        <li class="">:: Observabilidad</li>
-                        <li class="">:: Data Center</li>
-                    </ul>
-                    <ul>
-                        <li class="">:: Collaboration</li>
-                        <li class="">:: Enterprise</li>
-                    </ul>
-                    <ul>
-                        <li class="">:: Multicloud</li>
-                        <li class="">:: Service Provider</li>
-                    </ul>
-                    <ul>
-                        <li class="">:: DevNet</li>
-                        <li class="">:: Design</li>
+                        <li class="">  :: Enterprise</li>
+                        <li class="">  :: Multicloud</li>
+                        <li class="">  :: Service Provider</li>
+                        <li class="">  :: DevNet</li>
+                        <li class="">  :: Design</li>
                     </ul>
                 </div>
             </div>
@@ -142,6 +135,8 @@
                         <a href="<?=url.'?controller=mira&action=corporativo'?>">Saber más</a>
                     </div>
                 </div>
+
+                <?= ?>
             </section>
         </div>
         

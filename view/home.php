@@ -26,7 +26,6 @@
                 </div>
             </div>
         </section>
-        
         <div class="primera-seccion">
             <section class="que-ofrecemos">
                 <div class="container-header-que-ofrecemos">
@@ -73,7 +72,6 @@
                 </section>
             </div>
         </div>
-        
         <div class="slider">
             <div class="cont-title-slider">
                 <h2 class="title-slider">Comunidad de aprendizaje</h2>
@@ -84,6 +82,7 @@
                         <li class="card">
                             <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Cisco CCIE Elite Tech.png'); "></div>
                             <a class="download-link" href="./resource/pdf/home/Cisco CCIE Elite Tech 2024 SP.pdf" target="_blank">
+                                
                                 <div class="text-card-slider">
                                     <h3>Cisco CCIE Elite Tech</h3>
                                     <span>
@@ -95,8 +94,9 @@
                         </li>
                     
                     <li class="card">
+                    <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Talleres pràcticos.png');"></div>
                         <a class="download-link" href="<?=url.'?controller=curso&action=select&tecnology=27'?>">
-                            <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Talleres pràcticos.png');"></div>
+                            
                             <div class="text-card-slider">
                                 <h3>Talleres prácticos</h3>
                                 <span>Diseñamos para ganar, resolver y convencer.</span>
@@ -131,8 +131,9 @@
                     </li>
                     -->
                     <li class="card">
+                    <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Impacto social.png');"></div>
                         <a class="download-link" href="<?=url.'?controller=mira&action=corporativo'?>">
-                            <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Impacto social.png');"></div>
+                            
                             <div class="text-card-slider">
                                 <h3>Impacto social</h3>
                                 <span>Comprometidos con un marco corporativo responsable para toda la cadena de valor.</span>
@@ -140,8 +141,9 @@
                         </a>
                     </li>
                     <li class="card">
+                    <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Soluciones Cisco seguridad.png');"></div>
                         <a class="download-link" href="<?=url.'?controller=curso&action=select&tecnology=1'?>">
-                            <div class="img" style="background-image: url('resource/imagenes prueba web/slader/Soluciones Cisco seguridad.png');"></div>
+                            
                             <div class="text-card-slider">
                                 <h3>Cisco seguridad</h3>
                                 <span>Soluciones proporcionadas por Cisco seguridad</span>
@@ -157,26 +159,28 @@
                 
                 <article class="noticia-text">
                     <a href="<?=url.'?controller=calendario'?>">
-                    <div class="img-noticia"><img src="./resource/calendar.png" alt=""></div>
-                    <div class="noticia-body">
-                        <h4>CALENDARIO</h4>
-                        <div class="text-body">
-                            <h3>Calendario de Formación</h3>
-                            <span>
-                                Encuentre aquí formación oficial Cisco en las diferentes partes del mundo
-                            </span>
+                        <div class="img-noticia"><img src="./resource/calendar.png" alt=""></div>
+                        <div class="noticia-body">
+                            <h4>CALENDARIO</h4>
+                            <div class="text-body">
+                                <h3>Calendario de Formación</h3>
+                                <span>
+                                    Encuentre aquí formación oficial Cisco en las diferentes partes del mundo
+                                </span>
+                            </div>
                         </div>
-                    </div>
                     </a>
                 </article>
             
 
                 <article class="noticia-img">
                     <div class="img-noticia">
-                        <div class="text-img-noticia">
-                            <h4>Cisco Scheduling On The Go</h4>
-                            <p>Consulte las próximas convocatorias de formación oficial de Cisco</p>
-                        </div>
+                        <a class="link-noticia-img" href="./resource/pdf/home/Listado Convocatorias Confirmadas Septiembre EMEA 2024.pdf" target="_blank">
+                            <div class="text-img-noticia">
+                                <h4>Cisco Scheduling On The Go</h4>
+                                <p>Consulte las próximas convocatorias de formación oficial de Cisco</p>
+                            </div>
+                        </a>
                     </div>
                 </article>
             </div>

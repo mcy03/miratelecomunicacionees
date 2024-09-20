@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'Biome Std';
+    src: url('./fonts/BiomeStd-Wide.otf') format('opentype'); /* Formato especificado */
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Biome Std', sans-serif; /* Sans-serif como fallback */
+}
+
+body{
+    margin: 0;
+    font-family: "Biome Std";
+}
+header{
+    margin: 0;
+
+    background-color: #EA1C24;
+    color: #ffffff;
+}
+
+.header-one{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contacto-header{
+    width: 60%;
+    display: flex;
+    padding-left: 30px;
+}
+
+.div-mail{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 11px;
+}
+
+.div-phone{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 11px;
+}
+
+.div-mail a, .div-phone a{
+    margin: 0;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.div-mail a:hover, .div-phone a:hover{
+    margin: 0;
+    color: #b8b8b8;
+}
+
+.img-contact{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+
+.idioma-header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    padding-right: 40px;
+}
+
+.idioma-header img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 100%;
+}
+
+.idioma-header p{
+   margin: 0;
+   font-size: 11px;
+}
+
+
+
+
+
+
+.header-two {
+    background-color: #ffffff;
+    padding: 20px 30px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.logo{
+    width: 10%;
+}
+.logo-mira{
+    max-width: 140%;
+    height: auto;
+}
+
+.nav-header{
+    margin-right: 70px;
+}
+
+.nav-header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-header a {
+    text-decoration: none;
+    color: #000000;
+    padding: 10px;
+    display: block;
+    width: 150px;
+}
+
+.nav-header a:hover {
+    text-decoration: none;
+    color: #EA1C24;
+    padding: 10px;
+    display: block;
+}
+
+.search-icon img {
+    margin-right: 30px;
+}
+
+.search-icon img {
+    max-width: 30px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .div-mail a, .div-phone a{
+        display: none;
+    }
+    .header-two{
+        justify-content: space-between;
+    }
+    .nav-header {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-header.active {
+        display: flex;
+    }
+
+    .nav-header a {
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+    }
+
+
+
+    .search-icon img {
+        max-width: 30px;
+        height: auto;
+    }
+    .logo-mira{
+        max-width: 150px;
+        height: auto;
+    }
+}
+
+
+
+
+
+
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 2px;
+    width: 25px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.cabecera-admin{
+    background-color: #fff;
+    padding: 5px 10px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.cabecera-admin a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #000;
+    height: 100%;
+}
+
+.cabecera-admin a:hover{
+    color: #EA1C24;
+}

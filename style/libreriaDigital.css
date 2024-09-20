@@ -1,151 +1,853 @@
-.banner-principal{
-    background: rgba(0, 0, 0, 0.44);
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/Hexagonos Rojos.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+@media (max-width: 768px) {
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/Hexagonos Rojos.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .lines{
+        color: #EA1C24;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    .lines hr{
+        border: 1px solid #EA1C24;
+    }
+    
+    .title{
+        font-size: 14px;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .intro-libreria{
+        background-color: #EDEDED;
+        padding: 30px 30px;
+    }
+    
+    .tituloLibreria {
+        text-align: center;
+    }
+    
+    .intro-libreria hr{
+        margin: 5px 0;
+    }
+    
+    .intro-libreria .text-intro{
+        font-size: 13px;
+        text-align: justify;
+        display: flex;
+        justify-content: center;
+        margin: 10px auto;
+    }
+
+    .spacing-bar {
+        border-bottom: 1px solid #EA1C24;
+    }
+    
+    .border-right{
+        border-right: 1px solid #EA1C24;
+    }
+    
+    .border-left{
+        border-left: 1px solid #EA1C24;
+    }
+    
+    .planesCisco{
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .planesCisco .cont-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        margin: 10px;
+        width: fit-content;
+    }
+    
+    .btn-white {
+        background-color: #fff;
+        border: 1px solid #EA1C24;
+        color: #EA1C24;
+        border-radius: 20px;
+        padding: 10px;
+        transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+        text-decoration: none;
+        text-align: center;
+        margin: 0 10px;
+    }
+    
+    .btn-white:hover {
+        background-color: #EA1C24;
+        border: 1px solid #fff;
+        color: #fff;
+    }
+    
+    .options-sub{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .subs{
+        background-color: #EDEDED;
+        padding: 10px;
+
+    }
+    .subs .title{
+        margin: 20px 0px;
+    }
+    .sub{
+        background-color: #fff;
+        border: 1px solid #D9D9D9;
+        border-radius: 20px;
+        margin: 10px 5px;
+    }
+    
+    .cont-titleSub{
+        width: 90%;
+        margin: 20px 5%;
+        padding: 20px 50px;
+        background-color: #EA1C24;
+        color: #fff;
+        border-radius: 20px;
+    }
+    .cont-titleSub .titleSub{
+        font-size: 14px;
+        text-align: center;
+        margin: 0;
+    }
+    
+    .form-sub input[type='text'] {
+        border-radius: 20px;
+        border: 1px solid #939393;
+        text-align: center;
+        font-size: 13px;
+        width: 80%;
+        padding: 5px 0;
+        margin: 10px 10%;
+    }
+    
+    .form-sub input[type='text']:focus {
+        border: 1px solid #939393;
+    }
+    .form-sub a{
+        color:#EA1C24;
+    }
+    .form-sub a:hover{
+        color:#ea1c2385;
+    }
+    
+    .radio{
+        font-size: 10px;
+        color: #939393;
+        width: 80%;
+        margin: 10px 10%;
+        text-align: left;
+    }
+    
+    .note{
+        font-size: 10px;
+        color: #939393;
+        width: 80%;
+        margin: 10px 10%;
+        text-align: left;
+    }
+    
+    
+    
+    .form-sub .btn-red{
+        width: 30%;
+        margin: 30px 35%;
+        background-color: #EA1C24;
+        border: 1px solid #EA1C24;
+        color: #fff;
+        border-radius: 20px;
+        padding: 5px 0;
+        font-size: 14px;
+    }
 }
 
-.lines{
-    color: #EA1C24;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 30px;
-}
-.lines hr{
-    border: 1px solid #EA1C24;
+@media (min-width: 768px) {
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/Hexagonos Rojos.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .lines{
+        color: #EA1C24;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    .lines hr{
+        border: 1px solid #EA1C24;
+    }
+    
+    .title{
+        font-size: 14px;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .intro-libreria{
+        background-color: #EDEDED;
+        padding: 30px 30px;
+    }
+    
+    .tituloLibreria {
+        text-align: center;
+    }
+    
+    .intro-libreria hr{
+        margin: 5px 0;
+    }
+    
+    .intro-libreria .text-intro{
+        font-size: 13px;
+        text-align: justify;
+        display: flex;
+        justify-content: center;
+        margin: 10px auto;
+    }
+
+    .spacing-bar {
+        border-right: 1px solid #EA1C24;
+    }
+    
+    .border-right{
+        border-right: 1px solid #EA1C24;
+    }
+    
+    .border-left{
+        border-left: 1px solid #EA1C24;
+    }
+    
+    .planesCisco{
+        padding: 50px 0;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .planesCisco .cont-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+    }
+    
+    .btn-white {
+        background-color: #fff;
+        border: 1px solid #EA1C24;
+        color: #EA1C24;
+        border-radius: 20px;
+        padding: 10px;
+        transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+        text-decoration: none;
+        text-align: center;
+        margin: 0 10px;
+    }
+    
+    .btn-white:hover {
+        background-color: #EA1C24;
+        border: 1px solid #fff;
+        color: #fff;
+    }
+    
+    .options-sub{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .subs{
+        background-color: #EDEDED;
+        padding: 50px;
+
+    }
+    .subs .title{
+        margin: 20px 0px;
+    }
+    .sub{
+        background-color: #fff;
+        border: 1px solid #D9D9D9;
+        border-radius: 20px;
+        margin: 30px;
+    }
+    
+    .cont-titleSub{
+        width: 90%;
+        margin: 20px 5%;
+        padding: 20px 50px;
+        background-color: #EA1C24;
+        color: #fff;
+        border-radius: 20px;
+    }
+    .cont-titleSub .titleSub{
+        font-size: 14px;
+        text-align: center;
+        margin: 0;
+    }
+    
+    .form-sub input[type='text'] {
+        border-radius: 20px;
+        border: 1px solid #939393;
+        text-align: center;
+        font-size: 13px;
+        width: 80%;
+        padding: 5px 0;
+        margin: 10px 10%;
+    }
+    
+    .form-sub input[type='text']:focus {
+        border: 1px solid #939393;
+    }
+    .form-sub a{
+        color:#EA1C24;
+    }
+    .form-sub a:hover{
+        color:#ea1c2385;
+    }
+    
+    .radio{
+        font-size: 10px;
+        color: #939393;
+        width: 80%;
+        margin: 10px 10%;
+        text-align: left;
+    }
+    
+    .note{
+        font-size: 10px;
+        color: #939393;
+        width: 80%;
+        margin: 10px 10%;
+        text-align: left;
+    }
+    
+    
+    
+    .form-sub .btn-red{
+        width: 30%;
+        margin: 30px 35%;
+        background-color: #EA1C24;
+        border: 1px solid #EA1C24;
+        color: #fff;
+        border-radius: 20px;
+        padding: 5px 0;
+        font-size: 14px;
+    }
 }
 
-.title{
-    font-size: 20px;
-    margin: 0;
-    text-align: center;
+@media (min-width: 1024px) {
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/Hexagonos Rojos.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .lines{
+        color: #EA1C24;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    .lines hr{
+        border: 1px solid #EA1C24;
+    }
+    
+    .title{
+        font-size: 14px;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .intro-libreria{
+        background-color: #EDEDED;
+        padding: 30px 30px;
+    }
+    
+    .tituloLibreria {
+        text-align: center;
+    }
+    
+    .intro-libreria hr{
+        margin: 5px 0;
+    }
+    
+    .intro-libreria .text-intro{
+        font-size: 13px;
+        text-align: justify;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .border-right{
+        border-right: 1px solid #EA1C24;
+    }
+    
+    .border-left{
+        border-left: 1px solid #EA1C24;
+    }
+    
+    .planesCisco{
+        padding: 50px 0;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .planesCisco .cont-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+    }
+    
+    .btn-white {
+        background-color: #fff;
+        border: 1px solid #EA1C24;
+        color: #EA1C24;
+        border-radius: 20px;
+        padding: 10px;
+        transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+        text-decoration: none;
+        text-align: center;
+        margin: 0 10px;
+    }
+    
+    .btn-white:hover {
+        background-color: #EA1C24;
+        border: 1px solid #fff;
+        color: #fff;
+    }
+    
+    .options-sub{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .subs{
+        background-color: #EDEDED;
+        padding: 50px 100px;
+    }
+    .subs .title{
+        margin: 20px 0px;
+    }
+    .sub{
+        background-color: #fff;
+        border: 1px solid #D9D9D9;
+        border-radius: 20px;
+        margin: 30px;
+    }
+    
+    .cont-titleSub{
+        width: 90%;
+        margin: 20px 5%;
+        padding: 20px 50px;
+        background-color: #EA1C24;
+        color: #fff;
+        border-radius: 20px;
+    }
+    .cont-titleSub .titleSub{
+        font-size: 18px;
+        text-align: center;
+        margin: 0;
+    }
+    
+    .form-sub input[type='text'] {
+        border-radius: 20px;
+        border: 1px solid #939393;
+        text-align: center;
+        font-size: 13px;
+        width: 80%;
+        padding: 5px 0;
+        margin: 10px 10%;
+    }
+    
+    .form-sub input[type='text']:focus {
+        border: 1px solid #939393;
+    }
+    .form-sub a{
+        color:#EA1C24;
+    }
+    .form-sub a:hover{
+        color:#ea1c2385;
+    }
+    
+    .radio{
+        font-size: 10px;
+        color: #939393;
+        width: 80%;
+        margin: 10px 10%;
+        text-align: left;
+    }
+    
+    .note{
+        font-size: 10px;
+        color: #939393;
+        width: 80%;
+        margin: 10px 10%;
+        text-align: left;
+    }
+    
+    
+    
+    .form-sub .btn-red{
+        width: 30%;
+        margin: 30px 35%;
+        background-color: #EA1C24;
+        border: 1px solid #EA1C24;
+        color: #fff;
+        border-radius: 20px;
+        padding: 5px 0;
+        font-size: 14px;
+    }
 }
 
-.intro-libreria{
-    background-color: #EDEDED;
-    padding: 30px 30px;
+@media (min-width: 1194px) {
+    .banner-principal{
+        background: rgba(221, 202, 202, 0.44);
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/Hexagonos Rojos.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .lines{
+        color: #EA1C24;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    .lines hr{
+        border: 1px solid #EA1C24;
+    }
+    
+    .title{
+        font-size: 14px;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .intro-libreria{
+        background-color: #EDEDED;
+        padding: 30px 30px;
+    }
+    
+    .tituloLibreria {
+        text-align: center;
+    }
+    
+    .intro-libreria hr{
+        margin: 5px 0;
+    }
+    
+    .intro-libreria .text-intro{
+        font-size: 13px;
+        text-align: justify;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .border-right{
+        border-right: 1px solid #EA1C24;
+    }
+    
+    .border-left{
+        border-left: 1px solid #EA1C24;
+    }
+    
+    .planesCisco{
+        padding: 50px 0;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .planesCisco .cont-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+    }
+    
+    .btn-white {
+        background-color: #fff;
+        border: 1px solid #EA1C24;
+        color: #EA1C24;
+        border-radius: 20px;
+        padding: 10px;
+        transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+        text-decoration: none;
+        text-align: center;
+        width: fit-content;
+    }
+    
+    .btn-white:hover {
+        background-color: #EA1C24;
+        border: 1px solid #fff;
+        color: #fff;
+    }
+    
+    .options-sub{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .subs{
+        background-color: #EDEDED;
+        padding: 50px 100px;
+    }
+    .subs .title{
+        margin: 20px 0px 50px 0px;
+    }
+    .sub{
+        background-color: #fff;
+        border: 1px solid #D9D9D9;
+        border-radius: 20px;
+        margin: 0 50px;
+    }
+    
+    .cont-titleSub{
+        width: 90%;
+        margin: 20px 5%;
+        padding: 20px 50px;
+        background-color: #EA1C24;
+        color: #fff;
+        border-radius: 20px;
+    }
+    .cont-titleSub .titleSub{
+        font-size: 18px;
+        text-align: center;
+        margin: 0;
+    }
+    
+    .form-sub input[type='text'] {
+        border-radius: 20px;
+        border: 1px solid #939393;
+        text-align: center;
+        font-size: 13px;
+        width: 80%;
+        padding: 5px 0;
+        margin: 10px 10%;
+    }
+    
+    .form-sub input[type='text']:focus {
+        border: 1px solid #939393;
+    }
+    .form-sub a{
+        color:#EA1C24;
+    }
+    .form-sub a:hover{
+        color:#ea1c2385;
+    }
+    
+    .radio{
+        font-size: 10px;
+        color: #939393;
+        width: 80%;
+        margin: 10px 10%;
+        text-align: left;
+    }
+    
+    .note{
+        font-size: 10px;
+        color: #939393;
+        width: 80%;
+        margin: 10px 10%;
+        text-align: left;
+    }
+    
+    
+    
+    .form-sub .btn-red{
+        width: 30%;
+        margin: 30px 35%;
+        background-color: #EA1C24;
+        border: 1px solid #EA1C24;
+        color: #fff;
+        border-radius: 20px;
+        padding: 5px 0;
+        font-size: 14px;
+    }
 }
 
-.intro-libreria hr{
-    margin: 5px 0;
-}
-
-.intro-libreria .text-intro{
-    font-size: 13px;
-    text-align: justify;
-    display: flex;
-    justify-content: center;
-}
-
-.border-right{
-    border-right: 1px solid #EA1C24;
-}
-
-.border-left{
-    border-left: 1px solid #EA1C24;
-}
-
-.planesCisco{
-    padding: 50px 0;
-}
-
-.planesCisco .cont-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn-white {
-    background-color: #fff;
-    border: 1px solid #EA1C24;
-    color: #EA1C24;
-    border-radius: 20px;
-    padding: 20px;
-    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
-    text-decoration: none;
-}
-
-.btn-white:hover {
-    background-color: #EA1C24;
-    border: 1px solid #fff;
-    color: #fff;
-}
-
-
-.subs{
-    background-color: #EDEDED;
-    padding: 50px 100px;
-}
-.subs .title{
-    margin-bottom: 20px;
-}
-.sub{
-    background-color: #fff;
-    border: 1px solid #D9D9D9;
-    border-radius: 20px;
-    margin: 0 50px;
-}
-
-.cont-titleSub{
-    width: 90%;
-    margin: 20px 5%;
-    padding: 20px 50px;
-    background-color: #EA1C24;
-    color: #fff;
-    border-radius: 20px;
-}
-.cont-titleSub .titleSub{
-    font-size: 18px;
-    text-align: center;
-    margin: 0;
-}
-
-.form-sub input[type='text'] {
-    border-radius: 20px;
-    border: 1px solid #939393;
-    text-align: center;
-    font-size: 13px;
-    width: 80%;
-    padding: 5px 0;
-    margin: 10px 10%;
-}
-
-.form-sub input[type='text']:focus {
-    border: 1px solid #939393;
-}
-.form-sub a{
-    color:#EA1C24;
-}
-.form-sub a:hover{
-    color:#ea1c2385;
-}
-
-.radio{
-    font-size: 10px;
-    color: #939393;
-    width: 80%;
-    margin: 10px 10%;
-    text-align: left;
-}
-
-.note{
-    font-size: 10px;
-    color: #939393;
-    width: 80%;
-    margin: 10px 10%;
-    text-align: left;
-}
-
-
-
-.form-sub .btn-red{
-    width: 30%;
-    margin: 30px 35%;
-    background-color: #EA1C24;
-    border: 1px solid #EA1C24;
-    color: #fff;
-    border-radius: 20px;
-    padding: 5px 0;
-    font-size: 14px;
+@media (min-width: 1300px) {
+    .banner-principal{
+        background: rgba(221, 202, 202, 0.44);
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/Hexagonos Rojos.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .lines{
+        color: #EA1C24;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    .lines hr{
+        border: 1px solid #EA1C24;
+    }
+    
+    .title{
+        font-size: 16px;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .intro-libreria{
+        background-color: #EDEDED;
+        padding: 30px 30px;
+    }
+    
+    .tituloLibreria {
+        text-align: center;
+    }
+    
+    .intro-libreria hr{
+        margin: 5px 0;
+    }
+    
+    .intro-libreria .text-intro{
+        font-size: 13px;
+        text-align: justify;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .border-right{
+        border-right: 1px solid #EA1C24;
+    }
+    
+    .border-left{
+        border-left: 1px solid #EA1C24;
+    }
+    
+    .planesCisco{
+        padding: 50px 0;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .planesCisco .cont-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+    }
+    
+    .btn-white {
+        background-color: #fff;
+        border: 1px solid #EA1C24;
+        color: #EA1C24;
+        border-radius: 20px;
+        padding: 20px;
+        transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+        text-decoration: none;
+        text-align: center;
+        width: fit-content;
+    }
+    
+    .btn-white:hover {
+        background-color: #EA1C24;
+        border: 1px solid #fff;
+        color: #fff;
+    }
+    
+    .options-sub{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .subs{
+        background-color: #EDEDED;
+        padding: 50px 100px;
+    }
+    .subs .title{
+        margin: 20px 0px 50px 0px;
+    }
+    .sub{
+        background-color: #fff;
+        border: 1px solid #D9D9D9;
+        border-radius: 20px;
+        margin: 0 50px;
+    }
+    
+    .cont-titleSub{
+        width: 90%;
+        margin: 20px 5%;
+        padding: 20px 50px;
+        background-color: #EA1C24;
+        color: #fff;
+        border-radius: 20px;
+    }
+    .cont-titleSub .titleSub{
+        font-size: 18px;
+        text-align: center;
+        margin: 0;
+    }
+    
+    .form-sub input[type='text'] {
+        border-radius: 20px;
+        border: 1px solid #939393;
+        text-align: center;
+        font-size: 13px;
+        width: 80%;
+        padding: 5px 0;
+        margin: 10px 10%;
+    }
+    
+    .form-sub input[type='text']:focus {
+        border: 1px solid #939393;
+    }
+    .form-sub a{
+        color:#EA1C24;
+    }
+    .form-sub a:hover{
+        color:#ea1c2385;
+    }
+    
+    .radio{
+        font-size: 10px;
+        color: #939393;
+        width: 80%;
+        margin: 10px 10%;
+        text-align: left;
+    }
+    
+    .note{
+        font-size: 10px;
+        color: #939393;
+        width: 80%;
+        margin: 10px 10%;
+        text-align: left;
+    }
+    
+    
+    
+    .form-sub .btn-red{
+        width: 30%;
+        margin: 30px 35%;
+        background-color: #EA1C24;
+        border: 1px solid #EA1C24;
+        color: #fff;
+        border-radius: 20px;
+        padding: 5px 0;
+        font-size: 14px;
+    }
 }

@@ -3,7 +3,7 @@ const wrapper = document.querySelector(".wrapper");
       const firstCardWidth = carousel.querySelector(".card").offsetWidth;
       const carouselChildrens = [...carousel.children];
 
-let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId, velocity = 2000;
 
 // Obtén la cantidad de tarjetas que caben en el carrusel a la vez
 let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
@@ -62,7 +62,8 @@ const infiniteScroll = () => {
 }
 
 const autoPlay = () => {
-    if(window.innerWidth < 800 || !isAutoPlay) return;  // Devuelve si la ventana es menor que 800 o isAutoPlay es falso
+    if(window.innerWidth <= 768) velocity = 500;
+    if(window.innerWidth > 768 || !isAutoPlay) return;  // Devuelve si la ventana es menor que 800 o isAutoPlay es falso
     // Reproduce automáticamente el carrusel cada 2500 ms
     timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2000);
 }

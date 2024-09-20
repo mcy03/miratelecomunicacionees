@@ -8,11 +8,11 @@
     define('apis', array(
         'ApiCertificacionController.php', 'ApiCursoController.php', 'ApiLaboratorioController.php', 
         'ApiTecnologiaController.php','ApiCalendarioController.php', 'ApiCategoriaController.php', 
-        'ApiPublicacionController.php'));
+        'ApiPublicacionController.php','ApiRecursoController.php'));
     
     define('model', array(
         'db.php', 'Certificacion.php', 'Laboratorio.php', 'Curso.php','Tecnologia.php', 'Calendario.php', 
-        'User.php', 'email_permiso.php'));
+        'User.php', 'email_permiso.php', 'recurso.php'));
     
     define('model_entries', array(
         'Categoria.php', 'Publicacion.php', 'Texto.php', 

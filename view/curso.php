@@ -25,11 +25,6 @@
         <div class="title-page">
             <h1>Formación</h1>
         </div>
-
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Quisque a risus non sapien facilisis egestas. 
-            Vivamus scelerisque ex ipsum, a tempor velit tristique id. 
-            Ut in placerat erat.</span>
     </section>
     <section class="ubicacion">
         <div class="ruta-ubi">
@@ -38,12 +33,12 @@
     </section>
     <div class="buscador">
         <form action="" method="post">
-            <input type="text" name="nombreCurso" id="inputCurso" placeholder="Introducir nombre del curso">
+            <input type="text" name="nombreCurso" id="inputCurso" placeholder="Nombre del curso">
         </form>
     </div>
 
     <div class="contenido">
-        <section class="filtro">
+        <section id="filtro" class="filtro">
             <div class="tecnologias">
                 <h4>Tecnologías</h4>
                 <div id="loading-tecnologies">

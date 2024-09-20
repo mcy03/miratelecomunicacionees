@@ -33,10 +33,190 @@
         </div>
         
         <div id="cont-tecnologias" class="cont-tecnologias">
-            <div class="contenedor_carga">
+            <div class="contenedor_carga" style="display: none;">
                 <div class="carga"></div>
             </div>
-        </div>
+        <div class="fila-tecnologias">
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=1">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/security.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Security</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=2">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/networking.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Networking</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=3">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/wireless.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Wireless</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=4">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/customerExperience.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Customer Experience</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=5">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/dataCenter.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Data Center</div>
+                        </div>
+                    </a>
+                </article>
+            </div><div class="fila-tecnologias">
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=6">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/collaboration.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Collaboration</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=7">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/devNet.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">DevNet</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=8">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/internetOfThings.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Internet of Things</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=9">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/automation.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Automation</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=10">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/serviceProvider.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Service Provider</div>
+                        </div>
+                    </a>
+                </article>
+            </div><div class="fila-tecnologias">
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=11">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/foundation.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Foundation</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=12">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/cloud.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Cloud</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=13">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/CyberOPs.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">CyberOPs</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=26">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/reparar.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Talleres prácticos</div>
+                        </div>
+                    </a>
+                </article>
+            
+                <article class="tecnologia">
+                    <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;tecnology=27">
+                        <div class="img-tecnologia">
+                            <img src="./resource/iconosTecnologias/Meraki M Logo draw circle.png" alt="">
+                        </div>
+                        
+                        <div class="cont-nombre-tecnologia">
+                            <div class="nombre-tecnologia">Meraki</div>
+                        </div>
+                    </a>
+                </article>
+            </div></div>
     </section>
 
     <div class="separador">
@@ -49,10 +229,58 @@
         </div>
 
         <div id="cont-certificaciones" class="cont-certificaciones">
-            <div class="contenedor_carga">
+            <div class="contenedor_carga" style="display: none;">
                 <div class="carga"></div>
             </div>
-        </div>
+        <div class="fila-certificaciones">
+            <article class="certificacion">
+                <h3 class="name-certificacion">ENTRY LEVEL</h3>
+                <p class="description-certificacion">Descripción ENTRY LEVEL</p>
+                <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;certification=1" class="saber-mas">Saber más...</a>
+            </article>
+        
+            <article class="certificacion">
+                <h3 class="name-certificacion">ASSOCIATE LEVEL</h3>
+                <p class="description-certificacion">Descripcion de certifiacion de ejemplo</p>
+                <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;certification=2" class="saber-mas">Saber más...</a>
+            </article>
+        
+            <article class="certificacion">
+                <h3 class="name-certificacion">PROFESSIONAL CCNP LEVEL</h3>
+                <p class="description-certificacion">Descripcion de certifiacion de ejemplo</p>
+                <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;certification=3" class="saber-mas">Saber más...</a>
+            </article>
+        
+            <article class="certificacion">
+                <h3 class="name-certificacion">EXPERT CCIE LEVEL</h3>
+                <p class="description-certificacion">Descripcion de certifiacion de ejemplo</p>
+                <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;certification=4" class="saber-mas">Saber más...</a>
+            </article>
+        </div><div class="fila-certificaciones">
+            <article class="certificacion">
+                <h3 class="name-certificacion">AppDynamic</h3>
+                <p class="description-certificacion">Descripcion de certifiacion de ejemplo</p>
+                <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;certification=5" class="saber-mas">Saber más...</a>
+            </article>
+        
+            <article class="certificacion">
+                <h3 class="name-certificacion">Cisco Certified Technician (CCT)</h3>
+                <p class="description-certificacion">Descripcion de certifiacion de ejemplo</p>
+                <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;certification=6" class="saber-mas">Saber más...</a>
+            </article>
+        
+            <article class="certificacion">
+                <h3 class="name-certificacion">Customer Success</h3>
+                <p class="description-certificacion">Descripcion de certifiacion de ejemplo</p>
+                <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;certification=7" class="saber-mas">Saber más...</a>
+            </article>
+        
+            <article class="certificacion">
+                <h3 class="name-certificacion">Meraki Solutions</h3>
+                <p class="description-certificacion">Descripción de ejemplo de Meraki Solutions</p>
+                <a href="https://miratelecomunicacions.com/?controller=curso&amp;action=select&amp;certification=8" class="saber-mas">Saber más...</a>
+            </article>
+        </div></div>
     </section>
 
     <section class="certificaciones">
@@ -65,10 +293,31 @@
             </p>
         </div>
         <div id="cont-certificaciones-partners" class="cont-certificaciones">
-            <div class="contenedor_carga">
+            <div class="contenedor_carga" style="display: none;">
                 <div class="carga"></div>
             </div>
-        </div>
+        <div class="fila-certificaciones fila-cert-partners">
+           <div class="certification">
+                <button class="button-red certifications-button" onclick="mostrarContenido('GOLD')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <span>GOLD</span>
+                </button>
+            </div>
+
+        
+           <div class="certification">
+                <button class="button-red certifications-button" onclick="mostrarContenido('PREMIER')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <span>PREMIER</span>
+                </button>
+            </div>
+
+        
+           <div class="certification">
+                <button class="button-red certifications-button" onclick="mostrarContenido('SELECT')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <span>SELECT</span>
+                </button>
+            </div>
+
+        </div></div>
     </section>
 
     <!-- Modal -->

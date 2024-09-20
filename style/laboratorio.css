@@ -1,338 +1,1262 @@
-.banner-principal{
-    background: rgba(0, 0, 0, 0.44);
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg'); */
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url('../resource/imagenes prueba web/img_home/Red.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.banner-principal span{
-    text-align: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 320px) {
     .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg'); */
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url('../resource/imagenes prueba web/img_home/Red.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .banner-principal span{
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+    }
+    
+    .intro-labs{
+        font-size: 14px;
+        border: 1px solid grey;
+        border-radius: 20px;
+        padding: 30px;
+        margin-top: 50px;
+    }
+    .buttons-scrollDown{
+        margin: 60px 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .buttons-scrollDown button{
+        margin: 0 30px;
+        padding: 4px 20px;
+        font-size: 14px;
+        background-color: #ffffff;
+        border: 1px solid #EA1C24;
+        color: #EA1C24;
+    }
+    .buttons-scrollDown button:hover{
+        background-color: #EA1C24;
+        color: #fff;
+    }
+    
+    .buttons-scrollDown button a{
+        color: #EA1C24;
+        text-decoration: none;
+    }
+    .buttons-scrollDown button a:hover{
+        color: #fff;
+    }
+
+    .div-aprendizaje-practico {
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
-
-    .banner-principal h1{
-        width: 100%;
+    
+    .aprendizaje-practico{
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        margin: 30px 0;
     }
-
-    .banner-principal span{
-        text-align: center;
-        width: 100%;
-    }
-}
-
-.intro-labs{
-    font-size: 14px;
-    border: 1px solid grey;
-    border-radius: 20px;
-    padding: 30px;
-    margin-top: 50px;
-}
-.buttons-scrollDown{
-    margin: 60px 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.buttons-scrollDown button{
-    margin: 0 30px;
-    padding: 4px 20px;
-    font-size: 14px;
-    background-color: #ffffff;
-    border: 1px solid #EA1C24;
-    color: #EA1C24;
-}
-.buttons-scrollDown button:hover{
-    background-color: #EA1C24;
-    color: #fff;
-}
-
-.buttons-scrollDown button a{
-    color: #EA1C24;
-    text-decoration: none;
-}
-.buttons-scrollDown button a:hover{
-    color: #fff;
-}
-
-@media (max-width: 1200px) {
-    .buttons-scrollDown button{
-        margin: 15px;
-    }
-}
-
-.aprendizaje-practico{
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    margin: 80px 0;
-}
-
-.title-section{
-    width: 80%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #EA1C24;
-    border-radius: 20px;
-    color: #fff;
-}
-
-.title-section h3{
-    text-align: center;
-    font-size: 18px;
-}
-#aprendizaje-practico{
-    border-right: 1px solid #848484;
-}
-.content-section{
-    margin-top: 20px;
-    padding: 0 70px;
-}
-
-.content-section ol{
-    padding: 0;
-}
-.content-section ol li{
-    margin: 10px 0;
-}
-
-#aprendizaje-practico .title-section{
-    background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Izquierda.png');
-}
-#target .title-section{
-    background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Derecha.png');
-}
-@media (max-width: 768px) {
+    
     .title-section{
-        height: 120px;
-        border-radius: 20px 20px 0 0;
+        width: 80%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #EA1C24;
+        border-radius: 20px;
+        color: #fff;
+    }
+    
+    .title-section h3{
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .content-section{
+        margin-top: 20px;
+        padding: 0 70px;
+    }
+    
+    .content-section ol{
+        padding: 0;
+    }
+    .content-section ol li{
+        margin: 10px 0;
+    }
+    
+    #aprendizaje-practico .title-section{
+        background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Izquierda.png');
+    }
+    #target .title-section{
+        background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Derecha.png');
+    }
+    
+    .opciones{
+        padding: 50px;
+        background-image: url('../resource/imagenes prueba web/img_home/Fondo Labs Web Mira.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+    }
+    
+    .title-opciones{
+        display: flex;
+        justify-content: center;
+    }
+    .title-opciones h3{
+        font-size: 18px;
+        color: #fff;
+        width: 80%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    
+    .opciones h4{
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+    }   
+    .opciones ul{
+        list-style: none;
+        color: #fff;
+        margin-top: 40px;
+    }
+    .opciones ul li{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .img-icon-package{
+        width: 25px;
+        margin-right: 10px;
+    }
+    .img-double{
+        width: 50px;
+    }
+    .packages{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .list-package{
+        background-color: #ea1c2390;
+        padding: 40px 50px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 0;
+    }
+    
+    .list-package p{
+        color: #000;
+        background-color: #fff;
+        padding: 10px 20px;
+        width: 280px;
+        text-align: center;
+    }
+    
+    
+    .container-package-partner {
+        background-color: #EA1C24;
+        margin-top: 30px;
+        padding: 30px 0;
+        padding-bottom: 10px;
+    }
+    
+    #link-learningPartner{
+        margin-top: 50px;
+        margin-bottom: 0;
+        text-align: center;
+        color: #ffdcdc;
+        cursor: pointer;
+        text-decoration:underline;
+    }
+    
+    #link-learningPartner:hover{
+        color: #fff5f5;
+    }
+    
+    
+    #title-labs{
+        font-size: 18px;
+    }
+    
+    
+    .lab {
+        margin: 30px 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    table{
+        margin: 10px 5px;
+    }
+    
+    .buscador input{
+        border-radius: 10px;
+        margin-right: 5px;
+        padding-left: 5px;
+    }
+    
+    
+    .buscador td{
+        text-align: center;
+    }
+    .separator{
+        height: 30px;
+    }
+    
+    .head-table td{
+        background-color: #EA1C24;
+        padding: 0;
+    }
+    .head-table h3{
+        font-size: 15px;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+    
+    .esquina-izquierda, .esquina-izquierda h3{
+        border-radius: 10px 0 0 0;
+    }
+    
+    .esquina-derecha, .esquina-derecha h3{
+        border-radius: 0 10px 0 0;
+    }
+    .body-table{
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+        border-bottom: 1px solid grey;
+        text-align: center;
+    }
+    
+    .body-table span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        font-size: 11px;
+    }
+    .border-center{
+        border: 1px solid grey;
+    }
+    
+    .name-course-table{
+        width: 400px;
+    }
+    .id-course-table{
+        width: 50%;
+    }
+    .valor-name{
+        padding: 0 5px;
+        font-size: 11px;
+    }
+    
+    .valor-enroll{
+        width: 100px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+    
+    .pagina{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .publi{
+        margin-top: 50px;
+    }
+    
+    .publi article{
+        margin-bottom: 150px;
+        border-radius: 10px;
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .publi-text h4{
+        width: 100%;
+        text-align: center;
+    }
+    .publi-text p{
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .publi-text button:hover{
+        border: 1px solid rgb(0, 0, 0);
+    }
+    
+    
+    #input-id{
+        width: 100%;
+        margin: 20px 0;
+    }
+    /* enlazar a desplegables y que salgan ya seleccionados*/
+}
+@media (min-width: 321px) and (max-width: 768px) {
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg'); */
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url('../resource/imagenes prueba web/img_home/Red.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .banner-principal span{
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+    }
+    
+    .intro-labs{
+        font-size: 14px;
+        border: 1px solid grey;
+        border-radius: 20px;
+        padding: 30px;
+        margin-top: 50px;
+    }
+    .buttons-scrollDown{
+        margin: 60px 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .buttons-scrollDown button{
+        margin: 0 30px;
+        padding: 4px 20px;
+        font-size: 14px;
+        background-color: #ffffff;
+        border: 1px solid #EA1C24;
+        color: #EA1C24;
+    }
+    .buttons-scrollDown button:hover{
+        background-color: #EA1C24;
+        color: #fff;
+    }
+    
+    .buttons-scrollDown button a{
+        color: #EA1C24;
+        text-decoration: none;
+    }
+    .buttons-scrollDown button a:hover{
+        color: #fff;
+    }
+
+    .div-aprendizaje-practico {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .aprendizaje-practico{
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        margin: 30px 0;
+    }
+    
+    .title-section{
+        width: 80%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #EA1C24;
+        border-radius: 20px;
+        color: #fff;
+    }
+    
+    .title-section h3{
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .content-section{
+        margin-top: 20px;
+        padding: 0 70px;
+    }
+    
+    .content-section ol{
+        padding: 0;
+    }
+    .content-section ol li{
+        margin: 10px 0;
+    }
+    
+    #aprendizaje-practico .title-section{
+        background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Izquierda.png');
+    }
+    #target .title-section{
+        background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Derecha.png');
+    }
+    
+    .opciones{
+        padding: 50px;
+        background-image: url('../resource/imagenes prueba web/img_home/Fondo Labs Web Mira.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+    }
+    
+    .title-opciones{
+        display: flex;
+        justify-content: center;
+    }
+    .title-opciones h3{
+        font-size: 18px;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    
+    .opciones h4{
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+    }   
+    .opciones ul{
+        list-style: none;
+        color: #fff;
+        margin-top: 40px;
+    }
+    .opciones ul li{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .img-icon-package{
+        width: 25px;
+        margin-right: 10px;
+    }
+    .img-double{
+        width: 50px;
+    }
+    .packages{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .list-package{
+        background-color: #ea1c2390;
+        padding: 40px 10px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 0;
+    }
+    
+    .list-package p{
+        color: #000;
+        background-color: #fff;
+        padding: 10px 20px;
+        width: 320px;
+        text-align: center;
+    }
+    
+    
+    .container-package-partner {
+        background-color: #EA1C24;
+        margin-top: 30px;
+        padding: 30px 0;
+        padding-bottom: 10px;
+    }
+    
+    #link-learningPartner{
+        margin-top: 50px;
+        margin-bottom: 0;
+        text-align: center;
+        color: #ffdcdc;
+        cursor: pointer;
+        text-decoration:underline;
+    }
+    
+    #link-learningPartner:hover{
+        color: #fff5f5;
+    }
+    
+    
+    #title-labs{
+        font-size: 18px;
+    }
+
+    .lab {
+        margin: 60px 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    table{
+        margin: 10px 5px;
+    }
+    
+    .buscador input{
+        border-radius: 10px;
+        margin-right: 5px;
+        padding-left: 5px;
+    }
+    
+    
+    .buscador td{
+        text-align: center;
+    }
+    .separator{
+        height: 30px;
+    }
+    
+    .head-table td{
+        background-color: #EA1C24;
+        padding: 0;
+    }
+    .head-table h3{
+        font-size: 13px;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+    
+    .esquina-izquierda, .esquina-izquierda h3{
+        border-radius: 10px 0 0 0;
+    }
+    
+    .esquina-derecha, .esquina-derecha h3{
+        border-radius: 0 10px 0 0;
+    }
+    .body-table{
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+        border-bottom: 1px solid grey;
+        text-align: center;
+    }
+    
+    .body-table span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        font-size: 11px;
+    }
+    .border-center{
+        border: 1px solid grey;
+    }
+    
+    .name-course-table{
+        width: 400px;
+    }
+    .id-course-table{
+        width: 50%;
+    }
+    .valor-name{
+        padding: 0 5px;
+        font-size: 11px;
+    }
+    
+    .valor-enroll{
+        width: 100px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+    
+    .pagina{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .publi{
+        margin-top: 50px;
+    }
+    
+    .publi article{
+        margin-bottom: 150px;
+        border-radius: 10px;
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .publi-text h4{
+        width: 100%;
+        text-align: center;
+    }
+    .publi-text p{
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .publi-text button:hover{
+        border: 1px solid rgb(0, 0, 0);
+    }
+    
+    
+    #input-id{
+        width: 100%;
+        margin: 20px 0;
+    }
+    /* enlazar a desplegables y que salgan ya seleccionados*/
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg'); */
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url('../resource/imagenes prueba web/img_home/Red.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .banner-principal span{
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+    }
+    
+    .intro-labs{
+        font-size: 14px;
+        border: 1px solid grey;
+        border-radius: 20px;
+        padding: 30px;
+        margin-top: 50px;
+    }
+    .buttons-scrollDown{
+        margin: 60px 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .buttons-scrollDown button{
+        margin: 0 30px;
+        padding: 4px 20px;
+        font-size: 14px;
+        background-color: #ffffff;
+        border: 1px solid #EA1C24;
+        color: #EA1C24;
+    }
+    .buttons-scrollDown button:hover{
+        background-color: #EA1C24;
+        color: #fff;
+    }
+    
+    .buttons-scrollDown button a{
+        color: #EA1C24;
+        text-decoration: none;
+    }
+    .buttons-scrollDown button a:hover{
+        color: #fff;
+    }
+
+    .div-aprendizaje-practico {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .aprendizaje-practico{
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        margin: 30px 0;
+    }
+    
+    .title-section{
+        width: 80%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #EA1C24;
+        border-radius: 20px;
+        color: #fff;
+    }
+    
+    .title-section h3{
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .content-section{
+        margin-top: 20px;
+        padding: 0 70px;
+    }
+    
+    .content-section ol{
+        padding: 0;
+    }
+    .content-section ol li{
+        margin: 10px 0;
+    }
+    
+    #aprendizaje-practico .title-section{
+        background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Izquierda.png');
+    }
+    #target .title-section{
+        background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Derecha.png');
+    }
+    
+    .opciones{
+        padding: 50px;
+        background-image: url('../resource/imagenes prueba web/img_home/Fondo Labs Web Mira.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+    }
+    
+    .title-opciones{
+        display: flex;
+        justify-content: center;
+    }
+    .title-opciones h3{
+        font-size: 18px;
+        color: #fff;
+        width: 80%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    
+    .opciones h4{
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+    }   
+    .opciones ul{
+        list-style: none;
+        color: #fff;
+        margin-top: 40px;
+    }
+    .opciones ul li{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .img-icon-package{
+        width: 25px;
+        margin-right: 10px;
+    }
+    .img-double{
+        width: 50px;
+    }
+    .packages{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .list-package{
+        background-color: #ea1c2390;
+        padding: 40px 50px;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 0;
+    }
+    
+    .list-package p{
+        color: #000;
+        background-color: #fff;
+        padding: 10px 20px;
+        width: 380px;
+        text-align: center;
+    }
+    
+    
+    .container-package-partner {
+        background-color: #EA1C24;
+        margin-top: 30px;
+        padding: 30px 0;
+        padding-bottom: 10px;
+    }
+    
+    #link-learningPartner{
+        margin-top: 50px;
+        margin-bottom: 0;
+        text-align: center;
+        color: #ffdcdc;
+        cursor: pointer;
+        text-decoration:underline;
+    }
+    
+    #link-learningPartner:hover{
+        color: #fff5f5;
+    }
+    
+    
+    #title-labs{
+        font-size: 18px;
+    }
+    
+    
+    .lab{
+        padding: 50px;
+    }
+    
+    table{
+        margin: 50px 30px;
+    }
+    
+    .buscador input{
+        border-radius: 10px;
+        margin-right: 5px;
+        padding-left: 5px;
+    }
+    
+    
+    .buscador td{
+        text-align: center;
+    }
+    .separator{
+        height: 30px;
+    }
+    
+    .head-table td{
+        background-color: #EA1C24;
+        padding: 0;
+    }
+    .head-table h3{
+        font-size: 15px;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+    
+    .esquina-izquierda, .esquina-izquierda h3{
+        border-radius: 10px 0 0 0;
+    }
+    
+    .esquina-derecha, .esquina-derecha h3{
+        border-radius: 0 10px 0 0;
+    }
+    .body-table{
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+        border-bottom: 1px solid grey;
+        text-align: center;
+    }
+    
+    .body-table span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        font-size: 11px;
+    }
+    .border-center{
+        border: 1px solid grey;
+    }
+    
+    .name-course-table{
+        width: 400px;
+    }
+    .id-course-table{
+        width: 50%;
+    }
+    .valor-name{
+        padding: 0 5px;
+        font-size: 11px;
+    }
+    
+    .valor-enroll{
+        width: 100px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+    
+    .pagina{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .publi{
+        margin-top: 50px;
+    }
+    
+    .publi article{
+        margin-bottom: 150px;
+        border-radius: 10px;
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .publi-text h4{
+        width: 100%;
+        text-align: center;
+    }
+    .publi-text p{
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .publi-text button:hover{
+        border: 1px solid rgb(0, 0, 0);
+    }
+    
+    
+    #input-id{
+        width: 100%;
+        margin: 20px 0;
+    }
+    /* enlazar a desplegables y que salgan ya seleccionados*/
+}
+
+@media (min-width: 1200px) {
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg'); */
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url('../resource/imagenes prueba web/img_home/Red.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .banner-principal span{
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+    }
+    
+    .intro-labs{
+        font-size: 14px;
+        border: 1px solid grey;
+        border-radius: 20px;
+        padding: 30px;
+        margin-top: 50px;
+    }
+    .buttons-scrollDown{
+        margin: 60px 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .buttons-scrollDown button{
+        margin: 0 30px;
+        padding: 4px 20px;
+        font-size: 14px;
+        background-color: #ffffff;
+        border: 1px solid #EA1C24;
+        color: #EA1C24;
+    }
+    .buttons-scrollDown button:hover{
+        background-color: #EA1C24;
+        color: #fff;
+    }
+    
+    .buttons-scrollDown button a{
+        color: #EA1C24;
+        text-decoration: none;
+    }
+    .buttons-scrollDown button a:hover{
+        color: #fff;
+    }
+    
+    .div-aprendizaje-practico {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .aprendizaje-practico{
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        margin: 80px 0;
+    }
+    
+    .title-section{
+        width: 80%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #EA1C24;
+        border-radius: 20px;
+        color: #fff;
+    }
+    
+    .title-section h3{
+        text-align: center;
+        font-size: 18px;
+    }
+    #aprendizaje-practico{
+        border-right: 1px solid #848484;
     }
     .content-section{
-        border: 1px solid grey;
-        padding: 40px;
-        border-radius: 0 0 20px 20px;
+        margin-top: 20px;
+        padding: 0 70px;
     }
-
-    .reverse{
+    
+    .content-section ol{
+        padding: 0;
+    }
+    .content-section ol li{
+        margin: 10px 0;
+    }
+    
+    #aprendizaje-practico .title-section{
+        background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Izquierda.png');
+    }
+    #target .title-section{
+        background-image: url('../resource/imagenes prueba web/img_home/Pestañas Red/Pestaña Derecha.png');
+    }
+    
+    .opciones{
+        padding: 50px;
+        background-image: url('../resource/imagenes prueba web/img_home/Fondo Labs Web Mira.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+    }
+    
+    .title-opciones{
         display: flex;
-        flex-wrap: wrap-reverse;
+        justify-content: center;
     }
+    .title-opciones h3{
+        font-size: 18px;
+        color: #fff;
+        width: 80%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    
+    .opciones h4{
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+    }   
+    .opciones ul{
+        list-style: none;
+        color: #fff;
+        margin-top: 40px;
+    }
+    .opciones ul li{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .img-icon-package{
+        width: 25px;
+        margin-right: 10px;
+    }
+    .img-double{
+        width: 50px;
+    }
+    .packages{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .list-package{
+        background-color: #ea1c2390;
+        padding: 40px 50px;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .list-package p{
+        color: #000;
+        background-color: #fff;
+        padding: 10px 20px;
+        width: 380px;
+        text-align: center;
+    }
+    
+    
+    .container-package-partner {
+        background-color: #EA1C24;
+        margin-top: 30px;
+        padding: 30px 0;
+        padding-bottom: 10px;
+    }
+    
+    #link-learningPartner{
+        margin-top: 50px;
+        margin-bottom: 0;
+        text-align: center;
+        color: #ffdcdc;
+        cursor: pointer;
+        text-decoration:underline;
+    }
+    
+    #link-learningPartner:hover{
+        color: #fff5f5;
+    }
+    
+    
+    #title-labs{
+        font-size: 18px;
+    }
+    
+    
+    .lab{
+        padding: 50px;
+    }
+    
+    table{
+        margin: 50px 30px;
+    }
+    
+    .buscador input{
+        border-radius: 10px;
+        margin-right: 5px;
+        padding-left: 5px;
+    }
+    
+    
+    .buscador td{
+        text-align: center;
+    }
+    .separator{
+        height: 30px;
+    }
+    
+    .head-table td{
+        background-color: #EA1C24;
+        padding: 0;
+    }
+    .head-table h3{
+        font-size: 15px;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+    
+    .esquina-izquierda, .esquina-izquierda h3{
+        border-radius: 10px 0 0 0;
+    }
+    
+    .esquina-derecha, .esquina-derecha h3{
+        border-radius: 0 10px 0 0;
+    }
+    .body-table{
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+        border-bottom: 1px solid grey;
+        text-align: center;
+    }
+    
+    .body-table span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        font-size: 11px;
+    }
+    .border-center{
+        border: 1px solid grey;
+    }
+    
+    .name-course-table{
+        width: 400px;
+    }
+    .id-course-table{
+        width: 50%;
+    }
+    .valor-name{
+        padding: 0 5px;
+        font-size: 11px;
+    }
+    
+    .valor-enroll{
+        width: 100px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+    
+    .pagina{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .publi{
+        margin-top: 50px;
+    }
+    
+    .publi article{
+        margin-bottom: 150px;
+        border-radius: 10px;
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .publi-text h4{
+        width: 100%;
+        text-align: center;
+    }
+    .publi-text p{
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .publi-text button:hover{
+        border: 1px solid rgb(0, 0, 0);
+    }
+    
+    
+    #input-id{
+        width: 100%;
+        margin: 20px 0;
+    }
+    /* enlazar a desplegables y que salgan ya seleccionados*/
 }
-
-.opciones{
-    padding: 50px;
-    background-image: url('../resource/imagenes prueba web/img_home/Fondo Labs Web Mira.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-}
-
-.title-opciones{
-    display: flex;
-    justify-content: center;
-}
-.title-opciones h3{
-    font-size: 18px;
-    color: #fff;
-    width: 80%;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-
-.opciones h4{
-    color: #fff;
-    text-align: center;
-    font-size: 16px;
-}   
-.opciones ul{
-    list-style: none;
-    color: #fff;
-    margin-top: 40px;
-}
-.opciones ul li{
-    font-size: 15px;
-    margin-bottom: 20px;
-}
-.img-icon-package{
-    width: 25px;
-    margin-right: 10px;
-}
-.img-double{
-    width: 50px;
-}
-.packages{
-    display: flex;
-    justify-content: space-around;
-}
-
-.list-package{
-    background-color: #ea1c2390;
-    padding: 40px 50px;
-    width: 600px;
-}
-
-.list-package p{
-    color: #000;
-    background-color: #fff;
-    padding: 10px 20px;
-    width: 380px;
-    text-align: center;
-}
-
-
-.container-package-partner {
-    background-color: #EA1C24;
-    margin-top: 30px;
-    padding: 30px 0;
-    padding-bottom: 10px;
-}
-
-#link-learningPartner{
-    margin-top: 50px;
-    margin-bottom: 0;
-    text-align: center;
-    color: #ffdcdc;
-    cursor: pointer;
-    text-decoration:underline;
-}
-
-#link-learningPartner:hover{
-    color: #fff5f5;
-}
-
-
-#title-labs{
-    font-size: 18px;
-}
-
-
-.lab{
-    padding: 50px;
-}
-
-table{
-    margin: 50px 30px;
-}
-
-.buscador input{
-    border-radius: 10px;
-    margin-right: 5px;
-    padding-left: 5px;
-}
-
-
-.buscador td{
-    text-align: center;
-}
-.separator{
-    height: 30px;
-}
-
-.head-table td{
-    background-color: #EA1C24;
-    padding: 0;
-}
-.head-table h3{
-    font-size: 15px;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-    color: white;
-}
-
-.esquina-izquierda, .esquina-izquierda h3{
-    border-radius: 10px 0 0 0;
-}
-
-.esquina-derecha, .esquina-derecha h3{
-    border-radius: 0 10px 0 0;
-}
-.body-table{
-    border-left: 1px solid grey;
-    border-right: 1px solid grey;
-    border-bottom: 1px solid grey;
-    text-align: center;
-}
-
-.body-table span{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    font-size: 11px;
-}
-.border-center{
-    border: 1px solid grey;
-}
-
-.name-course-table{
-    width: 400px;
-}
-.id-course-table{
-    width: 50px;
-}
-.valor-name{
-    padding: 0 5px;
-    font-size: 11px;
-}
-
-.valor-enroll{
-    width: 100px;
-    padding: 0 10px;
-    font-size: 10px;
-}
-
-.pagina{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.publi{
-    margin-top: 50px;
-}
-
-.publi article{
-    margin-bottom: 150px;
-    border-radius: 10px;
-    min-height: 200px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.publi-text h4{
-    width: 100%;
-    text-align: center;
-}
-.publi-text p{
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    align-items: center;
-}
-
-.publi-text button:hover{
-    border: 1px solid rgb(0, 0, 0);
-}
-
-
-
-/* enlazar a desplegables y que salgan ya seleccionados*/

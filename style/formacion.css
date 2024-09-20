@@ -1,210 +1,666 @@
-.banner-principal{
-    background: rgba(0, 0, 0, 0.44);
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/Pantallas.png');
-    /*background-image: linear-gradient( rgba(0, 0, 0, 0.8)20%, rgba(141, 141, 141, 0.8)60%), url('../resource/backgroundEjemplo.jpg');*/
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+@media (max-width: 768px){
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/Pantallas.png');
+        /*background-image: linear-gradient( rgba(0, 0, 0, 0.8)20%, rgba(141, 141, 141, 0.8)60%), url('../resource/backgroundEjemplo.jpg');*/
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    *{
+        font-family: "Biome Std";
+    }
+    
+    .section-tecnologias{
+        padding: 40px;
+    }
+    .title-section{
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .cont-tecnologias{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .fila-tecnologias{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: space-around;
+        margin-bottom: 30px;
+    }
+    
+    .tecnologia{
+        width: 100%;
+        height: 50px;
+    }
+    
+    .tecnologia a{
+        text-decoration: none;
+    }
+    
+    .img-tecnologia{
+    
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-bottom: 25px;
+        
+        display: none;
+    }
+    
+    .img-tecnologia img{
+        width: 100px;
+        height: 100px;
+        margin-top: 25px;
+    }
+    
+    .cont-nombre-tecnologia{
+        text-align: center;
+    }
+    
+    .nombre-tecnologia{
+        background-color: #EE4950;
+        border: 1px solid #EE4950;
+        color: #fff;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+    }
+    
+    .separador img{
+        width: 100%;
+    }
+    
+    .certificaciones{
+        margin: 50px 30px;
+    }
+    
+    .cont-certificaciones{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 50px;
+    }
+    
+    .fila-certificaciones{
+        width: 100%;
+        display: flex;
+        justify-content:space-evenly;
+        align-items:center;
+        flex-direction: column;
+        margin-bottom: 6%;
+    }
+    
+    .certificacion{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #EA1C24;
+    }
+    
+    .name-certificacion{
+        font-size: 20px;
+        text-align: left;
+    }
+    
+    .description-certificacion{
+        font-size: 15px;
+        text-align: left;
+    }
+    
+    .saber-mas{
+        font-size: 15px;
+        text-align: right;
+        text-decoration: none;
+        color: #EA1C24;
+    }
+    
+    
+    .certifications-button{
+        border-radius: 0;
+        min-width: 300px;
+    }
+    
+    .certifications-button:hover{
+        border-radius: 0;
+        border: 1px solid #EA1C24;
+        background-color: #EE4950;
+    }
+    
+    .page-certifications{
+        min-width: 300px;
+        min-height: 100px;
+    }
+    
+    .page-certifications p{
+        width: 100%;
+        text-align: center;
+        height: 30px;
+        margin: 0;
+        cursor: pointer;
+        background-color: aliceblue;
+       
+    }
+    
+    .page-certifications p:hover{
+        background-color: darkgray;
+    }
+    
+    .page-certifications {
+        opacity: 0;
+        transform: scale(0.95);
+        transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .page-certifications.show {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    
+    .download-link-red{
+        background-color: #EA1C24;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    .download-link-red:hover{
+        background-color: #fff;
+        color: #EA1C24;
+        border: 1px solid #EA1C24;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    
+    
+    
+    .modal-footer {
+        justify-content: space-between;
+    }
+    .link-grey{
+        background-color: #fff;
+        color: #b3b3b3;
+        border: 1px solid #b3b3b3;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    .link-grey:hover{
+        background-color: #b3b3b3;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    
+    .intro-section{
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .fila-cert-partners{
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    .fila-cert-partners .certifications-button{
+        margin-bottom: 50px;
+    }
 }
 
-*{
-    font-family: "Biome Std";
+@media (min-width: 768px) and (max-width: 1024px){
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/Pantallas.png');
+        /*background-image: linear-gradient( rgba(0, 0, 0, 0.8)20%, rgba(141, 141, 141, 0.8)60%), url('../resource/backgroundEjemplo.jpg');*/
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    *{
+        font-family: "Biome Std";
+    }
+    
+    .section-tecnologias{
+        padding: 40px;
+    }
+    .title-section{
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .cont-tecnologias{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .fila-tecnologias{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: space-around;
+        margin-bottom: 30px;
+    }
+    
+    .tecnologia{
+        width: 15%;
+        height: 200px;
+    }
+    
+    .tecnologia a{
+        text-decoration: none;
+    }
+    
+    .img-tecnologia{
+    
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-bottom: 25px;
+    }
+    
+    .img-tecnologia img{
+        width: 100px;
+        height: 100px;
+        margin-top: 25px;
+    }
+    
+    .cont-nombre-tecnologia{
+        text-align: center;
+    }
+    
+    .nombre-tecnologia{
+        background-color: #EE4950;
+        color: #fff;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+    }
+    
+    
+    
+    
+    .separador img{
+        width: 100%;
+    }
+    
+    .certificaciones{
+        margin: 50px 30px;
+    }
+    
+    .cont-certificaciones{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        padding-top: 50px;
+    }
+    
+    .fila-certificaciones{
+        width: 50%;
+        display: flex;
+        justify-content:space-evenly;
+        align-items:center;
+        flex-direction: column;
+        margin-bottom: 6%;
+    }
+    
+    .certificacion{
+        width: 80%;
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    
+    .name-certificacion{
+        font-size: 20px;
+        text-align: left;
+    }
+    
+    .description-certificacion{
+        font-size: 15px;
+        text-align: left;
+    }
+    
+    .saber-mas{
+        font-size: 15px;
+        text-align: right;
+        text-decoration: none;
+        color: #EA1C24;
+    }
+    
+    
+    .certifications-button{
+        border-radius: 0;
+        min-width: 300px;
+    }
+    
+    .certifications-button:hover{
+        border-radius: 0;
+        border: 1px solid #EA1C24;
+        background-color: #EE4950;
+    }
+    
+    .page-certifications{
+        min-width: 300px;
+        min-height: 100px;
+    }
+    
+    .page-certifications p{
+        width: 100%;
+        text-align: center;
+        height: 30px;
+        margin: 0;
+        cursor: pointer;
+        background-color: aliceblue;
+       
+    }
+    
+    .page-certifications p:hover{
+        background-color: darkgray;
+    }
+    
+    .page-certifications {
+        opacity: 0;
+        transform: scale(0.95);
+        transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .page-certifications.show {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    
+    .download-link-red{
+        background-color: #EA1C24;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    .download-link-red:hover{
+        background-color: #fff;
+        color: #EA1C24;
+        border: 1px solid #EA1C24;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    
+    
+    
+    .modal-footer {
+        justify-content: space-between;
+    }
+    .link-grey{
+        background-color: #fff;
+        color: #b3b3b3;
+        border: 1px solid #b3b3b3;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    .link-grey:hover{
+        background-color: #b3b3b3;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    
+    .intro-section{
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .fila-cert-partners{
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    .fila-cert-partners .certifications-button{
+        margin-bottom: 50px;
+    }
 }
 
-.section-tecnologias{
-    padding: 40px;
+@media (min-width: 1024px){
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url('../resource/imagenes prueba web/img_home/Pantallas.png');
+        /*background-image: linear-gradient( rgba(0, 0, 0, 0.8)20%, rgba(141, 141, 141, 0.8)60%), url('../resource/backgroundEjemplo.jpg');*/
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    *{
+        font-family: "Biome Std";
+    }
+    
+    .section-tecnologias{
+        padding: 40px;
+    }
+    .title-section{
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .cont-tecnologias{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .fila-tecnologias{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: space-around;
+        margin-bottom: 30px;
+    }
+    
+    .tecnologia{
+        width: 15%;
+        height: 200px;
+    }
+    
+    .tecnologia a{
+        text-decoration: none;
+    }
+    
+    .img-tecnologia{
+    
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-bottom: 25px;
+    }
+    
+    .img-tecnologia img{
+        width: 100px;
+        height: 100px;
+        margin-top: 25px;
+    }
+    
+    .cont-nombre-tecnologia{
+        text-align: center;
+    }
+    
+    .nombre-tecnologia{
+        background-color: #EE4950;
+        color: #fff;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+    }
+    
+    
+    
+    
+    .separador img{
+        width: 100%;
+    }
+    
+    .certificaciones{
+        margin: 50px 30px;
+    }
+    
+    .cont-certificaciones{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 50px;
+    }
+    
+    .fila-certificaciones{
+        width: 100%;
+        display: flex;
+        justify-content:space-evenly;
+        align-items:center;
+        flex-direction: row;
+        margin-bottom: 6%;
+    }
+    
+    .certificacion{
+        width: 16%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .name-certificacion{
+        font-size: 20px;
+        text-align: left;
+    }
+    
+    .description-certificacion{
+        font-size: 15px;
+        text-align: left;
+    }
+    
+    .saber-mas{
+        font-size: 15px;
+        text-align: right;
+        text-decoration: none;
+        color: #EA1C24;
+    }
+    
+    
+    .certifications-button{
+        border-radius: 0;
+        min-width: 300px;
+    }
+    
+    .certifications-button:hover{
+        border-radius: 0;
+        border: 1px solid #EA1C24;
+        background-color: #EE4950;
+    }
+    
+    .page-certifications{
+        min-width: 300px;
+        min-height: 100px;
+    }
+    
+    .page-certifications p{
+        width: 100%;
+        text-align: center;
+        height: 30px;
+        margin: 0;
+        cursor: pointer;
+        background-color: aliceblue;
+       
+    }
+    
+    .page-certifications p:hover{
+        background-color: darkgray;
+    }
+    
+    .page-certifications {
+        opacity: 0;
+        transform: scale(0.95);
+        transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .page-certifications.show {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    
+    .download-link-red{
+        background-color: #EA1C24;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    .download-link-red:hover{
+        background-color: #fff;
+        color: #EA1C24;
+        border: 1px solid #EA1C24;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    
+    
+    
+    .modal-footer {
+        justify-content: space-between;
+    }
+    .link-grey{
+        background-color: #fff;
+        color: #b3b3b3;
+        border: 1px solid #b3b3b3;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    .link-grey:hover{
+        background-color: #b3b3b3;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        padding: 5px 5px;
+    }
+    
+    .intro-section{
+        text-align: center;
+        font-size: 14px;
+    }
 }
-.title-section{
-    font-size: 20px;
-    margin-bottom: 30px;
-}
 
-.cont-tecnologias{
-    display: flex;
-    flex-direction: column;
-}
-
-.fila-tecnologias{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: space-around;
-    margin-bottom: 30px;
-}
-
-.tecnologia{
-    width: 15%;
-    height: 200px;
-}
-
-.tecnologia a{
-    text-decoration: none;
-}
-
-.img-tecnologia{
-
-    width: 100%;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin-bottom: 25px;
-}
-
-.img-tecnologia img{
-    width: 100px;
-    height: 100px;
-    margin-top: 25px;
-}
-
-.cont-nombre-tecnologia{
-    text-align: center;
-}
-
-.nombre-tecnologia{
-    background-color: #EE4950;
-    color: #fff;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-}
-
-
-
-
-.separador img{
-    width: 100%;
-}
-
-.certificaciones{
-    margin: 50px 30px;
-}
-
-.cont-certificaciones{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 50px;
-}
-
-.fila-certificaciones{
-    width: 100%;
-    display: flex;
-    justify-content:space-evenly;
-    align-items:center;
-    flex-direction: row;
-    margin-bottom: 6%;
-}
-
-.certificacion{
-    width: 16%;
-    display: flex;
-    flex-direction: column;
-}
-
-.name-certificacion{
-    font-size: 20px;
-    text-align: left;
-}
-
-.description-certificacion{
-    font-size: 15px;
-    text-align: left;
-}
-
-.saber-mas{
-    font-size: 15px;
-    text-align: right;
-    text-decoration: none;
-    color: #EA1C24;
-}
-
-
-.certifications-button{
-    border-radius: 0;
-    min-width: 300px;
-}
-
-.certifications-button:hover{
-    border-radius: 0;
-    border: 1px solid #EA1C24;
-    background-color: #EE4950;
-}
-
-.page-certifications{
-    min-width: 300px;
-    min-height: 100px;
-}
-
-.page-certifications p{
-    width: 100%;
-    text-align: center;
-    height: 30px;
-    margin: 0;
-    cursor: pointer;
-    background-color: aliceblue;
-   
-}
-
-.page-certifications p:hover{
-    background-color: darkgray;
-}
-
-.page-certifications {
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.page-certifications.show {
-    opacity: 1;
-    transform: scale(1);
-}
-
-
-.download-link-red{
-    background-color: #EA1C24;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 5px 5px;
-}
-.download-link-red:hover{
-    background-color: #fff;
-    color: #EA1C24;
-    border: 1px solid #EA1C24;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 5px 5px;
-}
-
-
-
-.modal-footer {
-    justify-content: space-between;
-}
-.link-grey{
-    background-color: #fff;
-    color: #b3b3b3;
-    border: 1px solid #b3b3b3;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 5px 5px;
-}
-.link-grey:hover{
-    background-color: #b3b3b3;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 5px 5px;
-}
-
-.intro-section{
-    text-align: center;
-    font-size: 14px;
-}

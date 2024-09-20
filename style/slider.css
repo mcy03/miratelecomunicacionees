@@ -1,3 +1,4 @@
+@media only screen and (min-width: 1024px) {
   .wrapper {
     max-width: 100%;
     width: 90%;
@@ -136,68 +137,292 @@
   .download-link:hover{
     text-decoration: none;
   }
-  @media screen and (max-width: 1400px) {
-    .wrapper .carousel {
-      grid-auto-columns: calc((100% / 2) - 9px);
-    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    max-width: 100%;
+    width: 90%;
+    position: relative;
+    padding-bottom: 30px;
+    /*margin-left: 75px;*/
+  }
+  .wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
   }
   
-  @media screen and (max-width: 1200px) {
-    .carousel .card {
-      scroll-snap-align: start;
-      height: 280px;
-      width: 240px;
-      list-style: none;
-      background: #fff;
-      cursor: pointer;
-      padding-bottom: 15px;
-      flex-direction: column;
-      border: 1px solid black;
-      border-radius: 8px;
-      transition: transform 0.3s ease; /* Agrega una transición */
-    }
+  .wrapper i:active{
+    transform: translateY(-50%) scale(0.85);
+  }
+  .wrapper i:first-child{
+    left: -22px;
+  }
+  .wrapper i:last-child{
+    right: -22px;
+  }
+  .wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    margin-left: 150px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel .card {
+    scroll-snap-align: start;
+    height: 310px;
+    width: 230px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Agrega una transición */
+    margin-right: 20px;
+  }
+
+  .carousel .card:hover {
+    transform: scale(1.2);
   }
   
-  @media screen and (max-width: 860px) {
-    .wrapper .carousel {
-      /*grid-auto-columns: 120%;*/
-      width: 90%;
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: calc((100% / 1.8));
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 16px;
-      border-radius: 8px;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      margin-left: 0px;
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
-    .wrapper .card{
-      width: 170px;
-      height: 220px;
-      margin: 0 30px;
-    }
-    .text-card-slider{
-      width: 80%;
-    }
-    .card h3{
-      font-size: 15px;
-      width: 100%;
-    }
-    .card .download-link{
-      font-size: 10px;
-    }
-    .card span{
-      display: none;
-    }
-
-    .wrapper{
-      width: 120%;
-      margin-right: 30px;
-      margin-left: 25px;
-    }
-
+  .carousel .select{
+    scroll-snap-align: start;
+    height: 250px;
+    width: 200px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
   }
+  
+  .carousel .card .img {
+    background: #ffffff;
+    height: 130px;
+    width: 99%;
+    border-radius: 6px 6px 0 0;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: -10px;
+  }
+  .card .img img {
+    width: 99%;
+    border-radius: 0;
+  }
+  .text-card-slider{
+    width: 250px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .carousel .card h3 {
+    font-size: 16px;
+    margin: 20px 0 20px;
+  }
+  .carousel .card span{
+    color: rgb(72, 72, 72);
+    font-size: 12px;
+    padding: 0 10px;
+    text-align: center;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .download-link{
+    text-decoration: none;
+    color: #000;
+  }
+  .download-link:hover{
+    text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .wrapper {
+    max-width: 100%;
+    width: 90%;
+    position: relative;
+    padding-bottom: 30px;
+    /*margin-left: 75px;*/
+  }
+  .wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  
+  .wrapper i:active{
+    transform: translateY(-50%) scale(0.85);
+  }
+  .wrapper i:first-child{
+    left: -22px;
+  }
+  .wrapper i:last-child{
+    right: -22px;
+  }
+  .wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 0.8));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    margin-left: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel .card {
+    scroll-snap-align: start;
+    height: 280px;
+    width: 230px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Agrega una transición */
+    margin-right: 20px;
+  }
+
+  .carousel .card:hover {
+    transform: scale(1.2);
+  }
+  
+  .carousel .select{
+    scroll-snap-align: start;
+    height: 250px;
+    width: 200px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+  
+  .carousel .card .img {
+    background: #ffffff;
+    height: 130px;
+    width: 99%;
+    border-radius: 6px 6px 0 0;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: -10px;
+  }
+  .card .img img {
+    width: 99%;
+    border-radius: 0;
+  }
+  .text-card-slider{
+    width: 250px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .carousel .card h3 {
+    font-size: 16px;
+    margin: 20px 0 20px;
+  }
+  .carousel .card span{
+    color: rgb(72, 72, 72);
+    font-size: 12px;
+    padding: 0 10px;
+    text-align: center;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .download-link{
+    text-decoration: none;
+    color: #000;
+  }
+  .download-link:hover{
+    text-decoration: none;
+  }
+}

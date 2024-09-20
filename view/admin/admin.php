@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./style/admin/menuAdmin.css">
     <link rel="stylesheet" href="./style/admin/inicio.css">
     <link rel="stylesheet" href="./style/admin/entries.css">
@@ -309,7 +309,7 @@
                     <button>Papelera</button>
                     <div class="button-create create-category">
                         <div class="button-create-category">
-                            <a href="" class="create-category">Crear curso</a>
+                            <a href="#" class="create-category" data-toggle="modal" data-target="#modalAddLab">Añadir lab</a>
                         </div>
                     </div>
                 </div>
@@ -337,42 +337,58 @@
                     </tr>
                     <tr class="tr-body">
                         <td class="data-table">1</td>
-                        <td class="data-table">DNA</td>
+                        <td class="data-table"></td>
                         <td class="data-table"><span>Laboratorio que se centra en la tecnologia dna center</span></td>
                         <td class="data-table">40</td>
                         <td class="data-table">4</td>
                         <td class="data-table">opciones</td>
                     </tr>
-                    <tr class="tr-body">
-                        <td class="data-table">2</td>
-                        <td class="data-table">ACII</td>
-                        <td class="data-table"><span>Laboratorio que se centra en la tecnologia acii</span></td>
-                        <td class="data-table">40</td>
-                        <td class="data-table">4</td>
-                        <td class="data-table">opciones</td>
-                    </tr>
-                    <tr class="tr-body">
-                        <td class="data-table">3</td>
-                        <td class="data-table">DCACI</td>
-                        <td class="data-table"><span>Laboratorio que se centra en la tecnologia dcaci</span></td>
-                        <td class="data-table">40</td>
-                        <td class="data-table">4</td>
-                        <td class="data-table">opciones</td>
-                    </tr>
-                    <tr class="tr-body">
-                        <td class="data-table">4</td>
-                        <td class="data-table">SISE</td>
-                        <td class="data-table"><span>Laboratorio que se centra en la tecnologia sise</span></td>
-                        <td class="data-table">40</td>
-                        <td class="data-table">4</td>
-                        <td class="data-table">opciones</td>
-                    </tr>
+
                 </table>
             </div>
         </div>
     </section>
 
-    
+    <!-- Modal -->
+    <div class="modal fade" id="modalAddLab" tabindex="-1" role="dialog" aria-labelledby="modalAddLabLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAddLabLabel">Añadir Nuevo Laboratorio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario -->
+                    <form id="formAddLab" action="<?=url.'controller=laboratorio&action=insertLab'?>" method="POST">
+                        <div class="form-group container-courses-insertLab">
+                            <label for="course">Curso</label>
+                            <select name="selectCourseLab" id="selectCourseLab">
+                                
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripción</label>
+                            <textarea class="form-control" id="description" name="description" rows="3" placeholder="Ingrese la descripción" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duración</label>
+                            <input type="number" class="form-control" id="duration" name="duration" placeholder="Ingrese la duración" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="capacity">Capacidad Pods</label>
+                            <input type="number" class="form-control" id="capacity" name="capacity" placeholder="Ingrese la capacidad pods" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="submitLabForm">Guardar lab</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="contenido-servicios desactivated">
         <div class="intro intro-admin">
@@ -671,11 +687,9 @@
         <div class="content-page-entrie content-pages">
             <div class="filter-seeker">
                 <div class="filter filter-pages">
-                    <button>Publicadas</button>
-                    <button>Papelera</button>
                     <div class="button-create create-category">
                         <div class="button-create-category">
-                            <a href="" class="create-category">Crear curso</a>
+                            <a href="#" class="create-category" data-toggle="modal" data-target="#modalAddDate">Añadir fecha</a>
                         </div>
                     </div>
                 </div>
@@ -691,72 +705,141 @@
                 </div>
             </div>  
             
-            <div class="content-data-objects content-labs">
-                <div class="row-objects">
-                    <div class="object lab">
-                        <div class="object-img lab-img">
-                            <img src="./resource/backgroundEjemplo.jpg" alt="">
-                        </div>
+            <div class="content-data-objects">
+                <div class="row container-table-calendar">
+                    <table cellspacing="0" cellpadding="5" class="col-12" id="tableDate">
+                        <thead>
+                            <tr>
+                                <th>Curso</th>
+                                <th>Inicio</th>
+                                <th>Finalización</th>
+                                <th>Horario</th>
+                                <th>Idioma</th>
+                                <th>País</th>
+                                <th>Enlace</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        
+                    </table>
 
-                        <div class="object-body lab-body">
-                            <h4 class="id-object id-lab">nombre curso</h4>
-                            <p class="name-object name-lab">descripcion con nombre del curso</p>
-                        </div>
-
-                        <div class="options-object options-lab">
-                            <p>Opciones...</p>
-                        </div>
-                    </div>
-
-                    <div class="object lab">
-                        <div class="object-img lab-img">
-                            <img src="./resource/backgroundEjemplo.jpg" alt="">
-                        </div>
-
-                        <div class="object-body lab-body">
-                            <h4 class="id-object id-lab">nombre curso</h4>
-                            <p class="name-object name-lab">descripcion con nombre del curso</p>
-                        </div>
-
-                        <div class="options-object options-lab">
-                            <p>Opciones...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row-objects">
-                    <div class="object lab">
-                        <div class="object-img lab-img">
-                            <img src="./resource/backgroundEjemplo.jpg" alt="">
-                        </div>
-
-                        <div class="object-body lab-body">
-                            <h4 class="id-object id-lab">nombre curso</h4>
-                            <p class="name-object name-lab">descripcion con nombre del curso</p>
-                        </div>
-
-                        <div class="options-object options-lab">
-                            <p>Opciones...</p>
-                        </div>
-                    </div>
-
-                    <div class="object lab">
-                            <div class="object-img lab-img">
-                                <img src="./resource/backgroundEjemplo.jpg" alt="">
-                            </div>
-
-                        <div class="object-body lab-body">
-                            <h4 class="id-object id-lab">nombre curso</h4>
-                            <p class="name-object name-lab">descripcion con nombre del curso</p>
-                        </div>
-
-                        <div class="options-object options-lab">
-                            <p>Opciones...</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+ <!-- Modal para Añadir Registro del Calendario -->
+<div class="modal fade" id="modalAddDate" tabindex="-1" role="dialog" aria-labelledby="modalAddDateLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAddDateLabel">Añadir Nuevo Registro al Calendario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <!-- ID del Registro -->
+                    <div class="form-group">
+                        <label for="registroId">ID Registro</label>
+                        <input type="text" class="form-control" id="registroId" placeholder="Ingrese el ID del registro">
+                    </div>
+                    
+                    <!-- Curso -->
+                    <div class="form-group">
+                        <label for="cursoId">ID Curso</label>
+                        <select class="form-control" id="cursoId">
+                            <!-- Aquí se llenará dinámicamente con los cursos disponibles -->
+                        </select>
+                    </div>
+
+                    <!-- Fecha de Inicio -->
+                    <div class="form-group">
+                        <label for="fechaInicio">Fecha de Inicio</label>
+                        <input type="date" class="form-control" id="fechaInicio">
+                    </div>
+
+                    <!-- Fecha de Fin -->
+                    <div class="form-group">
+                        <label for="fechaFin">Fecha de Fin</label>
+                        <input type="date" class="form-control" id="fechaFin">
+                    </div>
+
+                    <!-- Idioma -->
+                    <div class="form-group">
+                        <label for="idioma">Idioma</label>
+                        <input type="text" class="form-control" id="idioma" placeholder="Ingrese el idioma">
+                    </div>
+
+                    <!-- Zona Horaria -->
+                    <div class="form-group">
+                        <label for="timeZone">Zona Horaria</label>
+                        <input type="text" class="form-control" id="timeZone" placeholder="Ingrese la zona horaria">
+                    </div>
+
+                    <!-- Enroll -->
+                    <div class="form-group">
+                        <label for="enroll">Enroll</label>
+                        <input type="text" class="form-control" id="enroll" placeholder="Ingrese el enlace de inscripción">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="addDate()">Guardar Registro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalModificar" tabindex="-1" aria-labelledby="modalModificarLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalModificarLabel">Modificar Curso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formModificarCurso">
+          <div class="mb-3">
+            <label for="modalCursoId" class="form-label">ID del Curso</label>
+            <input type="text" class="form-control" id="modalCursoId" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="modalFechaInicio" class="form-label">Fecha de Inicio</label>
+            <input type="date" class="form-control" id="modalFechaInicio">
+          </div>
+          <div class="mb-3">
+            <label for="modalFechaFin" class="form-label">Fecha de Fin</label>
+            <input type="date" class="form-control" id="modalFechaFin">
+          </div>
+          <div class="mb-3">
+            <label for="modalTimeZone" class="form-label">Zona Horaria</label>
+            <input type="text" class="form-control" id="modalTimeZone">
+          </div>
+          <div class="mb-3">
+            <label for="modalIdioma" class="form-label">Idioma</label>
+            <input type="text" class="form-control" id="modalIdioma">
+          </div>
+          <div class="mb-3">
+            <label for="modalPais" class="form-label">País</label>
+            <input type="text" class="form-control" id="modalPais">
+          </div>
+          <div class="mb-3">
+            <label for="modalEnroll" class="form-label">Enlace de Inscripción</label>
+            <input type="text" class="form-control" id="modalEnroll">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" onclick="guardarCambios()">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 
@@ -785,6 +868,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./script/admin.js"></script>
 </body>
 </html>

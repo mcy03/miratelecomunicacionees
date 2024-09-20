@@ -21,23 +21,23 @@
     </section>
     <section class="intro-libreria row">
         <div class="col-2 lines"><hr><hr></div>
-        <div class="col-8"><p>Entrene desde cualquier lugar con clases dirigidas por instructor o librería digital.</p></div>
+        <div class="col-8 tituloLibreria"><p>Entrene desde cualquier lugar con clases dirigidas por instructor o librería digital.</p></div>
         <div class="col-2 lines"><hr><hr></div>
-        <div class="col-6 text-intro"><p>Los Cisco Learning Partner ofrecemos formación dirigida por instructor, pero también podemos ayudarle con la contratación de las diferentes opciones que presenta nuestra comunidad de aprendizaje.</p></div>
-        <div class="col-6 text-intro border-left"><p>Las suscripciones digitales son un complemento a las formaciones dirigidas en línea que también puede comprar con Cisco Learning Credits.</p></div>
+        <div class="col-12 col-md-6 text-intro spacing-bar"><p>Los Cisco Learning Partner ofrecemos formación dirigida por instructor, pero también podemos ayudarle con la contratación de las diferentes opciones que presenta nuestra comunidad de aprendizaje.</p></div>
+        <div class="col-12 col-md-6 text-intro"><p>Las suscripciones digitales son un complemento a las formaciones dirigidas en línea que también puede comprar con Cisco Learning Credits.</p></div>
     </section>
-    <section class="planesCisco row">
+    <section class="planesCisco">
         <div class="cont-title col-4">
             <h4 class="title">PLANES CISCO U</h4>
         </div>
         
-        <div class="buttonPlan col-4">
+        <div class="cont-title buttonPlan col-4">
             <a class="btn-white" href="https://learningnetworkstore.cisco.com/ilt/specials/?src=14118&d=IGW1htsJd8ZWq0h2TxOCyP%2Fos7FGGr8y0oFwG91Y09sWQwHThehebmlHggYEcPFazugldvMa%2F%2BAe1xnNyfMtYg%3D%3D">
                 Essentials Acceso a la compra por CLC
             </a>
             
         </div>
-        <div class="buttonPlan col-4">
+        <div class="cont-title buttonPlan col-4">
             <a class="btn-white" href="https://learningnetworkstore.cisco.com/ilt/specials/?src=14118&d=zxh%2BLRQTsnIEzRRdR8PsE5mEUB1zSqTcz%2FSd%2F0QevJoDzcZxwChJbO013yX0Orh6aNrcRrNbIZHK0F9Oe1A6UA%3D%3D">
                 Full Access Acceso a la compra por CLC
             </a>
@@ -45,8 +45,8 @@
     </section>
     <section class="subs row">
         <h4 class="title col-12">SUSCRIPCIONES</h4>
-        <div class="options-sub col-12 row">
-            <div class="col-6">
+        <div class="options-sub col-12">
+            <div class="col-12 col-md-10 col-lg-7 col-xl-6">
                 <div class="sub">
                     <div class="cont-titleSub">
                         <h4 class="titleSub">LIBRERÍA DIGITAL</h4>
@@ -74,7 +74,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-10 col-lg-7 col-xl-6">
                 <div class="sub">
                     <div class="cont-titleSub">
                         <h4 class="titleSub">Bar Labs / horas mentoría</h4>

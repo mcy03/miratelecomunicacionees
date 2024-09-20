@@ -1,0 +1,90 @@
+.contenido{
+    display: flex;
+    justify-content: space-around;
+    background-color: #E5E5E5;
+}
+
+.media{
+    background-color: #fff;
+    margin: 50px 0;
+    padding: 5px;
+    border-radius: 20px;
+}
+.menu_media{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+.menu_media input{
+    width: 70%;
+    border-radius: 20px;
+    border: 1px solid #000;
+    padding: 5px 10px;
+}
+
+.menu_media a.add_resource{
+    border-radius: 20px;
+    border: 1px solid #EA1C24;
+    background-color: #EA1C24;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.menu_media a.add_resource:hover{
+    border-radius: 20px;
+    background-color: #fff;
+    color: #EA1C24;
+    padding: 5px 10px;
+}
+
+.objects_media{
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.object_media{
+    border: 1px solid #E5E5E5;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.copy_button{
+    border: 1px solid #EA1C24;
+    background-color: #EA1C24;
+    color: #fff;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.copy_button:hover{
+    background-color: #fff;
+    color: #EA1C24;
+}
+
+
+.object_media .content_delete_media button{
+    border: 0;
+    background-color: #00000000;
+}
+.object_media .content_delete_media button:hover{
+    color: #EA1C24;
+}
+.object_media h3{
+    font-size: 20px;
+}
+
+.object_media a{
+    font-size: 13px;
+}
+
+
+.modal-lg-custom {
+    max-width: 60% !important; /* Ancho del modal al 60% de la pantalla */
+}
+
+.not_empty{
+    color: #EA1C24;
+    text-align: center;
+    margin: 80px 0;
+}

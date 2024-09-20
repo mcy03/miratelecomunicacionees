@@ -1,42 +1,373 @@
-.banner-principal{
+@media (max-width: 767px) {
+  .banner-principal {
     background: rgba(0, 0, 0, 0.44);
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../resource/imagenes prueba web/img_home/nuevas/Calendario de cursos.png');
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url("../resource/imagenes prueba web/img_home/nuevas/Calendario de cursos.png");
     /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
     background-size: cover;
     background-repeat: no-repeat;
-}
+  }
 
-.pagina{
-    width: 100%;
+  .pagina {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding-top: 50px;
-}
-table{
-    margin: 0 30px;
-}
+  }
 
-.buscador input{
+  .calendario {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Ajuste de la tabla */
+  table {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    table-layout: auto; /* Hace que las celdas se adapten al contenido */
+  }
+
+  /* Ajuste del ancho de las celdas */
+  td {
+    padding: 3px; /* Reducir el padding interno */
+    font-size: 10px; /* Reducir el tamaño de la fuente */
+    word-wrap: break-word; /* Permitir que el contenido se ajuste mejor */
+  }
+
+  .buscador input {
     border-radius: 10px;
     margin-right: 5px;
     padding-left: 5px;
-}
+  }
 
-
-.buscador td{
+  .buscador td {
     text-align: center;
-}
-.separator{
+  }
+  .separator {
     height: 30px;
-}
-#input-name, .title-name, #input-id, #input-start-date, .title-id, .title-start-date, .title-enroll, #input-enroll, #input-end-date, #input-idioma, #input-timeZone, .title-end-date, .title-idioma, .title-timeZone{
-    width: 95%;
-}
-.head-table td{
-    background-color: #EA1C24;
+  }
+
+  .head-table td {
+    background-color: #ea1c24;
     padding: 0;
+  }
+  .head-table h3 {
+    font-size: 13px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+
+  .esquina-izquierda,
+  .esquina-izquierda h3 {
+    border-radius: 10px 0 0 0;
+  }
+
+  .esquina-derecha,
+  .esquina-derecha h3 {
+    border-radius: 0 10px 0 0;
+  }
+  .body-table {
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    text-align: center;
+  }
+
+  .body-table span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 11px;
+  }
+  .border-center {
+    border: 1px solid grey;
+  }
+
+  .name-course-table {
+    width: 400px;
+  }
+  .id-course-table {
+    width: 50%;
+  }
+  .valor-name {
+    padding: 0 5px;
+    font-size: 11px;
+  }
+
+  .valor-enroll {
+    width: 100px;
+    padding: 0 10px;
+    font-size: 10px;
+  }
+
+  .publi {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .publi article {
+    margin: 20px;
+    border-radius: 20px;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid grey;
+    padding: 20px;
+    width: 250px;
+    height: auto;
+  }
+
+  .publi-text h4 {
+    width: 100%;
+    text-align: center;
+  }
+  .publi-text p {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .publi-text .button-red {
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .publi-text .button-red:hover {
+    border: 1px solid rgb(0, 0, 0);
+  }
+
+  .logo_p {
+    width: 100%;
+  }
 }
-.head-table h3{
+
+@media (min-width: 768px) and (max-width: 1470px) {
+  .banner-principal {
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url("../resource/imagenes prueba web/img_home/nuevas/Calendario de cursos.png");
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .pagina {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 50px;
+  }
+
+  .calendario {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+  }
+
+  table {
+    margin: 0 30px;
+    table-layout: fixed;
+    width: 90%;
+  }
+
+  td {
+    width: 15%; /* Ajusta según sea necesario */
+    max-width: 15%; /* Limita el ancho máximo */
+    padding: 5px; /* Reduce el padding interno */
+  }
+
+  .buscador input {
+    border-radius: 10px;
+    margin-right: 5px;
+    padding-left: 5px;
+  }
+
+  .buscador td {
+    text-align: center;
+  }
+  .separator {
+    height: 30px;
+  }
+
+  .head-table td {
+    background-color: #ea1c24;
+    padding: 0;
+  }
+  .head-table h3 {
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+
+  .esquina-izquierda,
+  .esquina-izquierda h3 {
+    border-radius: 10px 0 0 0;
+  }
+
+  .esquina-derecha,
+  .esquina-derecha h3 {
+    border-radius: 0 10px 0 0;
+  }
+  .body-table {
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    text-align: center;
+  }
+
+  .body-table span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 11px;
+  }
+  .border-center {
+    border: 1px solid grey;
+  }
+
+  .name-course-table {
+    width: 400px;
+  }
+  .id-course-table {
+    width: 50%;
+  }
+  .valor-name {
+    padding: 0 5px;
+    font-size: 11px;
+  }
+
+  .valor-enroll {
+    width: 100px;
+    padding: 0 10px;
+    font-size: 10px;
+  }
+
+  .publi {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .publi article {
+    margin: 50px;
+    border-radius: 20px;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid grey;
+    padding: 20px;
+    width: 250px;
+    height: auto;
+  }
+
+  .publi-text h4 {
+    width: 100%;
+    text-align: center;
+  }
+  .publi-text p {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .publi-text .button-red {
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .publi-text .button-red:hover {
+    border: 1px solid rgb(0, 0, 0);
+  }
+
+  .logo_p {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1470px) {
+  .banner-principal {
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url("../resource/imagenes prueba web/img_home/nuevas/Calendario de cursos.png");
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .pagina {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+  }
+  .calendario {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+  }
+
+  table {
+    margin: 0 30px;
+    table-layout: fixed;
+    width: 90%;
+  }
+
+  td {
+    width: 15%; /* Ajusta según sea necesario */
+    max-width: 15%; /* Limita el ancho máximo */
+    padding: 5px; /* Reduce el padding interno */
+  }
+
+  .buscador input {
+    border-radius: 10px;
+    margin-right: 5px;
+    padding-left: 5px;
+  }
+
+  .buscador td {
+    text-align: center;
+  }
+  .separator {
+    height: 30px;
+  }
+
+  .head-table td {
+    background-color: #ea1c24;
+    padding: 0;
+  }
+  .head-table h3 {
     font-size: 15px;
     width: 100%;
     height: 100%;
@@ -44,47 +375,42 @@ table{
     padding: 10px 10px;
     text-align: center;
     color: white;
-}
+  }
 
-.esquina-izquierda, .esquina-izquierda h3{
+  .esquina-izquierda,
+  .esquina-izquierda h3 {
     border-radius: 10px 0 0 0;
-}
+  }
 
-.esquina-derecha, .esquina-derecha h3{
+  .esquina-derecha,
+  .esquina-derecha h3 {
     border-radius: 0 10px 0 0;
-}
-.body-table{
+  }
+
+  .body-table {
     border-left: 1px solid grey;
     border-right: 1px solid grey;
     border-bottom: 1px solid grey;
     text-align: center;
-}
+  }
 
-.body-table span{
+  .body-table span {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px 0;
     font-size: 11px;
-}
-.border-center{
+  }
+  .border-center {
     border: 1px solid grey;
-}
+  }
 
-.valor-name{
-    width: 320px;
-    padding: 0 5px;
-}
+  .publi {
+    width: 400px;
+    margin: 0 30px 0 0;
+  }
 
-.valor-enroll{
-    width: 100px;
-    padding: 0 10px;
-    font-size: 10px;
-}
-
-
-
-.publi article{
+  .publi article {
     margin-bottom: 50px;
     border-radius: 20px;
     min-height: 200px;
@@ -93,30 +419,30 @@ table{
     flex-direction: column;
     border: 1px solid grey;
     padding: 20px;
-}
+  }
 
-.publi-text h4{
+  .publi-text h4 {
     width: 100%;
     text-align: center;
-}
-.publi-text p{
+  }
+  .publi-text p {
     width: 100%;
     padding: 20px;
     text-align: center;
     align-items: center;
-}
+  }
 
-.publi-text .button-red{
+  .publi-text .button-red {
     font-size: 14px;
     text-decoration: none;
     text-align: center;
-}
+  }
 
-.publi-text .button-red:hover{
+  .publi-text .button-red:hover {
     border: 1px solid rgb(0, 0, 0);
-}
+  }
 
-.logo_p{
+  .logo_p {
     width: 100%;
-
+  }
 }

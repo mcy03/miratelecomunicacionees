@@ -25,7 +25,7 @@ class homeController{
         }
     
         // Incluye archivos de vista para la cabecera, la página principal (home) y el footer
-        require_once("view/prueba.html");
+        require_once("view/prueba.php");
     }
 }
 ?>

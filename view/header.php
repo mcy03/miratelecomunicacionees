@@ -13,17 +13,26 @@
     <header>
         <div class="header-one">
             <div class="contacto-header">
-                <div class="div-mail">
-                    <img class="img-contact" src="./resource/icon-gmail.png" alt="">
-                    <a href="mailto:miratelecomunicacions.com" class="text-contacto">mira@miratelecomunicacions.com</a>
-                </div>
-                <div class="div-phone">
-                    <img class="img-contact" src="./resource/icon-phone.png" alt="">
-                    <a href="tel:+34 902 876 701" class="text-contacto">+34 902 876 701</a>
-                </div>
-                <div class="div-phone"> 
-                    <a href="tel:+52 55 4040 8261" class="text-contacto">+52 55 4040 8261</a>
-                </div>
+                <a href="mailto:miratelecomunicacions.com" class="mail-link">
+                    <div class="div-mail">
+                        <img class="img-contact" src="./resource/icon-gmail.png" alt="">
+                        <p class="text-contacto">mira@miratelecomunicacions.com</p>
+                    </div>
+                </a>
+                <a href="tel:+34 902 876 701" class="phone-link">
+                    <div class="div-phone">
+                        <img class="img-contact" src="./resource/icon-phone.png" alt="">
+                        <span>ESP</span>
+                        <p class="text-contacto">+34 902 876 701</p>
+                    </div>
+                </a>
+                <a href="tel:+52 55 4040 8261" class="phone-link">
+                    <div class="div-phone">
+                        <img class="img-contact" src="./resource/icon-phone.png" alt="">
+                        <span>MEX</span>
+                        <p class="text-contacto">+52 55 4040 8261</p>
+                    </div>
+                </a>
             </div>
             <div class="idioma-header">
                 <img src="./resource/espana.png" alt="">
@@ -34,22 +43,31 @@
             <div class="logo">
                 <a href="<?=url.'?controller=home'?>"><img class="logo-mira" src="./resource/MiraLogo/Mira.png" alt=""></a>
             </div>
-            <nav class="nav-header">
-                <div class="menu-toggle" id="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul>
-                    <li><a href="<?=url.'?controller=formacion'?>">Formación</a></li>
-                    <li><a href="<?=url.'?controller=calendario'?>">Calendario</a></li>
-                    <li><a href="<?=url.'?controller=serviciosIT'?>">Servicios IT</a></li>
-                    <li><a href="<?=url.'?controller=laboratorio'?>">Laboratorios</a></li>
-                    <li><a href="<?=url.'?controller=libreriaDigital'?>">Librería Digital</a></li>
-                    <li><a href="<?=url.'?controller=mira'?>">Conoce a Mira</a></li>
-                    <li><a href="<?=url.'?controller=blog'?>">Blog on the Go</a></li>
-                </ul>
-            </nav>
+            <img id="menu-mobile-icon" src="./resource/iconos/bars-solid.svg" alt="">
+            <div id="menu-header">
+                <nav class="nav-header">
+                    <div class="menu-toggle" id="mobile-menu">
+                        <ul>
+                            <li><a href="<?=url.'?controller=formacion'?>">Formación</a></li>
+                            <li><a href="<?=url.'?controller=calendario'?>">Calendario</a></li>
+                            <li><a href="<?=url.'?controller=serviciosIT'?>">Servicios IT</a></li>
+                            <li><a href="<?=url.'?controller=laboratorio'?>">Laboratorios</a></li>
+                            <li><a href="<?=url.'?controller=libreriaDigital'?>">Librería Digital</a></li>
+                            <li><a href="<?=url.'?controller=mira'?>">Conoce a Mira</a></li>
+                            <li><a href="<?=url.'?controller=blog'?>">Blog on the Go</a></li>
+                        </ul>
+                    </div>
+                    <ul id="navComputer">
+                        <li><a href="<?=url.'?controller=formacion'?>">Formación</a></li>
+                        <li><a href="<?=url.'?controller=calendario'?>">Calendario</a></li>
+                        <li><a href="<?=url.'?controller=serviciosIT'?>">Servicios IT</a></li>
+                        <li><a href="<?=url.'?controller=laboratorio'?>">Laboratorios</a></li>
+                        <li><a href="<?=url.'?controller=libreriaDigital'?>">Librería Digital</a></li>
+                        <li><a href="<?=url.'?controller=mira'?>">Conoce a Mira</a></li>
+                        <li><a href="<?=url.'?controller=blog'?>">Blog on the Go</a></li>
+                    </ul>
+                </nav>
+            </div>
             <!--
             <div class="search-icon">
                 <img src="./resource/lupa.png" alt="Icono de búsqueda">

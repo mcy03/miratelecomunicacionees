@@ -1,5 +1,4 @@
     window.addEventListener('DOMContentLoaded', async function() {
-        console.log('hola');
         const inputSelection = document.getElementById('input-selection');
 
         if (inputSelection) {
@@ -19,6 +18,7 @@
 
             await data(selectedValue);
         }
+
 
     });
 
@@ -317,5 +317,131 @@
         }else if (id == 'cursos') {
             let allCourses = await getCourses();
             viewCourses(allCourses);
+        }else if (id == 'laboratorios') {
+            let allCourses = await getCourses();
+            
+            let selectCourseLab = document.getElementById('selectCourseLab');
+            
+            // Limpiar cualquier opción existente antes de agregar nuevas (opcional)
+            selectCourseLab.innerHTML = '';
+            
+            // Iterar sobre los cursos y crear un <option> por cada uno
+            allCourses.forEach(course => {
+                let option = document.createElement('option');
+                option.value = course.CURSO_ID; // Asigna la ID del curso como valor
+                option.textContent = course.NOMBRE_CURSO; // Asigna el nombre del curso como texto
+                
+                // Añadir la opción al select
+                selectCourseLab.appendChild(option);
+            });
+        }else if (id == 'calendario') {
+            
+            let allDates = await getCalendario();
+            
+            let tableDate = document.getElementById('tableDate');
+
+            // Iterar sobre los registros de calendario y crear una fila <tr> por cada uno
+            allDates.forEach(course => {
+                let row = document.createElement('tr');
+                
+                // Crear las celdas de la fila con los datos del curso
+                row.innerHTML = `
+                    <td>${course.CURSO}</td>
+                    <td>${course.FECHA_INICIO}</td>
+                    <td>${course.FECHA_FIN}</td>
+                    <td>${course.TIME_ZONE}</td>
+                    <td>${course.IDIOMA}</td>
+                    <td>${course.PAIS}</td>
+                    <td><a href="${course.ENROLL}">Enroll using CLC</a></td>
+                    <td>
+                        <button onclick="eliminarFecha('${course.REGISTRO_ID}')">Eliminar</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalModificar" onclick="abrirModalModificar('${course.REGISTRO_ID}')">
+                            Modificar
+                        </button>
+
+                    </td>
+                `;            
+                
+                // Añadir la fila a la tabla
+                tableDate.appendChild(row);
+            });
+        }
+
+        
+        
+    }
+    async function abrirModalModificar(REGISTRO_ID) {
+        try {
+            // Obtén el registro del calendario usando el ID mediante la función del modelo
+            const registro = await getCalendarioById(REGISTRO_ID);
+    
+            if (registro) {
+                // Asigna los valores a los campos del modal
+                document.getElementById('modalCursoId').value = registro.CURSO_ID;
+                document.getElementById('modalFechaInicio').value = registro.FECHA_INICIO;
+                document.getElementById('modalFechaFin').value = registro.FECHA_FIN;
+                document.getElementById('modalTimeZone').value = registro.TIME_ZONE;
+                document.getElementById('modalIdioma').value = registro.IDIOMA;
+                document.getElementById('modalPais').value = registro.PAIS;
+                document.getElementById('modalEnroll').value = registro.ENROLL;
+    
+                // Abre el modal manualmente si no se abre automáticamente con el data-bs-toggle
+                const modal = new bootstrap.Modal(document.getElementById('modalModificar'));
+                modal.show();
+            } else {
+                console.error(`No se encontró el registro con ID: ${REGISTRO_ID}`);
+            }
+        } catch (error) {
+            console.error(`Error al obtener el registro: ${error.message}`);
         }
     }
+    
+    
+    async function getCalendario() {
+        let formData = new FormData();
+        formData.append('accion', 'get_calendario');
+         
+        const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiCalendario&action=api';
+    
+        try {
+            const response = await axios.post(url, formData);
+    
+            return response.data;
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+
+    async function getCalendarioById(id) {
+        let formData = new FormData();
+        formData.append('accion', 'get_calendarioById');
+        formData.append('id', id);
+         
+        const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiCalendario&action=api';
+    
+        try {
+            const response = await axios.post(url, formData);
+    
+            return response.data;
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+    async function eliminarFecha(id) {
+        let formData = new FormData();
+        formData.append('accion', 'delete_data');
+        formData.append('id', id);
+         
+        const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiCalendario&action=api';
+        
+        try {
+            const response = await axios.post(url, formData);
+    
+            return response.data;
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    }
+
+    
+    

@@ -1,10 +1,10 @@
 <?php
-/*  
+/*
 =========================================================================
-                            CLASE calendario
+                            CLASE Calendario
 =========================================================================
-º Inicializamos la clase calendario la cual contendra las calendario    º
-º de la base de datos.                                                  º
+º Inicializamos la clase Calendario la cual contendrá los registros del  º
+º calendario en la base de datos.                                        º
 =========================================================================
 */
 class Calendario {
@@ -13,10 +13,11 @@ class Calendario {
     protected $FECHA_INICIO;
     protected $FECHA_FIN; 
     protected $IDIOMA;
+    protected $PAIS;
     protected $TIME_ZONE; 
     protected $ENROLL; 
-
-    public function ___construct(){
+    
+    public function __construct(){
         
     }
 
@@ -49,6 +50,46 @@ class Calendario {
         }
     }
 
+    public static function getCalendarioById($REGISTRO_ID) {
+        $conn = db::connect();
+        $consulta = "SELECT * FROM calendario WHERE REGISTRO_ID = ?";
+        
+        if ($stmt = $conn->prepare($consulta)) {
+            $stmt->bind_param("i", $REGISTRO_ID);  // "i" indica que el parámetro es un entero
+            $stmt->execute();
+            $resultado = $stmt->get_result();
+            
+            if ($obj = $resultado->fetch_object('Calendario')) {
+                $stmt->close();
+                return $obj;
+            } else {
+                $stmt->close();
+                return null;  // No se encontró ningún registro con ese ID
+            }
+        } else {
+            // Manejar el error si la preparación de la consulta falla
+            return false;
+        }
+    }    
+    public static function deleteCalendarioById($REGISTRO_ID) {
+        $conn = db::connect();
+        $consulta = "DELETE FROM calendario WHERE REGISTRO_ID = ?";
+        
+        if ($stmt = $conn->prepare($consulta)) {
+            $stmt->bind_param("i", $REGISTRO_ID);  // "i" indica que el parámetro es un entero
+            if ($stmt->execute()) {
+                $stmt->close();
+                return true;  // Eliminación exitosa
+            } else {
+                $stmt->close();
+                return false;  // Fallo en la ejecución
+            }
+        } else {
+            // Manejar el error si la preparación de la consulta falla
+            return false;
+        }
+    }
+    
     /**
      * Get the value of REGISTRO_ID
      */ 
@@ -150,6 +191,26 @@ class Calendario {
     }
 
     /**
+     * Get the value of PAIS
+     */ 
+    public function getPAIS()
+    {
+        return $this->PAIS;
+    }
+
+    /**
+     * Set the value of PAIS
+     *
+     * @return  self
+     */ 
+    public function setPAIS($PAIS)
+    {
+        $this->PAIS = $PAIS;
+
+        return $this;
+    }
+
+    /**
      * Get the value of TIME_ZONE
      */ 
     public function getTIME_ZONE()
@@ -189,3 +250,4 @@ class Calendario {
         return $this;
     }
 }
+?>

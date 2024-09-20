@@ -1,195 +1,640 @@
-.banner-principal{
-    background: rgba(0, 0, 0, 0.44);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-body{
-    background-color: #EFEFEF;
-}
-.buscador {
+.fila-cursos {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 40px;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los cursos */
+  }
+  
+  .fila-cursos .curso {
+    flex: 1 1 calc(30% - 20px); /* Tres cursos por fila */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Espacio inferior */
+  }
+  @media (max-width: 1024px) {
+    .fila-cursos .curso {
+      flex: 1 1 calc(45% - 20px); /* Dos cursos por fila */
+    }
+  }
+  /* Media query para pantallas de 768px o menos: dos cursos por fila */
+  @media (max-width: 768px) {
+    .fila-cursos .curso {
+      flex: 1 1 calc(50% - 20px); /* Dos cursos por fila */
+    }
+  }
+  
+  /* Media query para pantallas pequeñas (480px o menos): un curso por fila */
+  @media (max-width: 480px) {
+    .fila-cursos .curso {
+      flex: 1 1 100%; /* Un curso por fila */
+    }
+  }
+  
+@media only screen and (max-width: 768px) {
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+    }
+
+    .fila-cursos .curso {
+        flex: 1 1 calc(100% - 16px); /* Dos cursos por fila */
+    }
+
+    body{
+        background-color: #EFEFEF;
+    }
+    .buscador {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 40px;
+    }
+    .buscador form{
+        display: flex;
+        justify-content: center;
+
+        width: 100%;
+    }
+
+    .buscador input[type='text']{
+        background-color: #fff;
+        border: 0;
+        border-radius: 15px;
+        padding: 5px 30px;
+        margin-right: 20px;
+        width: 100%;
+    }
+
+    .contenido{
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        margin: 0 50px;
+        padding-bottom: 70px;
+    }
+
+    .list-courses{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .filtro{
+        display: none;
+        width: 20%;
+    }
+
+    .filtro h3{
+        font-size: 15px;
+    }
+
+    .tecnologias, .certificacion{
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+
+        
+    }
+
+    .tecnologias h4, .certificacion h4{
+        font-size: 15px;
+        color: #4D4D4D;
+        padding-bottom: 10px;
+    }
+
+    .tecnologias-filtro p, .certificacion-filtro p{
+        font-size: 13px;
+        color: #000000;
+        padding-left: 30px;
+        cursor: pointer;
+    }
+
+    .tecnologias, .certificacion{
+        height: 100%;
+    }
+
+    #loading-tecnologies div, #loading-certifications div{
+        height: 20px;
+        width: 200px;
+        background-color: #8D8D8D;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        padding-left: 30px; 
+    }
+
+    .tecnologias-filtro p.selected, .certificacion-filtro p.selected{
+        color: #EA1C24;
+        background-color: #dbdbdb;
+        border-radius: 50px;
+    }
+
+    .tecnologias-filtro p:hover, .certificacion-filtro p:hover{
+        color: #EA1C24;
+    }
+
+    .cursos, #loading-courses{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #loading-courses{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fila-cursos{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .fila-loading-cursos{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .curso, .course-loading{
+        background-color: #fff;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 30px;
+        padding: 20px;
+        text-align: center;
+        border-radius: 15px;
+    }
+
+    .course-loading{
+        height: 180px;
+    }
+
+    .curso h2{
+        font-size: 14px;
+    }
+    
+    .content-course{
+        display:none;
+    }
+    .curso p{
+        font-size: 12px;
+        color: #8D8D8D;
+    }
+
+    .curso span{
+        font-size: 10px;
+        color: #383838;
+    }
+
+    .paginacion{
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    .paginacion a{
+        text-decoration: none;
+        width: 70px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: #000000;
+        font-size: 15px;
+        font-weight: 500;
+        transition: .4s linear;
+
+    }
+
+    .paginacion a:hover, .paginacion a.select:hover{
+        background-color: #EE4950;
+        color: white;
+        /*#EA1C24*/
+    }
+
+    .paginacion a.select{
+        color: #EA1C24;
+        /*#EA1C24*/
+    }
+
+
+    .no-content{
+        text-align: center;
+        background-color: #fff;
+        margin: 20px 100px;
+        padding: 20px;
+        border-radius: 40px;
+    }
+
+    .no-content h3{
+        color: #EA1C24;
+        font-size: 20px;
+    }
 }
-.buscador form{
-    display: flex;
-    justify-content: center;
-    width: 70%;
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    body{
+        background-color: #EFEFEF;
+    }
+    .buscador {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 40px;
+    }
+    .buscador form{
+        display: flex;
+        justify-content: center;
+        width: 70%;
+    }
+
+    .buscador input[type='text']{
+        background-color: #fff;
+        border: 0;
+        border-radius: 15px;
+        padding: 5px 30px;
+        margin-right: 20px;
+        width: 35%;
+    }
+
+    .contenido{
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        margin: 0 50px;
+        padding-bottom: 70px;
+    }
+
+    .list-courses{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filtro{
+        width: 20%;
+        display: none;
+    }
+
+    .filtro h3{
+        font-size: 15px;
+    }
+
+    .tecnologias, .certificacion{
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+    }
+
+    .tecnologias h4, .certificacion h4{
+        font-size: 15px;
+        color: #4D4D4D;
+        padding-bottom: 10px;
+    }
+
+    .tecnologias-filtro p, .certificacion-filtro p{
+        font-size: 13px;
+        color: #000000;
+        padding-left: 30px;
+        cursor: pointer;
+    }
+    
+    .tecnologias, .certificacion{
+        height: 100%;
+    }
+
+    #loading-tecnologies div, #loading-certifications div{
+        height: 20px;
+        width: 200px;
+        background-color: #8D8D8D;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        padding-left: 30px; 
+    }
+
+    .tecnologias-filtro p.selected, .certificacion-filtro p.selected{
+        color: #EA1C24;
+        background-color: #dbdbdb;
+        border-radius: 50px;
+    }
+
+    .tecnologias-filtro p:hover, .certificacion-filtro p:hover{
+        color: #EA1C24;
+    }
+
+    .cursos, #loading-courses{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #loading-courses{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fila-cursos{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .fila-loading-cursos{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .curso, .course-loading{
+        background-color: #fff;
+        width: 50%;
+        margin: 0 30px;
+        margin-bottom: 30px;
+        padding: 20px;
+        text-align: center;
+        border-radius: 15px;
+    }
+
+    .course-loading{
+        height: 180px;
+    }
+
+    .curso h2{
+        font-size: 14px;
+    }
+
+    .curso p{
+        font-size: 12px;
+        color: #8D8D8D;
+    }
+
+    .curso span{
+        font-size: 10px;
+        color: #383838;
+    }
+
+    .paginacion{
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    .paginacion a{
+        text-decoration: none;
+        width: 70px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: #000000;
+        font-size: 15px;
+        font-weight: 500;
+        transition: .4s linear;
+
+    }
+
+    .paginacion a:hover, .paginacion a.select:hover{
+        background-color: #EE4950;
+        color: white;
+        /*#EA1C24*/
+    }
+
+    .paginacion a.select{
+        color: #EA1C24;
+        /*#EA1C24*/
+    }
+
+
+    .no-content{
+        text-align: center;
+        background-color: #fff;
+        margin: 20px 100px;
+        padding: 20px;
+        border-radius: 40px;
+    }
+
+    .no-content h3{
+        color: #EA1C24;
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .banner-principal{
+        background: rgba(0, 0, 0, 0.44);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../resource/backgroundEjemplo.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    body{
+        background-color: #EFEFEF;
+    }
+    .buscador {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 40px;
+    }
+    .buscador form{
+        display: flex;
+        justify-content: center;
+        width: 70%;
+    }
+
+    .buscador input[type='text']{
+        background-color: #fff;
+        border: 0;
+        border-radius: 15px;
+        padding: 5px 30px;
+        margin-right: 20px;
+        width: 35%;
+    }
+
+    .contenido{
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        margin: 0 50px;
+        padding-bottom: 70px;
+    }
+
+    .list-courses{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .filtro{
+        width: 20%;
+    }
+
+    .filtro h3{
+        font-size: 15px;
+    }
+
+    .tecnologias, .certificacion{
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+    }
+
+    .tecnologias h4, .certificacion h4{
+        font-size: 15px;
+        color: #4D4D4D;
+        padding-bottom: 10px;
+    }
+
+    .tecnologias-filtro p, .certificacion-filtro p{
+        font-size: 13px;
+        color: #000000;
+        padding-left: 30px;
+        cursor: pointer;
+    }
+
+    .tecnologias, .certificacion{
+        height: 100%;
+    }
+
+    #loading-tecnologies div, #loading-certifications div{
+        height: 20px;
+        width: 200px;
+        background-color: #8D8D8D;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        padding-left: 30px; 
+    }
+
+    .tecnologias-filtro p.selected, .certificacion-filtro p.selected{
+        color: #EA1C24;
+        background-color: #dbdbdb;
+        border-radius: 50px;
+    }
+
+    .tecnologias-filtro p:hover, .certificacion-filtro p:hover{
+        color: #EA1C24;
+    }
+
+    .cursos, #loading-courses{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #loading-courses{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fila-cursos{
+        width: 140%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .fila-loading-cursos{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .curso, .course-loading{
+        background-color: #fff;
+        width: 30%;
+        margin: 0 30px;
+        margin-bottom: 30px;
+        padding: 20px;
+        text-align: center;
+        border-radius: 15px;
+    }
+
+    .course-loading{
+        height: 180px;
+    }
+
+    .curso h2{
+        font-size: 14px;
+    }
+
+    .curso p{
+        font-size: 12px;
+        color: #8D8D8D;
+    }
+
+    .curso span{
+        font-size: 10px;
+        color: #383838;
+    }
+
+    .paginacion{
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    .paginacion a{
+        text-decoration: none;
+        width: 70px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: #000000;
+        font-size: 15px;
+        font-weight: 500;
+        transition: .4s linear;
+
+    }
+
+    .paginacion a:hover, .paginacion a.select:hover{
+        background-color: #EE4950;
+        color: white;
+        /*#EA1C24*/
+    }
+
+    .paginacion a.select{
+        color: #EA1C24;
+        /*#EA1C24*/
+    }
+
+
+    .no-content{
+        text-align: center;
+        background-color: #fff;
+        margin: 20px 100px;
+        padding: 20px;
+        border-radius: 40px;
+    }
+
+    .no-content h3{
+        color: #EA1C24;
+        font-size: 20px;
+    }
 }
 
-.buscador input[type='text']{
-    background-color: #fff;
-    border: 0;
-    border-radius: 15px;
-    padding: 5px 30px;
-    margin-right: 20px;
-    width: 35%;
-}
-
-.contenido{
-    display: flex;
-    justify-content: space-around;
-    align-items: start;
-    margin: 0 50px;
-    padding-bottom: 70px;
-}
-
-.list-courses{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.filtro{
-    width: 20%;
-}
-
-.filtro h3{
-    font-size: 15px;
-}
-
-.tecnologias, .certificacion{
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 30px;
-    margin-bottom: 20px;
-}
-
-.tecnologias h4, .certificacion h4{
-    font-size: 15px;
-    color: #4D4D4D;
-    padding-bottom: 10px;
-}
-
-.tecnologias-filtro p, .certificacion-filtro p{
-    font-size: 13px;
-    color: #000000;
-    padding-left: 30px;
-    cursor: pointer;
-}
-
-.tecnologias, .certificacion{
-    height: 100%;
-}
-
-#loading-tecnologies div, #loading-certifications div{
-    height: 20px;
-    width: 200px;
-    background-color: #8D8D8D;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    padding-left: 30px; 
-}
-
-.tecnologias-filtro p.selected, .certificacion-filtro p.selected{
-    color: #EA1C24;
-    background-color: #dbdbdb;
-    border-radius: 50px;
-}
-
-.tecnologias-filtro p:hover, .certificacion-filtro p:hover{
-    color: #EA1C24;
-}
-
-.cursos, #loading-courses{
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-}
-
-#loading-courses{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.fila-cursos{
-    width: 140%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.fila-loading-cursos{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.curso, .course-loading{
-    background-color: #fff;
-    width: 30%;
-    margin: 0 30px;
-    margin-bottom: 30px;
-    padding: 20px;
-    text-align: center;
-    border-radius: 15px;
-}
-
-.course-loading{
-    height: 180px;
-}
-
-.curso h2{
-    font-size: 14px;
-}
-
-.curso p{
-    font-size: 12px;
-    color: #8D8D8D;
-}
-
-.curso span{
-    font-size: 10px;
-    color: #383838;
-}
-
-.paginacion{
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    justify-content: center;
-}
-
-.paginacion a{
-    text-decoration: none;
-    width: 70px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    color: #000000;
-    font-size: 15px;
-    font-weight: 500;
-    transition: .4s linear;
-
-}
-
-.paginacion a:hover, .paginacion a.select:hover{
-    background-color: #EE4950;
-    color: white;
-    /*#EA1C24*/
-}
-
-.paginacion a.select{
-    color: #EA1C24;
-    /*#EA1C24*/
-}
-
-
-.no-content{
-    text-align: center;
-    background-color: #fff;
-    margin: 20px 100px;
-    padding: 20px;
-    border-radius: 40px;
-}
-
-.no-content h3{
-    color: #EA1C24;
-    font-size: 20px;
+.hidden {
+    display: none;
 }
