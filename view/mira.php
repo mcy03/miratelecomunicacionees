@@ -135,8 +135,6 @@
                         <a href="<?=url.'?controller=mira&action=corporativo'?>">Saber más</a>
                     </div>
                 </div>
-
-                <?= ?>
             </section>
         </div>
         

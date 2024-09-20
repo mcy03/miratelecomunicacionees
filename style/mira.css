@@ -569,13 +569,14 @@
     .list-intro {
         display: flex;
         justify-content: space-between;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-around;
         align-items: center;
     }
     
     .list-intro ul{
         display: flex;
+        flex-direction: column; 
         padding: 0;
     }
     .list-intro li{

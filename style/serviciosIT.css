@@ -1,28 +1,34 @@
-.banner-principal{
+@media (max-width: 768px) {
+  .banner-principal {
     background: rgba(0, 0, 0, 0.44);
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../resource/imagenes prueba web/img_home/nuevas/Servicios IT.png');
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url("../resource/imagenes prueba web/img_home/nuevas/Servicios IT.png");
     /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
     background-size: cover;
     background-repeat: no-repeat;
-}
+  }
 
-.banner-principal span{
+  .banner-principal span {
     text-align: center;
     height: 30px;
     align-self: center;
     font-size: 18px;
-}
+  }
 
-.content{
+  .content {
     display: flex;
     align-items: center;
     flex-direction: column;
-}
+  }
 
-.intro-txt{
-    margin-top: 50px; 
-    background-color: #F6F6F6;
-    border: 1px solid #9A9A9A;
+  .intro-txt {
+    margin-top: 50px;
+    background-color: #f6f6f6;
+    border: 1px solid #9a9a9a;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -30,365 +36,998 @@
     width: 80%;
     height: 150px;
     padding: 30px;
-}
-.title-section{
+  }
+  .title-section {
     font-size: 20px;
     padding: 30px 50px;
-}
-.intro-txt p{
+  }
+  .intro-txt p {
     font-size: 15px;
     margin: 0;
-}
+  }
 
-.compromiso{
+  .compromiso {
     width: 100%;
-}
+  }
 
-.fases{
+  .fases {
     display: flex;
     justify-content: center;
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
     padding: 50px;
     height: 900px;
-}
+  }
 
-.txt-fases ul, .txt-fases li{
+  .txt-fases ul,
+  .txt-fases li {
     font-size: 15px;
-}
+  }
 
-.txt-fases p{
+  .txt-fases p {
     font-size: 13px;
     margin-left: 20px;
-}
+  }
 
-
-
-.content-list{
+  .content-list {
     margin-bottom: 50px;
-}
-.list-two{
-    margin-bottom: 40px;    
-}
-.list-two li{
+  }
+  .list-two {
+    margin-bottom: 40px;
+  }
+  .list-two li {
     font-size: 13px;
     margin-bottom: 5px;
-}
-.cont-img-fases{
+  }
+  .cont-img-fases {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 40px;
-}
-.img-fases {
+  }
+  .img-fases {
     background-image: url("../resource/imagenes prueba web/img_home/Fases del Proyecto.png");
     background-size: cover;
     background-position: center;
     width: 420px;
     height: 740px;
-}
+  }
 
+  /* Ocultar contenido por defecto en pantallas pequeñas */
+  .text-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  }
 
-@media (max-width: 1150px) {
-    .fases{
-        height: 950px;
-    }
+  /* Estilos para los botones */
+  #btn-content1,
+  #btn-content2,
+  #btn-content3,
+  #btn-content4 {
+    list-style: none;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    margin-bottom: 30px;
+  }
 
-    .img-fases {
-        width: 450px;
-        height: 500px;
-    }
-}
+  .fases {
+    height: 800px;
+  }
 
-@media (max-width: 1150px) and (min-width: 768px) {
-    .fases{
-        height: 950px;
-    }
+  .img-fases {
+    display: none;
+  }
 
-    .img-fases {
-        width: 450px;
-        height: 500px;
-    }
-}
-
-@media (max-width: 900px) {
-    .fases{
-        height: 1050px;
-    }
-}
-
-/* Estilos por defecto para text-content */
-.text-content {
-    display: block;
-    max-height: none;
+  /* Clase seleccionada */
+  .selected {
+    max-height: 1000px; /* Ajustar según sea necesario */
     opacity: 1;
-}
+  }
 
-@media (max-width: 768px) {
-    /* Ocultar contenido por defecto en pantallas pequeñas */
-    .text-content {
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-    }
-
-    /* Estilos para los botones */
-    #btn-content1, #btn-content2, #btn-content3, #btn-content4 {
-        list-style: none;
-        border-bottom: 1px solid #000;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .fases {
-        height: 800px;
-    }
-
-    .img-fases {
-        display: none;
-    }
-
-    /* Clase seleccionada */
-    .selected {
-        max-height: 1000px; /* Ajustar según sea necesario */
-        opacity: 1;
-    }
-}
-.casos{
+  .casos {
     padding: 0 50px;
-}
-.caso{
+  }
+  .caso {
     border: 1px solid #565656;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
     margin: 30px 10px;
-}
+  }
 
-/* Background img de casos de exito */
-.img-card{
+  /* Background img de casos de exito */
+  .img-card {
     width: 100%;
     height: 210px;
     background-repeat: no-repeat;
     background-size: cover;
-}
-#img-Saica{
-    background-image: url('../resource/Casos de Exito/Saica.png');
+  }
+  #img-Saica {
+    background-image: url("../resource/Casos de Exito/Saica.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
+    background-size: contain;
+  }
 
-#img-Aena{
-    background-image: url('../resource/Casos de Exito/Aena.png');
+  #img-Aena {
+    background-image: url("../resource/Casos de Exito/Aena.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
+    background-size: contain;
+  }
 
-#img-F1{
-    background-image: url('../resource/Casos de Exito/F1 Valencia Street Circuit.png');
+  #img-F1 {
+    background-image: url("../resource/Casos de Exito/F1 Valencia Street Circuit.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
+    background-size: contain;
+  }
 
-#img-Adif{
-    background-image: url('../resource/Casos de Exito/Adif.png');
+  #img-Adif {
+    background-image: url("../resource/Casos de Exito/Adif.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
+    background-size: contain;
+  }
 
-#img-Nexica{
-    background-image: url('../resource/Casos de Exito/Nexica.png');
+  #img-Nexica {
+    background-image: url("../resource/Casos de Exito/Nexica.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
+    background-size: contain;
+  }
 
-#img-Holcim{
-    background-image: url('../resource/Casos de Exito/Holcim.png');
+  #img-Holcim {
+    background-image: url("../resource/Casos de Exito/Holcim.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
+    background-size: contain;
+  }
 
-#img-ayuntBcn{
-    background-image: url('../resource/Casos de Exito/Ayuntamiento Barcelona.png');
+  #img-ayuntBcn {
+    background-image: url("../resource/Casos de Exito/Ayuntamiento Barcelona.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-ayuntMadrid{
-    background-image: url('../resource/Casos de Exito/Ayuntamoento de Madrid.png');
+    background-size: contain;
+  }
+  #img-ayuntMadrid {
+    background-image: url("../resource/Casos de Exito/Ayuntamoento de Madrid.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-Mapfre{
-    background-image: url('../resource/Casos de Exito/Mapfre.png');
+    background-size: contain;
+  }
+  #img-Mapfre {
+    background-image: url("../resource/Casos de Exito/Mapfre.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-AndorraTelecom{
-    background-image: url('../resource/Casos de Exito/Andorra Telecom.png');
+    background-size: contain;
+  }
+  #img-AndorraTelecom {
+    background-image: url("../resource/Casos de Exito/Andorra Telecom.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-CiscoLatam{
-    background-image: url('../resource/Casos de Exito/Cisco Latam.png');
+    background-size: contain;
+  }
+  #img-CiscoLatam {
+    background-image: url("../resource/Casos de Exito/Cisco Latam.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-SchneiderEgipto{
-    background-image: url('../resource/Casos de Exito/Schneider.png');
+    background-size: contain;
+  }
+  #img-SchneiderEgipto {
+    background-image: url("../resource/Casos de Exito/Schneider.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-HyperflexAyuntRoquetas{
-    background-image: url('../resource/Casos de Exito/Ayuntamiento de Roquetas.png');
+    background-size: contain;
+  }
+  #img-HyperflexAyuntRoquetas {
+    background-image: url("../resource/Casos de Exito/Ayuntamiento de Roquetas.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-telefonica-bancaMarch{
-    background-image: url('../resource/Casos de Exito/Banca March.png');
+    background-size: contain;
+  }
+  #img-telefonica-bancaMarch {
+    background-image: url("../resource/Casos de Exito/Banca March.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-telefonica-cajamar{
-    background-image: url('../resource/Casos de Exito/Cajamar.png');
+    background-size: contain;
+  }
+  #img-telefonica-cajamar {
+    background-image: url("../resource/Casos de Exito/Cajamar.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-partnerPremierCisco{
-    background-image: url('../resource/Casos de Exito/Partner Premier de Cisco.png');
+    background-size: contain;
+  }
+  #img-partnerPremierCisco {
+    background-image: url("../resource/Casos de Exito/Partner Premier de Cisco.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-clienteBingoRoma{
-    background-image: url('../resource/Casos de Exito/Bingo Roma.png');
+    background-size: contain;
+  }
+  #img-clienteBingoRoma {
+    background-image: url("../resource/Casos de Exito/Bingo Roma.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-ClienteGonvarri{
-    background-image: url('../resource/Casos de Exito/Gonvarri.png');
+    background-size: contain;
+  }
+  #img-ClienteGonvarri {
+    background-image: url("../resource/Casos de Exito/Gonvarri.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
-#img-serviciosCiscoColaboracion{
-    background-image: url('../resource/Casos de Exito/Cisco Colaboración Empresa de teleasistencia.png');
+    background-size: contain;
+  }
+  #img-serviciosCiscoColaboracion {
+    background-image: url("../resource/Casos de Exito/Cisco Colaboración Empresa de teleasistencia.png");
     background-repeat: no-repeat;
-        background-size: contain;
-}
+    background-size: contain;
+  }
 
-
-.fila-hidden{
+  .fila-hidden {
     display: none;
-}
+  }
 
-#mostrar-mas-btn{
+  #mostrar-mas-btn {
     background-color: #00000000;
-    color: #EA1C24;
+    color: #ea1c24;
     border: 0;
-    text-decoration:underline;
-}
+    text-decoration: underline;
+  }
 
-#mostrar-mas-btn:hover{
+  #mostrar-mas-btn:hover {
     color: #902528;
-}
+  }
 
-/* ------------------------------------- */
+  /* ------------------------------------- */
 
-
-.content-card{
+  .content-card {
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: left;
     flex-direction: column;
     padding: 30px;
-}
+  }
 
-.content-card h4{
+  .content-card h4 {
     font-size: 16px;
-}
-.content-card .button-caso-exito{
+  }
+  .content-card .button-caso-exito {
     align-self: flex-end;
-    color: #EA1C24;
+    color: #ea1c24;
     text-decoration: none;
     font-size: 12px;
     background-color: #00000000;
     border: 0;
-}
+  }
 
-.content-card a:hover{
+  .content-card a:hover {
     color: #ea1c239d;
-}
+  }
 
-.content-solutions{
+  .content-solutions {
     padding: 30px 50px;
-}
+  }
 
-
-.headers-solutions{
+  .headers-solutions {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-}
+  }
 
-
-.header-solution{
+  .header-solution {
     border: 1px solid #fff;
     width: 60%;
     padding: 15px 0;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-}
+  }
 
-.header-solution h4{
+  .header-solution h4 {
     font-size: 14px;
     text-align: center;
     margin: 0;
-}
+  }
 
-.header-solution:hover{
-    border-bottom: 1px solid #EA1C24;
-    color: #EA1C24;
+  .header-solution:hover {
+    border-bottom: 1px solid #ea1c24;
+    color: #ea1c24;
     box-shadow: 5px 5px 15px rgba(234, 28, 36, 0.5);
-}
+  }
 
-.header-solution.selected{
-    border-bottom: 1px solid #EA1C24;
-    color: #EA1C24;
+  .header-solution.selected {
+    border-bottom: 1px solid #ea1c24;
+    color: #ea1c24;
     box-shadow: 5px 5px 15px rgba(234, 28, 36, 0.5);
-}
+  }
 
-.text-solution{
+  .text-solution {
     display: none;
     margin-left: 140px;
-}
+  }
 
-.text-solution h4{
+  .text-solution h4 {
     font-size: 16px;
-}
+  }
 
-.text-solution p{
+  .text-solution p {
     width: 300px;
     font-size: 13px;
     margin: 30px 0;
-}
-.text-solution img{
+  }
+  .text-solution img {
     width: 300px;
-}
+  }
 
-.text-solution.selected{
+  .text-solution.selected {
     display: block;
-}
+  }
 
-
-/* Ensanchar el modal */
-.modal-dialog {
+  /* Ensanchar el modal */
+  .modal-dialog {
     max-width: 80%; /* Ajusta el porcentaje según necesites */
-}
+  }
 
-/* Cambiar el fondo del encabezado del modal a rojo */
-.modal-header {
+  /* Cambiar el fondo del encabezado del modal a rojo */
+  .modal-header {
     background-color: red;
     color: white; /* Cambiar el color del texto si es necesario */
+  }
+
+  .modal-body {
+    font-size: 14px;
+  }
 }
 
-.modal-body{
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner-principal {
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url("../resource/imagenes prueba web/img_home/nuevas/Servicios IT.png");
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .banner-principal span {
+    text-align: center;
+    height: 30px;
+    align-self: center;
+    font-size: 18px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .intro-txt {
+    margin-top: 50px;
+    background-color: #f6f6f6;
+    border: 1px solid #9a9a9a;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 150px;
+    padding: 30px;
+  }
+  .title-section {
+    font-size: 20px;
+    padding: 30px 50px;
+  }
+  .intro-txt p {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .compromiso {
+    width: 100%;
+  }
+
+  .fases {
+    display: flex;
+    justify-content: center;
+    background-color: #4e66ec;
+    padding: 50px;
+    height: 900px;
+  }
+
+  .txt-fases ul,
+  .txt-fases li {
+    font-size: 12px;
+  }
+
+  .txt-fases p {
+    font-size: 10px;
+    margin-left: 20px;
+  }
+
+  .content-list {
+    margin-bottom: 50px;
+  }
+  .list-two {
+    margin-bottom: 40px;
+  }
+  .list-two li {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+  .cont-img-fases {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+  }
+  .img-fases {
+    background-image: url("../resource/imagenes prueba web/img_home/Fases del Proyecto.png");
+    background-size: cover;
+    background-position: center;
+    width: 420px;
+    height: 740px;
+  }
+
+  /* Estilos por defecto para text-content */
+  .text-content {
+    display: block;
+    max-height: none;
+    opacity: 1;
+  }
+
+  .casos {
+    padding: 0 50px;
+  }
+  .caso {
+    border: 1px solid #565656;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    margin: 30px 10px;
+  }
+
+  /* Background img de casos de exito */
+  .img-card {
+    width: 100%;
+    height: 210px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #img-Saica {
+    background-image: url("../resource/Casos de Exito/Saica.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-Aena {
+    background-image: url("../resource/Casos de Exito/Aena.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-F1 {
+    background-image: url("../resource/Casos de Exito/F1 Valencia Street Circuit.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-Adif {
+    background-image: url("../resource/Casos de Exito/Adif.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-Nexica {
+    background-image: url("../resource/Casos de Exito/Nexica.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-Holcim {
+    background-image: url("../resource/Casos de Exito/Holcim.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-ayuntBcn {
+    background-image: url("../resource/Casos de Exito/Ayuntamiento Barcelona.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-ayuntMadrid {
+    background-image: url("../resource/Casos de Exito/Ayuntamoento de Madrid.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-Mapfre {
+    background-image: url("../resource/Casos de Exito/Mapfre.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-AndorraTelecom {
+    background-image: url("../resource/Casos de Exito/Andorra Telecom.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-CiscoLatam {
+    background-image: url("../resource/Casos de Exito/Cisco Latam.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-SchneiderEgipto {
+    background-image: url("../resource/Casos de Exito/Schneider.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-HyperflexAyuntRoquetas {
+    background-image: url("../resource/Casos de Exito/Ayuntamiento de Roquetas.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-telefonica-bancaMarch {
+    background-image: url("../resource/Casos de Exito/Banca March.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-telefonica-cajamar {
+    background-image: url("../resource/Casos de Exito/Cajamar.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-partnerPremierCisco {
+    background-image: url("../resource/Casos de Exito/Partner Premier de Cisco.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-clienteBingoRoma {
+    background-image: url("../resource/Casos de Exito/Bingo Roma.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-ClienteGonvarri {
+    background-image: url("../resource/Casos de Exito/Gonvarri.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-serviciosCiscoColaboracion {
+    background-image: url("../resource/Casos de Exito/Cisco Colaboración Empresa de teleasistencia.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .fila-hidden {
+    display: none;
+  }
+
+  #mostrar-mas-btn {
+    background-color: #00000000;
+    color: #ea1c24;
+    border: 0;
+    text-decoration: underline;
+  }
+
+  #mostrar-mas-btn:hover {
+    color: #902528;
+  }
+
+  /* ------------------------------------- */
+
+  .content-card {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .content-card h4 {
+    font-size: 16px;
+  }
+  .content-card .button-caso-exito {
+    align-self: flex-end;
+    color: #ea1c24;
+    text-decoration: none;
+    font-size: 12px;
+    background-color: #00000000;
+    border: 0;
+  }
+
+  .content-card a:hover {
+    color: #ea1c239d;
+  }
+
+  .content-solutions {
+    padding: 30px 50px;
+  }
+
+  .headers-solutions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .header-solution {
+    border: 1px solid #fff;
+    width: 60%;
+    padding: 15px 0;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+
+  .header-solution h4 {
     font-size: 14px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .header-solution:hover {
+    border-bottom: 1px solid #ea1c24;
+    color: #ea1c24;
+    box-shadow: 5px 5px 15px rgba(234, 28, 36, 0.5);
+  }
+
+  .header-solution.selected {
+    border-bottom: 1px solid #ea1c24;
+    color: #ea1c24;
+    box-shadow: 5px 5px 15px rgba(234, 28, 36, 0.5);
+  }
+
+  .text-solution {
+    display: none;
+    margin-left: 140px;
+  }
+
+  .text-solution h4 {
+    font-size: 16px;
+  }
+
+  .text-solution p {
+    width: 300px;
+    font-size: 13px;
+    margin: 30px 0;
+  }
+  .text-solution img {
+    width: 300px;
+  }
+
+  .text-solution.selected {
+    display: block;
+  }
+
+  /* Ensanchar el modal */
+  .modal-dialog {
+    max-width: 80%; /* Ajusta el porcentaje según necesites */
+  }
+
+  /* Cambiar el fondo del encabezado del modal a rojo */
+  .modal-header {
+    background-color: red;
+    color: white; /* Cambiar el color del texto si es necesario */
+  }
+
+  .modal-body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner-principal {
+    background: rgba(0, 0, 0, 0.44);
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url("../resource/imagenes prueba web/img_home/nuevas/Servicios IT.png");
+    /*background-image: url('../resource/imagenes prueba web/img_home/nuevas/Seccion Blog/Blog2.png');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .banner-principal span {
+    text-align: center;
+    height: 30px;
+    align-self: center;
+    font-size: 18px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .intro-txt {
+    margin-top: 50px;
+    background-color: #f6f6f6;
+    border: 1px solid #9a9a9a;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 150px;
+    padding: 30px;
+  }
+  .title-section {
+    font-size: 20px;
+    padding: 30px 50px;
+  }
+  .intro-txt p {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .compromiso {
+    width: 100%;
+  }
+
+  .fases {
+    display: flex;
+    justify-content: center;
+    background-color: #d9d9d9;
+    padding: 50px;
+    height: 900px;
+  }
+
+  .txt-fases ul,
+  .txt-fases li {
+    font-size: 15px;
+  }
+
+  .txt-fases p {
+    font-size: 13px;
+    margin-left: 20px;
+  }
+
+  .content-list {
+    margin-bottom: 50px;
+  }
+  .list-two {
+    margin-bottom: 40px;
+  }
+  .list-two li {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .cont-img-fases {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+  }
+  .img-fases {
+    background-image: url("../resource/imagenes prueba web/img_home/Fases del Proyecto.png");
+    background-size: cover;
+    background-position: center;
+    width: 420px;
+    height: 740px;
+  }
+
+  /* Estilos por defecto para text-content */
+  .text-content {
+    display: block;
+    max-height: none;
+    opacity: 1;
+  }
+
+  .casos {
+    padding: 0 50px;
+  }
+  .caso {
+    border: 1px solid #565656;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    margin: 30px 10px;
+  }
+
+  /* Background img de casos de exito */
+  .img-card {
+    width: 100%;
+    height: 210px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #img-Saica {
+    background-image: url("../resource/Casos de Exito/Saica.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-Aena {
+    background-image: url("../resource/Casos de Exito/Aena.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-F1 {
+    background-image: url("../resource/Casos de Exito/F1 Valencia Street Circuit.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-Adif {
+    background-image: url("../resource/Casos de Exito/Adif.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-Nexica {
+    background-image: url("../resource/Casos de Exito/Nexica.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-Holcim {
+    background-image: url("../resource/Casos de Exito/Holcim.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #img-ayuntBcn {
+    background-image: url("../resource/Casos de Exito/Ayuntamiento Barcelona.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-ayuntMadrid {
+    background-image: url("../resource/Casos de Exito/Ayuntamoento de Madrid.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-Mapfre {
+    background-image: url("../resource/Casos de Exito/Mapfre.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-AndorraTelecom {
+    background-image: url("../resource/Casos de Exito/Andorra Telecom.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-CiscoLatam {
+    background-image: url("../resource/Casos de Exito/Cisco Latam.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-SchneiderEgipto {
+    background-image: url("../resource/Casos de Exito/Schneider.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-HyperflexAyuntRoquetas {
+    background-image: url("../resource/Casos de Exito/Ayuntamiento de Roquetas.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-telefonica-bancaMarch {
+    background-image: url("../resource/Casos de Exito/Banca March.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-telefonica-cajamar {
+    background-image: url("../resource/Casos de Exito/Cajamar.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-partnerPremierCisco {
+    background-image: url("../resource/Casos de Exito/Partner Premier de Cisco.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-clienteBingoRoma {
+    background-image: url("../resource/Casos de Exito/Bingo Roma.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-ClienteGonvarri {
+    background-image: url("../resource/Casos de Exito/Gonvarri.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #img-serviciosCiscoColaboracion {
+    background-image: url("../resource/Casos de Exito/Cisco Colaboración Empresa de teleasistencia.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .fila-hidden {
+    display: none;
+  }
+
+  #mostrar-mas-btn {
+    background-color: #00000000;
+    color: #ea1c24;
+    border: 0;
+    text-decoration: underline;
+  }
+
+  #mostrar-mas-btn:hover {
+    color: #902528;
+  }
+
+  /* ------------------------------------- */
+
+  .content-card {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .content-card h4 {
+    font-size: 16px;
+  }
+  .content-card .button-caso-exito {
+    align-self: flex-end;
+    color: #ea1c24;
+    text-decoration: none;
+    font-size: 12px;
+    background-color: #00000000;
+    border: 0;
+  }
+
+  .content-card a:hover {
+    color: #ea1c239d;
+  }
+
+  .content-solutions {
+    padding: 30px 50px;
+  }
+
+  .headers-solutions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .header-solution {
+    border: 1px solid #fff;
+    width: 60%;
+    padding: 15px 0;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+
+  .header-solution h4 {
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .header-solution:hover {
+    border-bottom: 1px solid #ea1c24;
+    color: #ea1c24;
+    box-shadow: 5px 5px 15px rgba(234, 28, 36, 0.5);
+  }
+
+  .header-solution.selected {
+    border-bottom: 1px solid #ea1c24;
+    color: #ea1c24;
+    box-shadow: 5px 5px 15px rgba(234, 28, 36, 0.5);
+  }
+
+  .text-solution {
+    display: none;
+    margin-left: 140px;
+  }
+
+  .text-solution h4 {
+    font-size: 16px;
+  }
+
+  .text-solution p {
+    width: 300px;
+    font-size: 13px;
+    margin: 30px 0;
+  }
+  .text-solution img {
+    width: 300px;
+  }
+
+  .text-solution.selected {
+    display: block;
+  }
+
+  /* Ensanchar el modal */
+  .modal-dialog {
+    max-width: 80%; /* Ajusta el porcentaje según necesites */
+  }
+
+  /* Cambiar el fondo del encabezado del modal a rojo */
+  .modal-header {
+    background-color: red;
+    color: white; /* Cambiar el color del texto si es necesario */
+  }
+
+  .modal-body {
+    font-size: 14px;
+  }
 }
