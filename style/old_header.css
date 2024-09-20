@@ -5,11 +5,8 @@
     font-style: normal;
 }
 
-* {
-    font-family: 'Biome Std', sans-serif; /* Sans-serif como fallback */
-}
 
-body{
+*{
     margin: 0;
     font-family: "Biome Std";
 }

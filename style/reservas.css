@@ -1,12 +1,4 @@
-@font-face {
-  font-family: "BiomeStd";
-  src: url("../BiomeStd-Wide.otf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
 body {
-  font-family: BiomeStd;
   background-color: rgb(189, 189, 189);
 }
 button {
@@ -43,13 +35,12 @@ button {
     font-weight: bold;
   }
   input,
-  select {
+  select option {
     margin-bottom: 30px;
     color: #a1a1a1;
     border: 1px solid #000000;
     border-radius: 10px;
     background-color: #ffffff;
-    font-family: BiomeStd;
     font-size: 10px;
     height: 25px;
     user-select: none;
@@ -288,7 +279,6 @@ button {
     border: 1px solid #000000;
     border-radius: 10px;
     background-color: #ffffff;
-    font-family: BiomeStd;
     font-size: 10px;
     height: 25px;
     user-select: none;
@@ -526,7 +516,6 @@ button {
     border: 1px solid #000000;
     border-radius: 10px;
     background-color: #ffffff;
-    font-family: BiomeStd;
     font-size: 10px;
     height: 25px;
     user-select: none;

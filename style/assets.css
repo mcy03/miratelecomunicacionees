@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+* {
+    font-family: 'Biome Std', sans-serif; /* Sans-serif como fallback */
+}
+
 
 .button-red{
     font-family: "Biome Std";
