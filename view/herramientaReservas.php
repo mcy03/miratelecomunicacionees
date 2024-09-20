@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incluir CSS de Choices.js -->
+    <link rel="stylesheet" href="./style/choices.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/assets.css">
     <link rel="stylesheet" href="./style/reservas.css">
@@ -25,27 +27,20 @@
             <form onsubmit="return false;" action="">
                 <div id="seleccionLabSection">
                     <h1 class="tituloSeccion">SELECCIÓN DE LABORATORIO</h1>
+                    <label for="proovedores">Proovedor:</label>
+                    <select name="proovedores" id="proovedores" required>
+                        <option value="">Seleccione un laboratorio</option>
+                    </select>
                     <label for="laboratorios">Laboratorio:</label>
                     <select name="laboratorios" id="laboratorios" required>
                         <option value="">Seleccione un laboratorio</option>
-                        <option value="1">Laboratorio 1</option>
-                        <option value="2">Laboratorio 2</option>
-                        <option value="3">Laboratorio 3</option>
+                    </select>
+                    <label for="pods">Número de pods:</label>
+                    <select name="pods" id="pods" required>
+                        <option value="">Seleccione número de pods</option>
                     </select>
                     <label for="alumnos">Número de alumnos:</label>
-                    <select name="alumnos" id="alumnos" required>
-                        <option value="">Seleccione número de alumnos</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
+                    <input type="number" name="alumnos" id="alumnos" required placeholder="Seleccione número de alumnos"/>
                     <!-- Ventana emergente (modal) para la advertencia -->
                     <div id="popup" class="popup">
                         <div class="popup-content">
@@ -62,21 +57,9 @@
                         </div>
                         <div id="dateButtons"></div>
                     </div>
-
-
-                    <label for="pods">Número de pods:</label>
-                    <select name="pods" id="pods" required>
-                        <option value="">Seleccione número de pods</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
+                    <label for="zonasHorarias">Zona horaria:</label>
+                    <select name="zonasHorarias" id="zonasHorarias" required>
+                        <option value="">Seleccione zona horaria</option>
                     </select>
                 </div>
                 <div id="credencialesEmpSection">
@@ -102,6 +85,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Incluir JS de Choices.js -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script src="./config/parameters.js"></script>
     <script src="./script/reservas/herramientaReservas.js"></script>
     <script src="./script/reservas/calendars.js"></script>
