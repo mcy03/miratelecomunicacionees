@@ -1,0 +1,748 @@
+@font-face {
+  font-family: "BiomeStd";
+  src: url("../BiomeStd-Wide.otf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  font-family: BiomeStd;
+  background-color: rgb(189, 189, 189);
+}
+button {
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .divGeneral {
+    display: block;
+    margin: 20px;
+  }
+  .pasosReserva {
+    font-size: 12px;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    height: fit-content;
+    margin-bottom: 5px;
+  }
+  .formReserva {
+    font-size: 12px;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+    border-bottom: 2px solid #000000;
+  }
+  label {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  input,
+  select {
+    margin-bottom: 30px;
+    color: #a1a1a1;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-family: BiomeStd;
+    font-size: 10px;
+    height: 25px;
+    user-select: none;
+  }
+  .navButtons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nextBtnDiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+  #nextBtn {
+    background-color: #ea1c24;
+    color: white;
+    border: 1px solid #ea1c24;
+    border-radius: 20px;
+    padding: 10px 10px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+  }
+  .prevBtnDiv {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+  #prevBtn {
+    background-color: #ea1c24;
+    color: white;
+    border: 1px solid #ea1c24;
+    border-radius: 20px;
+    padding: 10px 10px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+  }
+  .monthBtn {
+    background-color: #ffffff;
+    color: #ea1c24;
+    border: 1px solid #ea1c24;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 10px 5px 20px 5px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+  }
+  .selected {
+    color: #ea1c24;
+    font-weight: bold;
+  }
+  .unselected {
+    color: #6c757d;
+  }
+  .completed {
+    color: #cccccc;
+  }
+  #seleccionLabSection {
+    display: flex;
+    flex-direction: column;
+  }
+  #credencialesEmpSection {
+    display: none;
+    flex-direction: column;
+  }
+  #finalizarResSection {
+    display: none;
+    flex-direction: column;
+  }
+  .tituloSeccion {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #inputDate-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .calendars-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    user-select: none;
+  }
+  .row-calendars {
+    display: flex;
+    justify-content: center;
+  }
+  .calendar-widget {
+    width: 260px; /* Reducido el ancho del calendario */
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: center; /* Centrar el mes y el año */
+    align-items: center;
+    background: #ea1c24;
+    color: white;
+    padding: 5px; /* Reducido el padding */
+  }
+
+  .calendar-header .month-year {
+    font-weight: bold;
+    font-size: 1em; /* Reducido el tamaño de fuente */
+  }
+
+  .calendar-body {
+    padding: 10px;
+  }
+
+  .day-names,
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+  }
+
+  .day-names {
+    margin-bottom: 10px;
+    color: #666;
+    font-weight: bold;
+  }
+
+  .day-names div {
+    font-size: 0.8em; /* Reducido el tamaño de fuente de los nombres de los días */
+  }
+
+  .days-grid div.unselect {
+    padding: 5px; /* Reducido el padding */
+    margin: 1px; /* Reducido el margen */
+    font-size: 0.9em; /* Reducido el tamaño de fuente */
+    background: #f9f9f9;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  .days-grid div.unselect:hover {
+    background: #ea1c24;
+    color: white;
+  }
+  .days-grid div.unselect.mid {
+    background: #f16d73;
+    color: white;
+  }
+  .days-grid div.unselect.selected {
+    background: #ea1c24;
+    color: white;
+  }
+
+  /* Estilo para ocultar el popup por defecto */
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #ea1c24;
+    color: #ffffff;
+    border: 1px solid #888;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  /* Contenido del popup */
+  .popup-content {
+    position: relative;
+    padding: 20px;
+  }
+
+  /* Botón de cerrar (X) */
+  .close-btn {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .close-btn:hover {
+    color: #000;
+  }
+}
+
+@media (min-width: 768px) {
+  .divGeneral {
+    display: block;
+    margin: 40px;
+  }
+  .pasosReserva {
+    font-size: 12px;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    height: fit-content;
+    margin-bottom: 5px;
+  }
+  .formReserva {
+    font-size: 12px;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+    border-bottom: 2px solid #000000;
+  }
+  label {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  input,
+  select {
+    margin-bottom: 30px;
+    color: #a1a1a1;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-family: BiomeStd;
+    font-size: 10px;
+    height: 25px;
+    user-select: none;
+  }
+  .navButtons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nextBtnDiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+  #nextBtn {
+    background-color: #ea1c24;
+    color: white;
+    border: 1px solid #ea1c24;
+    border-radius: 20px;
+    padding: 10px 10px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+  }
+  .prevBtnDiv {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+  #prevBtn {
+    background-color: #ea1c24;
+    color: white;
+    border: 1px solid #ea1c24;
+    border-radius: 20px;
+    padding: 10px 10px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+  }
+  .monthBtn {
+    background-color: #ffffff;
+    color: #ea1c24;
+    border: 1px solid #ea1c24;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 10px 10px 20px 10px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+  }
+  .selected {
+    color: #ea1c24;
+    font-weight: bold;
+  }
+  .unselected {
+    color: #6c757d;
+  }
+  .completed {
+    color: #cccccc;
+  }
+  #seleccionLabSection {
+    display: flex;
+    flex-direction: column;
+  }
+  #credencialesEmpSection {
+    display: none;
+    flex-direction: column;
+  }
+  #finalizarResSection {
+    display: none;
+    flex-direction: column;
+  }
+  .tituloSeccion {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #inputDate-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .calendars-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    user-select: none;
+  }
+  .row-calendars {
+    display: flex;
+    justify-content: center;
+  }
+  .calendar-widget {
+    width: 260px; /* Reducido el ancho del calendario */
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: center; /* Centrar el mes y el año */
+    align-items: center;
+    background: #ea1c24;
+    color: white;
+    padding: 5px; /* Reducido el padding */
+  }
+
+  .calendar-header .month-year {
+    font-weight: bold;
+    font-size: 1em; /* Reducido el tamaño de fuente */
+  }
+
+  .calendar-body {
+    padding: 10px;
+  }
+
+  .day-names,
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+  }
+
+  .day-names {
+    margin-bottom: 10px;
+    color: #666;
+    font-weight: bold;
+  }
+
+  .day-names div {
+    font-size: 0.8em; /* Reducido el tamaño de fuente de los nombres de los días */
+  }
+
+  .days-grid div.unselect {
+    padding: 5px; /* Reducido el padding */
+    margin: 1px; /* Reducido el margen */
+    font-size: 0.9em; /* Reducido el tamaño de fuente */
+    background: #f9f9f9;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  .days-grid div.unselect:hover {
+    background: #ea1c24;
+    color: white;
+  }
+  .days-grid div.unselect.mid {
+    background: #f16d73;
+    color: white;
+  }
+  .days-grid div.unselect.selected {
+    background: #ea1c24;
+    color: white;
+  }
+
+  /* Estilo para ocultar el popup por defecto */
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #ea1c24;
+    color: #ffffff;
+    border: 1px solid #888;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  /* Contenido del popup */
+  .popup-content {
+    position: relative;
+    padding: 20px;
+  }
+
+  /* Botón de cerrar (X) */
+  .close-btn {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .close-btn:hover {
+    color: #000;
+  }
+}
+
+@media (min-width: 1190px) {
+  .divGeneral {
+    display: flex;
+    margin: 80px;
+  }
+  .pasosReserva {
+    font-size: 12px;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+    width: fit-content;
+    text-align: center;
+    height: fit-content;
+    margin-right: 5px;
+  }
+  .formReserva {
+    font-size: 12px;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+  }
+  label {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  input,
+  select {
+    margin-bottom: 30px;
+    color: #a1a1a1;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-family: BiomeStd;
+    font-size: 10px;
+    height: 25px;
+    user-select: none;
+  }
+  .navButtons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nextBtnDiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+  #nextBtn {
+    background-color: #ea1c24;
+    color: white;
+    border: 1px solid #ea1c24;
+    border-radius: 20px;
+    padding: 10px 10px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+  }
+  #nextBtn:hover {
+    background-color: #ffffff;
+    color: #ea1c24;
+    border: 1px solid #ea1c24;
+    transition: background 0.3s;
+  }
+  .prevBtnDiv {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+  #prevBtn {
+    background-color: #ea1c24;
+    color: white;
+    border: 1px solid #ea1c24;
+    border-radius: 20px;
+    padding: 10px 10px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+  }
+  #prevBtn:hover {
+    background-color: #ffffff;
+    color: #ea1c24;
+    border: 1px solid #ea1c24;
+    transition: background 0.3s;
+  }
+  .monthBtn {
+    background-color: #ea1c24;
+    color: white;
+    border: 1px solid #ea1c24;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+  }
+  .monthBtn:hover {
+    background-color: #ffffff;
+    color: #ea1c24;
+    border: 1px solid #ea1c24;
+    transition: background 0.3s;
+  }
+  .selected {
+    color: #ea1c24;
+    font-weight: bold;
+  }
+  .unselected {
+    color: #6c757d;
+  }
+  .completed {
+    color: #cccccc;
+  }
+  #seleccionLabSection {
+    display: flex;
+    flex-direction: column;
+  }
+  #credencialesEmpSection {
+    display: none;
+    flex-direction: column;
+  }
+  #finalizarResSection {
+    display: none;
+    flex-direction: column;
+  }
+  .tituloSeccion {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #inputDate-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .calendars-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    user-select: none;
+  }
+  .row-calendars {
+    display: flex;
+    justify-content: center;
+  }
+  .calendar-widget {
+    width: 260px; /* Reducido el ancho del calendario */
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: center; /* Centrar el mes y el año */
+    align-items: center;
+    background: #ea1c24;
+    color: white;
+    padding: 5px; /* Reducido el padding */
+  }
+
+  .calendar-header .month-year {
+    font-weight: bold;
+    font-size: 1em; /* Reducido el tamaño de fuente */
+  }
+
+  .calendar-body {
+    padding: 10px;
+  }
+
+  .day-names,
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+  }
+
+  .day-names {
+    margin-bottom: 10px;
+    color: #666;
+    font-weight: bold;
+  }
+
+  .day-names div {
+    font-size: 0.8em; /* Reducido el tamaño de fuente de los nombres de los días */
+  }
+
+  .days-grid div.unselect {
+    padding: 5px; /* Reducido el padding */
+    margin: 1px; /* Reducido el margen */
+    font-size: 0.9em; /* Reducido el tamaño de fuente */
+    background: #f9f9f9;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  .days-grid div.unselect:hover {
+    background: #ea1c24;
+    color: white;
+  }
+  .days-grid div.unselect.mid {
+    background: #f16d73;
+    color: white;
+  }
+  .days-grid div.unselect.selected {
+    background: #ea1c24;
+    color: white;
+  }
+
+  /* Estilo para ocultar el popup por defecto */
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #ea1c24;
+    color: #ffffff;
+    border: 1px solid #888;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  /* Contenido del popup */
+  .popup-content {
+    position: relative;
+    padding: 20px;
+  }
+
+  /* Botón de cerrar (X) */
+  .close-btn {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .close-btn:hover {
+    color: #000;
+  }
+}
