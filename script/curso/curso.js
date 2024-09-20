@@ -111,7 +111,7 @@ async function displayCourses(page, courses) {
         // Crear un único contenedor (div) para todos los cursos
         const filaCursos = document.createElement('div');
         filaCursos.classList.add('fila-cursos'); // Clase para todo el contenedor
-    
+        
         coursesSelected.forEach((course) => {
             const curso = document.createElement('article');
             curso.classList.add('curso');
