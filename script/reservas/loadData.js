@@ -1,6 +1,8 @@
 window.addEventListener("load", async function() {
   console.log(await get_data());
 });
+
+
 //----------------------
 //      Peticiones a api para obtener datos 
 //----------------------
