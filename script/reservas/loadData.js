@@ -1,4 +1,15 @@
-window.addEventListener("load", async function() {
+let pods = 5;
+
+// Inicializa el ionRangeSlider una vez al cargar la página
+$(document).ready(function () {
+  $("#pods").ionRangeSlider({
+    min: 0,
+    max: pods,
+    from: 0,
+  });
+});
+
+window.addEventListener("load", async function () {
   let data = await get_data();
   let proovedores = data[0];
   let zonasHorarias = data[1];
@@ -6,7 +17,7 @@ window.addEventListener("load", async function() {
 
   displayLabs(labsReservas);
 
-  
+
   displayProovedores(proovedores);
   displayZonasHorarias(zonasHorarias);
 
@@ -23,25 +34,6 @@ window.addEventListener("load", async function() {
     searchEnabled: true,  // Habilitar la búsqueda
     itemSelectText: '',   // Texto que aparece cuando una opción es seleccionable
   });
-
-  /* inputLab.addEventListener('change', () => {
-    displayPods(labsReservas);
-  }); */
-
-  
-});
-
-let pods = 16; // Cambia este valor según tus necesidades
-
-$(document).ready(function() {
-    $("#miRange").ionRangeSlider({
-        min: 0,
-        max: pods,
-        from: 0,
-        onChange: function(data) {
-            $("#valorRange").text(`Valor: ${data.from}`);
-        }
-    });
 });
 
 
@@ -51,11 +43,11 @@ function displayProovedores(proovedores) {
   proovedores.forEach(proovedor => {
     // Crear un nuevo elemento <option>
     let option = document.createElement('option');
-    
+
     // Asignar el valor y el texto a la opción
     option.value = proovedor.PROOVEDOR_ID;
     option.textContent = proovedor.PROOVEDOR_NAME;
-    
+
     // Agregar la opción al select
     proovedoresSelect.appendChild(option);
   });
@@ -67,11 +59,11 @@ function displayZonasHorarias(zonasHorarias) {
   zonasHorarias.forEach(zonaHoraria => {
     // Crear un nuevo elemento <option>
     let option = document.createElement('option');
-    
+
     // Asignar el valor y el texto a la opción
     option.value = zonaHoraria.TIME_ZONE_ID;
     option.textContent = zonaHoraria.TIME_ZONE + ': ' + zonaHoraria.NOMBRE;
-    
+
     // Agregar la opción al select
     zonasHorariasSelect.appendChild(option);
   });
@@ -83,13 +75,29 @@ function displayLabs(labs) {
   labs.forEach(lab => {
     // Crear un nuevo elemento <option>
     let option = document.createElement('option');
-    
+
     // Asignar el valor y el texto a la opción
     option.value = lab.CURSO_ID;
     option.textContent = lab.NOMBRE_CURSO + ' - ' + lab.COMPLETE_NAME;
-    
+
     // Agregar la opción al select
     labsSelect.appendChild(option);
+  });
+
+  // Agregar evento de cambio al select
+  labsSelect.addEventListener('change', function () {
+    const selectedLab = labsSelect.options[labsSelect.selectedIndex];
+
+    labs.forEach(lab => {
+      if (lab.CURSO_ID === selectedLab.value) {
+        pods = lab.PODS_AVALIABLE; // Actualiza la variable pods
+
+        // Actualiza el rango del slider
+        $("#pods").data("ionRangeSlider").update({
+          max: pods
+        });
+      }
+    });
   });
 }
 
@@ -99,7 +107,7 @@ function displayPods(pods) {
   pods.forEach(pod => {
     // Crear un nuevo elemento <option>
     let option = document.createElement('option');
-    
+
     // Asignar el valor y el texto a la opción
     option.value = pod.CURSO_ID;
     option.textContent = pod.PODS_AVALIABLE;
@@ -122,7 +130,7 @@ async function get_data() {
     const response = await axios.post(url, formData);
 
     return response.data;
-  } catch (error) { 
+  } catch (error) {
     console.error('Error:', error.message);
   }
 }
@@ -136,7 +144,7 @@ async function get_labs_reservas() {
     const response = await axios.post(url, formData);
 
     return response.data;
-  } catch (error) { 
+  } catch (error) {
     console.error('Error:', error.message);
   }
 }

@@ -42,11 +42,7 @@
 
                     <div id="apartadoPods">
                         <label for="pods">Número de pods:</label>
-                        <input type="text" id="miRange" />
-                   
-                        <!-- <select name="pods" id="pods" required>
-                            <option value="">Seleccione número de pods</option>
-                        </select> -->
+                        <input type="text" id="pods" />
                     </div>
 
                     <div id="apartadoAlumnos">
