@@ -324,6 +324,7 @@
   border-radius: 0;
   max-width: 100%;
   padding: 4px 0 4px 2px;
+  width: 100%;
 }
 .choices__input::-webkit-search-cancel-button,
 .choices__input::-webkit-search-decoration,

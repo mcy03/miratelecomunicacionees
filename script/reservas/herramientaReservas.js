@@ -12,6 +12,9 @@ const inputLab = document.getElementById('laboratorios');
 const inputAlumnos = document.getElementById('alumnos');
 const inputFecha = document.getElementById('fecha');
 const inputPods = document.getElementById('pods');
+const apartadoPods = document.getElementById('apartadoPods');
+const apartadoAlumnos = document.getElementById('apartadoAlumnos');
+const apartadoFechas = document.getElementById('apartadoFechas');
 
 // Variable para llevar el control de la sección actual
 let currentSection = seleccionLabSection;
@@ -102,4 +105,12 @@ addEventListener('change', () => {
     if (inputPods.value !== '' && inputAlumnos.value > inputPods.value) {
         showPopup('Recuerde que los laboratorios no se pueden trabajar de forma simultánea, ya que son 1:2 pod:alumno.');
     }
+})
+
+
+
+inputLab.addEventListener('change', () => {
+    apartadoPods.style.display = 'block';
+    apartadoAlumnos.style.display = 'block';
+    apartadoFechas.style.display = 'block';
 })

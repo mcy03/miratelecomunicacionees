@@ -77,6 +77,27 @@ class ApiReservasController{
             $this->sendJsonResponse([$array_proovedores, $array_zonas_horarias]);
             return;
         }
+
+        if(trim($accion) == "get_labs_reservas"){
+            $laboratorios = Laboratorio::getLabs();
+            
+            $array_laboratorios = [];
+            foreach ($laboratorios as $laboratorio) {
+                $nombre_curso = Curso::getNOMBRE_CURSObyId($laboratorio->getCURSO_ID());
+                $complete_name = Curso::getCOMPLETE_NAMEbyId($laboratorio->getCURSO_ID());
+                
+                $array_laboratorios[] = array(
+                    "CURSO_ID" => $this->sanitizeUTF8($laboratorio->getCURSO_ID()),
+                    "NOMBRE_CURSO" => $this->sanitizeUTF8($nombre_curso),
+                    "COMPLETE_NAME" => $this->sanitizeUTF8($complete_name),
+                    "PODS_AVALIABLE" => $this->sanitizeUTF8($laboratorio->getPODS_AVALIABLE()),
+                    "DURACION" => $this->sanitizeUTF8($laboratorio->getDURACION())
+                );
+            }
+
+            $this->sendJsonResponse($array_laboratorios); 
+            return;
+        }
     }
 
     private function sanitizeUTF8($data) {

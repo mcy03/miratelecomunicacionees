@@ -45,6 +45,9 @@ button {
     height: 25px;
     user-select: none;
   }
+  .labelFecha {
+    margin-top: 30px;
+  }
   .navButtons {
     display: flex;
     justify-content: space-between;
@@ -283,6 +286,9 @@ button {
     height: 25px;
     user-select: none;
   }
+  .labelFecha {
+    margin-top: 30px;
+  }
   .navButtons {
     display: flex;
     justify-content: space-between;
@@ -520,6 +526,9 @@ button {
     height: 25px;
     user-select: none;
   }
+  .labelFecha {
+    margin-top: 30px;
+  }
   .navButtons {
     display: flex;
     justify-content: space-between;
@@ -734,4 +743,17 @@ button {
   .close-btn:hover {
     color: #000;
   }
+
+  #apartadoPods {
+    display: none;
+  }
+
+  #apartadoAlumnos {
+    display: none;
+  }
+
+  #apartadoFechas {
+    display: none;
+  }
+
 }
