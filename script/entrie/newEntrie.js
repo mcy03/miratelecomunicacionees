@@ -23,6 +23,20 @@ textForm.addEventListener('submit', (event) => {
 
 const imgForm = document.getElementById('img-form');
 
+const fileInput = document.getElementById('addImg');
+    const messageContainer = document.getElementById('image-selected-message');
+
+    // Escuchar el cambio en el input de archivo
+    fileInput.addEventListener('change', function() {
+        const fileName = fileInput.files.length ? fileInput.files[0].name : ''; // Obtener el nombre del archivo seleccionado
+        if (fileName) {
+            // Mostrar mensaje de archivo seleccionado
+            messageContainer.textContent = `Imagen seleccionada: ${fileName}`;
+        } else {
+            // Si se ha deseleccionado la imagen, limpiar el mensaje
+            messageContainer.textContent = '';
+        }
+    });
 let archivoImagen = [];
 let cantImg = 0;
 imgForm.addEventListener('submit', (event) => {

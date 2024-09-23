@@ -12,11 +12,6 @@
         <div class="title-page">
             <h1>On the Go</h1>
         </div>
-
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Quisque a risus non sapien facilisis egestas. 
-            Vivamus scelerisque ex ipsum, a tempor velit tristique id. 
-            Ut in placerat erat.</span>
     </section>
     <section class="ubicacion">
         <div class="ruta-ubi">

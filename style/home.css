@@ -542,6 +542,8 @@
     .logo-clp{
         margin-right: 20px;
         margin-top: -20px;
+
+        display: none;
     }
     .logo-latam{
         width: 150px;
@@ -569,6 +571,11 @@
         margin-bottom: 10px;
     }
 
+    .que-ofrecemos a p{
+        font-size: 12px;
+    }
+
+
     .segunda-fila{
         margin-bottom: 0;
     }
@@ -594,7 +601,7 @@
         margin-left: 50px;
     }
     .quienes-somos h2{
-        width: 70%;
+        width: 100%;
         text-align: left;
         color: #e4e4e4;
         font-size: 18px;
@@ -797,9 +804,6 @@
     }
 
 
-    .img-noticia-max img{
-        width: 600px;
-    }
 
     .reverse{
         display: flex;
@@ -997,7 +1001,7 @@
         color: #565656;
         margin-right: 30px;
         width: 110px;
-        font-size: 14px;
+        font-size: 10px;
     
     }
     .que-ofrecemos a img{
@@ -1262,7 +1266,7 @@
     .noticia-img .img-noticia {
         position: relative;
         width: 100%; /* Ajusta según necesites */
-        height: 100%; /* Ajusta según necesites */
+        height: 300px;
 
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 100%), url('../resource/conectamos.png');
         background-size: cover; /* Ajusta el tamaño de la imagen */
@@ -1295,12 +1299,12 @@
         text-align: center;
     }
 
-    .link-noticia-img{
+    .link-noticia-img {
         height: 100%;
         width: 100%;
         display: flex;
         justify-content: center;
-        align-items: end;
+        align-items: center;
         text-decoration: none;
     }
 }

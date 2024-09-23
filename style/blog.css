@@ -101,7 +101,10 @@
     height: 100%;
     width: 100%;
 }
-
+.enlace-entrie{
+    text-decoration: none;
+    color: #000;
+}
 
 .body-entrada{
     width: 25%;
@@ -109,6 +112,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-size: 11px;
 }
 .body-entrada img{
@@ -116,6 +120,14 @@
     height: 20px;
     margin-right: 5px;
 }
+
+.body-entrada h4{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
 .body-entrada ul{
     height: 80%;
     padding-left: 10px;

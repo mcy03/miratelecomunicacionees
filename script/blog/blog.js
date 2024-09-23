@@ -205,21 +205,23 @@ async function listEntries(entries) {
 
     entries.forEach(entrie => {
         contenidoEntradas += `
-            <article class="entrada">
-                <div class="img-entrada">
-                    <input type="hidden" value="${entrie.PUBLICACION_ID}">
-                    <img src="./${entrie.IMG_ENTRIE}">
-                    <h4 style="display:none;">${entrie.TITULO}</h4>
-                </div>
-                <div class="body-entrada">
-                    <ul>
-                        <li><img src="./resource/iconos/calendario.png" alt="">${entrie.FECHA}</li>
-                        <li><img src="./resource/iconos/etiqueta.png" alt="">${entrie.CATEGORIA}</li>
-                        <li><img src="./resource/iconos/usuario.png" alt="">Mira</li>
-                        <li><img src="./resource/iconos/calendario.png" alt="">${entrie.cantidad}</li>
-                    </ul>
-                </div>
-            </article>
+            <a class="enlace-entrie" href="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entrie.PUBLICACION_ID}">
+                <article class="entrada">
+                    <div class="img-entrada">
+                        <input type="hidden" value="${entrie.PUBLICACION_ID}">
+                        <img src="./${entrie.IMG_ENTRIE}">
+                        <h4 style="display:none;">${entrie.TITULO}</h4>
+                    </div>
+                    <div class="body-entrada">
+                        <h4>${entrie.TITULO}</h4>
+                        <ul>
+                            <li><img src="./resource/iconos/calendario.png" alt="">${entrie.FECHA}</li>
+                            <li><img src="./resource/iconos/etiqueta.png" alt="">${entrie.CATEGORIA}</li>
+                            <li><img src="./resource/iconos/usuario.png" alt="">Mira</li>
+                        </ul>
+                    </div>
+                </article>
+            </a>
         `;
     });
 

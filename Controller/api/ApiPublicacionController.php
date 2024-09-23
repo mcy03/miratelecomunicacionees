@@ -88,18 +88,28 @@ class ApiPublicacionController{
         } elseif(trim($accion) == "delete_entrie") {
             $id = $_POST['id'];
             $entrie = Publicacion::getEntrieById($id);
+            
             $definitive = ($entrie[0]->getESTADO() == "TRASH");
             $titulo = $entrie[0]->getTITULO();
             $carpeta = './resource/publicaciones/'.$titulo;
-
-            if ($definitive && is_dir($carpeta) && !rmdir($carpeta)) {
-                $this->sendJsonResponse(["success" => false, "message" => "No se pudo eliminar la carpeta."]);
+            
+            if ($definitive && is_dir($carpeta) && !$this->eliminarCarpeta($carpeta)) {
+                $this->sendJsonResponse(["error" => false, "message" => "No se pudo eliminar la carpeta."]);
                 return;
             }
-        
+            
             $result = Publicacion::deleteEntrie($id, $definitive);
+            
+            if (!$result) {
+                $this->sendJsonResponse(["success" => false, "message" => "No se pudo eliminar la publicación."]);
+                return;
+            }
+
             $this->sendJsonResponse($result);
             return;
+
+
+            
         } elseif(trim($accion) == "get_img_byPubli"){
             $publicacion_id = $_POST["publicacion_id"];
             $imgs = Img::getImg_ByPubliId($publicacion_id);
@@ -179,6 +189,8 @@ class ApiPublicacionController{
                 }
             }
         }
+
+        
     }
 
     private function sanitizeUTF8($data) {
@@ -196,5 +208,24 @@ class ApiPublicacionController{
             echo $json;
         }
     }
+
+    private function eliminarCarpeta($carpeta) {
+        if (!is_dir($carpeta)) {
+            return false;
+        }
+        foreach (scandir($carpeta) as $item) {
+            if ($item == '.' || $item == '..') {
+                continue;
+            }
+            $itemPath = $carpeta . DIRECTORY_SEPARATOR . $item;
+            if (is_dir($itemPath)) {
+                eliminarCarpeta($itemPath); // Eliminar subcarpetas de manera recursiva
+            } else {
+                unlink($itemPath); // Eliminar archivos
+            }
+        }
+        return rmdir($carpeta); // Eliminar la carpeta vacía
+    }
+    
 }
 ?>
