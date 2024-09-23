@@ -48,9 +48,10 @@
         <div class="publi">
             <div class="last-entries">
                 <form id="img-form">
-                        <span class="btn btn-primary btn-file">
-                            Subir imagen...<input id="addImg" name="addImg" type="file">
-                        </span>
+                    <span class="btn btn-primary btn-file">
+                        Subir imagen...<input id="addImg" name="addImg" type="file">
+                    </span>
+                    <div id="image-selected-message" style="margin-top: 20px; color: green;"></div>
                     <div class="inputs-size">
                         <input id="input-anchura" type="number" placeholder="Anchura (px)">
                         <input id="input-altura" type="number" placeholder="Altura (px)">
@@ -65,6 +66,8 @@
                     <div id="mt-20">
                         <input class="button-tag" type="submit" value="Añadir">
                     </div>
+
+                    
                 </form>
 
                 <form id="params-entrie-form">

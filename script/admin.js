@@ -131,6 +131,7 @@
         try {
             const response = await axios.post(url, formData);
             data('entradas');
+            console.log(response.data)
             return response.data;
         } catch (error) {
             console.error('Error:', error.message);

@@ -1,3 +1,7 @@
+#input-name{
+    color: #000;
+}
+
 .button-option-entrie{
     display: flex;
     flex-direction: column; 
@@ -135,4 +139,9 @@
 .ubicacion #img-entrie span{
     margin: 0;
     margin-right: 15px;
+}
+
+
+#image-selected-message{
+    margin-bottom: 30px;
 }

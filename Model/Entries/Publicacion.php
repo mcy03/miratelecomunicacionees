@@ -99,7 +99,7 @@ class Publicacion {
         
         if ($definitive) {
             $consulta = "DELETE FROM publicacion WHERE PUBLICACION_ID = ?";
-
+            
             $stmt = $conn->prepare($consulta);
 
             $stmt->bind_param('i', $id);

@@ -17,7 +17,7 @@ class cursoController{
             $courseName = $keys[2];
             $course = Curso::getCourseByName($courseName)[0];
         }else {
-            header('Location: http://127.0.0.1/miratelecomunicacionees/');
+            header('Location: '.url);
         }
 
         require_once("view/header.php");
@@ -33,7 +33,7 @@ class cursoController{
             setcookie('certification', $_GET['certification'], time() + (100 * 1), "/");
         }
 
-        header('Location: http://127.0.0.1/miratelecomunicacionees/?controller=curso');
+        header('Location: '.url.'?controller=curso');
         exit;
     }
 

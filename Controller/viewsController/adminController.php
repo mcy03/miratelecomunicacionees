@@ -44,14 +44,16 @@ class adminController{
 
     public function insertEntrieAdmin(){
         session_start(); // Inicia la sesión
+        /*
         if (!isset($_SESSION['admin'])) {
             header("Location: ".url."?controller=login");
         }else{
+        */
             $categories = Categoria::getCategorias();
             require_once("view/header.php");
             require_once("view/admin/entrie/insertEntrie.php");
             require_once("view/footer.php");
-        }
+        /*}*/
     }
 
     public function medios(){
