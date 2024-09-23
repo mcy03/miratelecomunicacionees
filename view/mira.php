@@ -254,27 +254,27 @@
                 <h2>TOP LINKS DE INTERÉS SOBRE L&C</h2>
             </div>
 
-            <div class="link-interes col-3">
+            <div class="link-interes col-11 col-md-3">
                 <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/recertification.html" target="_blank">Recertificaciones Cisco</a>
             </div>
         
-            <div class="link-interes col-3">
+            <div class="link-interes col-11 col-md-3">
                 <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/continuing-education.html" target="_blank">Education Program</a>
             </div>
 
-            <div class="link-interes col-3">
+            <div class="link-interes col-11 col-md-3">
                 <a href="https://id.cisco.com/oauth2/default/v1/authorize?response_type=code&scope=openid%20profile%20address%20offline_access%20cci_coimemberOf%20email&client_id=cae-okta-web-gslb-01&state=ZHvxWGDA0__Zp9lqcwqEcDIWsvw&redirect_uri=https%3A%2F%2Flearningcredit.cloudapps.cisco.com%2Fcb%2Fsso&nonce=7xh5Lggo-p40pMu2uggrD7M9pCclaunkVRrQ1oPR8u0#/" target="_blank">Cisco Learning Credits tool</a>
             </div>
 
-            <div class="link-interes col-3">
+            <div class="link-interes col-11 col-md-3">
                 <a href="https://learninglocator.cloudapps.cisco.com/#/home" target="_blank">Cisco Learning Locator</a>
             </div>
             
-            <div class="link-interes col-3">
+            <div class="link-interes col-11 col-md-3">
                 <a href="https://learningspace.cisco.com/" target="_blank">Cisco Learning Network Space</a>
             </div>
 
-            <div class="link-interes col-3">
+            <div class="link-interes col-11 col-md-3">
                 <a href="https://www.cisco.com/site/us/en/learn/training-certifications/certifications/index.html" target="_blank">Cisco Learning & Certifications</a>
             </div>
         </section>

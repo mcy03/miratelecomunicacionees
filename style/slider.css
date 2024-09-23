@@ -206,8 +206,8 @@
   }
   .carousel .card {
     scroll-snap-align: start;
-    height: 310px;
-    width: 230px;
+    height: 300px;
+    width: 200px;
     list-style: none;
     background: #fff;
     cursor: pointer;

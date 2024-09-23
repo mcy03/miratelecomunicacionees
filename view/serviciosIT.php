@@ -80,7 +80,7 @@
             <h3 class="title-section">CASOS DE ÉXITO</h3>
 
             <div class="fila col-12 row">
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-Saica" class="img-card"></div>
                         <div class="content-card">
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-Aena" class="img-card"></div>
                         <div class="content-card">
@@ -102,7 +102,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-F1" class="img-card"></div>
                         <div class="content-card">
@@ -115,7 +115,7 @@
                 </div>
             </div>
             <div class="fila col-12 row">
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-Adif" class="img-card"></div>
                         <div class="content-card">
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-Nexica" class="img-card"></div>
                         <div class="content-card">
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-Holcim" class="img-card"></div>
                         <div class="content-card">
@@ -150,7 +150,7 @@
                 </div>
             </div>
             <div class="fila col-12 row fila-hidden">
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-ayuntBcn" class="img-card"></div>
                         <div class="content-card">
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-ayuntMadrid" class="img-card"></div>
                         <div class="content-card">
@@ -172,7 +172,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-Mapfre" class="img-card"></div>
                         <div class="content-card">
@@ -185,7 +185,7 @@
                 </div>
             </div>
             <div class="fila col-12 row fila-hidden">
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-AndorraTelecom" class="img-card"></div>
                         <div class="content-card">
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-CiscoLatam" class="img-card"></div>
                         <div class="content-card">
@@ -207,7 +207,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-SchneiderEgipto" class="img-card"></div>
                         <div class="content-card">
@@ -220,7 +220,7 @@
                 </div>
             </div>
             <div class="fila col-12 row fila-hidden">
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-HyperflexAyuntRoquetas" class="img-card"></div>
                         <div class="content-card">
@@ -231,7 +231,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-telefonica-bancaMarch" class="img-card"></div>
                         <div class="content-card">
@@ -242,7 +242,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-telefonica-cajamar" class="img-card"></div>
                         <div class="content-card">
@@ -255,7 +255,7 @@
                 </div>
             </div>
             <div class="fila col-12 row fila-hidden">
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-partnerPremierCisco" class="img-card"></div>
                         <div class="content-card">
@@ -266,7 +266,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-clienteBingoRoma" class="img-card"></div>
                         <div class="content-card">
@@ -277,7 +277,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-ClienteGonvarri" class="img-card"></div>
                         <div class="content-card">
@@ -291,10 +291,10 @@
             </div>
 
             <div class="fila col-12 row fila-hidden">
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                 </div>
 
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="caso">
                         <div id="img-serviciosCiscoColaboracion" class="img-card"></div>
                         <div class="content-card">
@@ -306,7 +306,7 @@
                     </div>
                 </div>
                 
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                 </div>
             </div>
             <div class="text-center">
@@ -354,7 +354,7 @@
                         <img src="./resource/serviciosIT/Soluciones Cisco/Service Provider.png" alt="">
                     </div>
                 </div>
-                <div class="headers-solutions col-4">
+                <div class="headers-solutions col-12 col-md-4">
                     <div class="header-solution selected">
                         <h4>Centro de Datos</h4>
                     </div>
