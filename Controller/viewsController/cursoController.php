@@ -16,10 +16,12 @@ class cursoController{
             $keys = array_keys($_GET);
             $courseName = $keys[2];
             $course = Curso::getCourseByName($courseName)[0];
+
+           
         }else {
             header('Location: '.url);
         }
-
+        echo($keys);
         require_once("view/header.php");
         require_once("view/courseView.php");
         require_once("view/footer.php");

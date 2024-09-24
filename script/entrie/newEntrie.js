@@ -66,22 +66,45 @@ imgForm.addEventListener('submit', (event) => {
 
         lectorImagen.onload = function(evento) {
             const urlImagen = evento.target.result;
+        
+            // Crear el HTML para la imagen y el contenedor
+            const html = `
+                <div style="display: flex; justify-content: ${selectPosition.value};">
+                    <img src="${urlImagen}" id="img-entrie-size" class="img-entrie-size" style="width: ${width}px; height: ${height}px;">
+                </div>
 
-            const imagen = document.createElement('img');
-            imagen.src = urlImagen;
-            imagen.className += 'img-entrie';
-            imagen.style.width = width + 'px';
-            imagen.style.height = height + 'px';
+                <div>
+                    <label for="width-img">Ancho:</label>
+                    <input type="number" id="width-img" value="${width}" min="1">
+                    <label for="height-img">Alto:</label>
+                    <input type="number" id="height-img" value="${height}" min="1">
+
+                    <input class="button-confirm-size" type="submit" value="Confirmar">
+                </div>
+            `;
             
-            const divContenedor = document.createElement('div');
-            divContenedor.style.display = 'flex';
-            divContenedor.style.justifyContent = selectPosition.value;
-            divContenedor.appendChild(imagen);
+            // Insertar el HTML en el contenedor
+            contentEntrie.innerHTML += html;
 
-            contentEntrie.appendChild(divContenedor); 
+            let imagen = document.getElementById('img-entrie-size');
+            let widthInput = document.getElementById('width-img');
+            let heightInput = document.getElementById('height-img');
+            console.log(widthInput);
+
+            console.log(heightInput);
+            widthInput.addEventListener('input', function() {
+                imagen.style.width = widthInput.value + 'px';
+            });
+
+            heightInput.addEventListener('input', function() {
+                imagen.style.height = heightInput.value + 'px';
+            });
         };
+        
 
         lectorImagen.readAsDataURL(archivoImagen[cantImg-1]);
+
+        
     }
 });
 
