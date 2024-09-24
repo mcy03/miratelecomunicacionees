@@ -92,10 +92,11 @@ class Curso {
             // Vincular parámetro y ejecutar la consulta
             $stmt->bind_param("s", $name);
             $stmt->execute();
-    
+            
             // Obtener resultados
             $resultado = $stmt->get_result();
             $arrayCurso = array();
+            
             while ($obj = $resultado->fetch_object('Curso')) {
                 $arrayCurso []= $obj;
             }
