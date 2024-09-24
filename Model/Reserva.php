@@ -1,0 +1,313 @@
+<?php
+/*
+======================================================================
+                            CLASE Reserva
+======================================================================
+º Inicializamos la clase Reserva la cual contendrá los registros de  º
+º las reservas en la base de datos.                                  º
+======================================================================
+*/
+class Reserva {
+    protected $RESERVA_ID;
+    protected $PROOVEDOR_ID;
+    protected $LABORATORIO_ID;
+    protected $PODS;
+    protected $ALUMNOS;
+    protected $FECHA_INICIO;
+    protected $FECHA_FIN;
+    protected $TIME_ZONE_ID;
+    protected $HORA_INICIO;
+    protected $HORA_FIN;
+    
+    public function __construct(){
+        
+    }
+
+    // Método para obtener todas las reservas
+    public static function getReservas(){
+        $conn = db::connect();
+        $consulta = "SELECT * FROM reserva";
+
+        if ($resultado = $conn->query($consulta)) {
+            while ($obj = $resultado->fetch_object('Reserva')) {
+                $arrayReservas []= $obj;
+            }
+            
+            $resultado->close();
+            return $arrayReservas;
+        }
+    }
+
+    // Método para insertar una nueva reserva
+    public static function insertReserva($PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN) {
+        $conn = db::connect(); // Conectar a la base de datos
+
+        // Preparar la consulta de inserción con parámetros seguros
+        $stmt = $conn->prepare("INSERT INTO reserva (PROOVEDOR_ID, LABORATORIO_ID, PODS, ALUMNOS, FECHA_INICIO, FECHA_FIN, TIME_ZONE_ID, HORA_INICIO, HORA_FIN) 
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        // Vincular parámetros a la consulta preparada
+        $stmt->bind_param("iiisssiss", $PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN);
+
+        $stmt->execute(); // Ejecutar la consulta
+        $result = $stmt->get_result(); // Obtener el resultado de la ejecución (si es necesario)
+        $conn->close(); // Cerrar la conexión
+
+        return $result; // Devolver el resultado de la ejecución de la consulta
+    }
+
+    public static function insertExampleReservas() {
+      $conn = db::connect(); // Conectar a la base de datos
+
+      // Preparar la consulta para insertar una reserva
+      $stmt = $conn->prepare("INSERT INTO reserva 
+          (PROOVEDOR_ID, LABORATORIO_ID, PODS, ALUMNOS, FECHA_INICIO, FECHA_FIN, TIME_ZONE_ID, HORA_INICIO, HORA_FIN) 
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+      // Reservas de ejemplo
+      $reservasEjemplo = [
+          [1, 1, 10, 10, '2024-10-01', '2024-10-02', 1, '09:00:00', '12:00:00'],
+          [2, 2, 8, 8, '2024-11-05', '2024-11-06', 2, '14:00:00', '17:00:00'],
+          [3, 3, 16, 16, '2024-12-10', '2024-12-11', 3, '08:00:00', '11:00:00']
+      ];
+
+      // Recorrer cada reserva y realizar la inserción
+      foreach ($reservasEjemplo as $reserva) {
+          // Asignar los valores a las variables correspondientes
+          $PROOVEDOR_ID = $reserva[0];
+          $LABORATORIO_ID = $reserva[1];
+          $PODS = $reserva[2];
+          $ALUMNOS = $reserva[3];
+          $FECHA_INICIO = $reserva[4];
+          $FECHA_FIN = $reserva[5];
+          $TIME_ZONE_ID = $reserva[6];
+          $HORA_INICIO = $reserva[7];
+          $HORA_FIN = $reserva[8];
+
+          // Vincular parámetros y ejecutar la inserción
+          $stmt->bind_param(
+              "iiiississ", 
+              $PROOVEDOR_ID, 
+              $LABORATORIO_ID, 
+              $PODS, 
+              $ALUMNOS, 
+              $FECHA_INICIO, 
+              $FECHA_FIN, 
+              $TIME_ZONE_ID, 
+              $HORA_INICIO, 
+              $HORA_FIN
+          );
+
+          // Ejecutar la consulta para esta reserva
+          $stmt->execute();
+      }
+      
+      $result = $stmt->get_result(); // Obtener el resultado de la ejecución (si es necesario)
+      $conn->close(); // Cerrar la conexión
+
+      return $result; // Devolver el resultado de la ejecución de la consulta
+  }
+
+    // Métodos Getters y Setters para cada atributo
+
+    /**
+     * Get the value of RESERVA_ID
+     */ 
+    public function getRESERVA_ID() 
+    {
+      return $this->RESERVA_ID;
+    }
+
+    /**
+     * Set the value of RESERVA_ID
+     *
+     * @return  self
+     */ 
+    public function setRESERVA_ID($RESERVA_ID) 
+    {
+      $this->RESERVA_ID = $RESERVA_ID;
+
+      return $this;
+    }
+
+    /**
+     * Get the value of PROOVEDOR_ID
+     */ 
+    public function getPROOVEDOR_ID() 
+    {
+      return $this->PROOVEDOR_ID;
+    }
+
+    /**
+     * Set the value of PROOVEDOR_ID
+     *
+     * @return  self
+     */ 
+    public function setPROOVEDOR_ID($PROOVEDOR_ID) 
+    {
+      $this->PROOVEDOR_ID = $PROOVEDOR_ID;
+
+      return $this;
+    }
+
+    /**
+     * Get the value of LABORATORIO_ID
+     */ 
+    public function getLABORATORIO_ID() 
+    {
+      return $this->LABORATORIO_ID;
+    }
+
+    /**
+     * Set the value of LABORATORIO_ID
+     *
+     * @return  self
+     */ 
+    public function setLABORATORIO_ID($LABORATORIO_ID) 
+    {
+      $this->LABORATORIO_ID = $LABORATORIO_ID;
+
+      return $this;
+    }
+
+    /**
+     * Get the value of PODS
+     */ 
+    public function getPODS() 
+    {
+      return $this->PODS;
+    }
+
+    /**
+     * Set the value of PODS
+     *
+     * @return  self
+     */ 
+    public function setPODS($PODS) 
+    {
+      $this->PODS = $PODS;
+
+      return $this;
+    }
+
+    /**
+     * Get the value of ALUMNOS
+     */ 
+    public function getALUMNOS() 
+    {
+      return $this->ALUMNOS;
+    }
+
+    /**
+     * Set the value of ALUMNOS
+     *
+     * @return  self
+     */ 
+    public function setALUMNOS($ALUMNOS) 
+    {
+      $this->ALUMNOS = $ALUMNOS;
+
+      return $this;
+    }
+
+    /**
+     * Get the value of FECHA_INICIO
+     */ 
+    public function getFECHA_INICIO() 
+    {
+      return $this->FECHA_INICIO;
+    }
+
+    /**
+     * Set the value of FECHA_INICIO
+     *
+     * @return  self
+     */ 
+    public function setFECHA_INICIO($FECHA_INICIO) 
+    {
+      $this->FECHA_INICIO = $FECHA_INICIO;
+
+      return $this;
+    }
+
+    /**
+     * Get the value of FECHA_FIN
+     */ 
+    public function getFECHA_FIN() 
+    {
+      return $this->FECHA_FIN;
+    }
+
+    /**
+     * Set the value of FECHA_FIN
+     *
+     * @return  self
+     */ 
+    public function setFECHA_FIN($FECHA_FIN) 
+    {
+      $this->FECHA_FIN = $FECHA_FIN;
+
+      return $this;
+    }
+
+    /**
+     * Get the value of TIME_ZONE_ID
+     */ 
+    public function getTIME_ZONE_ID() 
+    {
+      return $this->TIME_ZONE_ID;
+    }
+
+    /**
+     * Set the value of TIME_ZONE_ID
+     *
+     * @return  self
+     */ 
+    public function setTIME_ZONE_ID($TIME_ZONE_ID) 
+    {
+      $this->TIME_ZONE_ID = $TIME_ZONE_ID;
+
+      return $this;
+    }
+
+    /**
+     * Get the value of HORA_INICIO
+     */ 
+    public function getHORA_INICIO() 
+    {
+      return $this->HORA_INICIO;
+    }
+
+    /**
+     * Set the value of HORA_INICIO
+     *
+     * @return  self
+     */ 
+    public function setHORA_INICIO($HORA_INICIO) 
+    {
+      $this->HORA_INICIO = $HORA_INICIO;
+
+      return $this;
+    }
+
+    /**
+     * Get the value of HORA_FIN
+     */ 
+    public function getHORA_FIN() 
+    {
+      return $this->HORA_FIN;
+    }
+
+    /**
+     * Set the value of HORA_FIN
+     *
+     * @return  self
+     */ 
+    public function setHORA_FIN($HORA_FIN) 
+    {
+      $this->HORA_FIN = $HORA_FIN;
+
+      return $this;
+    }
+}
+?>
