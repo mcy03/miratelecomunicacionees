@@ -98,6 +98,30 @@ class ApiReservasController{
             $this->sendJsonResponse($array_laboratorios); 
             return;
         }
+
+        if(trim($accion) == "get_reservas"){
+            $reservas = Reserva::getReservas();
+            
+            $array_reservas = [];
+            foreach ($reservas as $reserva) {
+
+                $array_reservas[] = array(
+                    "RESERVA_ID" => $this->sanitizeUTF8($reserva->getRESERVA_ID()),
+                    "PROOVEDOR_ID" => $this->sanitizeUTF8($reserva->getPROOVEDOR_ID()),
+                    "LABORATORIO_ID" => $this->sanitizeUTF8($reserva->getLABORATORIO_ID()),
+                    "PODS" => $this->sanitizeUTF8($reserva->getPODS()),
+                    "ALUMNOS" => $this->sanitizeUTF8($reserva->getALUMNOS()),
+                    "FECHA_INICIO" => $this->sanitizeUTF8($reserva->getFECHA_INICIO()),
+                    "FECHA_FIN" => $this->sanitizeUTF8($reserva->getFECHA_FIN()),
+                    "TIME_ZONE_ID" => $this->sanitizeUTF8($reserva->getTIME_ZONE_ID()),
+                    "HORA_INICIO" => $this->sanitizeUTF8($reserva->getHORA_INICIO()),
+                    "HORA_FIN" => $this->sanitizeUTF8($reserva->getHORA_FIN())
+                  );
+            }
+
+            $this->sendJsonResponse($array_reservas);
+            return;
+        }
     }
 
     private function sanitizeUTF8($data) {

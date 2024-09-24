@@ -14,9 +14,10 @@ window.addEventListener("load", async function () {
   let proovedores = data[0];
   let zonasHorarias = data[1];
   let labsReservas = await get_labs_reservas();
-
+  let reservas = await get_reservas();
+  console.log(reservas);
+  console.log('reservas');
   displayLabs(labsReservas);
-
 
   displayProovedores(proovedores);
   displayZonasHorarias(zonasHorarias);
@@ -137,6 +138,20 @@ async function get_data() {
 async function get_labs_reservas() {
   let formData = new FormData();
   formData.append('accion', 'get_labs_reservas');
+
+  const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiReservas&action=api';
+
+  try {
+    const response = await axios.post(url, formData);
+
+    return response.data;
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+}
+async function get_reservas() {
+  let formData = new FormData();
+  formData.append('accion', 'get_reservas');
 
   const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiReservas&action=api';
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-09-2024 a las 11:09:07
+-- Tiempo de generación: 24-09-2024 a las 10:11:07
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -486,6 +486,34 @@ INSERT INTO `recurso` (`RECURSO_ID`, `NOMBRE`, `DESCRIPCION`, `URL`, `URL_SERVER
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `reserva`
+--
+
+CREATE TABLE `reserva` (
+  `RESERVA_ID` int(11) NOT NULL,
+  `PROOVEDOR_ID` int(11) NOT NULL,
+  `LABORATORIO_ID` int(11) NOT NULL,
+  `PODS` int(11) DEFAULT NULL,
+  `ALUMNOS` int(11) DEFAULT NULL,
+  `FECHA_INICIO` date DEFAULT NULL,
+  `FECHA_FIN` date DEFAULT NULL,
+  `TIME_ZONE_ID` int(11) NOT NULL,
+  `HORA_INICIO` time DEFAULT NULL,
+  `HORA_FIN` time DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `reserva`
+--
+
+INSERT INTO `reserva` (`RESERVA_ID`, `PROOVEDOR_ID`, `LABORATORIO_ID`, `PODS`, `ALUMNOS`, `FECHA_INICIO`, `FECHA_FIN`, `TIME_ZONE_ID`, `HORA_INICIO`, `HORA_FIN`) VALUES
+(1, 1, 1, 10, 10, '2024-10-01', '2024-10-02', 1, '09:00:00', '12:00:00'),
+(2, 2, 2, 8, 8, '2024-11-05', '2024-11-06', 2, '14:00:00', '17:00:00'),
+(3, 3, 3, 16, 16, '2024-12-10', '2024-12-11', 3, '08:00:00', '11:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tecnologia`
 --
 
@@ -679,6 +707,12 @@ ALTER TABLE `recurso`
   ADD PRIMARY KEY (`RECURSO_ID`);
 
 --
+-- Indices de la tabla `reserva`
+--
+ALTER TABLE `reserva`
+  ADD PRIMARY KEY (`RESERVA_ID`);
+
+--
 -- Indices de la tabla `tecnologia`
 --
 ALTER TABLE `tecnologia`
@@ -712,6 +746,12 @@ ALTER TABLE `zona_horaria`
 --
 ALTER TABLE `proovedor`
   MODIFY `PROOVEDOR_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `reserva`
+--
+ALTER TABLE `reserva`
+  MODIFY `RESERVA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `zona_horaria`
