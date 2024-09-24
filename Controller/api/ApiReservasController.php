@@ -87,6 +87,7 @@ class ApiReservasController{
                 $complete_name = Curso::getCOMPLETE_NAMEbyId($laboratorio->getCURSO_ID());
                 
                 $array_laboratorios[] = array(
+                    "LABORATORIO_ID" => $this->sanitizeUTF8($laboratorio->getLABORATORIO_ID()),
                     "CURSO_ID" => $this->sanitizeUTF8($laboratorio->getCURSO_ID()),
                     "NOMBRE_CURSO" => $this->sanitizeUTF8($nombre_curso),
                     "COMPLETE_NAME" => $this->sanitizeUTF8($complete_name),

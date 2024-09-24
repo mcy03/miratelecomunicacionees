@@ -15,11 +15,11 @@ window.addEventListener("load", async function () {
   let zonasHorarias = data[1];
   let labsReservas = await get_labs_reservas();
   let reservas = await get_reservas();
-  console.log(reservas);
-  console.log('reservas');
-  displayLabs(labsReservas);
 
+  // Mostrar los datos en los selects
+  displayLabs(labsReservas);
   displayProovedores(proovedores);
+  displayReservas(reservas);
   displayZonasHorarias(zonasHorarias);
 
 
@@ -78,7 +78,7 @@ function displayLabs(labs) {
     let option = document.createElement('option');
 
     // Asignar el valor y el texto a la opción
-    option.value = lab.CURSO_ID;
+    option.value = lab.LABORATORIO_ID;
     option.textContent = lab.NOMBRE_CURSO + ' - ' + lab.COMPLETE_NAME;
 
     // Agregar la opción al select
@@ -90,7 +90,7 @@ function displayLabs(labs) {
     const selectedLab = labsSelect.options[labsSelect.selectedIndex];
 
     labs.forEach(lab => {
-      if (lab.CURSO_ID === selectedLab.value) {
+      if (lab.LABORATORIO_ID === selectedLab.value) {
         pods = lab.PODS_AVALIABLE; // Actualiza la variable pods
 
         // Actualiza el rango del slider
@@ -102,19 +102,18 @@ function displayLabs(labs) {
   });
 }
 
-function displayPods(pods) {
-  let podsSelect = document.getElementById('pods');
+function displayReservas(reservas) {
+  let labsSelect = document.getElementById('laboratorios');
 
-  pods.forEach(pod => {
-    // Crear un nuevo elemento <option>
-    let option = document.createElement('option');
+  labsSelect.addEventListener('change', () => {
+    const selectedLab = labsSelect.options[labsSelect.selectedIndex];
 
-    // Asignar el valor y el texto a la opción
-    option.value = pod.CURSO_ID;
-    option.textContent = pod.PODS_AVALIABLE;
-
-    // Agregar la opción al select
-    podsSelect.appendChild(option);
+    reservas.forEach(reserva => {
+      if (reserva.LABORATORIO_ID === selectedLab.value) {
+        renderCalendars(reserva);
+        console.log(reserva);
+      }
+    });
   });
 }
 

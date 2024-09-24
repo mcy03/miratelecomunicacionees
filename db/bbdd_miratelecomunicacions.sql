@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-09-2024 a las 10:11:07
+-- Tiempo de generación: 24-09-2024 a las 11:33:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -507,9 +507,9 @@ CREATE TABLE `reserva` (
 --
 
 INSERT INTO `reserva` (`RESERVA_ID`, `PROOVEDOR_ID`, `LABORATORIO_ID`, `PODS`, `ALUMNOS`, `FECHA_INICIO`, `FECHA_FIN`, `TIME_ZONE_ID`, `HORA_INICIO`, `HORA_FIN`) VALUES
-(1, 1, 1, 10, 10, '2024-10-01', '2024-10-02', 1, '09:00:00', '12:00:00'),
-(2, 2, 2, 8, 8, '2024-11-05', '2024-11-06', 2, '14:00:00', '17:00:00'),
-(3, 3, 3, 16, 16, '2024-12-10', '2024-12-11', 3, '08:00:00', '11:00:00');
+(1, 1, 84, 4, 4, '2024-10-01', '2024-10-02', 1, '09:00:00', '12:00:00'),
+(2, 1, 84, 8, 8, '2024-11-05', '2024-11-06', 2, '14:00:00', '17:00:00'),
+(3, 1, 66, 8, 8, '2024-12-10', '2024-12-11', 3, '08:00:00', '11:00:00');
 
 -- --------------------------------------------------------
 
@@ -751,7 +751,7 @@ ALTER TABLE `proovedor`
 -- AUTO_INCREMENT de la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  MODIFY `RESERVA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `RESERVA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `zona_horaria`
