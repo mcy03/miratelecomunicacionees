@@ -188,7 +188,8 @@ button {
     padding: 5px; /* Reducido el padding */
     margin: 1px; /* Reducido el margen */
     font-size: 0.9em; /* Reducido el tamaño de fuente */
-    background: #f9f9f9;
+    background: #a0ff8e;
+    border: 1px solid #20c300;
     cursor: pointer;
     border-radius: 4px;
     transition: background 0.3s;
@@ -196,14 +197,17 @@ button {
 
   .days-grid div.unselect:hover {
     background: #ea1c24;
+    border: 1px solid #ea1c24;
     color: white;
   }
   .days-grid div.unselect.mid {
     background: #f16d73;
+    border: 1px solid #ea1c24;
     color: white;
   }
   .days-grid div.unselect.selected {
     background: #ea1c24;
+    border: 1px solid #ea1c24;
     color: white;
   }
 
@@ -441,7 +445,8 @@ button {
     padding: 5px; /* Reducido el padding */
     margin: 1px; /* Reducido el margen */
     font-size: 0.9em; /* Reducido el tamaño de fuente */
-    background: #f9f9f9;
+    background: #a0ff8e;
+    border: 1px solid #20c300;
     cursor: pointer;
     border-radius: 4px;
     transition: background 0.3s;
@@ -449,14 +454,17 @@ button {
 
   .days-grid div.unselect:hover {
     background: #ea1c24;
+    border: 1px solid #ea1c24;
     color: white;
   }
   .days-grid div.unselect.mid {
     background: #f16d73;
+    border: 1px solid #ea1c24;
     color: white;
   }
   .days-grid div.unselect.selected {
     background: #ea1c24;
+    border: 1px solid #ea1c24;
     color: white;
   }
 
@@ -711,7 +719,8 @@ button {
     padding: 5px; /* Reducido el padding */
     margin: 1px; /* Reducido el margen */
     font-size: 0.9em; /* Reducido el tamaño de fuente */
-    background: #f9f9f9;
+    background: #a0ff8e;
+    border: 1px solid #20c300;
     cursor: pointer;
     border-radius: 4px;
     transition: background 0.3s;
@@ -719,14 +728,17 @@ button {
 
   .days-grid div.unselect:hover {
     background: #ea1c24;
+    border: 1px solid #ea1c24;
     color: white;
   }
   .days-grid div.unselect.mid {
     background: #f16d73;
+    border: 1px solid #ea1c24;
     color: white;
   }
   .days-grid div.unselect.selected {
     background: #ea1c24;
+    border: 1px solid #ea1c24;
     color: white;
   }
 

@@ -110,6 +110,7 @@ function displayReservas(reservas) {
 
     reservas.forEach(reserva => {
       if (reserva.LABORATORIO_ID === selectedLab.value) {
+        renderCalendars(reserva);
         console.log(reserva);
       }
     });

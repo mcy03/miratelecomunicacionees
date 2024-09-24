@@ -105,8 +105,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
     <script src="./config/parameters.js"></script>
     <script src="./script/reservas/herramientaReservas.js"></script>
-    <script src="./script/reservas/loadData.js"></script>
     <script src="./script/reservas/calendars.js"></script>
+    <script src="./script/reservas/loadData.js"></script>
 </body>
 
 </html>
