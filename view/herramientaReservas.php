@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/assets.css">
     <link rel="stylesheet" href="./style/reservas.css">
-    <title>Reservas Mira</title>
+    <title>Mira Reservations</title>
     <!-- Favicon -->
     <link rel="icon" href="./resource/faviconMira.png" type="image/png">
 </head>
@@ -19,36 +19,36 @@
 <body>
     <div class="divGeneral">
         <div class="pasosReserva">
-            <div id="seleccionLab">Selección de laboratorio</div>
+            <div id="seleccionLab">Laboratory selection</div>
             <hr>
-            <div id="credencialesEmp">Credenciales de empresa</div>
+            <div id="credencialesEmp">Company credentials</div>
             <hr>
-            <div id="finalizarRes">Finalizar reserva</div>
+            <div id="finalizarRes">Finalize reservation</div>
         </div>
         <div class="formReserva">
             <form onsubmit="return false;" action="">
                 <div id="seleccionLabSection">
-                    <h1 class="tituloSeccion">SELECCIÓN DE LABORATORIO</h1>
+                    <h1 class="tituloSeccion">LABORATORY SELECTION</h1>
 
-                    <label for="proovedores">Proovedor:</label>
+                    <label for="proovedores">Vendor:</label>
                     <select name="proovedores" id="proovedores" required>
-                        <option value="">Seleccione un laboratorio</option>
+                        <option value="">Select a vendor</option>
                     </select>
 
-                    <label for="laboratorios">Laboratorio:</label>
+                    <label for="laboratorios">Laboratory:</label>
                     <select name="laboratorios" id="laboratorios" required>
-                        <option value="">Seleccione un laboratorio</option>
+                        <option value="">Select a laboratory</option>
                     </select>
 
                     <div id="apartadoPods">
-                        <label for="pods">Número de pods:</label>
+                        <label for="pods">Number of pods:</label>
                         <input type="text" id="pods" />
                     </div>
 
                     <div id="apartadoAlumnos">
-                        <label for="alumnos" class="labelFecha">Número de alumnos:</label>
+                        <label for="alumnos" class="labelFecha">Number of students:</label>
                         <div class="choices__inner">
-                            <input type="number" name="alumnos" id="alumnos" class="choices__input" placeholder="Seleccione número de alumnos" />
+                            <input type="number" name="alumnos" id="alumnos" class="choices__input" placeholder="Select number of students" />
                         </div>
                     </div>
 
@@ -61,7 +61,7 @@
                     </div>
 
                     <div id="apartadoFechas">
-                        <label class="labelFecha" for="fecha">Fechas:</label>
+                        <label class="labelFecha" for="fecha">Dates:</label>
                         <div id="inputDate-container">
                             <div class="calendars-container">
                                 <div class="calendar-widget" id="calendar1"></div>
@@ -72,27 +72,27 @@
                         </div>
                     </div>
 
-                    <label for="zonasHorarias">Zona horaria:</label>
+                    <label for="zonasHorarias">Time zone:</label>
                     <select name="zonasHorarias" id="zonasHorarias" required>
-                        <option value="">Seleccione zona horaria</option>
+                        <option value="">Select time zone</option>
                     </select>
                 </div>
                 <div id="credencialesEmpSection">
-                    <h1 class="tituloSeccion">CREDENCIALES DE EMPRESA</h1>
-                    <label for="laboratorios">Laboratorio:</label>
-                    <label for="alumnos">Número de alumnos:</label>
-                    <label for="fecha">Fechas:</label>
-                    <label for="pods">Núm pods:</label>
+                    <h1 class="tituloSeccion">COMPANY CREDENTIALS</h1>
+                    <label for="laboratorios">Laboratory:</label>
+                    <label for="alumnos">Number of students:</label>
+                    <label for="fecha">Dates:</label>
+                    <label for="pods">Number of pods:</label>
                 </div>
                 <div id="finalizarResSection">
-                    <h1 class="tituloSeccion">FINALIZAR RESERVA</h1>
+                    <h1 class="tituloSeccion">FINALIZE RESERVATION</h1>
                 </div>
                 <div class="navButtons">
                     <div class="prevBtnDiv">
-                        <button id="prevBtn" type="button">VOLVER</button>
+                        <button id="prevBtn" type="button">PREVIOUS</button>
                     </div>
                     <div class="nextBtnDiv">
-                        <button id="nextBtn" type="button">SIGUIENTE</button>
+                        <button id="nextBtn" type="button">NEXT</button>
                     </div>
                 </div>
             </form>

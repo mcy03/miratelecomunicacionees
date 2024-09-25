@@ -1,4 +1,3 @@
-console.log('Iniciando herramienta de reservas');
 const nextBtn = document.getElementById('nextBtn');
 const prevBtn = document.getElementById('prevBtn');
 const seleccionLabText = document.getElementById('seleccionLab');
@@ -103,7 +102,7 @@ function showPopup(message) {
 
 addEventListener('change', () => {
     if (inputPods.value !== '' && inputAlumnos.value > inputPods.value) {
-        showPopup('Recuerde que los laboratorios no se pueden trabajar de forma simultánea, ya que son 1:2 pod:alumno.');
+        showPopup('Remember that the laboratories cannot be worked on simultaneously, since they are 1:2 pod:student.');
     }
 })
 

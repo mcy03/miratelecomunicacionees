@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     const months = [
-        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
     ];
 
     let currentDate = new Date();
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const dayNames = document.createElement('div');
         dayNames.className = 'day-names';
-        ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"].forEach(day => {
+        ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].forEach(day => {
             const dayName = document.createElement('div');
             dayName.textContent = day;
             dayNames.appendChild(dayName);
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Botones de navegación
     const prevBtn = document.createElement('button');
     prevBtn.className = "monthBtn";
-    prevBtn.textContent = '<< Mes ant';
+    prevBtn.textContent = '<< Prev';
     prevBtn.addEventListener('click', (event) => {
         event.preventDefault(); // Asegura que no se recargue la página
         updateMonthIndex(-1)
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const nextBtn = document.createElement('button');
     nextBtn.className = "monthBtn";
-    nextBtn.textContent = 'Mes sig >>';
+    nextBtn.textContent = 'Next >>';
     nextBtn.addEventListener('click', (event) => {
         event.preventDefault(); // Asegura que no se recargue la página
         updateMonthIndex(1)

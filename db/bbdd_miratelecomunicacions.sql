@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-09-2024 a las 11:33:23
+-- Tiempo de generación: 25-09-2024 a las 09:00:35
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -596,37 +596,37 @@ CREATE TABLE `zona_horaria` (
 INSERT INTO `zona_horaria` (`TIME_ZONE_ID`, `TIME_ZONE`, `NOMBRE`) VALUES
 (1, 'UTC-12:00', 'Baker Island, Howland Island'),
 (2, 'UTC-11:00', 'Samoa, American Samoa'),
-(3, 'UTC-10:00', 'Tiempo estándar de Hawái-Aleutiano (HST), Tahití'),
-(4, 'UTC-09:00', 'Tiempo estándar de Alaska (AKST)'),
-(5, 'UTC-08:00', 'Tiempo estándar de la costa del Pacífico (PST)'),
-(6, 'UTC-07:00', 'Tiempo estándar de la montaña (MST)'),
-(7, 'UTC-06:00', 'Tiempo estándar de California (CST)'),
-(8, 'UTC-05:00', 'Tiempo estándar del este (EST)'),
-(9, 'UTC-04:00', 'Tiempo estándar del Atlántico (AST), hora de verano del este (EDT)'),
-(10, 'UTC-03:00', 'Tiempo de Brasil (BRT), Argentina, Uruguay'),
-(11, 'UTC-02:00', 'Islas Georgias del Sur y Sandwich del Sur'),
-(12, 'UTC-01:00', 'Azores, Cabo Verde'),
-(13, 'UTC±00:00', 'Tiempo de Greenwich (GMT), Hora Universal Coordinada (UTC)'),
-(14, 'UTC+01:00', 'Hora central europea (CET), Hora de África Occidental'),
-(15, 'UTC+02:00', 'Hora de Europa del Este (EET), Hora de Israel, Hora de Sudáfrica'),
-(16, 'UTC+03:00', 'Hora de Moscú, Hora de Arabia, Hora de Turquía'),
-(17, 'UTC+04:00', 'Hora de los Emiratos Árabes Unidos, Hora de Azerbaiyán'),
-(18, 'UTC+05:00', 'Hora de Pakistán, Hora de Uzbekistán'),
-(19, 'UTC+05:30', 'Hora de India, Hora de Sri Lanka'),
-(20, 'UTC+05:45', 'Hora de Nepal'),
-(21, 'UTC+06:00', 'Hora de Bangladés, Hora de Omán'),
-(22, 'UTC+06:30', 'Hora de Cocos (Keeling) y de las Islas Christmas'),
-(23, 'UTC+07:00', 'Hora de Indochina, Hora de Mongolia'),
-(24, 'UTC+08:00', 'Hora estándar de China, Hora de Sídney'),
-(25, 'UTC+08:45', 'Hora de Australia Occidental (ACWST)'),
-(26, 'UTC+09:00', 'Hora de Japón (JST), Hora de Corea'),
-(27, 'UTC+09:30', 'Hora de Australia Central (ACST)'),
-(28, 'UTC+10:00', 'Hora de Australia Oriental (ACST), Hora estándar de Vladivostok'),
-(29, 'UTC+10:30', 'Hora de Lord Howe Island'),
-(30, 'UTC+11:00', 'Hora de las Islas Salomón, Hora de Magadán'),
-(31, 'UTC+12:00', 'Hora estándar de Fiyi, Hora de Nueva Zelanda (NZST)'),
-(32, 'UTC+13:00', 'Hora de las Islas Tonga, Hora de Fiyi en horario de verano'),
-(33, 'UTC+14:00', 'Línea de cambio de fecha (Islas Baker y Howland, en ciertas ciscunstancias)');
+(3, 'UTC-10:00', 'Hawaii-Aleutian Standard Time (HST), Tahiti'),
+(4, 'UTC-09:00', 'Alaska Standard Time (AKST)'),
+(5, 'UTC-08:00', 'Pacific Standard Time (PST)'),
+(6, 'UTC-07:00', 'Mountain Standard Time (MST)'),
+(7, 'UTC-06:00', 'Central Standard Time (CST)'),
+(8, 'UTC-05:00', 'Eastern Standard Time (EST)'),
+(9, 'UTC-04:00', 'Atlantic Standard Time (AST), Eastern Daylight Time (EDT)'),
+(10, 'UTC-03:00', 'Brazil Time (BRT), Argentina, Uruguay'),
+(11, 'UTC-02:00', 'South Georgia and the South Sandwich Islands'),
+(12, 'UTC-01:00', 'Azores, Cape Verde'),
+(13, 'UTC±00:00', 'Greenwich Mean Time (GMT), Coordinated Universal Time (UTC)'),
+(14, 'UTC+01:00', 'Central European Time (CET), West Africa Time'),
+(15, 'UTC+02:00', 'Eastern European Time (EET), Israel Time, South Africa Time'),
+(16, 'UTC+03:00', 'Moscow Time, Arabian Time, Turkey Time'),
+(17, 'UTC+04:00', 'United Arab Emirates Time, Azerbaijan Time'),
+(18, 'UTC+05:00', 'Pakistan Time, Uzbekistan Time'),
+(19, 'UTC+05:30', 'India Time, Sri Lanka Time'),
+(20, 'UTC+05:45', 'Nepal Time'),
+(21, 'UTC+06:00', 'Bangladesh Time, Oman Time'),
+(22, 'UTC+06:30', 'Cocos (Keeling) Islands Time, Christmas Island Time'),
+(23, 'UTC+07:00', 'Indochina Time, Mongolia Time'),
+(24, 'UTC+08:00', 'China Standard Time, Sydney Time'),
+(25, 'UTC+08:45', 'Australian Western Standard Time (ACWST)'),
+(26, 'UTC+09:00', 'Japan Standard Time (JST), Korea Time'),
+(27, 'UTC+09:30', 'Australian Central Standard Time (ACST)'),
+(28, 'UTC+10:00', 'Australian Eastern Standard Time (ACST), Vladivostok Standard Time'),
+(29, 'UTC+10:30', 'Lord Howe Island Time'),
+(30, 'UTC+11:00', 'Solomon Islands Time, Magadan Time'),
+(31, 'UTC+12:00', 'Fiji Standard Time, New Zealand Standard Time (NZST)'),
+(32, 'UTC+13:00', 'Tonga Time, Fiji Daylight Time'),
+(33, 'UTC+14:00', 'International Date Line (Baker and Howland Islands, in certain circumstances)');
 
 --
 -- Índices para tablas volcadas
