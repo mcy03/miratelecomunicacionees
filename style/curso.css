@@ -1,16 +1,16 @@
-.fila-cursos {
+.fila-cursos, #loading-courses{
     display: flex;
     flex-wrap: wrap;
     gap: 20px; /* Espacio entre los cursos */
   }
   
-  .fila-cursos .curso {
+  .fila-cursos .curso, .course-loading{
     flex: 1 1 calc(30% - 20px); /* Tres cursos por fila */
     box-sizing: border-box;
     margin-bottom: 20px; /* Espacio inferior */
   }
   @media (max-width: 1024px) {
-    .fila-cursos .curso {
+    .fila-cursos .curso, .course-loading {
       flex: 1 1 calc(45% - 20px); /* Dos cursos por fila */
     }
   }
@@ -569,10 +569,6 @@
         padding: 20px;
         text-align: center;
         border-radius: 15px;
-    }
-
-    .course-loading{
-        height: 180px;
     }
 
     .curso h2{

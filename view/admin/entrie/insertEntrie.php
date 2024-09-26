@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./style/assets.css">
+    <link rel="stylesheet" type="text/css" href="./style/admin/textEditor.css?1.0">   
     <link rel="stylesheet" type="text/css" href="./style/entrada.css?1.0">
     <link rel="stylesheet" type="text/css" href="./style/admin/createEntrie.css?1.0">   
     <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
@@ -35,6 +36,76 @@
     <div class="contenido">
         <div class="contenido-entrada">
             <div id="contentEntrie"></div>
+
+            <!-- Contenedor para el editor -->
+            <div id="editor-container"></div>
+
+            <div class="editor-container">
+                <div class="toolbar">
+                    <div class="row-opciones">
+                        <select class="select-editor" id="heading-select" onchange="formatHeading()" title="Selecciona un encabezado">
+                            <option value="p">Párrafo</option>
+                            <option value="h1">Encabezado 1</option>
+                            <option value="h2">Encabezado 2</option>
+                            <option value="h3">Encabezado 3</option>
+                        </select>
+
+                        <select class="select-editor"id="color-select" onchange="changeTextColor()" title="Selecciona un color de texto">
+                            <option value="">Color de texto</option>
+                            <option value="#EA1C24">Rojo</option>
+                            <option value="#A9A8A9">Gris</option>
+                            <option value="blue">Azul</option>
+                            <option value="black">Negro</option>
+                        </select>
+
+                        <button class="button-editor" onclick="formatText('bold')" title="Negrita">
+                            <i class="fas fa-bold"></i>
+                        </button>
+                        <button class="button-editor" onclick="formatText('italic')" title="Cursiva">
+                            <i class="fas fa-italic"></i>
+                        </button>
+                        <button class="button-editor" onclick="formatText('underline')" title="Subrayado">
+                            <i class="fas fa-underline"></i>
+                        </button>
+                        <button class="button-editor" onclick="insertHorizontalRule()" title="Añadir línea horizontal">
+                            <i class="fas fa-minus"></i>
+                        </button>
+
+                        <select class="select-editor" id="view-select" onchange="toggleView()" title="Ver HTML o Editor">
+                            <option value="editor">Vista Editor</option>
+                            <option value="html">Vista HTML</option>
+                        </select>
+                    </div>
+                    <div class="row-opciones">
+                        <div class="options-insert-table">
+                            <!-- Formulario para agregar tabla -->
+                            <input type="number" id="row-count" placeholder="Filas" min="1" />
+                            <input type="number" id="col-count" placeholder="Columnas" min="1" />
+                            <button class="button-editor" onclick="insertTable()" title="Insertar Tabla">
+                                <i class="fas fa-table"></i>
+                            </button>
+                        </div>
+                    </div>                    
+                </div>
+
+                <!-- Editor de texto -->
+                <div id="editor" contenteditable="true">
+                    Escribe aquí tu contenido...
+                </div>
+
+                <!-- Vista de código fuente HTML -->
+                <textarea id="html-view"></textarea>
+                <div class="footer-editor">
+                    <!-- Input para el ancho del contenido en porcentaje -->
+                    <input type="text" id="content-width" class="width-input" placeholder="Ancho (%)" />
+
+                    <button class="submit-content-editor" onclick="submitContent()" title="Enviar contenido">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                
+            </div>
+
             <div id="div-buttons-obtions" class="button-option-entrie">
                 <form id="textarea-form">
                     <textarea type="text" name="txtDescripcion" id="txtDescripcion"></textarea> 
@@ -53,7 +124,7 @@
                     </span>
                     <div id="image-selected-message" style="margin-top: 20px; color: green;"></div>
                     <div class="inputs-size">
-                        <input id="input-anchura" type="number" placeholder="Anchura (px)">
+                        <input id="input-anchura" type="number" placeholder="Anchura (%)">
                         <input id="input-altura" type="number" placeholder="Altura (px)">
                     </div>  
                     <div class="select-position">
@@ -66,8 +137,6 @@
                     <div id="mt-20">
                         <input class="button-tag" type="submit" value="Añadir">
                     </div>
-
-                    
                 </form>
 
                 <form id="params-entrie-form">
@@ -94,6 +163,84 @@
             .catch( error => {
             console.error( error );
             } );
-        </script>
+    </script>
+
+    <script>
+        // Función para aplicar formato al texto
+        function formatText(command) {
+            document.execCommand(command, false, null);
+        }
+
+        // Función para alternar entre las vistas de HTML y Editor
+        function toggleView() {
+            const editor = document.getElementById('editor');
+            const htmlView = document.getElementById('html-view');
+            const viewSelect = document.getElementById('view-select');
+
+            if (viewSelect.value === 'html') {
+                htmlView.style.display = 'block';
+                htmlView.value = editor.innerHTML;
+                editor.style.display = 'none';
+            } else {
+                editor.style.display = 'block';
+                editor.innerHTML = htmlView.value;
+                htmlView.style.display = 'none';
+            }
+        }
+
+        // Función para insertar una línea horizontal (<hr>)
+        function insertHorizontalRule() {
+            document.execCommand('insertHorizontalRule', false, null);
+        }
+
+        // Función para aplicar el formato de encabezado seleccionado
+        function formatHeading() {
+            const select = document.getElementById('heading-select');
+            const selectedValue = select.value;
+            document.execCommand('formatBlock', false, selectedValue);
+        }
+
+        // Función para cambiar el color del texto
+        function changeTextColor() {
+            const colorSelect = document.getElementById('color-select');
+            const selectedColor = colorSelect.value;
+            document.execCommand('foreColor', false, selectedColor);
+        }
+
+        // Función para insertar una tabla
+        function insertTable() {
+            const rowCount = document.getElementById('row-count').value;
+            const colCount = document.getElementById('col-count').value;
+
+            if (rowCount > 0 && colCount > 0) {
+                let table = '<table>';
+                for (let i = 0; i < rowCount; i++) {
+                    table += '<tr>';
+                    for (let j = 0; j < colCount; j++) {
+                        table += '<td></td>'; // Celdas vacías
+                    }
+                    table += '</tr>';
+                }
+                table += '</table>';
+                document.getElementById('editor').innerHTML += table;
+            } else {
+                alert("Por favor, ingresa valores válidos para filas y columnas.");
+            }
+        }
+
+        // Función para enviar el contenido generado
+        function submitContent() {
+            const editor = document.getElementById('editor');
+            const displayContent = document.getElementById('contenido-entrada');
+            const contentWidth = document.getElementById('content-width').value;
+
+            displayContent.innerHTML += editor.innerHTML; // Mostrar el contenido del editor
+
+            // Aplicar el ancho especificado al contenido generado
+            if (contentWidth) {
+                displayContent.style.width = contentWidth.includes('%') ? contentWidth : contentWidth + '%';
+            }
+        }
+    </script>
 </body>
 </html>

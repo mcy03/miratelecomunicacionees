@@ -79,7 +79,6 @@
             </div>
         </div>
         <div id="loading-courses">
-            <div class="fila-loading-cursos">
                 <div class="course-loading">
                     <div class="contenedor_carga">
                         <div class="carga"></div>
@@ -95,8 +94,6 @@
                         <div class="carga"></div>
                     </div>
                 </div>
-            </div>
-            <div class="fila-loading-cursos">
                 <div class="course-loading">
                     <div class="contenedor_carga">
                         <div class="carga"></div>
@@ -112,8 +109,6 @@
                         <div class="carga"></div>
                     </div>
                 </div>
-            </div>
-            <div class="fila-loading-cursos">
                 <div class="course-loading">
                     <div class="contenedor_carga">
                         <div class="carga"></div>
@@ -129,10 +124,9 @@
                         <div class="carga"></div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
-
+        
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
     <script src="./script/curso/curso.js"></script> 
 </body>

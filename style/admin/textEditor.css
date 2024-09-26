@@ -1,0 +1,100 @@
+/* Estilos del editor */
+.editor-container {
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+.toolbar {
+    background-color: #f3f3f3;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px 20px 0 0 ;
+}
+
+.toolbar button, .toolbar select, .toolbar input {
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#editor {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 300px;
+    outline: none;
+}
+
+#editor[contenteditable="true"] {
+    background-color: white;
+}
+
+/* Vista del código fuente */
+#html-view {
+    display: none;
+    width: 100%;
+    min-height: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-family: monospace;
+}
+
+/* Estilos para la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+td {
+    border: 1px solid #ccc; /* Borde de celdas */
+    min-width: 100px; /* Ancho mínimo para celdas */
+    min-height: 30px; /* Alto mínimo para celdas */
+    padding: 5px; /* Espaciado interno de las celdas */
+    vertical-align: top; /* Alineación vertical de texto */
+}
+
+/* Estilos para la sección de contenido generado */
+#generated-content {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Estilos para los iconos de la barra de herramientas */
+.toolbar i {
+    margin-right: 0px;
+    
+}
+.row-opciones{
+    margin-bottom: 10px;
+}
+.button-editor{
+    border-radius: 20px;
+}
+
+.width-input {
+    width: 120px; /* Ancho del input para el tamaño */
+    margin-right: 3px;
+    border-radius: 20px 0 0 20px;
+    padding-left: 8px;
+}
+
+.select-editor{
+    border-radius: 20px;
+    text-align: center;
+}
+
+.footer-editor{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 0 0 20px 20px;
+    padding: 5px;
+}
+
+.submit-content-editor{
+    border-radius: 0 20px 20px 0;
+}

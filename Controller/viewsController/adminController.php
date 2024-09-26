@@ -152,6 +152,8 @@ class adminController{
     }
     
     
-    
+    public function editor() {
+        require_once("view/textEditor.html");
+    }
 }
 ?>

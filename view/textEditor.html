@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor HTML Básico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos del editor */
+        .editor-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .toolbar {
+            background-color: #f3f3f3;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .toolbar button, .toolbar select, .toolbar input {
+            margin-right: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #editor {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 300px;
+            outline: none;
+        }
+
+        #editor[contenteditable="true"] {
+            background-color: white;
+        }
+
+        /* Vista del código fuente */
+        #html-view {
+            display: none;
+            width: 100%;
+            min-height: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-family: monospace;
+        }
+
+        /* Estilos para la tabla */
+        table {
+            border-collapse: collapse;
+            width: 100%; /* Ocupa todo el ancho disponible */
+        }
+
+        td {
+            border: 1px solid #ccc; /* Borde de celdas */
+            min-width: 100px; /* Ancho mínimo para celdas */
+            min-height: 30px; /* Alto mínimo para celdas */
+            padding: 5px; /* Espaciado interno de las celdas */
+            vertical-align: top; /* Alineación vertical de texto */
+        }
+
+        /* Estilos para la sección de contenido generado */
+        #generated-content {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Estilos para los iconos de la barra de herramientas */
+        .toolbar i {
+            margin-right: 5px;
+        }
+
+        .width-input {
+            width: 80px; /* Ancho del input para el tamaño */
+        }
+    </style>
+</head>
+<body>
+
+<div class="editor-container">
+    <div class="toolbar">
+        <select id="heading-select" onchange="formatHeading()" title="Selecciona un encabezado">
+            <option value="p">Párrafo</option>
+            <option value="h1">Encabezado 1</option>
+            <option value="h2">Encabezado 2</option>
+            <option value="h3">Encabezado 3</option>
+        </select>
+
+        <select id="color-select" onchange="changeTextColor()" title="Selecciona un color de texto">
+            <option value="">Color de texto</option>
+            <option value="#EA1C24">Rojo</option>
+            <option value="#A9A8A9">Gris</option>
+            <option value="blue">Azul</option>
+            <option value="black">Negro</option>
+        </select>
+
+        <button onclick="formatText('bold')" title="Negrita">
+            <i class="fas fa-bold"></i>
+        </button>
+        <button onclick="formatText('italic')" title="Cursiva">
+            <i class="fas fa-italic"></i>
+        </button>
+        <button onclick="formatText('underline')" title="Subrayado">
+            <i class="fas fa-underline"></i>
+        </button>
+        <button onclick="insertHorizontalRule()" title="Añadir línea horizontal">
+            <i class="fas fa-minus"></i>
+        </button>
+        
+        <select id="view-select" onchange="toggleView()" title="Ver HTML o Editor">
+            <option value="editor">Ver Editor</option>
+            <option value="html">Ver HTML</option>
+        </select>
+
+        <!-- Formulario para agregar tabla -->
+        <input type="number" id="row-count" placeholder="Filas" min="1" />
+        <input type="number" id="col-count" placeholder="Columnas" min="1" />
+        <button onclick="insertTable()" title="Insertar Tabla">
+            <i class="fas fa-table"></i>
+        </button>
+
+        <!-- Input para el ancho del contenido en porcentaje -->
+        <input type="text" id="content-width" class="width-input" placeholder="Ancho (%)" />
+
+        <button onclick="submitContent()" title="Enviar contenido">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+
+    <!-- Editor de texto -->
+    <div id="editor" contenteditable="true">
+        Escribe aquí tu contenido...
+    </div>
+
+    <!-- Vista de código fuente HTML -->
+    <textarea id="html-view"></textarea>
+
+    <!-- Sección para mostrar el contenido generado -->
+    <div id="generated-content">
+        <h3>Contenido Generado:</h3>
+        <div id="display-content"></div>
+    </div>
+</div>
+
+<script>
+    // Función para aplicar formato al texto
+    function formatText(command) {
+        document.execCommand(command, false, null);
+    }
+
+    // Función para alternar entre las vistas de HTML y Editor
+    function toggleView() {
+        const editor = document.getElementById('editor');
+        const htmlView = document.getElementById('html-view');
+        const viewSelect = document.getElementById('view-select');
+
+        if (viewSelect.value === 'html') {
+            htmlView.style.display = 'block';
+            htmlView.value = editor.innerHTML;
+            editor.style.display = 'none';
+        } else {
+            editor.style.display = 'block';
+            editor.innerHTML = htmlView.value;
+            htmlView.style.display = 'none';
+        }
+    }
+
+    // Función para insertar una línea horizontal (<hr>)
+    function insertHorizontalRule() {
+        document.execCommand('insertHorizontalRule', false, null);
+    }
+
+    // Función para aplicar el formato de encabezado seleccionado
+    function formatHeading() {
+        const select = document.getElementById('heading-select');
+        const selectedValue = select.value;
+        document.execCommand('formatBlock', false, selectedValue);
+    }
+
+    // Función para cambiar el color del texto
+    function changeTextColor() {
+        const colorSelect = document.getElementById('color-select');
+        const selectedColor = colorSelect.value;
+        document.execCommand('foreColor', false, selectedColor);
+    }
+
+    // Función para insertar una tabla
+    function insertTable() {
+        const rowCount = document.getElementById('row-count').value;
+        const colCount = document.getElementById('col-count').value;
+
+        if (rowCount > 0 && colCount > 0) {
+            let table = '<table>';
+            for (let i = 0; i < rowCount; i++) {
+                table += '<tr>';
+                for (let j = 0; j < colCount; j++) {
+                    table += '<td></td>'; // Celdas vacías
+                }
+                table += '</tr>';
+            }
+            table += '</table>';
+            document.getElementById('editor').innerHTML += table;
+        } else {
+            alert("Por favor, ingresa valores válidos para filas y columnas.");
+        }
+    }
+
+    // Función para enviar el contenido generado
+    function submitContent() {
+        const editor = document.getElementById('editor');
+        const displayContent = document.getElementById('display-content');
+        const contentWidth = document.getElementById('content-width').value;
+
+        displayContent.innerHTML = editor.innerHTML; // Mostrar el contenido del editor
+
+        // Aplicar el ancho especificado al contenido generado
+        if (contentWidth) {
+            displayContent.style.width = contentWidth.includes('%') ? contentWidth : contentWidth + '%';
+        }
+    }
+</script>
+
+</body>
+</html>
