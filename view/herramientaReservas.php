@@ -79,10 +79,35 @@
                 </div>
                 <div id="credencialesEmpSection">
                     <h1 class="tituloSeccion">COMPANY CREDENTIALS</h1>
-                    <label for="laboratorios">Laboratory:</label>
-                    <label for="alumnos">Number of students:</label>
-                    <label for="fecha">Dates:</label>
-                    <label for="pods">Number of pods:</label>
+
+                    <h2 class="subTituloSeccion">Contact details</h2>
+                    <label for="companyName">Company name:</label>
+                    <input type="text" id="companyName" name="companyName" placeholder="Company name" required>
+                    <label for="contactName">Contact name:</label>
+                    <input type="text" id="contactName" name="contactName" placeholder="Contact name" required>
+                    <label for="contactEmail">Contact email:</label>
+                    <input type="email" id="contactEmail" name="contactEmail" placeholder="Contact email" required>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Address" required>
+                    <label for="country">Country:</label>
+                    <select name="country" id="country" required>
+                        <option value="">Select country</option>
+                    </select>
+                    <label for="city">City:</label>
+                    <select name="city" id="city" required>
+                        <option value="">Select city</option>
+                    </select>
+                    <label for="zipCode">Zip code:</label>
+                    <input type="text" id="zipCode" name="zipCode" placeholder="Zip code" required>
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" placeholder="Phone" required>
+
+                    <h2 class="subTituloSeccion">Technical details</h2>
+                    <label for="technicalContactName">Technical contact name:</label>
+                    <input type="text" id="technicalContactName" name="technicalContactName" placeholder="Technical contact name" required>
+                    <label for="technicalContactEmail">Technical contact email:</label>
+                    <input type="email" id="technicalContactEmail" name="technicalContactEmail" placeholder="Technical contact email" required>
+
                 </div>
                 <div id="finalizarResSection">
                     <h1 class="tituloSeccion">FINALIZE RESERVATION</h1>

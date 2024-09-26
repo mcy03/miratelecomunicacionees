@@ -123,6 +123,38 @@ class ApiReservasController{
             $this->sendJsonResponse($array_reservas);
             return;
         }
+
+        if(trim($accion) == "get_paises"){
+            $paises = Pais::getPaises();
+            
+            $array_paises = [];
+            foreach ($paises as $pais) {
+
+                $array_paises[] = array(
+                    "CODIGO" => $this->sanitizeUTF8($pais->getCODIGO()),
+                    "PAIS" => $this->sanitizeUTF8($pais->getPAIS())
+                  );
+            }
+
+            $this->sendJsonResponse($array_paises);
+            return;
+        }
+
+        if(trim($accion) == "get_ciudades"){
+            $ciudades = Ciudad::getCiudades();
+            
+            $array_ciudades = [];
+            foreach ($ciudades as $ciudad) {
+
+                $array_ciudades[] = array(
+                    "CODIGO_PAIS" => $this->sanitizeUTF8($ciudad->getCODIGO_PAIS()),
+                    "CIUDAD" => $this->sanitizeUTF8($ciudad->getCIUDAD())
+                  );
+            }
+
+            $this->sendJsonResponse($array_ciudades);
+            return;
+        }
     }
 
     private function sanitizeUTF8($data) {

@@ -15,12 +15,21 @@ window.addEventListener("load", async function () {
   let zonasHorarias = data[1];
   let labsReservas = await get_labs_reservas();
   let reservas = await get_reservas();
+  let paises = await get_paises();
+  let ciudades = await get_ciudades();
+  console.log(paises);
 
   // Mostrar los datos en los selects
   displayLabs(labsReservas);
   displayProovedores(proovedores);
   displayReservas(reservas);
   displayZonasHorarias(zonasHorarias);
+
+  addEventListener('change', () => {
+    if (document.getElementById('credencialesEmpSection').style.display === 'flex') {
+      displayPaises(paises);
+    }
+  });
 
 
   new Choices('#proovedores', {
@@ -35,7 +44,48 @@ window.addEventListener("load", async function () {
     searchEnabled: true,  // Habilitar la búsqueda
     itemSelectText: '',   // Texto que aparece cuando una opción es seleccionable
   });
+  const paisChoices = new Choices('#country', {
+    searchEnabled: true,  // Habilitar la búsqueda
+    itemSelectText: '',   // Texto que aparece cuando una opción es seleccionable
+  });
+  const ciudadChoices = new Choices('#city', {
+    searchEnabled: true,  // Habilitar la búsqueda
+    itemSelectText: '',   // Texto que aparece cuando una opción es seleccionable
+  });
+
+  function displayPaises(paises) {
+    try {
+        // Limpiar las opciones de países
+        paisChoices.clearChoices();
+  
+        // Insertar las opciones de países
+        const countryOptions = paises.map(pais => ({
+            value: pais.CODIGO, // El valor será el ID del país
+            label: pais.PAIS // El texto será el nombre del país
+        }));
+  
+        paisChoices.setChoices(countryOptions, 'value', 'label', true);
+    } catch (error) {
+        console.error('Error cargando países:', error);
+    }
+  }
 });
+
+
+
+
+function displayCiudades(ciudades) {
+  let ciudadesSelect = document.getElementById('city');
+  ciudades.forEach(ciudad => {
+    // Crear un nuevo elemento <option>
+    let option = document.createElement('option');
+    // Asignar el valor y el texto a la opción
+    option.value = ciudad.CIUDAD_ID;
+    option.textContent = ciudad.CIUDAD;
+    // Agregar la opción al select
+    ciudadesSelect.appendChild(option);
+  });
+}
 
 
 function displayProovedores(proovedores) {
@@ -151,6 +201,36 @@ async function get_labs_reservas() {
 async function get_reservas() {
   let formData = new FormData();
   formData.append('accion', 'get_reservas');
+
+  const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiReservas&action=api';
+
+  try {
+    const response = await axios.post(url, formData);
+
+    return response.data;
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+}
+
+async function get_paises() {
+  let formData = new FormData();
+  formData.append('accion', 'get_paises');
+
+  const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiReservas&action=api';
+
+  try {
+    const response = await axios.post(url, formData);
+
+    return response.data;
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+}
+
+async function get_ciudades() {
+  let formData = new FormData();
+  formData.append('accion', 'get_ciudades');
 
   const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiReservas&action=api';
 

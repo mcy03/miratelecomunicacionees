@@ -116,9 +116,16 @@ button {
     flex-direction: column;
   }
   .tituloSeccion {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 20px;
     text-align: center;
+    font-weight: bold;
+  }
+
+  .subTituloSeccion {
+    color:#ea1c24;
+    font-size: 16px;
+    margin-bottom: 20px;
     font-weight: bold;
   }
 
@@ -373,9 +380,16 @@ button {
     flex-direction: column;
   }
   .tituloSeccion {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 20px;
     text-align: center;
+    font-weight: bold;
+  }
+
+  .subTituloSeccion {
+    color:#ea1c24;
+    font-size: 16px;
+    margin-bottom: 20px;
     font-weight: bold;
   }
 
@@ -647,9 +661,16 @@ button {
     flex-direction: column;
   }
   .tituloSeccion {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 20px;
     text-align: center;
+    font-weight: bold;
+  }
+
+  .subTituloSeccion {
+    color:#ea1c24;
+    font-size: 16px;
+    margin-bottom: 20px;
     font-weight: bold;
   }
 

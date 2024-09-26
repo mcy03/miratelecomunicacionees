@@ -12,7 +12,7 @@
     
     define('model', array(
         'db.php', 'Certificacion.php', 'Laboratorio.php', 'Curso.php','Tecnologia.php', 'Calendario.php', 
-        'User.php', 'email_permiso.php', 'recurso.php', 'Proovedor.php', 'Zona_Horaria.php', 'Reserva.php'));
+        'User.php', 'email_permiso.php', 'recurso.php', 'Proovedor.php', 'Zona_Horaria.php', 'Reserva.php', '/Ubicaciones/Pais.php', '/Ubicaciones/Ciudad.php'));
     
     define('model_entries', array(
         'Categoria.php', 'Publicacion.php', 'Texto.php', 
