@@ -23,10 +23,12 @@
             <hr>
             <div id="credencialesEmp">Company credentials</div>
             <hr>
-            <div id="finalizarRes">Finalize reservation</div>
+            <div id="policy">Policy hightlights</div>
+            <hr>
+            <div id="finalizarRes">Confirm reservation</div>
         </div>
         <div class="formReserva">
-            <form onsubmit="return false;" action="">
+            <form id="formReserva" onsubmit="return false;">
                 <div id="seleccionLabSection">
                     <h1 class="tituloSeccion">LABORATORY SELECTION</h1>
 
@@ -46,7 +48,7 @@
                     </div>
 
                     <div id="apartadoAlumnos">
-                        <label for="alumnos" class="labelFecha">Number of students:</label>
+                        <label for="alumnos" class="labelInputChoices">Number of students:</label>
                         <div class="choices__inner">
                             <input type="number" name="alumnos" id="alumnos" class="choices__input" placeholder="Select number of students" />
                         </div>
@@ -61,7 +63,7 @@
                     </div>
 
                     <div id="apartadoFechas">
-                        <label class="labelFecha" for="fecha">Dates:</label>
+                        <label class="labelInputChoices" for="fecha">Dates:</label>
                         <div id="inputDate-container">
                             <div class="calendars-container">
                                 <div class="calendar-widget" id="calendar1"></div>
@@ -80,16 +82,24 @@
                 <div id="credencialesEmpSection">
                     <h1 class="tituloSeccion">COMPANY CREDENTIALS</h1>
 
-                    <h2 class="subTituloSeccion">Contact details</h2>
-                    <label for="companyName">Company name:</label>
-                    <input type="text" id="companyName" name="companyName" placeholder="Company name" required>
-                    <label for="contactName">Contact name:</label>
-                    <input type="text" id="contactName" name="contactName" placeholder="Contact name" required>
-                    <label for="contactEmail">Contact email:</label>
-                    <input type="email" id="contactEmail" name="contactEmail" placeholder="Contact email" required>
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" placeholder="Address" required>
-                    <label for="country">Country:</label>
+                    <h2 id="subtitleContactDetails" class="subTituloSeccion">Contact details</h2>
+                    <label for="companyName" class="labelInputChoices">Company name:</label>
+                    <div class="choices__inner">
+                        <input type="text" id="companyName" name="companyName" class="choices__input" placeholder="Company name" required>
+                    </div>
+                    <label for="contactName" class="labelInputChoices">Contact name:</label>
+                    <div class="choices__inner">
+                        <input type="text" id="contactName" name="contactName" class="choices__input" placeholder="Contact name" required>
+                    </div>
+                    <label for="contactEmail" class="labelInputChoices">Contact email:</label>
+                    <div class="choices__inner">
+                        <input type="email" id="contactEmail" name="contactEmail" class="choices__input" placeholder="Contact email" required>
+                    </div>
+                    <label for="address" class="labelInputChoices">Address:</label>
+                    <div class="choices__inner">
+                        <input type="text" id="address" name="address" class="choices__input" placeholder="Address" required>
+                    </div>
+                    <label for="country" class="labelInputChoices">Country:</label>
                     <select name="country" id="country" required>
                         <option value="">Select country</option>
                     </select>
@@ -98,28 +108,65 @@
                         <option value="">Select city</option>
                     </select>
                     <label for="zipCode">Zip code:</label>
-                    <input type="text" id="zipCode" name="zipCode" placeholder="Zip code" required>
-                    <label for="phone">Phone:</label>
-                    <input type="text" id="phone" name="phone" placeholder="Phone" required>
+                    <div class="choices__inner">
+                        <input type="text" id="zipCode" name="zipCode" class="choices__input" placeholder="Zip code" required>
+                    </div>
+                    <label for="phone" class="labelInputChoices">Phone:</label>
+                    <div class="choices__inner">
+                        <input type="text" id="phone" name="phone" class="choices__input" placeholder="Phone" required>
+                    </div>
 
                     <h2 class="subTituloSeccion">Technical details</h2>
-                    <label for="technicalContactName">Technical contact name:</label>
-                    <input type="text" id="technicalContactName" name="technicalContactName" placeholder="Technical contact name" required>
-                    <label for="technicalContactEmail">Technical contact email:</label>
-                    <input type="email" id="technicalContactEmail" name="technicalContactEmail" placeholder="Technical contact email" required>
+                    <label for="technicalContactName" class="labelInputChoices">Technical contact name:</label>
+                    <div class="choices__inner">
+                        <input type="text" id="technicalContactName" name="technicalContactName" class="choices__input" placeholder="Technical contact name" required>
+                    </div>
+                    <label for="technicalContactEmail" class="labelInputChoices">Technical contact email:</label>
+                    <div class="choices__inner">
+                        <input type="email" id="technicalContactEmail" name="technicalContactEmail" class="choices__input" placeholder="Technical contact email" required>
+                    </div>
 
                 </div>
+                <div id="policySection">
+                    <h1 class="tituloSeccion">POLICY HIGHTLIGHTS</h1>
+                </div>
                 <div id="finalizarResSection">
-                    <h1 class="tituloSeccion">FINALIZE RESERVATION</h1>
+                    <h1 class="tituloSeccion">CONFIRM RESERVATION</h1>
+                    <div class="confirmContainer">
+                        <div class="confirmContainerLab">
+                            <h2 class="subtituloConfirm">Laboratory details</h2>
+                            <div id="vendor" class="confirm_param_white""><b>Vendor: </b></div>
+                            <div id="laboratory" class="confirm_param_gray""><b>Laboratory: </b></div>
+                            <div id="num_pods" class="confirm_param_white""><b>Pods: </b></div>
+                            <div id="num_students" class="confirm_param_gray""><b>Students: </b></div>
+                            <div id="start_date" class="confirm_param_white""><b>Start date: </b></div>
+                            <div id="end_date" class="confirm_param_gray""><b>End date: </b></div>
+                            <div id="schedule" class="confirm_param_white""><b>Schedule: </b></div>
+                            <div id="time_zone" class="confirm_param_gray""><b>Time zone: </b></div>
+                        </div>
+
+                        <div class="confirmContainerEmp">
+                            <h2 class="subtituloConfirm">Company details</h2>
+                            <div id="company_name" class="confirm_param_white""><b>Company name: </b></div>
+                            <div id="company_contact" class="confirm_param_gray""><b>Company contact: </b></div>º
+                            <div id="address" class="confirm_param_white""><b>Adress: </b></div>
+                            <div id="country" class="confirm_param_gray""><b>Country: </b></div>
+                            <div id="city" class="confirm_param_white""><b>City: </b></div>
+                            <div id="zip_code" class="confirm_param_gray""><b>Zip code: </b></div>
+                            <div id="phone" class="confirm_param_white""><b>Phone: </b></div>
+                            <div id="technical_contact" class="confirm_param_gray""><b>Technical contact: </b></div>
+                        </div>                    
+                    </div>
                 </div>
                 <div class="navButtons">
-                    <div class="prevBtnDiv">
-                        <button id="prevBtn" type="button">PREVIOUS</button>
-                    </div>
-                    <div class="nextBtnDiv">
-                        <button id="nextBtn" type="button">NEXT</button>
-                    </div>
-                </div>
+                            <div class="prevBtnDiv widthContainerButtons">
+                                <button id="prevBtn" type="button">PREVIOUS</button>
+                            </div>
+                            <div class="nextBtnDiv widthContainerButtons">
+                                <button id="nextBtn" type="button">NEXT</button>
+                            </div>
+                            <div id="ghostBtn" class="widthContainerButtons"></div>
+                        </div>
             </form>
         </div>
     </div>

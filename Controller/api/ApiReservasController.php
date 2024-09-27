@@ -147,6 +147,25 @@ class ApiReservasController{
             foreach ($ciudades as $ciudad) {
 
                 $array_ciudades[] = array(
+                    "CIUDAD_ID" => $this->sanitizeUTF8($ciudad->getCIUDAD_ID()),
+                    "CODIGO_PAIS" => $this->sanitizeUTF8($ciudad->getCODIGO_PAIS()),
+                    "CIUDAD" => $this->sanitizeUTF8($ciudad->getCIUDAD())
+                  );
+            }
+
+            $this->sendJsonResponse($array_ciudades);
+            return;
+        }
+
+        if(trim($accion) == "get_ciudades_by_codigo_pais"){
+            $codigo_pais = isset($_POST["codigo_pais"]) ? $_POST["codigo_pais"] : '';
+            $ciudades = Ciudad::getCiudadesByCodigoPais($codigo_pais);
+            
+            $array_ciudades = [];
+            foreach ($ciudades as $ciudad) {
+
+                $array_ciudades[] = array(
+                    "CIUDAD_ID" => $this->sanitizeUTF8($ciudad->getCIUDAD_ID()),
                     "CODIGO_PAIS" => $this->sanitizeUTF8($ciudad->getCODIGO_PAIS()),
                     "CIUDAD" => $this->sanitizeUTF8($ciudad->getCIUDAD())
                   );

@@ -45,7 +45,7 @@ button {
     height: 25px;
     user-select: none;
   }
-  .labelFecha {
+  .labelInputChoices {
     margin-top: 30px;
   }
   .navButtons {
@@ -73,8 +73,8 @@ button {
     margin-top: 30px;
   }
   #prevBtn {
-    background-color: #ea1c24;
-    color: white;
+    background-color: #ffffff;
+    color: #ea1c24;
     border: 1px solid #ea1c24;
     border-radius: 20px;
     padding: 10px 10px;
@@ -111,6 +111,10 @@ button {
     display: none;
     flex-direction: column;
   }
+  #policySection {
+    display: none;
+    flex-direction: column;
+  }
   #finalizarResSection {
     display: none;
     flex-direction: column;
@@ -125,7 +129,7 @@ button {
   .subTituloSeccion {
     color:#ea1c24;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-top: 30px;
     font-weight: bold;
   }
 
@@ -269,7 +273,7 @@ button {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1190px) {
   .divGeneral {
     display: block;
     margin: 40px;
@@ -309,7 +313,7 @@ button {
     height: 25px;
     user-select: none;
   }
-  .labelFecha {
+  .labelInputChoices {
     margin-top: 30px;
   }
   .navButtons {
@@ -337,8 +341,8 @@ button {
     margin-top: 30px;
   }
   #prevBtn {
-    background-color: #ea1c24;
-    color: white;
+    background-color: #ffffff;
+    color: #ea1c24;
     border: 1px solid #ea1c24;
     border-radius: 20px;
     padding: 10px 10px;
@@ -375,6 +379,10 @@ button {
     display: none;
     flex-direction: column;
   }
+  #policySection {
+    display: none;
+    flex-direction: column;
+  }
   #finalizarResSection {
     display: none;
     flex-direction: column;
@@ -389,7 +397,7 @@ button {
   .subTituloSeccion {
     color:#ea1c24;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-top: 30px;
     font-weight: bold;
   }
 
@@ -533,7 +541,7 @@ button {
   }
 }
 
-@media (min-width: 1190px) {
+@media (min-width: 1191px) {
   .divGeneral {
     display: flex;
     margin: 80px;
@@ -572,7 +580,7 @@ button {
     height: 25px;
     user-select: none;
   }
-  .labelFecha {
+  .labelInputChoices {
     margin-top: 30px;
   }
   .navButtons {
@@ -606,8 +614,8 @@ button {
     margin-top: 30px;
   }
   #prevBtn {
-    background-color: #ea1c24;
-    color: white;
+    background-color: #ffffff;
+    color: #ea1c24;
     border: 1px solid #ea1c24;
     border-radius: 20px;
     padding: 10px 10px;
@@ -616,11 +624,23 @@ button {
     width: fit-content;
   }
   #prevBtn:hover {
-    background-color: #ffffff;
-    color: #ea1c24;
+    background-color: #ea1c24;
+    color: #ffffff;
     border: 1px solid #ea1c24;
     transition: background 0.3s;
   }
+
+  #ghostBtn {
+    display: none;
+  }
+
+  .widthContainerButtons {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .monthBtn {
     background-color: #ea1c24;
     color: white;
@@ -656,6 +676,10 @@ button {
     display: none;
     flex-direction: column;
   }
+  #policySection {
+    display: none;
+    flex-direction: column;
+  }
   #finalizarResSection {
     display: none;
     flex-direction: column;
@@ -670,8 +694,12 @@ button {
   .subTituloSeccion {
     color:#ea1c24;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-top: 30px;
     font-weight: bold;
+  }
+
+  #subtitleContactDetails {
+    margin-top: 0px
   }
 
   #inputDate-container {
@@ -813,4 +841,41 @@ button {
     display: none;
   }
 
+  .confirm_param_gray {
+    padding: 10px;
+    background-color: #E3E2E3;
+  }
+
+  .confirm_param_white {
+    padding: 10px;
+    background-color: #FFFFFF;
+  }
+
+  .confirmContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    
+  }
+
+  .subtituloConfirm {
+    color: #ffffff;
+    background-color: #ea1c24;
+    font-size: 16px;
+    margin-top: 30px;
+    font-weight: bold;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .confirmContainerLab {
+    margin-left: 100px;
+    width: 40%;
+  }
+
+  .confirmContainerEmp {
+    margin-right: 100px;
+    width: 40%;
+  }
 }
