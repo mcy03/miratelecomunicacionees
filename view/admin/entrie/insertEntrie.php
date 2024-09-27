@@ -9,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="./style/entrada.css?1.0">
     <link rel="stylesheet" type="text/css" href="./style/admin/createEntrie.css?1.0">   
     <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
-    <title>Document</title>
+    <title>Insert Entrie Admin</title>
+
 </head>
 <body>
     <section id="banner-principal" class="banner-principal">
@@ -87,25 +88,25 @@
                         </div>
                     </div>                    
                 </div>
+                <form id="textarea-form">
+                    <!-- Editor de texto -->
+                    <div id="editor" contenteditable="true">
+                        Escribe aquí tu contenido...
+                    </div>
 
-                <!-- Editor de texto -->
-                <div id="editor" contenteditable="true">
-                    Escribe aquí tu contenido...
-                </div>
+                    <!-- Vista de código fuente HTML -->
+                    <textarea id="html-view"></textarea>
+                    <div class="footer-editor">
+                        <!-- Input para el ancho del contenido en porcentaje -->
+                        <input type="text" id="content-width" class="width-input" placeholder="Ancho (%)" />
 
-                <!-- Vista de código fuente HTML -->
-                <textarea id="html-view"></textarea>
-                <div class="footer-editor">
-                    <!-- Input para el ancho del contenido en porcentaje -->
-                    <input type="text" id="content-width" class="width-input" placeholder="Ancho (%)" />
-
-                    <button class="submit-content-editor" onclick="submitContent()" title="Enviar contenido">
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </div>
-                
+                        <button class="submit-content-editor" title="Enviar contenido">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
-
+            <!--
             <div id="div-buttons-obtions" class="button-option-entrie">
                 <form id="textarea-form">
                     <textarea type="text" name="txtDescripcion" id="txtDescripcion"></textarea> 
@@ -114,6 +115,7 @@
                     </div>
                 </form>
             </div>
+            -->
             <button id="button-create">CREAR</button>
         </div>
         <div class="publi">
@@ -156,7 +158,7 @@
     </div>              
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>   
     <script src="./script/entrie/newEntrie.js"></script> 
-
+    <!--
     <script>
         ClassicEditor
             .create( document.querySelector( '#txtDescripcion' ) )
@@ -164,7 +166,7 @@
             console.error( error );
             } );
     </script>
-
+    -->
     <script>
         // Función para aplicar formato al texto
         function formatText(command) {
@@ -228,18 +230,94 @@
             }
         }
 
+        // Obtener el botón que ejecutará la función submitContent
+        let buttonSubmitContent = document.getElementsByClassName('submit-content-editor')[0];
+
+        // Añadir un listener al botón para ejecutar la función submitContent al hacer clic
+        buttonSubmitContent.addEventListener('click', submitContent);
+
         // Función para enviar el contenido generado
-        function submitContent() {
+        function submitContent(e) {
+            // Prevenir el comportamiento por defecto (evitar que recargue la página si es un formulario)
+            e.preventDefault();
+
             const editor = document.getElementById('editor');
-            const displayContent = document.getElementById('contenido-entrada');
+            const displayContent = document.getElementById('contentEntrie');
+
+            // Obtener el valor computado del ancho del elemento
+            let widthContentEntrie = window.getComputedStyle(displayContent).width;
+
+            // Obtener el ancho especificado por el usuario
             const contentWidth = document.getElementById('content-width').value;
 
-            displayContent.innerHTML += editor.innerHTML; // Mostrar el contenido del editor
+            
+            // Contar cuántos divs con la clase 'div-content-text' existen
+            let countDivs = document.getElementsByClassName('div-content-text').length;
 
-            // Aplicar el ancho especificado al contenido generado
-            if (contentWidth) {
-                displayContent.style.width = contentWidth.includes('%') ? contentWidth : contentWidth + '%';
+            // Crear un nuevo div
+            const newDiv = document.createElement('div');
+            newDiv.className = 'div-content-text';
+            newDiv.id = `div-position-${countDivs + 1}`;
+            newDiv.style.width = contentWidth.includes('%') ? contentWidth : contentWidth + '%'; // Ancho deseado
+            newDiv.innerText = `${editor.innerHTML}`; // Cambia el contenido según sea necesario
+
+            const filas = contentEntrie.getElementsByClassName('fila');
+            let filaActual;
+
+            if (filas.length === 0) {
+                // Si no hay filas, crear la primera fila
+                filaActual = document.createElement('div');
+                filaActual.className = 'fila';
+                contentEntrie.appendChild(filaActual);
+            } else {
+                // Si hay filas, usar la última fila
+                filaActual = filas[filas.length - 1];
             }
+
+            const divs = filaActual.getElementsByClassName('div-content-text');
+
+            addNewDiv(displayContent, filaActual, divs, newDiv)
+        }
+
+        function addNewDiv(contentEntrie, filaActual, divs, newDiv) {
+            let totalWidth;
+            if(divs.length <= 0){
+                totalWidth = 0;
+            }else{
+                // Calcular el ancho total actual de la última fila
+                totalWidth = Array.from(divs).reduce((acc, div) => {
+                    let width = window.getComputedStyle(div).width;
+                     width = parseFloat(width.replace(/px|%/g, '')); // Convertir a número
+                    return acc + width; // Sumar el ancho de cada div
+                }, 0);
+            }
+            
+
+            // Obtener el ancho del contenedor de la fila
+            const containerWidth = parseFloat(window.getComputedStyle(filaActual).width.replace(/px/g, ''));
+
+            // Calcular el ancho del nuevo div
+            const newDivWidth = parseFloat(newDiv.style.width.replace(/%/g, ''));
+            console.log(totalWidth/10 +' : '+ newDivWidth)
+            // Comprobar si hay espacio suficiente para el nuevo div
+            if (totalWidth/10 + newDivWidth <= 100) {
+                // Si hay espacio, añadir el nuevo div a la fila actual
+                filaActual.appendChild(newDiv);
+            } else {
+                // Si no hay espacio, crear una nueva fila y añadir el nuevo div allí
+                createNewRow(contentEntrie, newDiv);
+            }
+        }
+
+        function createNewRow(contentEntrie, newDiv) {
+            const newRow = document.createElement('div'); // Crear una nueva fila
+            newRow.className = 'fila'; // Asignar la clase de fila
+
+            // Añadir el nuevo div a la nueva fila
+            newRow.appendChild(newDiv);
+            
+            // Insertar la nueva fila en el DOM justo después del contenedor actual
+            contentEntrie.appendChild(newRow);
         }
     </script>
 </body>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #contentEntrie {
+            width: 1000px;
+            border: 1px solid black; /* Para visualizar el contenedor */
+        }
+        .fila {
+            display: flex;
+        }
+        .div-content-text {
+            border: 1px solid black; /* Para visualización */
+            padding: 10px; /* Para visualización */
+            box-sizing: border-box; /* Para incluir padding y border en el ancho */
+        }
+    </style>
+</head>
+<body>
+    <div id="contentEntrie">
+        <div class="fila">
+            <div class="div-content-text" id="div-position-1" style="width: 50%;"> 
+                Escribe aquí tu contenido...afws
+            </div>
+            <div class="div-content-text" id="div-position-2" style="width: 50%;">
+                Escribe aquí tu contenido...afwsefce
+            </div>
+        </div>
+    </div>
+    
+    <button id="addDivButton">Añadir Div</button>
+
+    <script>
+        document.getElementById('addDivButton').addEventListener('click', addNewDiv);
+
+        function addNewDiv(contentEntrie, filaActual, divs) {
+            //const filas = contentEntrie.getElementsByClassName('fila');
+            //const filaActual = filas[filas.length - 1]; // Obtiene la última fila
+            //const divs = filaActual.getElementsByClassName('div-content-text');
+
+            // Crear un nuevo div
+            const newDiv = document.createElement('div');
+            newDiv.className = 'div-content-text';
+            newDiv.style.width = '70%'; // Ancho deseado
+            newDiv.innerText = 'Nuevo contenido'; // Cambia el contenido según sea necesario
+
+            // Calcular el ancho total actual de la última fila
+            let totalWidth = Array.from(divs).reduce((acc, div) => {
+                let width = window.getComputedStyle(div).width;
+                width = parseFloat(width.replace(/px|%/g, '')); // Convertir a número
+                return acc + width; // Sumar el ancho de cada div
+            }, 0);
+
+            // Obtener el ancho del contenedor de la fila
+            const containerWidth = parseFloat(window.getComputedStyle(filaActual).width.replace(/px/g, ''));
+
+            // Calcular el ancho del nuevo div
+            const newDivWidth = parseFloat(newDiv.style.width.replace(/%/g, ''));
+            console.log(totalWidth/10 + ' : ' + newDivWidth)
+            // Comprobar si hay espacio suficiente para el nuevo div
+            if (totalWidth/10 + newDivWidth <= 100) {
+                // Si hay espacio, añadir el nuevo div a la fila actual
+                filaActual.appendChild(newDiv);
+            } else {
+                // Si no hay espacio, crear una nueva fila y añadir el nuevo div allí
+                createNewRow(newDiv);
+            }
+        }
+
+        function createNewRow(newDiv) {
+            const contentEntrie = document.getElementById('contentEntrie');
+            const newRow = document.createElement('div'); // Crear una nueva fila
+            newRow.className = 'fila'; // Asignar la clase de fila
+
+            // Añadir el nuevo div a la nueva fila
+            newRow.appendChild(newDiv);
+            
+            // Insertar la nueva fila en el DOM justo después del contenedor actual
+            contentEntrie.appendChild(newRow);
+        }
+    </script>
+</body>
+</html>

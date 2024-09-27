@@ -52,9 +52,15 @@
                 </div>
             </div>
        </section>
+       
         <section id="entradas" class="entradas">
 
         </section>
+        
+        <div id="not-entrie-available">
+            <h3>Ups...</h3>
+            <p>No hay entradas disponibles con estas características.</p>
+        </div>
     </div>
 
     <script src="./script/blog/blog.js"></script>

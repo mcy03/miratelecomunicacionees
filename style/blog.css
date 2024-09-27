@@ -104,6 +104,7 @@
 .enlace-entrie{
     text-decoration: none;
     color: #000;
+    width: 100%;
 }
 
 .body-entrada{
@@ -141,4 +142,41 @@
 
 .body-entrada li{
     list-style: none;
+}
+
+#not-entrie-available{
+    width: 60%;
+    background-color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    display: none;
+}
+
+#not-entrie-available h3{
+    color: #EA1C24;
+}
+
+
+
+.img-entrada {
+    position: relative; /* Permite que los elementos hijos se posicionen de forma absoluta */
+}
+
+.img-entrada h4 {
+    position: absolute;
+    bottom: 0; /* Coloca el título 10px desde la parte inferior */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el texto horizontalmente */
+    color: white; /* Color del texto para hacerlo visible sobre la imagen */
+    background-color: #ea1c23d0; /* Fondo semitransparente para mejor visibilidad */
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 18px; /* Ajusta el tamaño de la fuente si es necesario */
+    text-align: center;
+    width: 100%;
 }

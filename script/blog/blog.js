@@ -80,7 +80,7 @@ async function listenerFiltros(entries) {
             listEntries(entriesFilter);
         });
     }   
-
+    
     let filtrosLastEntrie = document.getElementsByClassName('last-entrie');
 
     for (let index = 0; index < filtrosLastEntrie.length; index++) {
@@ -203,29 +203,37 @@ async function listEntries(entries) {
     const contenedorEntradas = document.getElementById('entradas');
     let contenidoEntradas = '';
 
-    entries.forEach(entrie => {
-        contenidoEntradas += `
-            <a class="enlace-entrie" href="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entrie.PUBLICACION_ID}">
-                <article class="entrada">
-                    <div class="img-entrada">
-                        <input type="hidden" value="${entrie.PUBLICACION_ID}">
-                        <img src="./${entrie.IMG_ENTRIE}">
-                        <h4 style="display:none;">${entrie.TITULO}</h4>
-                    </div>
-                    <div class="body-entrada">
-                        <h4>${entrie.TITULO}</h4>
-                        <ul>
-                            <li><img src="./resource/iconos/calendario.png" alt="">${entrie.FECHA}</li>
-                            <li><img src="./resource/iconos/etiqueta.png" alt="">${entrie.CATEGORIA}</li>
-                            <li><img src="./resource/iconos/usuario.png" alt="">Mira</li>
-                        </ul>
-                    </div>
-                </article>
-            </a>
-        `;
-    });
+    const notEntries = document.getElementById('not-entrie-available')
+    if(entries.length <= 0){
+        notEntries.style.display = 'flex';
+        contenedorEntradas.style.display = 'none';
+    }else{
+        notEntries.style.display = 'none';
+        contenedorEntradas.style.display = 'block';
 
-    contenedorEntradas.innerHTML = contenidoEntradas;
+        entries.forEach(entrie => {
+            contenidoEntradas += `
+                <a class="enlace-entrie" href="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entrie.PUBLICACION_ID}">
+                    <article class="entrada">
+                        <div class="img-entrada">
+                            <input type="hidden" value="${entrie.PUBLICACION_ID}">
+                            <img src="./${entrie.IMG_ENTRIE}">
+                            <h4>${entrie.TITULO}</h4>
+                        </div>
+                        <div class="body-entrada">
+                            <ul>
+                                <li><img src="./resource/iconos/calendario.png" alt="">${entrie.FECHA}</li>
+                                <li><img src="./resource/iconos/etiqueta.png" alt="">${entrie.CATEGORIA}</li>
+                                <li><img src="./resource/iconos/usuario.png" alt="">Mira</li>
+                            </ul>
+                        </div>
+                    </article>
+                </a>
+            `;
+        });
+    
+        contenedorEntradas.innerHTML = contenidoEntradas;
+    }
 }
 
 

@@ -11,18 +11,12 @@ confirmName.addEventListener('click', () => {
 });
 
 const textForm = document.getElementById('textarea-form');
-const contentEntrie = document.getElementById('contentEntrie');
-textForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const textoIntroducido = document.getElementsByClassName('ck-content')[0];
-    contentEntrie.innerHTML += textoIntroducido.innerHTML;
-});
+let contentEntrie = document.getElementById('contentEntrie');
 
 const imgForm = document.getElementById('img-form');
 
 const fileInput = document.getElementById('addImg');
-    const messageContainer = document.getElementById('image-selected-message');
+const messageContainer = document.getElementById('image-selected-message');
 
     // Escuchar el cambio en el input de archivo
     fileInput.addEventListener('change', function() {
@@ -166,48 +160,41 @@ let buttonCreate = document.getElementById('button-create');
 buttonCreate.addEventListener('click', async () => {
     const divTitlePage = document.getElementById('title-page');
     const h1Element = divTitlePage.querySelector('h1');
-    let nameEntrie = '';
-        if (h1Element !== null) {
-            const h1Element = document.querySelector('#title-page h1');
-            const nameEntrie = h1Element ? h1Element.textContent : '';
-            const path = `./resource/publicaciones/${nameEntrie}/`;
+    let nameEntrie = '';  // Definido fuera del bloque if
+    if (h1Element !== null) {
+        nameEntrie = h1Element.textContent;  // Asignación directa
+        const path = `./resource/publicaciones/${nameEntrie}/`;
 
-            const imagenes = document.querySelectorAll('.img-entrie');
-            const formData = new FormData();
-            let aux = 0;
-            imagenes.forEach((imagen, index) => {
-                formData.append(`imagen-${index}`, archivoImagen[aux]);
+        const imagenes = document.querySelectorAll('.img-entrie');
+        const formData = new FormData();
+        let aux = 0;
+        imagenes.forEach((imagen, index) => {
+            formData.append(`imagen-${index}`, archivoImagen[aux]);
 
-                imagen.src = `${path}${archivoImagen[aux].name}`;
-                aux++;
-            });
+            imagen.src = `${path}${archivoImagen[aux].name}`;
+            aux++;
+        });
 
-            let description = document.getElementById('value-description').value;
-            let category = document.getElementById('option-category').value;
+        let description = document.getElementById('value-description').value;
+        let category = document.getElementById('option-category').value;
 
-            formData.append('accion', 'insert_entrie');
-            formData.append('nombre', nameEntrie);
-            formData.append('description', description);
-            formData.append('imgEntrie', imagenBannerGuardar);
-            formData.append('category', category);
-            formData.append('content', contentEntrie.innerHTML);
-            formData.append('cant_img', cantImg);
-            console.log('nombre: '+ nameEntrie);
-            console.log('description: '+ description);
-            console.log('imgEntrie: '+ imagenBannerGuardar);
-            console.log('category: '+ category);
-            console.log('content: '+ contentEntrie.innerHTML);
-            console.log('cant_img: '+ cantImg);
-            const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiPublicacion&action=api';
+        formData.append('accion', 'insert_entrie');
+        formData.append('nombre', nameEntrie);
+        formData.append('description', description);
+        formData.append('imgEntrie', imagenBannerGuardar);
+        formData.append('category', category);
+        formData.append('content', contentEntrie.innerHTML);
+        formData.append('cant_img', cantImg);
 
-            try {
-                const response = await axios.post(url, formData);
-                console.log(response.data);
-            } catch (error) {
-                console.error('Error:', error.message);
-            }
+        const url = 'http://127.0.0.1/miratelecomunicacionees/?controller=ApiPublicacion&action=api';
 
-        }else{
-            console.log("introduce nombre de entrada");
+        try {
+            const response = await axios.post(url, formData);
+            console.log(response.data);
+        } catch (error) {
+            console.error('Error:', error.message);
         }
+    } else {
+        console.log("introduce nombre de entrada");
+    }
 });
