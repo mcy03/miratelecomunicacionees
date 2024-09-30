@@ -135,26 +135,26 @@
                     <div class="confirmContainer">
                         <div class="confirmContainerLab">
                             <h2 class="subtituloConfirm">Laboratory details</h2>
-                            <div id="vendor" class="confirm_param_white""><b>Vendor: </b></div>
-                            <div id="laboratory" class="confirm_param_gray""><b>Laboratory: </b></div>
-                            <div id="num_pods" class="confirm_param_white""><b>Pods: </b></div>
-                            <div id="num_students" class="confirm_param_gray""><b>Students: </b></div>
-                            <div id="start_date" class="confirm_param_white""><b>Start date: </b></div>
-                            <div id="end_date" class="confirm_param_gray""><b>End date: </b></div>
-                            <div id="schedule" class="confirm_param_white""><b>Schedule: </b></div>
-                            <div id="time_zone" class="confirm_param_gray""><b>Time zone: </b></div>
+                            <div id="confirmVendor" class="confirm_param_white""></div>
+                            <div id="confirmLaboratory" class="confirm_param_gray""></div>
+                            <div id="confirmNum_pods" class="confirm_param_white""></div>
+                            <div id="confirmNum_students" class="confirm_param_gray""></div>
+                            <div id="confirmStart_date" class="confirm_param_white""></div>
+                            <div id="confirmEnd_date" class="confirm_param_gray""></div>
+                            <div id="confirmSchedule" class="confirm_param_white""></div>
+                            <div id="confirmTime_zone" class="confirm_param_gray""></div>
                         </div>
 
                         <div class="confirmContainerEmp">
                             <h2 class="subtituloConfirm">Company details</h2>
-                            <div id="company_name" class="confirm_param_white""><b>Company name: </b></div>
-                            <div id="company_contact" class="confirm_param_gray""><b>Company contact: </b></div>º
-                            <div id="address" class="confirm_param_white""><b>Adress: </b></div>
-                            <div id="country" class="confirm_param_gray""><b>Country: </b></div>
-                            <div id="city" class="confirm_param_white""><b>City: </b></div>
-                            <div id="zip_code" class="confirm_param_gray""><b>Zip code: </b></div>
-                            <div id="phone" class="confirm_param_white""><b>Phone: </b></div>
-                            <div id="technical_contact" class="confirm_param_gray""><b>Technical contact: </b></div>
+                            <div id="confirmCompany_name" class="confirm_param_white""></div>
+                            <div id="confirmCompany_contact" class="confirm_param_gray""></div>
+                            <div id="confirmAddress" class="confirm_param_white""></div>
+                            <div id="confirmCountry" class="confirm_param_gray""></div>
+                            <div id="confirmCity" class="confirm_param_white""></div>
+                            <div id="confirmZip_code" class="confirm_param_gray""></div>
+                            <div id="confirmPhone" class="confirm_param_white""></div>
+                            <div id="confirmTechnical_contact" class="confirm_param_gray""></div>
                         </div>                    
                     </div>
                 </div>
@@ -176,8 +176,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
     <script src="./config/parameters.js"></script>
-    <script src="./script/reservas/herramientaReservas.js"></script>
-    <script src="./script/reservas/calendars.js"></script>
+    <script type="module" src="./script/reservas/herramientaReservas.js"></script>
+    <script type="module" src="./script/reservas/calendars.js"></script>º
     <script src="./script/reservas/loadData.js"></script>
 </body>
 

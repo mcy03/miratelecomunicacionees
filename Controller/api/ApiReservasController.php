@@ -100,6 +100,31 @@ class ApiReservasController{
             return;
         }
 
+        if(trim($accion) == "get_clientes"){
+            $clientes = Cliente::getClientes();
+            
+            $array_clientes = [];
+            foreach ($clientes as $cliente) {
+
+                $array_clientes[] = array(
+                    "CLIENTE_ID" => $this->sanitizeUTF8($cliente->getCLIENTE_ID()),
+                    "EMPRESA" => $this->sanitizeUTF8($cliente->getEMPRESA()),
+                    "NOMBRE_CONTACTO" => $this->sanitizeUTF8($cliente->getNOMBRE_CONTACTO()),
+                    "EMAIL_CONTACTO" => $this->sanitizeUTF8($cliente->getEMAIL_CONTACTO()),
+                    "DIRECCION" => $this->sanitizeUTF8($cliente->getDIRECCION()),
+                    "PAIS" => $this->sanitizeUTF8($cliente->getPAIS()),
+                    "CIUDAD" => $this->sanitizeUTF8($cliente->getCIUDAD()),
+                    "CODIGO_POSTAL" => $this->sanitizeUTF8($cliente->getCODIGO_POSTAL()),
+                    "TELEFONO" => $this->sanitizeUTF8($cliente->getTELEFONO()),
+                    "NOMBRE_CONTACTO_TECH" => $this->sanitizeUTF8($cliente->getNOMBRE_CONTACTO_TECH()),
+                    "EMAIL_CONTACTO_TECH" => $this->sanitizeUTF8($cliente->getEMAIL_CONTACTO_TECH())
+                  );
+            }
+
+            $this->sendJsonResponse($array_clientes);
+            return;
+        }
+
         if(trim($accion) == "get_reservas"){
             $reservas = Reserva::getReservas();
             
@@ -172,6 +197,41 @@ class ApiReservasController{
             }
 
             $this->sendJsonResponse($array_ciudades);
+            return;
+        }
+
+        if (trim($accion) == "insert_cliente") {
+            $EMPRESA = isset($_POST["companyName"]) ? $_POST["companyName"] : '';
+            $NOMBRE_CONTACTO = isset($_POST["contactName"]) ? $_POST["contactName"] : '';
+            $EMAIL_CONTACTO = isset($_POST["contactEmail"]) ? $_POST["contactEmail"] : '';
+            $DIRECCION = isset($_POST["address"]) ? $_POST["address"] : '';
+            $PAIS = isset($_POST["country"]) ? $_POST["country"] : '';
+            $CIUDAD = isset($_POST["city"]) ? $_POST["city"] : '';
+            $CODIGO_POSTAL = isset($_POST["zipCode"]) ? $_POST["zipCode"] : '';
+            $TELEFONO = isset($_POST["phone"]) ? $_POST["phone"] : '';
+            $NOMBRE_CONTACTO_TECH = isset($_POST["technicalContactName"]) ? $_POST["technicalContactName"] : '';
+            $EMAIL_CONTACTO_TECH = isset($_POST["technicalContactEmail"]) ? $_POST["technicalContactEmail"] : '';
+ 
+            $cliente = Cliente::insertCliente($EMPRESA, $NOMBRE_CONTACTO, $EMAIL_CONTACTO, $DIRECCION, $PAIS, $CIUDAD, $CODIGO_POSTAL, $TELEFONO, $NOMBRE_CONTACTO_TECH, $EMAIL_CONTACTO_TECH);
+            
+            $this->sendJsonResponse($cliente);
+            return;
+        }
+
+        if (trim($accion) == "insert_reserva") {
+            $PROOVEDOR_ID = isset($_POST["PROOVEDOR_ID"]) ? $_POST["PROOVEDOR_ID"] : '';
+            $LABORATORIO_ID = isset($_POST["LABORATORIO_ID"]) ? $_POST["LABORATORIO_ID"] : '';
+            $PODS = isset($_POST["PODS"]) ? $_POST["PODS"] : '';
+            $ALUMNOS = isset($_POST["ALUMNOS"]) ? $_POST["ALUMNOS"] : '';
+            $FECHA_INICIO = isset($_POST["FECHA_INICIO"]) ? $_POST["FECHA_INICIO"] : '';
+            $FECHA_FIN = isset($_POST["FECHA_FIN"]) ? $_POST["FECHA_FIN"] : '';
+            $TIME_ZONE_ID = isset($_POST["TIME_ZONE_ID"]) ? $_POST["TIME_ZONE_ID"] : '';
+            $HORA_INICIO = isset($_POST["HORA_INICIO"]) ? $_POST["HORA_INICIO"] : '';
+            $HORA_FIN = isset($_POST["HORA_FIN"]) ? $_POST["HORA_FIN"] : '';
+            $CLIENTE_ID = isset($_POST["clienteId"]) ? $_POST["clienteId"] : '';
+            $reserva = Reserva::insertReserva($PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN, $CLIENTE_ID);
+
+            $this->sendJsonResponse($reserva);
             return;
         }
     }

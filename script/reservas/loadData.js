@@ -21,7 +21,6 @@ window.addEventListener("load", async function () {
   // Mostrar los datos en los selects
   displayLabs(labsReservas);
   displayProovedores(proovedores);
-  displayReservas(reservas);
   displayZonasHorarias(zonasHorarias);
 
   new Choices('#proovedores', {
@@ -51,7 +50,6 @@ window.addEventListener("load", async function () {
       if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
         // Verifica si el display ha cambiado a 'flex'
         if (getComputedStyle(credencialesEmpSection).display === 'flex') {
-          console.log('Paises cargados');
           displayPaises(paises);
         }
       }
@@ -169,6 +167,7 @@ function displayLabs(labs) {
 
   // Agregar evento de cambio al select
   labsSelect.addEventListener('change', function () {
+    displayReservas(reservas);
     const selectedLab = labsSelect.options[labsSelect.selectedIndex];
 
     labs.forEach(lab => {
