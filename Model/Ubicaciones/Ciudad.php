@@ -30,6 +30,20 @@ class Ciudad {
       }
     }
 
+    public static function getCiudadesByCodigoPais($codigo_pais){
+      $conn = db::connect();
+      $consulta = "SELECT * FROM ciudades WHERE CODIGO_PAIS = '$codigo_pais'";
+
+      if ($resultado = $conn->query($consulta)) {
+          while ($obj = $resultado->fetch_object('Ciudad')) {
+              $arrayCiudades []= $obj;
+          }
+          
+          $resultado->close();
+          return $arrayCiudades;
+      }
+    }
+
     public static function insertCiudad($CODIGO_PAIS, $CIUDAD){    
       $conn = db::connect(); // Establecer conexión a la base de datos
 

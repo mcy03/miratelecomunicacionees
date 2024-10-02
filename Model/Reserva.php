@@ -18,6 +18,7 @@ class Reserva {
     protected $TIME_ZONE_ID;
     protected $HORA_INICIO;
     protected $HORA_FIN;
+    protected $CLIENTE_ID;
     
     public function __construct(){
         
@@ -39,15 +40,15 @@ class Reserva {
     }
 
     // Método para insertar una nueva reserva
-    public static function insertReserva($PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN) {
+    public static function insertReserva($PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN, $CLIENTE_ID) {
         $conn = db::connect(); // Conectar a la base de datos
 
         // Preparar la consulta de inserción con parámetros seguros
-        $stmt = $conn->prepare("INSERT INTO reserva (PROOVEDOR_ID, LABORATORIO_ID, PODS, ALUMNOS, FECHA_INICIO, FECHA_FIN, TIME_ZONE_ID, HORA_INICIO, HORA_FIN) 
+        $stmt = $conn->prepare("INSERT INTO reserva (PROOVEDOR_ID, LABORATORIO_ID, PODS, ALUMNOS, FECHA_INICIO, FECHA_FIN, TIME_ZONE_ID, HORA_INICIO, HORA_FIN, CLIENTE_ID) 
                                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
         // Vincular parámetros a la consulta preparada
-        $stmt->bind_param("iiisssiss", $PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN);
+        $stmt->bind_param("iiisssissi", $PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN, $CLIENTE_ID);
 
         $stmt->execute(); // Ejecutar la consulta
         $result = $stmt->get_result(); // Obtener el resultado de la ejecución (si es necesario)
@@ -61,14 +62,14 @@ class Reserva {
 
       // Preparar la consulta para insertar una reserva
       $stmt = $conn->prepare("INSERT INTO reserva 
-          (PROOVEDOR_ID, LABORATORIO_ID, PODS, ALUMNOS, FECHA_INICIO, FECHA_FIN, TIME_ZONE_ID, HORA_INICIO, HORA_FIN) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+          (PROOVEDOR_ID, LABORATORIO_ID, PODS, ALUMNOS, FECHA_INICIO, FECHA_FIN, TIME_ZONE_ID, HORA_INICIO, HORA_FIN, CLIENTE_ID) 
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
       // Reservas de ejemplo
       $reservasEjemplo = [
-          [1, 84, 4, 4, '2024-10-01', '2024-10-02', 1, '09:00:00', '12:00:00'],
-          [1, 84, 8, 8, '2024-11-05', '2024-11-06', 2, '14:00:00', '17:00:00'],
-          [1, 66, 8, 8, '2024-12-10', '2024-12-11', 3, '08:00:00', '11:00:00']
+          [1, 84, 4, 4, '2024-10-01', '2024-10-02', 1, '09:00:00', '12:00:00', '1'],
+          [1, 84, 8, 8, '2024-11-05', '2024-11-06', 2, '14:00:00', '17:00:00', '2'],
+          [1, 66, 8, 8, '2024-12-10', '2024-12-11', 3, '08:00:00', '11:00:00', '3']
       ];
 
       // Recorrer cada reserva y realizar la inserción
@@ -83,10 +84,11 @@ class Reserva {
           $TIME_ZONE_ID = $reserva[6];
           $HORA_INICIO = $reserva[7];
           $HORA_FIN = $reserva[8];
+          $CLIENTE_ID = $reserva[9];
 
           // Vincular parámetros y ejecutar la inserción
           $stmt->bind_param(
-              "iiiississ", 
+              "iiiississi", 
               $PROOVEDOR_ID, 
               $LABORATORIO_ID, 
               $PODS, 
@@ -95,7 +97,8 @@ class Reserva {
               $FECHA_FIN, 
               $TIME_ZONE_ID, 
               $HORA_INICIO, 
-              $HORA_FIN
+              $HORA_FIN,
+              $CLIENTE_ID
           );
 
           // Ejecutar la consulta para esta reserva

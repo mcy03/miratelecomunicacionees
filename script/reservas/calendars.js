@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let days = 5; // Número total de días que queremos seleccionar
 
     // Array para almacenar las fechas seleccionadas
-    let selectedDates = [];
+    window.selectedDates = [];
 
     function renderCalendar(date, calendarId) {
         const calendarEl = document.getElementById(calendarId);
