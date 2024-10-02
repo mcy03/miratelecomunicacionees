@@ -151,57 +151,44 @@ class ApiPublicacionController{
             $this->sendJsonResponse($array_imgs);
             return;
 
-        } elseif (trim($accion) == "insert_entrie") {
-            $titulo = $_POST["nombre"];
-            $description = $_POST["description"];
+        } elseif(trim($accion) == "insert_entrie"){
+            $titulo = $POST["nombre"];
+            $description = $POST["description"];
             $imgEntrie = $_FILES["imgEntrie"];
-            $category = $_POST["category"];
-            $content = $_POST["content"];
-            $cant = $_POST["cant_img"];
+            $category = $POST["category"];
+            $content = $POST["content"];
+            $cant = $POST["cant_img"];
             $imagenes = array();
-        
-            // Recolectar todas las imágenes enviadas
+            
             for ($i = 0; $i < $cant; $i++) {
                 $imagenes[$i] = $_FILES["imagen-$i"];
             }
-        
             echo $titulo;
             $directorioDestino = "resource/publicaciones/$titulo/";
-        
-            // Verificar si el directorio existe y crearlo si no existe
-            if (!file_exists($directorioDestino) && !mkdir($directorioDestino, 0777, true)) {
-                $this->sendJsonResponse(["error" => "Error al crear el directorio."]);
-                return;
-            }
-        
-            // Mover todas las imágenes
-            foreach ($imagenes as $imagen) {
-                $nombreArchivo = $imagen["name"];
-                $archivoTemporal = $imagen["tmp_name"];
-                $rutaDestinoCompleta = $directorioDestino . $nombreArchivo;
-        
-                if (!move_uploaded_file($archivoTemporal, $rutaDestinoCompleta)) {
-                    $this->sendJsonResponse(["error" => "Error al mover la imagen '$nombreArchivo'."]);
-                    return;
+
+            if (!file_exists($directorioDestino) && mkdir($directorioDestino, 0777, true)) {
+                foreach ($imagenes as $imagen) {
+                    $nombreArchivo = $imagen["name"];
+                    $archivoTemporal = $imagen["tmp_name"];
+                    $rutaDestinoCompleta = $directorioDestino . $nombreArchivo;
+
+                    if (move_uploaded_file($archivoTemporal, $rutaDestinoCompleta)) {
+                        $nombreArchivo = $imgEntrie["name"];
+                        $archivoTemporal = $imgEntrie["tmp_name"];
+                        $rutaDestinoCompleta = $directorioDestino . $nombreArchivo;
+
+                        if (move_uploaded_file($archivoTemporal, $rutaDestinoCompleta)) {
+                            Publicacion::setEntrie($category, $titulo, $description, $rutaDestinoCompleta, $content, 'PUBLIC');
+                            $this->sendJsonResponse($imagenes);
+                            return;
+                        } else {
+                            $this->sendJsonResponse(["error" => "Error al mover la imagen '$nombreArchivo'."]);
+                            return;
+                        }
+                    }
                 }
             }
-        
-            // Mover la imagen de la entrada principal (imgEntrie)
-            $nombreArchivoBanner = $imgEntrie["name"];
-            $archivoTemporalBanner = $imgEntrie["tmp_name"];
-            $rutaDestinoCompletaBanner = $directorioDestino . $nombreArchivoBanner;
-        
-            if (!move_uploaded_file($archivoTemporalBanner, $rutaDestinoCompletaBanner)) {
-                $this->sendJsonResponse(["error" => "Error al mover la imagen principal '$nombreArchivoBanner'."]);
-                return;
-            }
-        
-            // Guardar la entrada en la base de datos o realizar la lógica correspondiente
-            Publicacion::setEntrie($category, $titulo, $description, $rutaDestinoCompletaBanner, $content, 'PUBLIC');
-            $this->sendJsonResponse($imagenes);  // Devolver las imágenes procesadas como respuesta
-            return;
         }
-        
 
         
     }

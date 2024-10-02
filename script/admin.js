@@ -79,7 +79,7 @@
                         <a id="entrie-${entry.PUBLICACION_ID}" class="enlaceEntrie" href="http://127.0.0.1/miratelecomunicacionees/?controller=entrada&entrie=${entry.PUBLICACION_ID}">
                         <div class="body-data body-entrie">
                             <div class="data-img entrie-img">
-                                <img src="./resource/publicaciones/${entry.IMG_ENTRIE}" alt="">
+                                <img src="${entry.IMG_ENTRIE}" alt="">
                             </div>
 
                                 <div class="info-data info-entrie">

@@ -4,6 +4,9 @@ body{
 
 .banner-principal{
     justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .banner-principal h1{

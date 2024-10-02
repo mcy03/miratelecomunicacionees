@@ -13,8 +13,7 @@ class cursoController{
         session_start();
     
         if (sizeof($_GET) == 3) {
-            $keys = array_keys($_GET);
-            $courseName = $keys[2];
+            $courseName = $_GET['curso'];
             $course = Curso::getCourseByName($courseName)[0];
         }else {
             header('Location: '.url);
