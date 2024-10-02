@@ -841,6 +841,10 @@ button {
     display: none;
   }
 
+  #apartadoSchedule {
+    display: none;
+  }
+
   .confirm_param_gray {
     padding: 10px;
     background-color: #E3E2E3;
@@ -878,4 +882,35 @@ button {
     margin-right: 100px;
     width: 40%;
   }
+
+  #confirmComentariosSection {
+    display: flex;
+    flex-direction: column;
+    width: 87%;
+    margin-top: 30px;
+    color: #6c757d;
+    margin: auto;
+  }
+  #confirmComentariosSection div {
+    padding: 10px;
+  }
+  .error {
+    border: 1px solid #ea1c24;
+    background-color: #f16d73;
+    color : #ffffff;
+    padding: 5px;
+    margin-top: -24px;
+    font-size: 10px;
+
+    /* Transiciones */
+    max-height: 0; /* Inicialmente colapsado */
+    opacity: 0;    /* Inicialmente invisible */
+    overflow: hidden; /* Para ocultar el contenido que no se muestra */
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Transición de max-height y opacity */
+  }
+
+  .error.show {
+    max-height: fit-content; /* Altura máxima cuando está visible (ajusta según el contenido) */
+    opacity: 1;        /* Totalmente visible */
+}
 }

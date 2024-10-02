@@ -4,7 +4,7 @@ let pods = 5;
 // Inicializa el ionRangeSlider una vez al cargar la página
 $(document).ready(function () {
   $("#pods").ionRangeSlider({
-    min: 0,
+    min: 1,
     max: pods,
     from: 0,
   });
@@ -40,6 +40,10 @@ window.addEventListener("load", async function () {
     itemSelectText: '',   // Texto que aparece cuando una opción es seleccionable
   });
   const ciudadChoices = new Choices('#city', {
+    searchEnabled: true,  // Habilitar la búsqueda
+    itemSelectText: '',   // Texto que aparece cuando una opción es seleccionable
+  });
+  new Choices('#schedule', {
     searchEnabled: true,  // Habilitar la búsqueda
     itemSelectText: '',   // Texto que aparece cuando una opción es seleccionable
   });

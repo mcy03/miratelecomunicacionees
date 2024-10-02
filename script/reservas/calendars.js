@@ -77,6 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         dayDivs.forEach(dayDiv => {
             dayDiv.addEventListener('click', () => {
+                if (document.getElementsByClassName('error').length > 0) {
+                    let error = document.getElementsByClassName('error')[0];
+                    error.classList.remove('show');
+                }
+                
                 let allDays = document.querySelectorAll('.unselect');
                 allDays.forEach(d => {
                     d.classList.remove('selected');
