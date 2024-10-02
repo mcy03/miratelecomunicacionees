@@ -8,11 +8,12 @@
     <title><?=$entrada->getTITULO()?></title>
 </head>
 <body>
-    <section class="banner-principal"  style="background: url('<?=$entrada->getIMG_ENTRIE()?>')">
+    <section class="banner-principal" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<?=$entrada->getIMG_ENTRIE()?>'); background-size: cover; background-position: center;">
         <div class="title-page">
             <h1><?=$entrada->getTITULO()?></h1>   
         </div>
     </section>
+
     <section class="ubicacion">
         <div class="ruta-ubi">
             <a class="ruta-page" href="<?=url?>">Home / </a><a class="ruta-page"  href="<?=url.'?controller=blog'?>">On the Go / </a><p class="page"><?=$entrada->getTITULO()?></p>

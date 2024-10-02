@@ -3,18 +3,29 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const categorias = await getCategories();
     listCategories(categorias);
+
     const entries = await getEntries();
     listLastEntries(entries);
-    listFechas();
+    listFechas(entries);
     listenerFiltros(entries);
 
-    
     listEntries(entries);
-
-    
     
     listenerEntrie();
-})
+    
+    // Escuchar los cambios en el campo de búsqueda
+    const buscador = document.querySelector('.buscador input');
+    buscador.addEventListener('input', function() {
+        let searchText = buscador.value.toLowerCase();
+        let filteredEntries = entries.filter(entrie => 
+            entrie.TITULO.toLowerCase().includes(searchText) || 
+            entrie.CATEGORIA.toLowerCase().includes(searchText) ||
+            entrie.FECHA.toLowerCase().includes(searchText)
+        );
+        listEntries(filteredEntries); // Mostrar las entradas filtradas
+    });
+});
+
 
 
 function inicializarFiltros() {
@@ -107,6 +118,9 @@ function filtrar(entries) {
     let filtrosLastEntrie = document.getElementsByClassName('last-entrie');
     let lastEntrieSelected = Array.from(filtrosLastEntrie).filter(entrada => entrada.style.color === 'rgb(234, 28, 36)');
 
+    let filtrosFechas = document.getElementsByClassName('fecha');
+    let fechaSelected = Array.from(filtrosFechas).filter(fecha => fecha.style.color === 'rgb(234, 28, 36)');
+
     for (let index = 0; index < catSelected.length; index++) {
         entries = entries.filter(entrada => entrada.CATEGORIA === catSelected[index].innerHTML);
     }
@@ -114,23 +128,86 @@ function filtrar(entries) {
     for (let index = 0; index < lastEntrieSelected.length; index++) {
         entries = entries.filter(entrada => entrada.TITULO === lastEntrieSelected[index].innerHTML);
     }
-    if (lastEntrieSelected.length > 0 || catSelected.length > 0) {
+    for (let index = 0; index < fechaSelected.length; index++) {
+        // Obtener el texto de la fecha seleccionada
+        const fechaSeleccionada = fechaSelected[index].innerHTML;
+        
+        // Convertir el texto de la fecha seleccionada a un formato de rango de fechas
+        let startDate, endDate;
+        switch (fechaSeleccionada) {
+            case "enero 2024":
+                startDate = "2024-01-01";
+                endDate = "2024-01-31";
+                break;
+            case "febrero 2024":
+                startDate = "2024-02-01";
+                endDate = "2024-02-29"; // Febrero tiene 29 días en 2024 (año bisiesto)
+                break;
+            case "marzo 2024":
+                startDate = "2024-03-01";
+                endDate = "2024-03-31";
+                break;
+            case "abril 2024":
+                startDate = "2024-04-01";
+                endDate = "2024-04-30";
+                break;
+            case "mayo 2024":
+                startDate = "2024-05-01";
+                endDate = "2024-05-31";
+                break;
+            case "junio 2024":
+                startDate = "2024-06-01";
+                endDate = "2024-06-30";
+                break;
+            case "julio 2024":
+                startDate = "2024-07-01";
+                endDate = "2024-07-31";
+                break;
+            case "agosto 2024":
+                startDate = "2024-08-01";
+                endDate = "2024-08-31";
+                break;
+            case "septiembre 2024":
+                startDate = "2024-09-01";
+                endDate = "2024-09-30";
+                break;
+            case "octubre 2024":
+                startDate = "2024-10-01";
+                endDate = "2024-10-31";
+                break;
+            case "noviembre 2024":
+                startDate = "2024-11-01";
+                endDate = "2024-11-30";
+                break;
+            case "diciembre 2024":
+                startDate = "2024-12-01";
+                endDate = "2024-12-31";
+                break;
+        }
+    
+        // Filtrar las entradas por el rango de fechas
+        entries = entries.filter(entrada => {
+            const entradaFecha = entrada.FECHA;
+            return entradaFecha >= startDate && entradaFecha <= endDate;
+        });
+    }
+    
+
+    if (lastEntrieSelected.length > 0 || catSelected.length > 0 || fechaSelected.length > 0) {
         let dropCat = document.getElementById('quitar-categoria');
-                
         dropCat.style.display = 'block';
 
         dropCat.addEventListener('click', async function() {
             const entriess = await getEntries();
-
             resetColours();
             listEntries(entriess);
-
             dropCat.style.display = 'none';
         });
     }
-    
+
     return entries;
 }
+
 
 function resetColours() {
     let filtrosCategorias = document.getElementsByClassName('categorias');
@@ -184,20 +261,39 @@ async function listLastEntries(lastEntries) {
     contenedorEntries.innerHTML += contenidoEnlaces;
 }
 
-function listFechas() {
-    // Array con los valores
-    const valores = ["enero 2024", "febrero 2024", "marzo 2024", "abril 2024", "mayo 2024", "junio 2024", "julio 2024", "agosto 2024", "septiembre 2024", "octubre 2024", "noviembre 2024", "diciembre 2024"];
-
-    // Obtener el contenedor donde se agregarán los elementos <p>
+function listFechas(entries) {
+    // Cambiar el formato de las fechas para que coincida con 'YYYY-MM-DD'
+    const valores = ["2024", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12"];
+    const nombresFechas = ["enero 2024", "febrero 2024", "marzo 2024", "abril 2024", "mayo 2024", "junio 2024", "julio 2024", "agosto 2024", "septiembre 2024", "octubre 2024", "noviembre 2024", "diciembre 2024"];
+    
     const contenedor = document.getElementById("enlaces-por-fecha");
     let contenidoEnlaces = '';
-    // Iterar sobre el array y crear un elemento <p> para cada valor
-    valores.forEach(valor => {
-        contenidoEnlaces += `<p class="fecha">${valor}</p>`;
+
+    // Crear los enlaces con el formato adecuado
+    nombresFechas.forEach((nombre, index) => {
+        contenidoEnlaces += `<p class="fecha" data-fecha="${valores[index]}">${nombre}</p>`;
     });
 
     contenedor.innerHTML += contenidoEnlaces;
+
+    // Agregar evento a cada fecha
+    const fechas = document.getElementsByClassName('fecha');
+    for (let fecha of fechas) {
+        fecha.addEventListener('click', function() {
+            if (fecha.style.color === 'rgb(234, 28, 36)') {
+                fecha.style.color = '#000';
+            } else {
+                fecha.style.color = '#EA1C24';
+            }
+
+            // Filtrar entradas después de seleccionar una fecha
+            entriesFilter = filtrar(entries);
+            listEntries(entriesFilter);
+        });
+    }
 }
+
+
 
 async function listEntries(entries) {
     const contenedorEntradas = document.getElementById('entradas');
@@ -228,8 +324,8 @@ async function listEntries(entries) {
                             </ul>
                         </div>
                     </article>
-                </a>
-            `;
+                </a>`
+            ;
         });
     
         contenedorEntradas.innerHTML = contenidoEntradas;

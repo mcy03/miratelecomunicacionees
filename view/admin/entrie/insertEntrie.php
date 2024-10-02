@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <section id="banner-principal" class="banner-principal">
+    <section id="banner-principal" class="banner-principal" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); background-size: cover; background-position: center;">
         <div id="title-page" class="title-page">
             <input id="input-name" type="text" placeholder="Nombre de la entrada"> 
             <button id="confirm-name" class="button-tag">Confirmar</button>
@@ -259,7 +259,7 @@
             newDiv.className = 'div-content-text';
             newDiv.id = `div-position-${countDivs + 1}`;
             newDiv.style.width = contentWidth.includes('%') ? contentWidth : contentWidth + '%'; // Ancho deseado
-            newDiv.innerText = `${editor.innerHTML}`; // Cambia el contenido según sea necesario
+            newDiv.innerHTML = `${editor.innerHTML}`; // Cambia el contenido según sea necesario
 
             const filas = contentEntrie.getElementsByClassName('fila');
             let filaActual;

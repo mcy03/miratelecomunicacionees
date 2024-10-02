@@ -50,10 +50,10 @@ imgForm.addEventListener('submit', (event) => {
         const inputAnchura = document.getElementById('input-anchura');
         const inputAltura = document.getElementById('input-altura');
         const selectPosition = document.querySelector('.select-position select');
-            
+        
         let width = 300;
         let height = 300;
-
+        
         if (inputAnchura.value != '') {
             width = inputAnchura.value;
         }
@@ -148,7 +148,10 @@ formImgBanner.addEventListener('submit', (event) => {
             const urlImagen = evento.target.result;
 
             const contenedor = document.getElementById('banner-principal');
-            contenedor.style.backgroundImage = `url('${urlImagen}')`;
+
+            contenedor.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${urlImagen}')`;
+            contenedor.style.backgroundSize = 'cover';
+            contenedor.style.backgroundPosition = 'center';
         };
 
         lector.readAsDataURL(imagenBannerGuardar);

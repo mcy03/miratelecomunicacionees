@@ -50,6 +50,7 @@ function handleInitialFilterSelection() {
     let tecnologyValue = document.getElementById("selectTecnology")?.value;
     let certificationValue = document.getElementById("selectCertification")?.value;
 
+    // Primero verificamos si tecnologyValue tiene un valor, si no, comprobamos certificationValue
     if (tecnologyValue) {
         applyInitialFilter(tecnologyValue, 'tec', 'NOMBRE_TECNOLOGIA');
     } else if (certificationValue) {
@@ -58,13 +59,22 @@ function handleInitialFilterSelection() {
 }
 
 function applyInitialFilter(filterValue, elementPrefix, filterKey) {
+    // Buscar el elemento según el prefijo y valor de filtro
     let element = document.getElementById(`${elementPrefix}-${filterValue}`);
-    element.classList.add('selected');
 
-    let coursesFilter = courses.filter(objeto => objeto[filterKey] === element.textContent);
+    // Si el elemento existe, aplicar clase 'selected'
+    if (element) {
+        element.classList.add('selected');
+    }
+
+    // Usar directamente filterValue para filtrar el array courses
+    let coursesFilter = courses.filter(objeto => objeto[filterKey] === filterValue);
+
+    // Mostrar los cursos filtrados en las páginas y los cursos
     displayPages(coursesFilter, coursesPage);
     displayCourses(1, coursesFilter);
 }
+
 
 async function filterTecnologies() {
     await loadFilters('.tecnologias-filtro', 'loading-tecnologies', getTecnologies, 'TECNOLOGIA_ID', 'NOMBRE_TECNOLOGIA');
@@ -116,7 +126,7 @@ async function displayCourses(page, courses) {
             const curso = document.createElement('article');
             curso.classList.add('curso');
             curso.innerHTML = `
-                <a href="http://127.0.0.1/miratelecomunicacionees/?controller=curso&action=view&${course.NOMBRE_CURSO}" target="_blank" style="text-decoration: none; color: inherit;">
+                <a href="http://127.0.0.1/miratelecomunicacionees/?controller=curso&action=view&curso=${course.NOMBRE_CURSO}" target="_blank" style="text-decoration: none; color: inherit;">
                     <h2>${course.NOMBRE_CURSO}</h2>
                     <div id="content-course-${course.NOMBRE_CURSO}" class="content-course">
                         ${course.NOMBRE_TECNOLOGIA ? `<p>${course.NOMBRE_TECNOLOGIA}</p>` : ''}
