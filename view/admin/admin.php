@@ -201,9 +201,10 @@
                 </div>
                 <div class="button-create create-category">
                     <div class="button-create-category">
-                        <a href="" class="create-category">Crear categoria</a>
+                        <a  id="modalCreateCategory" class="create-category" href="#" data-toggle="modal" data-target="#miModalCreateCategory">Crear categoría</a>
                     </div>
                 </div>
+
             </div>  
 
             <div class="list-categories">
@@ -843,27 +844,72 @@
 
 </div>
 
-<!-- Modales -->
-<?php foreach ($categorias as $categoria) { ?>
-<div class="modal fade" id="miModal<?=$categoria->getCATEGORIA_ID()?>" tabindex="-1" role="dialog" aria-labelledby="miModalLabel<?=$categoria->getCATEGORIA_ID()?>" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="miModalLabel<?=$categoria->getCATEGORIA_ID()?>">Modal de <?=$categoria->getNOMBRE()?></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Este es el modal de <?=$categoria->getNOMBRE()?>. Puedes colocar aquí cualquier contenido que desees mostrar en el modal.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
-      </div>
+<!-- Modales categorias -->
+ <!-- Modal crear categoria -->
+<div class="modal fade" id="miModalCreateCategory" tabindex="-1" role="dialog" aria-labelledby="miModalLabelCreateCategory" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="miModalLabelCreateCategory">Modal de creación de categoria</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulario de Creación de Categoría -->
+                <form id="createCategoryForm">
+                    <div class="mb-3">
+                        <label for="category-name" class="form-label">NOMBRE</label>
+                        <input type="text" class="form-control" id="category-name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="category-description" class="form-label">DESCRIPCIÓN</label>
+                        <textarea class="form-control" id="category-description" name="description" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="category-date" class="form-label">FECHA</label>
+                        <input type="text" class="form-control" id="category-date" name="date" readonly>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="saveCategoryButton">Guardar cambios</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+
+<!-- Script para autocompletar la fecha -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const dateField = document.getElementById("category-date");
+    const today = new Date().toISOString().split('T')[0]; // Obtiene la fecha en formato YYYY-MM-DD
+    dateField.value = today;
+  });
+</script>
+
+<?php foreach ($categorias as $categoria) { ?>
+    <!-- Modal modificación categoria <?=$categoria->getNOMBRE()?> -->
+    <div class="modal fade" id="miModal<?=$categoria->getCATEGORIA_ID()?>" tabindex="-1" role="dialog" aria-labelledby="miModalLabel<?=$categoria->getCATEGORIA_ID()?>" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="miModalLabel<?=$categoria->getCATEGORIA_ID()?>">Modal de <?=$categoria->getNOMBRE()?></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Este es el modal de <?=$categoria->getNOMBRE()?>. Puedes colocar aquí cualquier contenido que desees mostrar en el modal.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Guardar cambios</button>
+            </div>
+            </div>
+        </div>
+    </div>
 <?php } ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

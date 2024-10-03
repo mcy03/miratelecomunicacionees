@@ -312,6 +312,23 @@
         }else if (id == 'categorias') {
             let allCategories = await getCategories();
             viewCategories(allCategories);
+
+            document.getElementById('saveCategoryButton').addEventListener('click', function() {
+                // Obtener los valores del formulario
+                const name = document.getElementById('category-name').value;
+                const description = document.getElementById('category-description').value;
+                const date = document.getElementById('category-date').value;
+            
+                // Crear un objeto con los datos
+                const formData = {
+                  name: name,
+                  description: description,
+                  date: date
+                };
+                
+                // Ver los datos en consola (solo para pruebas)
+                console.log(formData);
+            });
         }else if (id == 'paginas') {
             let allPages = await getPages();
             viewPages(allPages);
