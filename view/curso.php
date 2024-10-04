@@ -7,18 +7,29 @@
     <link rel="stylesheet" type="text/css" href="./style/curso.css?1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Cursos Mira</title>
+
+    <style>
+        #loading-courses {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas del mismo tamaño */
+            gap: 20px; /* Espacio entre elementos */
+        }
+        
+        .course-loading {
+            width: calc(100% - 40px); /* Ajusta el ancho para que ocupen el 50% del contenedor */
+            margin-bottom: 20px; /* Espacio entre filas */
+        }
+    </style>
 </head>
 <body>
-    <?php if (isset($_COOKIE['tecnology'])) { ?>
-        <input type="hidden" id="selectTecnology" value="<?=$_COOKIE['tecnology']?>">
-        <?php // Eliminar la cookie de tecnología
-            setcookie('tecnology', '', time() - 3600, '/');
-        ?>
-    <?php }else if (isset($_COOKIE['certification'])) {?>
-        <input type="hidden" id="selectCertification" value="<?=$_COOKIE['certification']?>">
-        <?php // Eliminar la cookie de certificación
-            setcookie('certification', '', time() - 3600, '/');
-        ?>
+
+    <?php 
+    if (isset($tecnologiaFiltro)) { ?>
+        <input type="hidden" id="selectTecnology" value="<?=$tecnologiaFiltro?>">
+
+    <?php }else if (isset($certificacionFiltro)) {?>
+        <input type="hidden" id="selectCertification" value="<?=$certificacionFiltro?>">
+        
     <?php } ?>
     
     <section class="banner-principal">
@@ -79,6 +90,11 @@
             </div>
         </div>
         <div id="loading-courses">
+                <div class="course-loading">
+                    <div class="contenedor_carga">
+                        <div class="carga"></div>
+                    </div>
+                </div>
                 <div class="course-loading">
                     <div class="contenedor_carga">
                         <div class="carga"></div>

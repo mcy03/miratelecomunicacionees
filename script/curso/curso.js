@@ -1,34 +1,42 @@
 window.addEventListener("load", async function() {
-    await loadFiltersAndCourses();
-    handleTecnologyAndCertificationSelection();
-    handleInitialFilterSelection();
+    let coursesPage = 20;
+    let courses = shuffleArray(await getCourses(0, 0));
+
+    await loadFiltersAndCourses(courses, coursesPage);
+    handleTecnologyAndCertificationSelection(courses, coursesPage);
+    handleInitialFilterSelection(courses, coursesPage);
 
 });
 
-async function loadFiltersAndCourses() {
+async function loadFiltersAndCourses(courses, coursesPage) {
     await filterTecnologies();
     await filterCertifications();
-    
-    let coursesPage = 20;
-    let courses = await getCourses(0, 0);
     
     displayPages(courses, coursesPage);
     displayCourses(1, courses);
     searchListener(courses);
+    return courses;
 }
 
-function handleTecnologyAndCertificationSelection() {
+function handleTecnologyAndCertificationSelection(courses, coursesPage) {
+    let selectedTecnology = null;
+    let selectedCertification = null;
+
     document.querySelectorAll('.tecnologias-filtro p, .certificacion-filtro p').forEach(function(p) {
         p.addEventListener('click', function() {
             let isTecnology = p.closest('.tecnologias-filtro') !== null;
             let filterKey = isTecnology ? 'NOMBRE_TECNOLOGIA' : 'NOMBRE_CERTIFICACION';
-            
+
+            // Si ya está seleccionado, lo deseleccionamos
             if (p.classList.contains('selected')) {
                 p.classList.remove('selected');
-                // Mostrar todos los cursos si se deselecciona
-                displayPages(courses, coursesPage);
-                displayCourses(1, courses);
-                searchListener(courses);
+
+                // Limpiar el filtro correspondiente
+                if (isTecnology) {
+                    selectedTecnology = null;
+                } else {
+                    selectedCertification = null;
+                }
             } else {
                 // Deseleccionar todos los elementos del grupo antes de seleccionar el nuevo
                 document.querySelectorAll('.' + (isTecnology ? 'tecnologias-filtro' : 'certificacion-filtro') + ' p').forEach(function(p) {
@@ -36,44 +44,64 @@ function handleTecnologyAndCertificationSelection() {
                 });
                 p.classList.add('selected');
 
-                let coursesFilter = courses.filter(objeto => objeto[filterKey] === p.textContent);
-
-                displayPages(coursesFilter, coursesPage);
-                displayCourses(1, coursesFilter);
-                searchListener(coursesFilter);
+                // Actualizar el filtro correspondiente
+                if (isTecnology) {
+                    selectedTecnology = p.textContent;
+                } else {
+                    selectedCertification = p.textContent;
+                }
             }
+
+            // Aplicar el filtrado con la combinación de filtros seleccionados
+            let coursesFilter = courses;
+
+            if (selectedTecnology) {
+                coursesFilter = coursesFilter.filter(objeto => objeto['NOMBRE_TECNOLOGIA'] === selectedTecnology);
+            }
+            if (selectedCertification) {
+                coursesFilter = coursesFilter.filter(objeto => objeto['NOMBRE_CERTIFICACION'] === selectedCertification);
+            }
+
+            // Mostrar los cursos filtrados
+            displayPages(coursesFilter, coursesPage);
+            displayCourses(1, coursesFilter);
+            searchListener(coursesFilter);
         });
     });
 }
 
-function handleInitialFilterSelection() {
+function handleInitialFilterSelection(courses, coursesPage) {
     let tecnologyValue = document.getElementById("selectTecnology")?.value;
     let certificationValue = document.getElementById("selectCertification")?.value;
 
-    // Primero verificamos si tecnologyValue tiene un valor, si no, comprobamos certificationValue
+    // Corrección en los console.log
+    console.log('tecnologia: ' + tecnologyValue);
+    console.log('certificacion: ' + certificationValue);
+
+    // Verificamos que haya un valor en tecnologyValue o certificationValue
     if (tecnologyValue) {
-        applyInitialFilter(tecnologyValue, 'tec', 'NOMBRE_TECNOLOGIA');
-    } else if (certificationValue) {
-        applyInitialFilter(certificationValue, 'cert', 'NOMBRE_CERTIFICACION');
+        applyInitialFilter(tecnologyValue, 'tecnologias', 'TECNOLOGIA_ID', courses, coursesPage);
+    }else if (certificationValue) {
+        applyInitialFilter(certificationValue, 'certificacion', 'CERTIFICACION_ID', courses, coursesPage);
     }
 }
 
-function applyInitialFilter(filterValue, elementPrefix, filterKey) {
-    // Buscar el elemento según el prefijo y valor de filtro
-    let element = document.getElementById(`${elementPrefix}-${filterValue}`);
 
-    // Si el elemento existe, aplicar clase 'selected'
+function applyInitialFilter(filterValue, elementPrefix, filterKey, courses, coursesPage) {
+    // Suponiendo que `courses` y `coursesPage` son accesibles
+    let element = document.getElementById(`${elementPrefix}-filtro-${filterValue}`);
     if (element) {
         element.classList.add('selected');
     }
 
-    // Usar directamente filterValue para filtrar el array courses
+    // Filtrar cursos basado en el filtro inicial
     let coursesFilter = courses.filter(objeto => objeto[filterKey] === filterValue);
-
-    // Mostrar los cursos filtrados en las páginas y los cursos
+    console.log(`${elementPrefix}-filtro-${filterValue}`);
+    // Mostrar los cursos filtrados
     displayPages(coursesFilter, coursesPage);
     displayCourses(1, coursesFilter);
 }
+
 
 
 async function filterTecnologies() {
@@ -121,7 +149,6 @@ async function displayCourses(page, courses) {
         // Crear un único contenedor (div) para todos los cursos
         const filaCursos = document.createElement('div');
         filaCursos.classList.add('fila-cursos'); // Clase para todo el contenedor
-        
         coursesSelected.forEach((course) => {
             const curso = document.createElement('article');
             curso.classList.add('curso');
@@ -148,6 +175,14 @@ async function displayCourses(page, courses) {
         messageNoContent.style.display = 'block';
     }
     
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];  // Intercambiar elementos
+    }
+    return array;
 }
 
 async function displayPages(courses, coursesPage) {
