@@ -43,10 +43,6 @@ window.addEventListener("load", async function () {
     searchEnabled: true,  // Habilitar la búsqueda
     itemSelectText: '',   // Texto que aparece cuando una opción es seleccionable
   });
-  new Choices('#schedule', {
-    searchEnabled: true,  // Habilitar la búsqueda
-    itemSelectText: '',   // Texto que aparece cuando una opción es seleccionable
-  });
 
   // Crear un MutationObserver
   const observer = new MutationObserver((mutationsList) => {
@@ -171,7 +167,7 @@ function displayLabs(labs) {
 
   // Agregar evento de cambio al select
   labsSelect.addEventListener('change', function () {
-    displayReservas(reservas);
+    /* displayReservas(reservas); */
     const selectedLab = labsSelect.options[labsSelect.selectedIndex];
 
     labs.forEach(lab => {

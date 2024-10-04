@@ -116,8 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     selectedDates.push(dateString);
                 }
 
-                console.log(selectedDates);
-
                 // Re-renderizar los calendarios para aplicar la selección
                 renderCalendars();
             });

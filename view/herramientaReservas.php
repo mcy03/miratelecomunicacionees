@@ -79,13 +79,21 @@
                     </div>
 
                     <div id="apartadoSchedule">
-                        <label for="schedule" class="labelInputChoices">Schedule:</label>
-                        <select name="schedule" id="schedule">
-                            <option value="">Select schedule</option>
-                            <option value="09:00:00,12:00:00">09:00 - 12:00</option>
-                            <option value="12:00:00,14:00:00">12:00 - 14:00</option>
-                            <option value="14:00:00,16:00:00">14:00 - 16:00</option>
-                        </select>
+                        <div class="scheduleContainer">
+                            <div>
+                                <label for="schedule" class="labelInputChoices">Start hour:</label>
+                                <div class="choices__inner">
+                                    <input class="choices__input" name="startHour" id="startHour" type="time"/>
+                                </div>
+                            </div>
+                            <p class="dividerHour">-</p>
+                            <div>
+                                <label for="schedule" class="labelInputChoices">End hour:</label>
+                                <div class="choices__inner">
+                                    <input class="choices__input" name="endHour" id="endHour"type="time"/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div id="apartadoZonasHorarias">
@@ -180,61 +188,148 @@
                 </div>
                 <div id="policySection">
                     <h1 class="tituloSeccion">POLICY HIGHTLIGHTS</h1>
+                    <div class="policyContainer">
+                        <p>This contract is between MIRA Telecomunicacions, S.L. (MIRA) and the client, regarding the provision of laboratory rental services. By accessing or using MIRA's services, you agree to the terms described below. If you do not agree with these terms, you will not be able to access the services.</p>
+                        <h3>General Terms</h3>
+                        <ul>
+                            <li>These Terms are governed by the laws of Spain.</li>
+                            <li>If you do not agree with these terms, you must notify us immediately.</li>
+                        </ul>
+                        <h3>Financial Terms</h3>
+                        <ul>
+                            <li>All invoices will be issued in the specified currency, and the client is responsible for any currency conversion charges.</li>
+                            <li>The client must pay in full before the start of the service, as follows:
+                                <ul>
+                                    <li><b>Laboratory rental services:</b> Full payment is required 10 days before the start date.</li>
+                                    <li><b>Regular clients:</b> Please consult payment terms with Mira Telecomunicacions.</li>
+                                </ul>
+                            </li>
+                            <li>Payments can be made via bank transfer or PayPal.</li>
+                        </ul>
+                        <h3>Cancellation and Modifications</h3>
+                        <ul>
+                            <li><b>Date modifications: </b>Any date change must be made at least 10 days before the reserved date. Changes within 10 days will incur a 35% penalty.</li>
+                            <li><b>Laboratory service cancellation: </b>Cancellations made more than 10 days in advance will not incur a penalty. Cancellations within 10 days will incur a 45% penalty.</li>
+                        </ul>
+                        <h3>Laboratory Access and Use</h3>
+                        <ul>
+                            <li>MIRA provides continuous access to the contracted laboratory, but interruptions may occur due to factors beyond its control (e.g., technical issues, maintenance).</li>
+                            <li>Users are responsible for ensuring they meet the required system specifications to access the courses.</li>
+                            <li>The client, instructor, and students must follow the laboratory guide provided. They cannot make any changes or add configurations or tests. If any anomaly is detected, Mira Telecomunicacions reserves the right to restrict access and penalize the client for any damages caused. Our support team is available to assist during the established hours (7:00 am – 10:00 pm GMT +2). Outside of those hours, please contact mira@miratelecomunicacions.com.</li>
+                        </ul>
+                        <h3>Copyright and Intellectual Property</h3>
+                        <ul>
+                            <li>The materials provided are the property of MIRA or its partners and are for personal use only.</li>
+                            <li>Users may not copy, share, or modify the laboratory content without MIRA’s express permission.</li>
+                        </ul>
+                        <h3>Limitation of Liability</h3>
+                        <ul>
+                            <li>MIRA is not responsible for any damages exceeding the laboratory fees paid. Use of the site and its content is at your own risk.</li>
+                        </ul>
+                        <h3>Payment Information</h3>
+                        <ul>
+                            <li>Payments must be made to:<ul>
+                                    <li>Bank transfer to:<ul>
+                                            <li><b>Beneficiary: </b>Mira Telecomunicacions, S.L.</li>
+                                            <li><b>Bank: </b>Banco Santander</li>
+                                            <li><b>IBAN: </b>ES9400490015042710112653</li>
+                                            <li><b>SWIFT: </b>BSCHESMM</li>
+                                        </ul>
+                                    </li>
+                                    <li>Bank receipts must be sent to: r.vazquez@miratelecomunicacions.com</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div id="termsContainer">
+                            <div class="checkbox-wrapper">
+                                <input type="radio" id="agreeTerms" name="agreeTerms" value="I agree to the terms and conditions">
+                                <label for="agreeTerms">I agree</label>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="radio" id="notAgreeTerms" name="agreeTerms" value="I do not agree to the terms and conditions">
+                                <label for="notAgreeTerms">I do not agree</label>
+                            </div>
+                        </div>
+                        
+                         <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Policy hightlights</h1>
+                                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        To continue with the reservation you must accept the policy highlights
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-red" data-dismiss="modal">Understood</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div id="finalizarResSection">
                     <h1 class="tituloSeccion">CONFIRM RESERVATION</h1>
                     <div class="confirmContainer">
                         <div class="confirmContainerLab">
                             <h2 class="subtituloConfirm">Laboratory details</h2>
-                            <div id="confirmVendor" class="confirm_param_white""></div>
-                            <div id=" confirmLaboratory" class="confirm_param_gray""></div>
-                            <div id=" confirmNum_pods" class="confirm_param_white""></div>
-                            <div id=" confirmNum_students" class="confirm_param_gray""></div>
-                            <div id=" confirmStart_date" class="confirm_param_white""></div>
-                            <div id=" confirmEnd_date" class="confirm_param_gray""></div>
-                            <div id=" confirmSchedule" class="confirm_param_white""></div>
-                            <div id=" confirmTime_zone" class="confirm_param_gray""></div>
+                            <div id="confirmVendor" class="confirm_param_white"></div>
+                            <div id="confirmLaboratory" class="confirm_param_gray"></div>
+                            <div id="confirmNum_pods" class="confirm_param_white"></div>
+                            <div id="confirmNum_students" class="confirm_param_gray"></div>
+                            <div id="confirmStart_date" class="confirm_param_white"></div>
+                            <div id="confirmEnd_date" class="confirm_param_gray"></div>
+                            <div id="confirmSchedule" class="confirm_param_white"></div>
+                            <div id="confirmTime_zone" class="confirm_param_gray"></div>
                         </div>
 
-                        <div class=" confirmContainerEmp">
-                                <h2 class="subtituloConfirm">Company details</h2>
-                                <div id="confirmCompany_name" class="confirm_param_white""></div>
-                            <div id=" confirmCompany_contact" class="confirm_param_gray""></div>
-                            <div id=" confirmAddress" class="confirm_param_white""></div>
-                            <div id=" confirmCountry" class="confirm_param_gray""></div>
-                            <div id=" confirmCity" class="confirm_param_white""></div>
-                            <div id=" confirmZip_code" class="confirm_param_gray""></div>
-                            <div id=" confirmPhone" class="confirm_param_white""></div>
-                            <div id=" confirmTechnical_contact" class="confirm_param_gray""></div>
+                        <div class="confirmContainerEmp">
+                            <h2 class="subtituloConfirm">Company details</h2>
+                            <div id="confirmCompany_name" class="confirm_param_white"></div>
+                            <div id="confirmCompany_contact" class="confirm_param_gray"></div>
+                            <div id="confirmAddress" class="confirm_param_white""></div>
+                            <div id="confirmCountry" class="confirm_param_gray"></div>
+                            <div id="confirmCity" class="confirm_param_white"></div>
+                            <div id="confirmZip_code" class="confirm_param_gray"></div>
+                            <div id="confirmPhone" class="confirm_param_white"></div>
+                            <div id="confirmTechnical_contact" class="confirm_param_gray"></div>
                         </div>                    
                     </div>
-                    <div id=" confirmComentariosSection">
-                                    <h2 class="subtituloConfirm">Aditional comments</h2>
-                                    <div id="confirmComentarios">
+                    <div id="confirmComentariosSection">
+                        <h2 class="subtituloConfirm">Aditional comments</h2>
+                        <div id="confirmComentarios" class="confirm_param_gray"></div>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="navButtons">
-                                <div class="prevBtnDiv widthContainerButtons">
-                                    <button id="prevBtn" type="button">PREVIOUS</button>
-                                </div>
-                                <div class="nextBtnDiv widthContainerButtons">
-                                    <button id="nextBtn" type="button">NEXT</button>
-                                </div>
-                                <div id="ghostBtn" class="widthContainerButtons"></div>
-                            </div>
+                        <p class="confirmSectionText"><b>You are generating a Purchase Order. You will receive a copy by email with the details specified in the form.</b><br>
+                        <b>Mira Telecomunicacions will receive a copy and will contact you to finalize the process. If you wish, you can reach out to mira@miratelecomunicaciones.com.</b></p>
+                    </div>
+                </div>
+                   
+
+                    <div class="navButtons">
+                        <div class="prevBtnDiv widthContainerButtons">
+                            <button id="prevBtn" type="button">PREVIOUS</button>
+                        </div>
+                        <div class="nextBtnDiv widthContainerButtons">
+                            <button id="nextBtn" type="button">NEXT</button>
+                        </div>
+                        <div id="ghostBtn" class="widthContainerButtons"></div>
+                    </div>
             </form>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Incluir JS de Choices.js -->
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
     <script src="./config/parameters.js"></script>
     <script type="module" src="./script/reservas/herramientaReservas.js"></script>
-    <script type="module" src="./script/reservas/calendars.js"></script>º
+    <script type="module" src="./script/reservas/calendars.js"></script>
     <script src="./script/reservas/loadData.js"></script>
 </body>
 
