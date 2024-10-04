@@ -330,7 +330,7 @@
     <script src="./config/parameters.js"></script>
     <script type="module" src="./script/reservas/herramientaReservas.js"></script>
     <script type="module" src="./script/reservas/calendars.js"></script>
-    <script src="./script/reservas/loadData.js"></script>
+    <script type="module" src="./script/reservas/loadData.js"></script>
 </body>
 
 </html>

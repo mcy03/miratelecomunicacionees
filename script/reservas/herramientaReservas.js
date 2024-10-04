@@ -414,6 +414,15 @@ nextBtn.addEventListener('click', function (event) {
 
             laboratorySelect = document.getElementById('laboratorios');
             laboratorySelectValue = parseInt(laboratorySelect.value);
+            laboratorySelect.appendChild(`<div id="labSelected" style="display: none;">${laboratorySelectValue}</div>`);
+
+
+            
+            console.log(document.getElementById('labSelected').textContent);
+
+
+
+            
             laboratoryText = laboratorySelect.selectedIndex !== -1 ? laboratorySelect.options[laboratorySelect.selectedIndex].text : '';
 
             numPods = parseInt(document.getElementById('pods').value) || 'N/A';

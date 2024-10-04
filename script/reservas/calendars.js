@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Array para almacenar las fechas seleccionadas
     window.selectedDates = [];
+    
 
     function renderCalendar(date, calendarId) {
         const calendarEl = document.getElementById(calendarId);
