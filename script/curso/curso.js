@@ -1,7 +1,7 @@
 window.addEventListener("load", async function() {
     let coursesPage = 20;
     let courses = shuffleArray(await getCourses(0, 0));
-
+    console.log(courses);
     await loadFiltersAndCourses(courses, coursesPage);
     handleTecnologyAndCertificationSelection(courses, coursesPage);
     handleInitialFilterSelection(courses, coursesPage);
@@ -55,11 +55,18 @@ function handleTecnologyAndCertificationSelection(courses, coursesPage) {
             // Aplicar el filtrado con la combinación de filtros seleccionados
             let coursesFilter = courses;
 
+            // Filtrar por tecnología seleccionada
             if (selectedTecnology) {
-                coursesFilter = coursesFilter.filter(objeto => objeto['NOMBRE_TECNOLOGIA'] === selectedTecnology);
+                coursesFilter = coursesFilter.filter(course => 
+                    course.TECNOLOGIAS.some(tecnologia => tecnologia.NOMBRE_TECNOLOGIA === selectedTecnology)
+                );
             }
+ 
+            // Filtrar por certificación seleccionada
             if (selectedCertification) {
-                coursesFilter = coursesFilter.filter(objeto => objeto['NOMBRE_CERTIFICACION'] === selectedCertification);
+                coursesFilter = coursesFilter.filter(course => 
+                    course.CERTIFICACIONES.some(certificacion => certificacion.NOMBRE_CERTIFICACION === selectedCertification)
+                );
             }
 
             // Mostrar los cursos filtrados
@@ -67,23 +74,34 @@ function handleTecnologyAndCertificationSelection(courses, coursesPage) {
             displayCourses(1, coursesFilter);
             searchListener(coursesFilter);
         });
-    });
+    }); 
 }
+
 
 function handleInitialFilterSelection(courses, coursesPage) {
     let tecnologyValue = document.getElementById("selectTecnology")?.value;
     let certificationValue = document.getElementById("selectCertification")?.value;
 
-    // Corrección en los console.log
-    console.log('tecnologia: ' + tecnologyValue);
-    console.log('certificacion: ' + certificationValue);
+    // Filtrar los cursos de acuerdo con las tecnologías y certificaciones seleccionadas
+    let coursesFilter = courses;
 
-    // Verificamos que haya un valor en tecnologyValue o certificationValue
+    // Si hay una tecnología seleccionada, aplicar el filtro
     if (tecnologyValue) {
-        applyInitialFilter(tecnologyValue, 'tecnologias', 'TECNOLOGIA_ID', courses, coursesPage);
-    }else if (certificationValue) {
-        applyInitialFilter(certificationValue, 'certificacion', 'CERTIFICACION_ID', courses, coursesPage);
+        coursesFilter = coursesFilter.filter(course => 
+            course.TECNOLOGIAS.some(tecnologia => tecnologia.TECNOLOGIA_ID === tecnologyValue)
+        );
     }
+
+    // Si hay una certificación seleccionada, aplicar el filtro
+    if (certificationValue) {
+        coursesFilter = coursesFilter.filter(course => 
+            course.CERTIFICACIONES.some(certificacion => certificacion.CERTIFICACION_ID === certificationValue)
+        );
+    }
+
+    // Mostrar los cursos filtrados
+    displayPages(coursesFilter, coursesPage);
+    displayCourses(1, coursesFilter);
 }
 
 
@@ -96,7 +114,6 @@ function applyInitialFilter(filterValue, elementPrefix, filterKey, courses, cour
 
     // Filtrar cursos basado en el filtro inicial
     let coursesFilter = courses.filter(objeto => objeto[filterKey] === filterValue);
-    console.log(`${elementPrefix}-filtro-${filterValue}`);
     // Mostrar los cursos filtrados
     displayPages(coursesFilter, coursesPage);
     displayCourses(1, coursesFilter);
@@ -149,19 +166,33 @@ async function displayCourses(page, courses) {
         // Crear un único contenedor (div) para todos los cursos
         const filaCursos = document.createElement('div');
         filaCursos.classList.add('fila-cursos'); // Clase para todo el contenedor
+        
         coursesSelected.forEach((course) => {
+            // Generar el HTML para las certificaciones
+            let certificacionesHTML = '';
+            course.CERTIFICACIONES.forEach((certificacion) => {
+                certificacionesHTML += `<p>${certificacion.NOMBRE_CERTIFICACION}</p>`;
+            });
+    
+            // Generar el HTML para las tecnologías
+            let tecnologiasHTML = '';
+            course.TECNOLOGIAS.forEach((tecnologia) => {
+                tecnologiasHTML += `<p>${tecnologia.NOMBRE_TECNOLOGIA}</p>`;
+            });
+
+            // Crear el elemento para cada curso
             const curso = document.createElement('article');
             curso.classList.add('curso');
             curso.innerHTML = `
                 <a href="http://127.0.0.1/miratelecomunicacionees/?controller=curso&action=view&curso=${course.NOMBRE_CURSO}" target="_blank" style="text-decoration: none; color: inherit;">
                     <h2>${course.NOMBRE_CURSO}</h2>
                     <div id="content-course-${course.NOMBRE_CURSO}" class="content-course">
-                        ${course.NOMBRE_TECNOLOGIA ? `<p>${course.NOMBRE_TECNOLOGIA}</p>` : ''}
-                        ${course.NOMBRE_CERTIFICACION ? `<p>${course.NOMBRE_CERTIFICACION}</p>` : ''}
+                        ${tecnologiasHTML}  <!-- Aquí se muestran las tecnologías -->
+                        ${certificacionesHTML}  <!-- Aquí se muestran las certificaciones -->
                         <span>${course.COMPLETE_NAME}</span>
                     </div>
                 </a>`;
-            
+    
             // Añadir el artículo al contenedor de cursos
             filaCursos.appendChild(curso);
         });
@@ -174,8 +205,8 @@ async function displayCourses(page, courses) {
     } else {
         messageNoContent.style.display = 'block';
     }
-    
 }
+
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
