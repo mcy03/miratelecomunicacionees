@@ -9,6 +9,7 @@
 */
 class Reserva {
     protected $RESERVA_ID;
+    protected $CODIFICACION;
     protected $PROOVEDOR_ID;
     protected $LABORATORIO_ID;
     protected $PODS;
@@ -41,68 +42,64 @@ class Reserva {
     }
 
     // Método para insertar una nueva reserva
-    public static function insertReserva($PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN, $CLIENTE_ID) {
+    public static function insertReserva($CODIFICACION, $PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN, $CLIENTE_ID, $COMENTARIOS) {
         $conn = db::connect(); // Conectar a la base de datos
 
         // Preparar la consulta de inserción con parámetros seguros
-        $stmt = $conn->prepare("INSERT INTO reserva (PROOVEDOR_ID, LABORATORIO_ID, PODS, ALUMNOS, FECHA_INICIO, FECHA_FIN, TIME_ZONE_ID, HORA_INICIO, HORA_FIN, CLIENTE_ID, COMENTARIOS) 
-                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-        if (!$stmt) {
-          // Muestra el error si no se puede preparar la consulta
-          echo "Error al preparar la consulta: " . $conn->error;
-          return false;
-        }
+        $stmt = $conn->prepare("INSERT INTO reserva (CODIFICACION, PROOVEDOR_ID, LABORATORIO_ID, PODS, ALUMNOS, FECHA_INICIO, FECHA_FIN, TIME_ZONE_ID, HORA_INICIO, HORA_FIN, CLIENTE_ID, COMENTARIOS) 
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
         // Vincular parámetros a la consulta preparada
-        $stmt->bind_param("iiiississis", $PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN, $CLIENTE_ID, $COMENTARIOS);
+        $stmt->bind_param("siiiississis", $CODIFICACION, $PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN, $CLIENTE_ID, $COMENTARIOS);
         
         if (!$stmt->execute()) {
           // Muestra el error si no se puede ejecutar la consulta
           echo "Error en la ejecución: " . $stmt->error;
-          return false;
         }
 
-        //$stmt->execute(); // Ejecutar la consulta
+        $stmt->execute(); // Ejecutar la consulta
         $result = $stmt->get_result(); // Obtener el resultado de la ejecución (si es necesario)
         $conn->close(); // Cerrar la conexión
 
         return $result; // Devolver el resultado de la ejecución de la consulta
     }
 
+
     public static function insertExampleReservas() {
       $conn = db::connect(); // Conectar a la base de datos
 
       // Preparar la consulta para insertar una reserva
       $stmt = $conn->prepare("INSERT INTO reserva 
-          (PROOVEDOR_ID, LABORATORIO_ID, PODS, ALUMNOS, FECHA_INICIO, FECHA_FIN, TIME_ZONE_ID, HORA_INICIO, HORA_FIN, CLIENTE_ID, COMENTARIOS) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+          (CODIFICACION, PROOVEDOR_ID, LABORATORIO_ID, PODS, ALUMNOS, FECHA_INICIO, FECHA_FIN, TIME_ZONE_ID, HORA_INICIO, HORA_FIN, CLIENTE_ID, COMENTARIOS) 
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
       // Reservas de ejemplo
       $reservasEjemplo = [
-          [1, 84, 4, 4, '2024-10-01', '2024-10-02', 1, '09:00:00', '12:00:00', '1', 'Comentarios de ejemplo'],
-          [1, 84, 8, 8, '2024-11-05', '2024-11-06', 2, '14:00:00', '17:00:00', '2', 'Comentarios de ejemplo'],
-          [1, 66, 8, 8, '2024-12-10', '2024-12-11', 3, '08:00:00', '11:00:00', '3', 'Comentarios de ejemplo']
+          ['LAB2024', 1, 84, 4, 4, '2024-10-01', '2024-10-02', 1, '09:00:00', '12:00:00', '1', 'Comentarios de ejemplo'],
+          ['LAB2024', 1, 84, 8, 8, '2024-11-05', '2024-11-06', 2, '14:00:00', '17:00:00', '2', 'Comentarios de ejemplo'],
+          ['LAB2024', 1, 66, 8, 8, '2024-12-10', '2024-12-11', 3, '08:00:00', '11:00:00', '3', 'Comentarios de ejemplo']
       ];
 
       // Recorrer cada reserva y realizar la inserción
       foreach ($reservasEjemplo as $reserva) {
           // Asignar los valores a las variables correspondientes
-          $PROOVEDOR_ID = $reserva[0];
-          $LABORATORIO_ID = $reserva[1];
-          $PODS = $reserva[2];
-          $ALUMNOS = $reserva[3];
-          $FECHA_INICIO = $reserva[4];
-          $FECHA_FIN = $reserva[5];
-          $TIME_ZONE_ID = $reserva[6];
-          $HORA_INICIO = $reserva[7];
-          $HORA_FIN = $reserva[8];
-          $CLIENTE_ID = $reserva[9];
-          $COMENTARIOS = $reserva[10];
+          $CODIFICACION = $reserva[0];
+          $PROOVEDOR_ID = $reserva[1];
+          $LABORATORIO_ID = $reserva[2];
+          $PODS = $reserva[3];
+          $ALUMNOS = $reserva[4];
+          $FECHA_INICIO = $reserva[5];
+          $FECHA_FIN = $reserva[6];
+          $TIME_ZONE_ID = $reserva[7];
+          $HORA_INICIO = $reserva[8];
+          $HORA_FIN = $reserva[9];
+          $CLIENTE_ID = $reserva[10];
+          $COMENTARIOS = $reserva[11];
 
           // Vincular parámetros y ejecutar la inserción
           $stmt->bind_param(
-              "iiiississis", 
+              "siiiississis",
+              $CODIFICACION, 
               $PROOVEDOR_ID, 
               $LABORATORIO_ID, 
               $PODS, 
@@ -146,6 +143,26 @@ class Reserva {
       $this->RESERVA_ID = $RESERVA_ID;
 
       return $this;
+    }
+
+    /**
+     * Get the value of CODIFICACION
+     */ 
+    public function getCODIFICACION()
+    {
+        return $this->CODIFICACION;
+    }
+
+    /**
+     * Set the value of CODIFICACION
+     *
+     * @return  self
+     */ 
+    public function setCODIFICACION($CODIFICACION)
+    {
+        $this->CODIFICACION = $CODIFICACION;
+
+        return $this;
     }
 
     /**

@@ -219,6 +219,7 @@ class ApiReservasController{
         }
 
         if (trim($accion) == "insert_reserva") {
+            $CODIFICACION = isset($_POST["codificacion"]) ? $_POST["codificacion"] : '';
             $PROOVEDOR_ID = isset($_POST["vendorSelectValue"]) ? $_POST["vendorSelectValue"] : '';
             $LABORATORIO_ID = isset($_POST["laboratorySelectValue"]) ? $_POST["laboratorySelectValue"] : '';
             $PODS = isset($_POST["numPods"]) ? $_POST["numPods"] : '';
@@ -230,7 +231,7 @@ class ApiReservasController{
             $HORA_FIN = isset($_POST["horaFin"]) ? $_POST["horaFin"] : '';
             $CLIENTE_ID = isset($_POST["clienteId"]) ? $_POST["clienteId"] : '';
             $COMENTARIOS = isset($_POST["comentarios"]) ? $_POST["comentarios"] : '';
-            $reserva = Reserva::insertReserva($PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN, $CLIENTE_ID, $COMENTARIOS);
+            $reserva = Reserva::insertReserva($CODIFICACION, $PROOVEDOR_ID, $LABORATORIO_ID, $PODS, $ALUMNOS, $FECHA_INICIO, $FECHA_FIN, $TIME_ZONE_ID, $HORA_INICIO, $HORA_FIN, $CLIENTE_ID, $COMENTARIOS);
 
             $this->sendJsonResponse($reserva);
             return;

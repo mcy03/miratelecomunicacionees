@@ -30,6 +30,33 @@ const inputZipCode = document.getElementById('zipCode');
 const inputPhone = document.getElementById('phone');
 const inputTechnicalContactName = document.getElementById('technicalContactName');
 const inputTechnicalContactEmail = document.getElementById('technicalContactEmail');
+// Declaración de variables globales para poder acceder a ellas desde otras funciones serán los valores de los inputs para acceder a los datos y guardarlos en la BBDD
+let codificacion;
+let vendorSelect;
+let vendorSelectValue;
+let vendorText;
+let laboratorySelect;
+let laboratorySelectValue;
+let laboratoryText;
+let numPods;
+let numStudents;
+let schedule = [];
+let zonasHorarias;
+let zonasHorariasValue;
+let timeZoneText;
+let comentarios;
+let companyName;
+let contactName;
+let contactEmail;
+let address;
+let countrySelect;
+let countryText;
+let citySelect;
+let cityText;
+let zipCode;
+let phone;
+let technicalContactName;
+let technicalContactEmail;
 
 // Variable para llevar el control de la sección actual
 let currentSection = seleccionLabSection;
@@ -76,7 +103,7 @@ nextBtn.addEventListener('click', function (event) {
     event.preventDefault(); // Asegura que no se recargue la página
 
     if (currentSection === seleccionLabSection) {
-        if (inputProovedores.value !== '' && inputLab.value !== '' && inputAlumnos.value !== '' && selectedDates.length !== 0 && inputZonasHorarias.value !== '' && inputSchedule !== '') {
+        if (inputProovedores.value !== '' && inputLab.value !== '' && inputAlumnos.value !== '' && selectedDates.length !== 0 && inputZonasHorarias.value !== '' && startHour !== '' && endHour !== '') {
             oculto(event, seleccionLabSection);
             seleccionLabText.classList.add('completed');
             visible(credencialesEmpSection);
@@ -98,6 +125,12 @@ nextBtn.addEventListener('click', function (event) {
                 error.innerHTML = 'Please select a vendor';
                 apartadoProovedores.appendChild(error);
 
+                window.scrollTo({
+                    top: apartadoProovedores.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+
+            
                 inputProovedores.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
 
@@ -106,6 +139,11 @@ nextBtn.addEventListener('click', function (event) {
                 let apartadoLab = document.getElementById('apartadoLab');
                 error.innerHTML = 'Please select a laboratory';
                 apartadoLab.appendChild(error);
+
+                window.scrollTo({
+                    top: apartadoLab.offsetTop - 100,
+                    behavior: 'smooth'
+                });
 
                 inputLab.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
@@ -116,6 +154,10 @@ nextBtn.addEventListener('click', function (event) {
                 error.style.marginTop = '0px';
                 apartadoAlumnos.appendChild(error);
 
+                setTimeout(() => {
+                    inputAlumnos.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
+
                 inputAlumnos.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
                 });
@@ -124,19 +166,35 @@ nextBtn.addEventListener('click', function (event) {
                 error.innerHTML = 'Please select a date';
                 error.style.marginTop = '0px';
                 apartadoFechas.appendChild(error);
+                console.log(apartadoFechas.offsetTop);
+                window.scrollTo({
+                    top: apartadoFechas.offsetTop - 100,
+                    behavior: 'smooth'
+                });
 
-            } else if (inputSchedule.value === '') {
+            } else if (startHour.value === '' || endHour.value === '') {
                 let apartadoSchedule = document.getElementById('apartadoSchedule');
                 error.innerHTML = 'Please select a schedule';
+                error.style.marginTop = '0px';
                 apartadoSchedule.appendChild(error);
 
-                inputSchedule.addEventListener('change', () => {
+                window.scrollTo({
+                    top: apartadoSchedule.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+
+                endHour.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
                 });
             } else if (inputZonasHorarias.value === '') {
                 let apartadoZonasHorarias = document.getElementById('apartadoZonasHorarias');
                 error.innerHTML = 'Please select a time zone';
                 apartadoZonasHorarias.appendChild(error);
+
+                window.scrollTo({
+                    top: apartadoZonasHorarias.offsetTop - 100,
+                    behavior: 'smooth'
+                });
 
                 inputZonasHorarias.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
@@ -167,6 +225,10 @@ nextBtn.addEventListener('click', function (event) {
                 error.style.marginTop = '0px';
                 apartadoCompanyName.appendChild(error);
 
+                setTimeout(() => {
+                    inputCompanyName.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
+
                 inputCompanyName.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
 
@@ -177,6 +239,10 @@ nextBtn.addEventListener('click', function (event) {
                 error.style.marginTop = '0px';
                 apartadoContactName.appendChild(error);
 
+                setTimeout(() => {
+                    inputContactName.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
+
                 inputContactName.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
                 });
@@ -185,6 +251,10 @@ nextBtn.addEventListener('click', function (event) {
                 error.innerHTML = 'Please insert a contact email';
                 error.style.marginTop = '0px';
                 apartadoContactEmail.appendChild(error);
+
+                setTimeout(() => {
+                    inputContactEmail.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
 
                 inputContactEmail.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
@@ -195,14 +265,22 @@ nextBtn.addEventListener('click', function (event) {
                 error.style.marginTop = '0px';
                 apartadoContactEmail.appendChild(error);
 
+                setTimeout(() => {
+                    inputContactEmail.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
+
                 inputContactEmail.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
                 });
-            }else if (inputAddress.value === '') {
+            } else if (inputAddress.value === '') {
                 let apartadoAddress = document.getElementById('apartadoAddress');
                 error.innerHTML = 'Please insert an address';
                 error.style.marginTop = '0px';
                 apartadoAddress.appendChild(error);
+
+                setTimeout(() => {
+                    inputAddress.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
 
                 inputAddress.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
@@ -212,6 +290,11 @@ nextBtn.addEventListener('click', function (event) {
                 error.innerHTML = 'Please select a country';
                 apartadoCountry.appendChild(error);
 
+                window.scrollTo({
+                    top: apartadoCountry.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+
                 inputCountry.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
                 });
@@ -219,6 +302,11 @@ nextBtn.addEventListener('click', function (event) {
                 let apartadoCity = document.getElementById('apartadoCity');
                 error.innerHTML = 'Please select a city';
                 apartadoCity.appendChild(error);
+
+                window.scrollTo({
+                    top: apartadoCity.offsetTop - 100,
+                    behavior: 'smooth'
+                });
 
                 inputCity.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
@@ -229,6 +317,10 @@ nextBtn.addEventListener('click', function (event) {
                 error.style.marginTop = '0px';
                 apartadoZipCode.appendChild(error);
 
+                setTimeout(() => {
+                    inputZipCode.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
+
                 inputZipCode.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
                 });
@@ -238,6 +330,10 @@ nextBtn.addEventListener('click', function (event) {
                 error.style.marginTop = '0px';
                 apartadoPhone.appendChild(error);
 
+                setTimeout(() => {
+                    inputPhone.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
+
                 inputPhone.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
                 });
@@ -246,6 +342,10 @@ nextBtn.addEventListener('click', function (event) {
                 error.innerHTML = 'Please insert a valid phone number';
                 error.style.marginTop = '0px';
                 apartadoPhone.appendChild(error);
+
+                setTimeout(() => {
+                    inputPhone.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
 
                 inputPhone.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
@@ -257,6 +357,10 @@ nextBtn.addEventListener('click', function (event) {
                 error.style.marginTop = '0px';
                 apartadoTechnicalContactName.appendChild(error);
 
+                setTimeout(() => {
+                    inputTechnicalContactName.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
+
                 inputTechnicalContactName.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
                 });
@@ -265,6 +369,10 @@ nextBtn.addEventListener('click', function (event) {
                 error.innerHTML = 'Please insert a technical contact email';
                 error.style.marginTop = '0px';
                 apartadoTechnicalContactEmail.appendChild(error);
+
+                setTimeout(() => {
+                    inputTechnicalContactEmail.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
 
                 inputTechnicalContactEmail.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
@@ -275,6 +383,10 @@ nextBtn.addEventListener('click', function (event) {
                 error.style.marginTop = '0px';
                 apartadoTechnicalContactEmail.appendChild(error);
 
+                setTimeout(() => {
+                    inputTechnicalContactEmail.focus(); // Enfocar en el campo después de mostrar el error
+                }, 100); // Ajusta el tiempo según sea necesario
+
                 inputTechnicalContactEmail.addEventListener('change', () => {
                     error.classList.remove('show'); // Removemos la clase 'show' para poder volver a aplicarla
                 });
@@ -283,17 +395,70 @@ nextBtn.addEventListener('click', function (event) {
         }
 
     } else if (currentSection === policySection) {
-        oculto(event, policySection);
-        policyText.classList.add('completed');
-        visible(finalizarResSection);
-        nextBtn.innerHTML = 'SUBMIT';
-        let ghostBtn = document.getElementById('ghostBtn');
-        ghostBtn.style.display = 'flex';
-        nextBtn.style.fontSize = '16px';
-        nextBtn.style.width = '200px'
-        resumenReserva();
+        if (document.getElementById('agreeTerms').checked === true) {
+            console.log('Terminos aceptados');
+            oculto(event, policySection);
+            policyText.classList.add('completed');
+            visible(finalizarResSection);
+            nextBtn.innerHTML = 'SUBMIT';
+            let ghostBtn = document.getElementById('ghostBtn');
+            ghostBtn.style.display = 'flex';
+            nextBtn.style.fontSize = '16px';
+            nextBtn.style.width = '200px'
+
+            codificacion = `LAB${new Date().getFullYear()}`
+
+            vendorSelect = document.getElementById('proovedores');
+            vendorSelectValue = parseInt(vendorSelect.value);
+            vendorText = vendorSelect.selectedIndex !== -1 ? vendorSelect.options[vendorSelect.selectedIndex].text : '';
+
+            laboratorySelect = document.getElementById('laboratorios');
+            laboratorySelectValue = parseInt(laboratorySelect.value);
+            laboratorySelect.appendChild(`<div id="labSelected" style="display: none;">${laboratorySelectValue}</div>`);
+
+
+            
+            console.log(document.getElementById('labSelected').textContent);
+
+
+
+            
+            laboratoryText = laboratorySelect.selectedIndex !== -1 ? laboratorySelect.options[laboratorySelect.selectedIndex].text : '';
+
+            numPods = parseInt(document.getElementById('pods').value) || 'N/A';
+            numStudents = parseInt(document.getElementById('alumnos').value) || 'N/A';
+
+            schedule.push(document.getElementById('startHour').value || 'N/A');
+            schedule.push(document.getElementById('endHour').value || 'N/A');
+
+            zonasHorarias = document.getElementById('zonasHorarias');
+            zonasHorariasValue = parseInt(zonasHorarias.value);
+            timeZoneText = zonasHorarias.selectedIndex !== -1 ? zonasHorarias.options[zonasHorarias.selectedIndex].text : '';
+
+            comentarios = document.getElementById('comentarios').value || 'N/A';
+
+            companyName = document.getElementById('companyName').value || 'N/A';
+            contactName = document.getElementById('contactName').value || 'N/A';
+            contactEmail = document.getElementById('contactEmail').value || 'N/A';
+            address = document.getElementById('address').value || 'N/A';
+
+            countrySelect = document.getElementById('country');
+            countryText = countrySelect.selectedIndex !== -1 ? countrySelect.options[countrySelect.selectedIndex].text : '';
+
+            citySelect = document.getElementById('city');
+            cityText = citySelect.selectedIndex !== -1 ? citySelect.options[citySelect.selectedIndex].text : '';
+
+            zipCode = document.getElementById('zipCode').value || 'N/A';
+            phone = document.getElementById('phone').value || 'N/A';
+            technicalContactName = document.getElementById('technicalContactName').value || 'N/A';
+            technicalContactEmail = document.getElementById('technicalContactEmail').value || 'N/A';
+
+            resumenReserva(vendorText, laboratoryText, numPods, numStudents, selectedDates, schedule, timeZoneText, companyName, contactName, contactEmail, address, countryText, cityText, zipCode, phone, technicalContactName, technicalContactEmail, comentarios);
+        } else {
+            $('#exampleModal').modal('show');
+        }
     } else {
-        confirmacionReserva();
+        confirmacionReserva(codificacion, vendorSelectValue, laboratorySelectValue, numPods, numStudents, selectedDates, schedule, zonasHorariasValue, companyName, contactName, contactEmail, address, countryText, cityText, zipCode, phone, technicalContactName, technicalContactEmail, comentarios);
         form.submit();
 
     }
@@ -356,66 +521,10 @@ inputLab.addEventListener('change', () => {
     apartadoSchedule.style.display = 'block';
 })
 
-async function resumenReserva() {
-    let vendorSelect = document.getElementById('proovedores');
-    let vendorSelectValue = vendorSelect.value;
-    let vendorText = vendorSelect.selectedIndex !== -1 ? vendorSelect.options[vendorSelect.selectedIndex].text : '';
-
-    let laboratorySelect = document.getElementById('laboratorios');
-    let laboratorySelectValue = laboratorySelect.value;
-    let laboratoryText = laboratorySelect.selectedIndex !== -1 ? laboratorySelect.options[laboratorySelect.selectedIndex].text : '';
-
-    let numPods = document.getElementById('pods').value || 'N/A';
-    let numStudents = document.getElementById('alumnos').value || 'N/A';
-
-    let schedule = document.getElementById('schedule').value || 'N/A';
-    schedule = schedule.split(',');
-
-    let zonasHorarias = document.getElementById('zonasHorarias');
-    let zonasHorariasValue = zonasHorarias.value;
-    let timeZoneText = zonasHorarias.selectedIndex !== -1 ? zonasHorarias.options[zonasHorarias.selectedIndex].text : '';
-
-    let comentarios = document.getElementById('comentarios').value || 'N/A';
-
-    let companyName = document.getElementById('companyName').value || 'N/A';
-    let contactName = document.getElementById('contactName').value || 'N/A';
-    let contactEmail = document.getElementById('contactEmail').value || 'N/A';
-    let address = document.getElementById('address').value || 'N/A';
-
-    let countrySelect = document.getElementById('country');
-    let countryText = countrySelect.selectedIndex !== -1 ? countrySelect.options[countrySelect.selectedIndex].text : '';
-
-    let citySelect = document.getElementById('city');
-    let cityText = citySelect.selectedIndex !== -1 ? citySelect.options[citySelect.selectedIndex].text : '';
-
-    let zipCode = document.getElementById('zipCode').value || 'N/A';
-    let phone = document.getElementById('phone').value || 'N/A';
-    let technicalContactName = document.getElementById('technicalContactName').value || 'N/A';
-    let technicalContactEmail = document.getElementById('technicalContactEmail').value || 'N/A';
-
-    console.log(vendorText);
-    console.log(laboratoryText);
-    console.log(numPods);
-    console.log(numStudents);
-    console.log(selectedDates);
-    console.log(schedule);
-    console.log(timeZoneText);
-    console.log(companyName);
-    console.log(contactName);
-    console.log(contactEmail);
-    console.log(address);
-    console.log(countryText);
-    console.log(cityText);
-    console.log(zipCode);
-    console.log(phone);
-    console.log(technicalContactName);
-    console.log(technicalContactEmail);
-    console.log(comentarios);
-
-
+async function resumenReserva(vendorText, laboratoryText, numPods, numStudents, selectedDates, schedule, timeZoneText, companyName, contactName, contactEmail, address, countryText, cityText, zipCode, phone, technicalContactName, technicalContactEmail, comentarios) {
     // Asignar los valores obtenidos a los elementos de confirmación
     document.getElementById('confirmVendor').innerHTML = `<b>Vendor: </b>${vendorText}`;
-    document.getElementById('confirmLaboratory').innerHTML = `<b>Laboratory: </b>${laboratoryText}`;
+    document.getElementById(`confirmLaboratory`).innerHTML = `<b>Laboratory: </b>${laboratoryText}`;
     document.getElementById('confirmNum_pods').innerHTML = `<b>Pods: </b>${numPods}`;
     document.getElementById('confirmNum_students').innerHTML = `<b>Students: </b>${numStudents}`;
     document.getElementById(`confirmStart_date`).innerHTML = `<b>Start date: </b>${selectedDates[0]}`;
@@ -433,12 +542,12 @@ async function resumenReserva() {
     document.getElementById('confirmPhone').innerHTML = `<b>Phone: </b>${phone}`;
     document.getElementById('confirmTechnical_contact').innerHTML = `<b>Technical contact: </b>${technicalContactName} (${technicalContactEmail})`;
 
-    document.getElementById('confirmComentarios').innerHTML = `<div>${comentarios}</div>`;
+    document.getElementById('confirmComentarios').innerHTML = `${comentarios}`;
 }
 
-async function confirmacionReserva() {
-    let clienteId = await comprobarCliente(companyName, contactName, contactEmail, address, countryText, cityText, zipCode, phone, technicalContactName, technicalContactEmail);
-    console.log(await insert_reserva(vendorSelectValue, laboratorySelectValue, numPods, numStudents, selectedDates[0], selectedDates[selectedDates.length - 1], zonasHorariasValue, schedule[0], schedule[1], clienteId, comentarios));
+async function confirmacionReserva(codificacion, vendorSelectValue, laboratorySelectValue, numPods, numStudents, selectedDates, schedule, zonasHorariasValue, companyName, contactName, contactEmail, address, countryText, cityText, zipCode, phone, technicalContactName, technicalContactEmail, comentarios) {
+    let clienteId = parseInt(await comprobarCliente(companyName, contactName, contactEmail, address, countryText, cityText, zipCode, phone, technicalContactName, technicalContactEmail));
+    await insert_reserva(codificacion, vendorSelectValue, laboratorySelectValue, numPods, numStudents, selectedDates[0], selectedDates[selectedDates.length - 1], zonasHorariasValue, schedule[0], schedule[1], clienteId, comentarios);
 }
 
 async function comprobarCliente(companyName, contactName, contactEmail, address, countryText, cityText, zipCode, phone, technicalContactName, technicalContactEmail) {
@@ -446,11 +555,10 @@ async function comprobarCliente(companyName, contactName, contactEmail, address,
     let clienteId = 0;
     let clienteExiste = false;
 
-    clientes.forEach(async cliente => {
+    clientes.forEach(cliente => {
         if (cliente.EMPRESA === companyName && cliente.NOMBRE_CONTACTO === contactName && cliente.EMAIL_CONTACTO === contactEmail && cliente.DIRECCION === address && cliente.PAIS === countryText && cliente.CIUDAD === cityText && cliente.CODIGO_POSTAL === zipCode && cliente.TELEFONO === phone && cliente.NOMBRE_CONTACTO_TECH === technicalContactName && cliente.EMAIL_CONTACTO_TECH === technicalContactEmail) {
             clienteExiste = true;
             clienteId = cliente.CLIENTE_ID;
-            console.log('Cliente existente');
         } else if (cliente.EMPRESA === 'N/A' || cliente.NOMBRE_CONTACTO === 'N/A' || cliente.EMAIL_CONTACTO === 'N/A' || cliente.DIRECCION === 'N/A' || cliente.PAIS === 'Select country' || cliente.CIUDAD === 'Select city' || cliente.CODIGO_POSTAL === 'N/A' || cliente.TELEFONO === 'N/A' || cliente.NOMBRE_CONTACTO_TECH === 'N/A' || cliente.EMAIL_CONTACTO_TECH === 'N/A') {
             console.log('CAMPOS SIN RELLENAR');
             console.log(cliente.EMPRESA);
@@ -525,18 +633,19 @@ async function insert_cliente(companyName, contactName, contactEmail, address, c
     }
 }
 
-async function insert_reserva(vendorSelectValue, laboratorySelectValue, numPods, numStudents, selectedDates, zonasHorariasValue, schedule, clienteId, comentarios) {
+async function insert_reserva(codificacion, vendorSelectValue, laboratorySelectValue, numPods, numStudents, fechaInicio, fechaFin, zonasHorariasValue, horaInicio, horaFin, clienteId, comentarios) {
     let formData = new FormData();
     formData.append('accion', 'insert_reserva');
+    formData.append('codificacion', codificacion);
     formData.append('vendorSelectValue', vendorSelectValue);
     formData.append('laboratorySelectValue', laboratorySelectValue);
     formData.append('numPods', numPods);
     formData.append('numStudents', numStudents);
-    formData.append('fechaInicio', selectedDates);
-    formData.append('fechaFin', selectedDates);
+    formData.append('fechaInicio', fechaInicio);
+    formData.append('fechaFin', fechaFin);
     formData.append('zonasHorariasValue', zonasHorariasValue);
-    formData.append('horaInicio', schedule);
-    formData.append('horaFin', schedule);
+    formData.append('horaInicio', horaInicio);
+    formData.append('horaFin', horaFin);
     formData.append('clienteId', clienteId);
     formData.append('comentarios', comentarios);
 

@@ -127,7 +127,7 @@ button {
   }
 
   .subTituloSeccion {
-    color:#ea1c24;
+    color: #ea1c24;
     font-size: 16px;
     margin-top: 30px;
     font-weight: bold;
@@ -259,7 +259,7 @@ button {
   .close-btn:hover {
     color: #000;
   }
-  
+
   #apartadoPods {
     display: none;
   }
@@ -395,7 +395,7 @@ button {
   }
 
   .subTituloSeccion {
-    color:#ea1c24;
+    color: #ea1c24;
     font-size: 16px;
     margin-top: 30px;
     font-weight: bold;
@@ -692,14 +692,14 @@ button {
   }
 
   .subTituloSeccion {
-    color:#ea1c24;
+    color: #ea1c24;
     font-size: 16px;
     margin-top: 30px;
     font-weight: bold;
   }
 
   #subtitleContactDetails {
-    margin-top: 0px
+    margin-top: 0px;
   }
 
   #inputDate-container {
@@ -845,21 +845,31 @@ button {
     display: none;
   }
 
+  .scheduleContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .dividerHour {
+    margin-top: 70px;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+
   .confirm_param_gray {
     padding: 10px;
-    background-color: #E3E2E3;
+    background-color: #e3e2e3;
   }
 
   .confirm_param_white {
     padding: 10px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
 
   .confirmContainer {
     display: flex;
     justify-content: space-between;
     margin: 30px 0;
-    
   }
 
   .subtituloConfirm {
@@ -867,6 +877,7 @@ button {
     background-color: #ea1c24;
     font-size: 16px;
     margin-top: 30px;
+    margin-bottom: 0px;
     font-weight: bold;
     padding: 10px;
     border-top-left-radius: 10px;
@@ -888,29 +899,89 @@ button {
     flex-direction: column;
     width: 87%;
     margin-top: 30px;
-    color: #6c757d;
+    color: #000000;
     margin: auto;
   }
   #confirmComentariosSection div {
     padding: 10px;
   }
+  .confirmSectionText {
+    margin-top: 40px;
+    font-size: 12px;
+    line-height: 30px;
+    color: #6c757d;
+  }
   .error {
     border: 1px solid #ea1c24;
     background-color: #f16d73;
-    color : #ffffff;
+    color: #ffffff;
     padding: 5px;
     margin-top: -24px;
     font-size: 10px;
 
     /* Transiciones */
     max-height: 0; /* Inicialmente colapsado */
-    opacity: 0;    /* Inicialmente invisible */
+    opacity: 0; /* Inicialmente invisible */
     overflow: hidden; /* Para ocultar el contenido que no se muestra */
     transition: max-height 0.5s ease, opacity 0.5s ease; /* Transición de max-height y opacity */
   }
 
   .error.show {
     max-height: fit-content; /* Altura máxima cuando está visible (ajusta según el contenido) */
-    opacity: 1;        /* Totalmente visible */
-}
+    opacity: 1; /* Totalmente visible */
+  }
+
+  .policyContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 80%;
+    line-height: 30px;
+  }
+
+  .policyContainer h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ea1c24;
+  }
+
+  #termsContainer {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #termsContainer label {
+    margin-left: 8px; /* Espacio entre el checkbox y la etiqueta */
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: lighter;
+    margin-bottom: 0px;
+    user-select: none;
+  }
+
+  #termsContainer input[type="radio"] {
+    margin: 0px;
+    width: 16px;
+  }
+
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 55px;
+  }
+
+  .btn-red {
+    background-color: #ea1c24;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  .btn-red:hover {
+    background-color: #ffffff;
+    color: #ea1c24;
+    border: 1px solid #ea1c24;
+    transition: background 0.3s;
+  }
 }
