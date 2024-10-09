@@ -98,6 +98,7 @@ function init() {
 init();
 const validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 const validPhone = /^\(?(\d{3})\)?[-\s]?(\d{3})[-\s]?(\d{3})$/;
+let isSubmited = false;
 
 nextBtn.addEventListener('click', function (event) {
     event.preventDefault(); // Asegura que no se recargue la página
@@ -166,7 +167,6 @@ nextBtn.addEventListener('click', function (event) {
                 error.innerHTML = 'Please select a date';
                 error.style.marginTop = '0px';
                 apartadoFechas.appendChild(error);
-                console.log(apartadoFechas.offsetTop);
                 window.scrollTo({
                     top: apartadoFechas.offsetTop - 100,
                     behavior: 'smooth'
@@ -396,7 +396,6 @@ nextBtn.addEventListener('click', function (event) {
 
     } else if (currentSection === policySection) {
         if (document.getElementById('agreeTerms').checked === true) {
-            console.log('Terminos aceptados');
             oculto(event, policySection);
             policyText.classList.add('completed');
             visible(finalizarResSection);
@@ -414,15 +413,7 @@ nextBtn.addEventListener('click', function (event) {
 
             laboratorySelect = document.getElementById('laboratorios');
             laboratorySelectValue = parseInt(laboratorySelect.value);
-            laboratorySelect.appendChild(`<div id="labSelected" style="display: none;">${laboratorySelectValue}</div>`);
-
-
-            
-            console.log(document.getElementById('labSelected').textContent);
-
-
-
-            
+                        
             laboratoryText = laboratorySelect.selectedIndex !== -1 ? laboratorySelect.options[laboratorySelect.selectedIndex].text : '';
 
             numPods = parseInt(document.getElementById('pods').value) || 'N/A';
@@ -460,7 +451,6 @@ nextBtn.addEventListener('click', function (event) {
     } else {
         confirmacionReserva(codificacion, vendorSelectValue, laboratorySelectValue, numPods, numStudents, selectedDates, schedule, zonasHorariasValue, companyName, contactName, contactEmail, address, countryText, cityText, zipCode, phone, technicalContactName, technicalContactEmail, comentarios);
         form.submit();
-
     }
 });
 
@@ -513,12 +503,22 @@ addEventListener('change', () => {
 })
 
 
-
+let labDiv = document.createElement('div');
 inputLab.addEventListener('change', () => {
     apartadoPods.style.display = 'block';
     apartadoAlumnos.style.display = 'block';
     apartadoFechas.style.display = 'block';
     apartadoSchedule.style.display = 'block';
+    
+    labDiv.id = 'labSelected';
+    labDiv.style.display = 'none';
+    laboratorySelectValue = document.getElementById('laboratorios').value;
+    for (let lab of labsReservas) {
+        if (lab.LABORATORIO_ID === laboratorySelectValue) {
+            labDiv.innerHTML = lab.DURACION;
+        }
+    }
+    document.getElementById('apartadoLab').appendChild(labDiv);
 })
 
 async function resumenReserva(vendorText, laboratoryText, numPods, numStudents, selectedDates, schedule, timeZoneText, companyName, contactName, contactEmail, address, countryText, cityText, zipCode, phone, technicalContactName, technicalContactEmail, comentarios) {
@@ -560,8 +560,6 @@ async function comprobarCliente(companyName, contactName, contactEmail, address,
             clienteExiste = true;
             clienteId = cliente.CLIENTE_ID;
         } else if (cliente.EMPRESA === 'N/A' || cliente.NOMBRE_CONTACTO === 'N/A' || cliente.EMAIL_CONTACTO === 'N/A' || cliente.DIRECCION === 'N/A' || cliente.PAIS === 'Select country' || cliente.CIUDAD === 'Select city' || cliente.CODIGO_POSTAL === 'N/A' || cliente.TELEFONO === 'N/A' || cliente.NOMBRE_CONTACTO_TECH === 'N/A' || cliente.EMAIL_CONTACTO_TECH === 'N/A') {
-            console.log('CAMPOS SIN RELLENAR');
-            console.log(cliente.EMPRESA);
             clienteExiste = true;
             alert('Make sure you fill out all fields correctly')
         }

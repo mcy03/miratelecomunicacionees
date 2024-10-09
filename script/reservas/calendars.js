@@ -8,7 +8,20 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentDate = new Date();
     let currentMonthIndex = currentDate.getMonth();
     let currentYear = currentDate.getFullYear();
-    let days = 5; // Número total de días que queremos seleccionar
+    let days = 0;
+    let currentReservations = [];
+
+    document.getElementById('laboratorios').addEventListener('change', () => {
+        currentReservations = [];
+        days = parseInt(document.getElementById('labSelected').innerText);
+        for (let reserva of reservas) {
+            if (reserva.LABORATORIO_ID === document.getElementById('laboratorios').value) {
+                currentReservations.push(reserva);
+            }
+        }
+
+        renderCalendars();
+    });
 
     // Array para almacenar las fechas seleccionadas
     window.selectedDates = [];
@@ -60,6 +73,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const dayDivs = daysGrid.querySelectorAll('.unselect');
 
+        dayDivs.forEach(d => {
+            let dayNum = parseInt(d.textContent);
+            let dayDate = new Date(date.getFullYear(), date.getMonth(), dayNum);
+
+            // Establecer la hora del día a 00:00:00 para evitar problemas de comparación
+            dayDate.setHours(0, 0, 0, 0);
+
+            // Comprobar si el día está dentro de alguna reserva
+            for (let reserva of currentReservations) {
+                let reservaInicio = new Date(reserva.FECHA_INICIO);
+                let reservaFin = new Date(reserva.FECHA_FIN);
+
+                // También asegúrate de que las fechas de reserva no tengan hora
+                reservaInicio.setHours(0, 0, 0, 0);
+                reservaFin.setHours(0, 0, 0, 0);
+
+                // Si el día está dentro del rango de la reserva, agregar la clase 'unavailable'
+                if (dayDate >= reservaInicio && dayDate <= reservaFin) {
+                    d.classList.add('unavailable');
+                }
+            }
+        });
+
         // Aplicar las clases 'selected' y 'mid' a los días seleccionados
         dayDivs.forEach(d => {
             let dayNum = parseInt(d.textContent);
@@ -68,7 +104,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Verifica si la fecha actual (dayDateString) está en el array selectedDates
             if (selectedDates.includes(dayDateString)) {
-                if (dayDateString === selectedDates[0] || dayDateString === selectedDates[selectedDates.length - 1]) { // Si la fecha es la primera o la última de la selección les asigna selected
+                // Verificar si el día tiene la clase 'unavailable'
+                if (d.classList.contains('unavailable')) {
+                    // Borrar selección de días
+                    let allDays = document.querySelectorAll('.unselect');
+                    allDays.forEach(d => {
+                    d.classList.remove('selected');
+                    d.classList.remove('mid');
+                });
+
+                    alert('Este día no está disponible para selección.');
+
+                    selectedDates = []; // Resetear la selección para que no siga pintando despues de los dias no disponibles
+                    return; // Detener la ejecución si el día es "unavailable"
+                } else if (dayDateString === selectedDates[0] || dayDateString === selectedDates[selectedDates.length - 1]) { // Si la fecha es la primera o la última de la selección les asigna selected
                     d.classList.add('selected');
                 } else {
                     d.classList.add('mid');
@@ -95,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 let selectedDayNum = parseInt(dayDiv.innerHTML);
                 let startDate = new Date(date.getFullYear(), date.getMonth(), selectedDayNum);
                 let monthUpdated = false;
+
                 // Generar las fechas seleccionadas
                 for (let i = 0; i < days; i++) {
                     let currentDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + i);
@@ -117,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     selectedDates.push(dateString);
                 }
 
-                // Re-renderizar los calendarios para aplicar la selección
                 renderCalendars();
             });
         });

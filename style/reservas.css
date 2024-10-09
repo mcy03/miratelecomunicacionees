@@ -790,6 +790,11 @@ button {
     border: 1px solid #ea1c24;
     color: white;
   }
+  .days-grid div.unavailable {
+    background: #777777;
+    border: 1px solid #777777;
+    color: white;
+  }
 
   /* Estilo para ocultar el popup por defecto */
   .popup {
