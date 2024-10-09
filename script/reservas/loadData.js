@@ -14,8 +14,8 @@ window.addEventListener("load", async function () {
   let data = await get_data();
   let proovedores = data[0];
   let zonasHorarias = data[1];
-  let labsReservas = await get_labs_reservas();
-  let reservas = await get_reservas();
+  window.labsReservas = await get_labs_reservas();
+  window.reservas = await get_reservas();
   let paises = await get_paises();
 
   // Mostrar los datos en los selects
@@ -192,7 +192,6 @@ function displayReservas(reservas) {
     reservas.forEach(reserva => {
       if (reserva.LABORATORIO_ID === selectedLab.value) {
         renderCalendars(reserva);
-        console.log(reserva);
       }
     });
   });

@@ -57,7 +57,6 @@ class Reserva {
           echo "Error en la ejecución: " . $stmt->error;
         }
 
-        $stmt->execute(); // Ejecutar la consulta
         $result = $stmt->get_result(); // Obtener el resultado de la ejecución (si es necesario)
         $conn->close(); // Cerrar la conexión
 
@@ -344,5 +343,45 @@ class Reserva {
 
       return $this;
     }
+
+    /**
+     * Get the value of CLIENTE_ID
+     */ 
+    public function getCLIENTE_ID() 
+    {
+      return $this->CLIENTE_ID;
+    }
+
+    /**
+     * Set the value of CLIENTE_ID
+     *
+     * @return  self
+     */ 
+    public function setCLIENTE_ID($CLIENTE_ID) 
+    {
+      $this->CLIENTE_ID = $CLIENTE_ID;
+
+      return $this;
+    }
+
+    /**
+     * Get the value of COMENTARIOS
+     */ 
+    public function getCOMENTARIOS()
+    {
+        return $this->COMENTARIOS;
+    }
+
+    /**
+     * Set the value of COMENTARIOS
+     *
+     * @return  self
+     */ 
+    public function setCOMENTARIOS($COMENTARIOS)
+    {
+      $this->COMENTARIOS = $COMENTARIOS;
+
+      return $this;
+    } 
 }
 ?>

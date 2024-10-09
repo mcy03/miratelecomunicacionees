@@ -133,6 +133,7 @@ class ApiReservasController{
 
                 $array_reservas[] = array(
                     "RESERVA_ID" => $this->sanitizeUTF8($reserva->getRESERVA_ID()),
+                    "CODIFICACION" => $this->sanitizeUTF8($reserva->getCODIFICACION()),
                     "PROOVEDOR_ID" => $this->sanitizeUTF8($reserva->getPROOVEDOR_ID()),
                     "LABORATORIO_ID" => $this->sanitizeUTF8($reserva->getLABORATORIO_ID()),
                     "PODS" => $this->sanitizeUTF8($reserva->getPODS()),
@@ -141,7 +142,9 @@ class ApiReservasController{
                     "FECHA_FIN" => $this->sanitizeUTF8($reserva->getFECHA_FIN()),
                     "TIME_ZONE_ID" => $this->sanitizeUTF8($reserva->getTIME_ZONE_ID()),
                     "HORA_INICIO" => $this->sanitizeUTF8($reserva->getHORA_INICIO()),
-                    "HORA_FIN" => $this->sanitizeUTF8($reserva->getHORA_FIN())
+                    "HORA_FIN" => $this->sanitizeUTF8($reserva->getHORA_FIN()),
+                    "CLIENTE_ID" => $this->sanitizeUTF8($reserva->getCLIENTE_ID()),
+                    "COMENTARIOS" => $this->sanitizeUTF8($reserva->getCOMENTARIOS())
                   );
             }
 
