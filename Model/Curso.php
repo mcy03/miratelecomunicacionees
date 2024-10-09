@@ -1,12 +1,5 @@
 <?php
-/*  
-=========================================================================
-                            CLASE Curso
-=========================================================================
-º Inicializamos la clase Curso la cual contendra los cursos de la base  º
-º de datos.                                                             º
-=========================================================================
-*/
+
 class Curso {
     protected $CURSO_ID;
     protected $NOMBRE_CURSO;
@@ -18,14 +11,15 @@ class Curso {
     protected $COURSE_CONTENT;
     protected $LAB_OUTLINE;
     protected $DURATION;
-    protected $TECNOLOGIA_ID;
-    protected $CERTIFICACION_ID;
+    protected $CERTIFICACION = []; // Array de certificaciones
+    protected $TECNOLOGIA = [];    // Array de tecnologías
 
-    public function ___construct(){
-            
+    public function __construct(){
+        // Constructor vacío
     }
 
-    public static function countCourses(){
+    // Método para contar cursos
+    public static function countCourses() {
         $conn = db::connect();
         $consulta = "SELECT COUNT(*) as total FROM curso";
     
@@ -38,162 +32,144 @@ class Curso {
             return false;
         }
     }
-    
 
-    public static function getCourses(){
+    // Método para obtener todos los cursos
+    public static function getCourses() {
         $conn = db::connect();
         $consulta = "SELECT * FROM curso";
 
         if ($resultado = $conn->query($consulta)) {
+            $arrayCursos = [];
             while ($obj = $resultado->fetch_object('Curso')) {
-                $arrayCursos []= $obj;
+                // Llenar los arrays de certificaciones y tecnologías por cada curso
+                $obj->CERTIFICACION = self::getCertificationsByCourseId($obj->CURSO_ID);
+                $obj->TECNOLOGIA = self::getTecnologiasByCourseId($obj->CURSO_ID);
+                $arrayCursos[] = $obj;
             }
-            
             $resultado->close();
             return $arrayCursos;
         }
     }
 
-    public static function getCoursesFilter($select, $skip){
-        $conn = db::connect();
-        $consulta = "SELECT * FROM curso ORDER BY NOMBRE_CURSO LIMIT $select OFFSET $skip";
-
-
-        if ($resultado = $conn->query($consulta)) {
-            while ($obj = $resultado->fetch_object('Curso')) {
-                $arrayCursos []= $obj;
-            }
-            
-            $resultado->close();
-            return $arrayCursos;
-        }
-    }
-
-    public static function getCourseById($id){
+    // Método para obtener un curso por su ID
+    public static function getCourseById($id) {
         $conn = db::connect();
         $consulta = "SELECT * FROM curso WHERE CURSO_ID = $id";
 
         if ($resultado = $conn->query($consulta)) {
+            $arrayCurso = [];
             while ($obj = $resultado->fetch_object('Curso')) {
-                $arrayCurso []= $obj;
+                // Llenar los arrays de certificaciones y tecnologías por cada curso
+                $obj->CERTIFICACION = self::getCertificationsByCourseId($obj->CURSO_ID);
+                $obj->TECNOLOGIA = self::getTecnologiasByCourseId($obj->CURSO_ID);
+                $arrayCurso[] = $obj;
             }
-            
             $resultado->close();
             return $arrayCurso;
         }
     }
-    
-    public static function getCourseByName($name){
+
+    // Método para obtener un curso por su nombre
+    public static function getCourseByName($name) {
         $conn = db::connect();
     
-        // Preparar la consulta
         $consulta = "SELECT * FROM curso WHERE NOMBRE_CURSO = ?";
         if ($stmt = $conn->prepare($consulta)) {
-            // Vincular parámetro y ejecutar la consulta
             $stmt->bind_param("s", $name);
             $stmt->execute();
             
-            // Obtener resultados
             $resultado = $stmt->get_result();
-            $arrayCurso = array();
+            $arrayCurso = [];
             
             while ($obj = $resultado->fetch_object('Curso')) {
-                $arrayCurso []= $obj;
+                // Llenar los arrays de certificaciones y tecnologías por cada curso
+                $obj->CERTIFICACION = self::getCertificationsByCourseId($obj->CURSO_ID);
+                $obj->TECNOLOGIA = self::getTecnologiasByCourseId($obj->CURSO_ID);
+                $arrayCurso[] = $obj;
             }
             
-            // Cerrar recursos y devolver resultados
             $resultado->close();
             $stmt->close();
             return $arrayCurso;
         } else {
-            // Manejar el caso de consulta no válida
-            return array();
+            return [];
         }
     }
-    
 
-    public static function getNameById($id){
+    // Método auxiliar para obtener las certificaciones de un curso
+    private static function getCertificationsByCourseId($curso_id) {
         $conn = db::connect();
+        $consulta = "
+            SELECT c.CERTIFICACION_ID, c.NOMBRE_CERTIFICACION
+            FROM certificacion c
+            JOIN curso_certificacion cc ON c.CERTIFICACION_ID = cc.CERTIFICACION_ID
+            WHERE cc.CURSO_ID = $curso_id
+        ";
+        
+        $certificaciones = [];
+        if ($resultado = $conn->query($consulta)) {
+            while ($fila = $resultado->fetch_assoc()) {
+                $certificaciones[] = [
+                    'CERTIFICACION_ID' => $fila['CERTIFICACION_ID'],
+                    'NOMBRE_CERTIFICACION' => $fila['NOMBRE_CERTIFICACION']
+                ];
+            }
+            $resultado->close();
+        }
+        return $certificaciones;
+    }
 
-        // Consulta SQL para obtener el nombre del usuario con el ID dado
+    // Método para obtener las tecnologías asociadas a un curso
+    private static function getTecnologiasByCourseId($curso_id) {
+        $conn = db::connect();
+        $consulta = "
+            SELECT t.TECNOLOGIA_ID, t.NOMBRE_TECNOLOGIA
+            FROM tecnologia t
+            JOIN curso_tecnologia ct ON t.TECNOLOGIA_ID = ct.TECNOLOGIA_ID
+            WHERE ct.CURSO_ID = $curso_id
+        ";
+
+        $tecnologias = [];
+        if ($resultado = $conn->query($consulta)) {
+            while ($fila = $resultado->fetch_assoc()) {
+                $tecnologias[] = [
+                    'TECNOLOGIA_ID' => $fila['TECNOLOGIA_ID'],
+                    'NOMBRE_TECNOLOGIA' => $fila['NOMBRE_TECNOLOGIA']
+                ];
+            }
+            $resultado->close();
+        }
+        return $tecnologias;
+    }
+
+
+    // Métodos para obtener nombre y descripción del curso por ID
+    public static function getNameById($id) {
+        $conn = db::connect();
         $sql = "SELECT NOMBRE_CURSO FROM curso WHERE CURSO_ID = $id";
 
         $result = $conn->query($sql);
-
         if ($result->num_rows > 0) {
-            // Obtener el primer resultado (asumiendo que el ID es único)
             $row = $result->fetch_assoc();
             $name_curso = $row["NOMBRE_CURSO"];
-        }else {
+            return $name_curso;
+        } else {
             return false;
         }
-
-        // Cierra la conexión
-        $conn->close();
-
-        // Devolver el nombre del usuario
-        return $name_curso;
     }
 
-    public static function getDescById($id){
+    public static function getDescById($id) {
         $conn = db::connect();
-
-        // Consulta SQL para obtener el nombre del usuario con el ID dado
         $sql = "SELECT COMPLETE_NAME FROM curso WHERE CURSO_ID = $id";
 
         $result = $conn->query($sql);
-
         if ($result->num_rows > 0) {
-            // Obtener el primer resultado (asumiendo que el ID es único)
             $row = $result->fetch_assoc();
-            $desc_curso = $row["COMPLETE_NAME"];
-        }else {
+            return $row["COMPLETE_NAME"];
+        } else {
             return false;
         }
-
-        // Cierra la conexión
-        $conn->close();
-
-        // Devolver el nombre del usuario
-        return $desc_curso;
     }
-
-    public static function getNOMBRE_CURSObyId($id){
-        if (is_null($id)) {
-            return false;
-        }
-
-        $conn = db::connect();
-        $consulta = "SELECT NOMBRE_CURSO FROM curso WHERE CURSO_ID = $id";
-        
-        if ($resultado = $conn->query($consulta)) {
-            if ($fila = $resultado->fetch_assoc()) {
-                $curso_name = $fila['NOMBRE_CURSO'];
-                $resultado->close();
-                return $curso_name;
-            }
-        }
-        return null; // Si no se encuentra ninguna certificación con el ID proporcionado
-    }
-
-    public static function getCOMPLETE_NAMEbyId($id){
-        if (is_null($id)) {
-            return false;
-        }
-
-        $conn = db::connect();
-        $consulta = "SELECT COMPLETE_NAME FROM curso WHERE CURSO_ID = $id";
-        
-        if ($resultado = $conn->query($consulta)) {
-            if ($fila = $resultado->fetch_assoc()) {
-                $complete_name = $fila['COMPLETE_NAME'];
-                $resultado->close();
-                return $complete_name;
-            }
-        }
-        return null; // Si no se encuentra ninguna certificación con el ID proporcionado
-    }
-  
 
     /**
      * Get the value of CURSO_ID
@@ -396,44 +372,42 @@ class Curso {
     }
 
     /**
-     * Get the value of TECNOLOGIA_ID
+     * Get the value of CERTIFICACION
      */ 
-    public function getTECNOLOGIA_ID()
+    public function getCERTIFICACION()
     {
-        return $this->TECNOLOGIA_ID;
+        return $this->CERTIFICACION;
     }
 
     /**
-     * Set the value of TECNOLOGIA_ID
+     * Set the value of CERTIFICACION
      *
      * @return  self
      */ 
-    public function setTECNOLOGIA_ID($TECNOLOGIA_ID)
+    public function setCERTIFICACION($CERTIFICACION)
     {
-        $this->TECNOLOGIA_ID = $TECNOLOGIA_ID;
+        $this->CERTIFICACION = $CERTIFICACION;
 
         return $this;
     }
 
     /**
-     * Get the value of CERTIFICACION_ID
+     * Get the value of TECNOLOGIA
      */ 
-    public function getCERTIFICACION_ID()
+    public function getTECNOLOGIA()
     {
-        return $this->CERTIFICACION_ID;
+        return $this->TECNOLOGIA;
     }
 
     /**
-     * Set the value of CERTIFICACION_ID
+     * Set the value of TECNOLOGIA
      *
      * @return  self
      */ 
-    public function setCERTIFICACION_ID($CERTIFICACION_ID)
+    public function setTECNOLOGIA($TECNOLOGIA)
     {
-        $this->CERTIFICACION_ID = $CERTIFICACION_ID;
+        $this->TECNOLOGIA = $TECNOLOGIA;
 
         return $this;
     }
 }
-
-?>
