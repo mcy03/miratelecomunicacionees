@@ -152,7 +152,6 @@ function displayZonasHorarias(zonasHorarias) {
 
 function displayLabs(labs) {
   let labsSelect = document.getElementById('laboratorios');
-
   labs.forEach(lab => {
     // Crear un nuevo elemento <option>
     let option = document.createElement('option');

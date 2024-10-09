@@ -171,6 +171,42 @@ class Curso {
         }
     }
 
+    public static function getNOMBRE_CURSObyId($id){
+        if (is_null($id)) {
+            return false;
+        }
+
+        $conn = db::connect();
+        $consulta = "SELECT NOMBRE_CURSO FROM curso WHERE CURSO_ID = $id";
+        
+        if ($resultado = $conn->query($consulta)) {
+            if ($fila = $resultado->fetch_assoc()) {
+                $curso_name = $fila['NOMBRE_CURSO'];
+                $resultado->close();
+                return $curso_name;
+            }
+        }
+        return null; // Si no se encuentra ninguna certificación con el ID proporcionado
+    }
+
+    public static function getCOMPLETE_NAMEbyId($id){
+        if (is_null($id)) {
+            return false;
+        }
+
+        $conn = db::connect();
+        $consulta = "SELECT COMPLETE_NAME FROM curso WHERE CURSO_ID = $id";
+        
+        if ($resultado = $conn->query($consulta)) {
+            if ($fila = $resultado->fetch_assoc()) {
+                $complete_name = $fila['COMPLETE_NAME'];
+                $resultado->close();
+                return $complete_name;
+            }
+        }
+        return null; // Si no se encuentra ninguna certificación con el ID proporcionado
+    }
+
     /**
      * Get the value of CURSO_ID
      */ 
