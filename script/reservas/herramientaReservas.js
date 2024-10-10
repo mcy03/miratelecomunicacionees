@@ -400,10 +400,12 @@ nextBtn.addEventListener('click', function (event) {
             policyText.classList.add('completed');
             visible(finalizarResSection);
             nextBtn.innerHTML = 'SUBMIT';
-            let ghostBtn = document.getElementById('ghostBtn');
-            ghostBtn.style.display = 'flex';
-            nextBtn.style.fontSize = '16px';
-            nextBtn.style.width = '200px'
+            if (screen.width > 768) {
+                let ghostBtn = document.getElementById('ghostBtn');
+                ghostBtn.style.display = 'flex';
+                nextBtn.style.fontSize = '16px';
+                nextBtn.style.width = '200px';
+            }
 
             codificacion = `LAB${new Date().getFullYear()}`
 

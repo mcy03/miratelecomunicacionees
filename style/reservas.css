@@ -67,6 +67,12 @@ button {
     text-align: center;
     width: fit-content;
   }
+  #nextBtn:hover {
+    background-color: #ffffff;
+    color: #ea1c24;
+    border: 1px solid #ea1c24;
+    transition: background 0.3s;
+  }
   .prevBtnDiv {
     display: flex;
     justify-content: flex-start;
@@ -81,6 +87,23 @@ button {
     cursor: pointer;
     text-align: center;
     width: fit-content;
+  }
+  #prevBtn:hover {
+    background-color: #ea1c24;
+    color: #ffffff;
+    border: 1px solid #ea1c24;
+    transition: background 0.3s;
+  }
+
+  #ghostBtn {
+    display: none;
+  }
+
+  .widthContainerButtons {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .monthBtn {
     background-color: #ffffff;
@@ -120,7 +143,7 @@ button {
     flex-direction: column;
   }
   .tituloSeccion {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 20px;
     text-align: center;
     font-weight: bold;
@@ -128,7 +151,7 @@ button {
 
   .subTituloSeccion {
     color: #ea1c24;
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 30px;
     font-weight: bold;
   }
@@ -287,9 +310,9 @@ button {
   }
 
   .dividerHour {
-    margin-top: 70px;
-    margin-right: 40px;
-    margin-left: 40px;
+    margin-top: 75px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 
   .confirm_param_gray {
@@ -304,14 +327,13 @@ button {
 
   .confirmContainer {
     display: flex;
-    justify-content: space-between;
-    margin: 30px 0;
+    flex-direction: column;
   }
 
   .subtituloConfirm {
     color: #ffffff;
     background-color: #ea1c24;
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 30px;
     margin-bottom: 0px;
     font-weight: bold;
@@ -321,19 +343,17 @@ button {
   }
 
   .confirmContainerLab {
-    margin-left: 100px;
-    width: 40%;
+    width: 100%;
   }
 
   .confirmContainerEmp {
-    margin-right: 100px;
-    width: 40%;
+    width: 100%
   }
 
   #confirmComentariosSection {
     display: flex;
     flex-direction: column;
-    width: 87%;
+    width: 100%;
     margin-top: 30px;
     color: #000000;
     margin: auto;
@@ -343,7 +363,7 @@ button {
   }
   .confirmSectionText {
     margin-top: 40px;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 30px;
     color: #6c757d;
   }
@@ -371,27 +391,33 @@ button {
     display: flex;
     flex-direction: column;
     margin: 20px auto;
-    width: 80%;
+    width: 100%;
     line-height: 30px;
+    font-size: 10px;
+  }
+
+  .policyContainer ul {
+    padding-left: 5px;
   }
 
   .policyContainer h3 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     color: #ea1c24;
+    line-height: 1.4rem;
   }
 
   #termsContainer {
     margin-top: 70px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     gap: 10px;
   }
 
   #termsContainer label {
     margin-left: 8px; /* Espacio entre el checkbox y la etiqueta */
-    font-size: 14px;
+    font-size: 10px;
     color: #6c757d;
     font-weight: lighter;
     margin-bottom: 0px;
@@ -400,13 +426,12 @@ button {
 
   #termsContainer input[type="radio"] {
     margin: 0px;
-    width: 16px;
   }
 
   .checkbox-wrapper {
     display: flex;
     align-items: center;
-    margin: 0 55px;
+    margin: 0 5px;
   }
 
   .btn-red {
@@ -484,6 +509,12 @@ button {
     text-align: center;
     width: fit-content;
   }
+  #nextBtn:hover {
+    background-color: #ffffff;
+    color: #ea1c24;
+    border: 1px solid #ea1c24;
+    transition: background 0.3s;
+  }
   .prevBtnDiv {
     display: flex;
     justify-content: flex-start;
@@ -498,6 +529,23 @@ button {
     cursor: pointer;
     text-align: center;
     width: fit-content;
+  }
+  #prevBtn:hover {
+    background-color: #ea1c24;
+    color: #ffffff;
+    border: 1px solid #ea1c24;
+    transition: background 0.3s;
+  }
+
+  #ghostBtn {
+    display: none;
+  }
+
+  .widthContainerButtons {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .monthBtn {
     background-color: #ffffff;
@@ -738,12 +786,12 @@ button {
   }
 
   .confirmContainerLab {
-    margin-left: 100px;
+    margin-left: 50px;
     width: 40%;
   }
 
   .confirmContainerEmp {
-    margin-right: 100px;
+    margin-right: 50px;
     width: 40%;
   }
 
@@ -760,7 +808,7 @@ button {
   }
   .confirmSectionText {
     margin-top: 40px;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 30px;
     color: #6c757d;
   }
@@ -1188,19 +1236,19 @@ button {
   }
 
   .confirmContainerLab {
-    margin-left: 100px;
+    margin-left: 50px;
     width: 40%;
   }
 
   .confirmContainerEmp {
-    margin-right: 100px;
+    margin-right: 50px;
     width: 40%;
   }
 
   #confirmComentariosSection {
     display: flex;
     flex-direction: column;
-    width: 87%;
+    width: 95%;
     margin-top: 30px;
     color: #000000;
     margin: auto;
